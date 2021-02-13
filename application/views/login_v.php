@@ -34,7 +34,7 @@
 			<div class="wrap-login100">
 				<form class="login100-form validate-form" action = '<?= base_url() ?>dashboard'>
 					<span class="login100-form-logo">
-						<i class="zmdi zmdi-landscape"></i>
+						<i class="zmdi zmdi-gamepad"></i>
 						<!-- <i class="zmdi zmdi-landscape"></i> -->
 					</span>
 
