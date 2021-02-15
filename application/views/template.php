@@ -50,13 +50,13 @@
           <!-- Nav items -->
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link active" href="examples/dashboard.html">
+              <a class="nav-link active" href="<?= site_url('dashboard') ?>">
                 <i class="ni ni-tv-2 text-primary"></i>
                 <span class="nav-link-text">Dashboard</span>
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="examples/register.html">
+              <a class="nav-link" href="<?= site_url('pendaftaran') ?>">
                 <i class="ni ni-circle-08 text-pink"></i>
                 <span class="nav-link-text">Pendaftaran</span>
               </a>
