@@ -56,6 +56,24 @@
               </a>
             </li>
             <li class="nav-item">
+              <a class="nav-link" href="examples/register.html">
+                <i class="ni ni-circle-08 text-pink"></i>
+                <span class="nav-link-text">Pendaftaran</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="examples/icons.html">
+                <i class="ni ni-planet text-orange"></i>
+                <span class="nav-link-text">Rekam Medis</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="examples/login.html">
+                <i class="ni ni-key-25 text-info"></i>
+                <span class="nav-link-text">Transaksi</span>
+              </a>
+            </li>
+            <!-- <li class="nav-item">
               <a class="nav-link" href="examples/icons.html">
                 <i class="ni ni-planet text-orange"></i>
                 <span class="nav-link-text">Icons</span>
@@ -96,7 +114,7 @@
                 <i class="ni ni-send text-dark"></i>
                 <span class="nav-link-text">Upgrade</span>
               </a>
-            </li>
+            </li> -->
           </ul>
           <!-- Divider -->
           <hr class="my-3">
@@ -106,7 +124,7 @@
           </h6>
           <!-- Navigation -->
           <ul class="navbar-nav mb-md-3">
-            <li class="nav-item">
+            <!-- <li class="nav-item">
               <a class="nav-link" href="https://demos.creative-tim.com/argon-dashboard/docs/getting-started/overview.html" target="_blank">
                 <i class="ni ni-spaceship"></i>
                 <span class="nav-link-text">Getting started</span>
@@ -117,19 +135,19 @@
                 <i class="ni ni-palette"></i>
                 <span class="nav-link-text">Foundation</span>
               </a>
-            </li>
+            </li> -->
             <li class="nav-item">
               <a class="nav-link" href="https://demos.creative-tim.com/argon-dashboard/docs/components/alerts.html" target="_blank">
                 <i class="ni ni-ui-04"></i>
-                <span class="nav-link-text">Components</span>
+                <span class="nav-link-text">Master Data</span>
               </a>
             </li>
-            <li class="nav-item">
+            <!-- <li class="nav-item">
               <a class="nav-link" href="https://demos.creative-tim.com/argon-dashboard/docs/plugins/charts.html" target="_blank">
                 <i class="ni ni-chart-pie-35"></i>
                 <span class="nav-link-text">Plugins</span>
               </a>
-            </li>
+            </li> -->
           </ul>
         </div>
       </div>
