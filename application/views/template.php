@@ -30,6 +30,9 @@
   <link rel="stylesheet" href="<?= base_url() ?>assets_admin/vendor/nucleo/css/nucleo.css" type="text/css">
   <link rel="stylesheet" href="<?= base_url() ?>assets_admin/vendor/@fortawesome/fontawesome-free/css/all.min.css" type="text/css">
   <!-- Page plugins -->
+  <link rel="stylesheet" href="<?= base_url() ?>assets_admin/vendor/datatables.net-bs4/css/dataTables.bootstrap4.min.css">
+  <link rel="stylesheet" href="<?= base_url() ?>assets_admin/vendor/datatables.net-buttons-bs4/css/buttons.bootstrap4.min.css">
+  <link rel="stylesheet" href="<?= base_url() ?>assets_admin/vendor/datatables.net-select-bs4/css/select.bootstrap4.min.css">
   <!-- Argon CSS -->
   <link rel="stylesheet" href="<?= base_url() ?>assets_admin/css/argon.css?v=1.2.0" type="text/css">
 </head>
@@ -195,6 +198,16 @@
   <script src="<?= base_url() ?>assets_admin/vendor/chart.js/dist/Chart.extension.js"></script>
   <!-- Argon JS -->
   <script src="<?= base_url() ?>assets_admin/js/argon.js?v=1.2.0"></script>
+
+  <!-- Table -->
+  <script src="<?= base_url() ?>assets_admin/vendor/datatables.net/js/jquery.dataTables.min.js"></script>
+  <script src="<?= base_url() ?>assets_admin/vendor/datatables.net-bs4/js/dataTables.bootstrap4.min.js"></script>
+  <script src="<?= base_url() ?>assets_admin/vendor/datatables.net-buttons/js/dataTables.buttons.min.js"></script>
+  <script src="<?= base_url() ?>assets_admin/vendor/datatables.net-buttons-bs4/js/buttons.bootstrap4.min.js"></script>
+  <script src="<?= base_url() ?>assets_admin/vendor/datatables.net-buttons/js/buttons.html5.min.js"></script>
+  <script src="<?= base_url() ?>assets_admin/vendor/datatables.net-buttons/js/buttons.flash.min.js"></script>
+  <script src="<?= base_url() ?>assets_admin/vendor/datatables.net-buttons/js/buttons.print.min.js"></script>
+  <script src="<?= base_url() ?>assets_admin/vendor/datatables.net-select/js/dataTables.select.min.js"></script>
 </body>
 
 </html>
