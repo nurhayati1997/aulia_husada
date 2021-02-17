@@ -263,10 +263,13 @@
       <div class="row">
         <div class="col">
         <div class="card">
-            <div class="card-header bg-transparent">
-              <h3 class="mb-0">Pendaftaran</h3>
+            <div class="card-header bg-gradient-info">
+              <!-- <h3 class="mb-0"> </h3> -->
+              <div class="pt-4 text-center">
+              <h4 class="text-uppercase ls-1 text-white py-3 mb-0">Pendaftaran</h4>
+              </div>
             </div>
-            <div class="card-body">
+            <div class="card-body ">
               <div class="table-responsive py-4">
                   <table class="table table-flush" id="datatable-basic">
                       <thead class="thead-light">
