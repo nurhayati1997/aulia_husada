@@ -53,6 +53,8 @@
   <!-- Icons -->
   <link rel="stylesheet" href="<?= base_url() ?>assets_admin/vendor/nucleo/css/nucleo.css" type="text/css">
   <link rel="stylesheet" href="<?= base_url() ?>assets_admin/vendor/%40fortawesome/fontawesome-free/css/all.min.css" type="text/css">
+  <link rel="stylesheet" href="../../assets/vendor/animate.css/animate.min.css">
+  <link rel="stylesheet" href="../../assets/vendor/sweetalert2/dist/sweetalert2.min.css">
   <!-- Page plugins -->
   <link rel="stylesheet" href="<?= base_url() ?>assets_admin/vendor/datatables.net-bs4/css/dataTables.bootstrap4.min.css">
   <link rel="stylesheet" href="<?= base_url() ?>assets_admin/vendor/datatables.net-buttons-bs4/css/buttons.bootstrap4.min.css">
@@ -260,6 +262,8 @@
   <script src="<?= base_url() ?>assets_admin/vendor/datatables.net-buttons/js/buttons.flash.min.js"></script>
   <script src="<?= base_url() ?>assets_admin/vendor/datatables.net-buttons/js/buttons.print.min.js"></script>
   <script src="<?= base_url() ?>assets_admin/vendor/datatables.net-select/js/dataTables.select.min.js"></script>
+  <script src="<?= base_url() ?>assets_admin/vendor/sweetalert2/dist/sweetalert2.min.js"></script>
+  <script src="<?= base_url() ?>assets_admin/vendor/bootstrap-notify/bootstrap-notify.min.js"></script>
   <!-- Argon JS -->
   <script src="<?= base_url() ?>assets_admin/js/argon.min5438.js?v=1.2.0"></script>
   <!-- Demo JS - remove this in your project -->
