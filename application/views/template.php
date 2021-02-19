@@ -264,11 +264,31 @@
   <script src="<?= base_url() ?>assets_admin/vendor/datatables.net-select/js/dataTables.select.min.js"></script>
   <script src="<?= base_url() ?>assets_admin/vendor/sweetalert2/dist/sweetalert2.min.js"></script>
   <script src="<?= base_url() ?>assets_admin/vendor/bootstrap-notify/bootstrap-notify.min.js"></script>
+  <script src="<?= base_url() ?>assets_admin/vendor/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
+  <script src="<?= base_url() ?>assets_admin/vendor/moment.min.js"></script>
+  <script src="<?= base_url() ?>assets_admin/vendor/bootstrap-datetimepicker.js"></script>
+  <script type="text/javascript">
+    $(function() {
+      $('#datetimepicker1').datetimepicker({
+        icons: {
+          time: "fa fa-clock",
+          date: "fa fa-calendar-day",
+          up: "fa fa-chevron-up",
+          down: "fa fa-chevron-down",
+          previous: 'fa fa-chevron-left',
+          next: 'fa fa-chevron-right',
+          today: 'fa fa-screenshot',
+          clear: 'fa fa-trash',
+          close: 'fa fa-remove'
+        }
+      });
+    });
+  </script>
   <!-- Argon JS -->
   <script src="<?= base_url() ?>assets_admin/js/argon.min5438.js?v=1.2.0"></script>
   <!-- Demo JS - remove this in your project -->
   <script src="<?= base_url() ?>assets_admin/js/demo.min.js"></script>
-  <script>
+  <!-- <script>
     // Facebook Pixel Code Don't Delete
     ! function(f, b, e, v, n, t, s) {
       if (f.fbq) return;
@@ -296,7 +316,7 @@
     } catch (err) {
       console.log('Facebook Track Error:', err);
     }
-  </script>
+  </script> -->
   <noscript>
     <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=111649226022273&amp;ev=PageView&amp;noscript=1" />
   </noscript>

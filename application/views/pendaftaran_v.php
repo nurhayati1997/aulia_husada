@@ -263,7 +263,7 @@
       <div class="row">
         <div class="col">
           <div class="card">
-            <div class="card bg-gradient-info">
+            <div class="card bg-gradient-primary">
               <div class="card-header bg-transparent">
                 <div class="row justify-content-center">
                   <div class="col-lg-3 order-lg-2">
@@ -296,30 +296,63 @@
                 </div> -->
                 <div class="mt-4">
                   <form role="form" class="form-danger">
-                    <div class="form-group">
-                      <div class="input-group input-group-alternative mb-3">
-                        <div class="input-group-prepend">
-                          <span class="input-group-text"><i class="ni ni-single-02"></i></span>
-                        </div>
-                        <input class="form-control" placeholder="Name on card" type="text">
-                      </div>
-                    </div>
-                    <div class="form-group">
-                      <div class="input-group input-group-alternative mb-3">
-                        <div class="input-group-prepend">
-                          <span class="input-group-text"><i class="ni ni-credit-card"></i></span>
-                        </div>
-                        <input class="form-control" placeholder="Card number" type="text">
-                      </div>
-                    </div>
                     <div class="row">
+                      <div class="col-6">
+                        <div class="form-group">
+                          <div class="input-group input-group-alternative mb-3">
+                            <div class="input-group-prepend">
+                              <span class="input-group-text"><i class="ni ni-credit-card"></i></span>
+                            </div>
+                            <input class="form-control" placeholder="No Rekam Medis" type="text">
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-6">
+                        <div class="form-group">
+                          <div class="input-group input-group-alternative mb-3">
+                            <div class="input-group-prepend">
+                              <span class="input-group-text"><i class="ni ni-circle-08"></i></span>
+                            </div>
+                            <input class="form-control" placeholder="Nama Lengkap" type="text">
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-6">
+                        <div class="form-group">
+                          <div class="input-group input-group-alternative mb-3">
+                            <div class="input-group-prepend">
+                              <span class="input-group-text"><i class="ni ni-box-2"></i></span>
+                            </div>
+                            <input class="form-control" placeholder="No KTP" type="text">
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-6">
+                        <div class="form-group">
+                          <div class="input-group input-group-alternative mb-3">
+                            <div class="input-group-prepend">
+                              <span class="input-group-text"><i class="ni ni-pin-3"></i></span>
+                            </div>
+                            <input class="form-control" placeholder="Alamat" type="text">
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-6">
+                        <div class="form-group">
+                          <select class="form-control" id="exampleFormControlSelect1">
+                            <option selected>Jenis Kelamin</option>
+                            <option>laki-Laki</option>
+                            <option>Perempuan</option>
+                          </select>
+                        </div>
+                      </div>
                       <div class="col-6">
                         <div class="form-group">
                           <div class="input-group input-group-alternative mb-3">
                             <div class="input-group-prepend">
                               <span class="input-group-text"><i class="ni ni-calendar-grid-58"></i></span>
                             </div>
-                            <input class="form-control" placeholder="MM/YY" type="text">
+                            <input class="form-control datepicker" placeholder="Tanggal lahir" type="text">
                           </div>
                         </div>
                       </div>
@@ -329,12 +362,12 @@
                             <div class="input-group-prepend">
                               <span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
                             </div>
-                            <input class="form-control" placeholder="CCV" type="text">
+                            <input class="form-control" placeholder="Pekerjaan" type="text">
                           </div>
                         </div>
                       </div>
                     </div>
-                    <button type="button" class="btn btn-block btn-success">Simpan</button>
+                    <button type="button" class="btn btn-block btn-info">Simpan</button>
                   </form>
                 </div>
               </div>
