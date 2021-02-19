@@ -190,13 +190,13 @@
                 <i class="ni ni-spaceship"></i>
                 <span class="nav-link-text">Getting started</span>
               </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="../../docs/foundation/colors.html" target="_blank">
-                <i class="ni ni-palette"></i>
-                <span class="nav-link-text">Foundation</span>
-              </a>
             </li> -->
+            <li class="nav-item">
+              <a class="nav-link" href="<?= site_url('pengunjung') ?>">
+                <i class="ni ni-palette"></i>
+                <span class="nav-link-text">Pengunjung</span>
+              </a>
+            </li>
             <li class="nav-item">
               <a class="nav-link" href="../../docs/components/alerts.html" target="_blank">
                 <i class="ni ni-ui-04"></i>
