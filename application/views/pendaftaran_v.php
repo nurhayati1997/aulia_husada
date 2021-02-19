@@ -337,12 +337,33 @@
                           </div>
                         </div>
                       </div>
-                      <div class="col-6">
+                      <div class="col-4">
                         <div class="form-group">
                           <select class="form-control" id="exampleFormControlSelect1">
                             <option selected>Jenis Kelamin</option>
                             <option>laki-Laki</option>
                             <option>Perempuan</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="col-4">
+                        <div class="form-group">
+                          <select class="form-control" id="exampleFormControlSelect1">
+                            <option selected>Agama</option>
+                            <option>Islam</option>
+                            <option>Kriten</option>
+                            <option>Hindu</option>
+                            <option>Budha</option>
+                            <option>Konghucu</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="col-4">
+                        <div class="form-group">
+                          <select class="form-control" id="exampleFormControlSelect1">
+                            <option selected>Status</option>
+                            <option>Belum Menikah</option>
+                            <option>Menikah</option>
                           </select>
                         </div>
                       </div>
@@ -363,6 +384,26 @@
                               <span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
                             </div>
                             <input class="form-control" placeholder="Pekerjaan" type="text">
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-6">
+                        <div class="form-group">
+                          <div class="input-group input-group-alternative">
+                            <div class="input-group-prepend">
+                              <span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
+                            </div>
+                            <input class="form-control" placeholder="Pendidikan" type="text">
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-6">
+                        <div class="form-group">
+                          <div class="input-group input-group-alternative">
+                            <div class="input-group-prepend">
+                              <span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
+                            </div>
+                            <input class="form-control" placeholder="No Hp" type="text">
                           </div>
                         </div>
                       </div>
