@@ -277,7 +277,7 @@
                 <div class="pt-4 text-center">
                   <div class="row">
                     <div class="col-md-6">
-                      <button type="button" class="btn btn-default" data-toggle="modal" data-target="#modal-notification">Pasien Baru</button>
+                      <button type="button" class="btn btn-default" data-toggle="modal" data-target="#modal-notification">Input Pasien Baru</button>
                       <div class="modal fade" id="modal-notification" tabindex="-1" role="dialog" aria-labelledby="modal-notification" aria-hidden="true">
                         <div class="modal-dialog modal-danger modal-dialog-centered modal-" role="document">
                           <div class="modal-content bg-gradient-danger">
@@ -412,19 +412,54 @@
                       </div>
                     </div>
                     <div class="col-md-6">
-                      <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#modal-default">Pasien Lama</button>
+                      <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#modal-default">Pendaftaran</button>
                       <div class="modal fade" id="modal-default" tabindex="-1" role="dialog" aria-labelledby="modal-default" aria-hidden="true">
                           <div class="modal-dialog modal- modal-dialog-centered modal-" role="document">
                             <div class="modal-content">
                               <div class="modal-header">
-                                <h6 class="modal-title" id="modal-title-notification">Identitas Pasien Baru</h6>
+                              <h6 class="text-center modal-title " id="modal-title-notification">Pendaftaran Pasien</h6>
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                   <span aria-hidden="true">×</span>
                                 </button>
                               </div>
                               <div class="modal-body">
+                              <h4 class="text-center " id="modal-title-notification">Jenis Identitas</h4>
                                 <form role="form" class="form-danger">
                                   <div class="row">
+                                    <div class="col-4">
+                                      <div class="form-group">
+                                        <div class="custom-control custom-radio mb-3">
+                                          <input name="custom-radio-1" class="custom-control-input" id="customRadio5" type="radio">
+                                          <label class="custom-control-label" for="customRadio5">No Rm</label>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div class="col-4">
+                                      <div class="form-group">
+                                        <div class="custom-control custom-radio mb-3">
+                                          <input name="custom-radio-1" class="custom-control-input" id="customRadio6" checked="" type="radio">
+                                          <label class="custom-control-label" for="customRadio6">NIK</label>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div class="col-4">
+                                      <div class="form-group">
+                                        <div class="custom-control custom-radio mb-3">
+                                          <input name="custom-radio-1" class="custom-control-input" id="customRadio7" checked="" type="radio">
+                                          <label class="custom-control-label" for="customRadio7">Nama</label>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div class="col-12">
+                                      <div class="form-group">
+                                        <div class='input-group' id=''>
+                                          <input type='text' class="form-control" />
+                                          <span class="input-group-addon input-group-append">
+                                            <button class="btn btn-outline-primary" type="button" id="button-addon2"> <span class="fa fa-search"></span></button>
+                                          </span>
+                                        </div>
+                                      </div>
+                                    </div>
                                     <div class="col-6">
                                       <div class="form-group">
                                         <div class="input-group input-group-alternative mb-3">
@@ -465,74 +500,14 @@
                                         </div>
                                       </div>
                                     </div>
-                                    <div class="col-4">
+                                    <div class="col-12">
                                       <div class="form-group">
                                         <select class="form-control" id="exampleFormControlSelect1">
-                                          <option selected>Jenis Kelamin</option>
-                                          <option>laki-Laki</option>
-                                          <option>Perempuan</option>
+                                          <option selected>Praktik dokter</option>
+                                          <option>dr.Nunuk Kristiani,Sp.Rad | Spesialis Radiologi</option>
+                                          <option>dr.Nuryatien Husna,Sp.KFR | Spesialis Kedokteran Fisik & Rehabilitas</option>
+                                          <option>dr.Mirathi Ayu Irnanda | Dokter Umum</option>
                                         </select>
-                                      </div>
-                                    </div>
-                                    <div class="col-4">
-                                      <div class="form-group">
-                                        <select class="form-control" id="exampleFormControlSelect1">
-                                          <option selected>Agama</option>
-                                          <option>Islam</option>
-                                          <option>Kriten</option>
-                                          <option>Hindu</option>
-                                          <option>Budha</option>
-                                          <option>Konghucu</option>
-                                        </select>
-                                      </div>
-                                    </div>
-                                    <div class="col-4">
-                                      <div class="form-group">
-                                        <select class="form-control" id="exampleFormControlSelect1">
-                                          <option selected>Status</option>
-                                          <option>Belum Menikah</option>
-                                          <option>Menikah</option>
-                                        </select>
-                                      </div>
-                                    </div>
-                                    <div class="col-6">
-                                      <div class="form-group">
-                                        <div class="input-group input-group-alternative mb-3">
-                                          <div class="input-group-prepend">
-                                            <span class="input-group-text"><i class="ni ni-calendar-grid-58"></i></span>
-                                          </div>
-                                          <input class="form-control datepicker" placeholder="Tanggal lahir" type="text">
-                                        </div>
-                                      </div>
-                                    </div>
-                                    <div class="col-6">
-                                      <div class="form-group">
-                                        <div class="input-group input-group-alternative">
-                                          <div class="input-group-prepend">
-                                            <span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
-                                          </div>
-                                          <input class="form-control" placeholder="Pekerjaan" type="text">
-                                        </div>
-                                      </div>
-                                    </div>
-                                    <div class="col-6">
-                                      <div class="form-group">
-                                        <div class="input-group input-group-alternative">
-                                          <div class="input-group-prepend">
-                                            <span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
-                                          </div>
-                                          <input class="form-control" placeholder="Pendidikan" type="text">
-                                        </div>
-                                      </div>
-                                    </div>
-                                    <div class="col-6">
-                                      <div class="form-group">
-                                        <div class="input-group input-group-alternative">
-                                          <div class="input-group-prepend">
-                                            <span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
-                                          </div>
-                                          <input class="form-control" placeholder="No Hp" type="text">
-                                        </div>
                                       </div>
                                     </div>
                                   </div>
@@ -552,138 +527,341 @@
               </div>
               <!-- Card body -->
               <div class="card-body">
-                <!-- <div class="row justify-content-between align-items-center">
-                  <div class="col">
-                    <img src="<?= base_url() ?>assets_admin/img/icons/cards/mastercard.png" alt="Image placeholder" />
-                  </div>
-                  <div class="col-auto">
-                    <div class="d-flex align-items-center">
-                      <small class="text-white font-weight-bold mr-3">Make default</small>
-                      <div>
-                        <label class="custom-toggle  custom-toggle-white">
-                          <input type="checkbox" checked="">
-                          <span class="custom-toggle-slider rounded-circle" data-label-off="No" data-label-on="Yes"></span>
-                        </label>
+                <div class="row justify-content-center">
+                  <div class="col-lg-10">
+                    <div class="pricing card-group flex-column flex-md-row mb-3">
+                      <div class="card card-pricing border-0 text-center mb-4">
+                        <div class="card-header bg-transparent">
+                          <h4 class="text-uppercase ls-1 text-primary py-3 mb-0">dr.Mirathi Ayu Irnanda</h4>
+                        </div>
+                        <div class="card-body px-lg-7">
+                          <ul class="list-group list-group-flush list my--3">
+                            <li class="list-group-item px-0">
+                              <div class="row align-items-center">
+                                <div class="col ml--2">
+                                  <h4 class="mb-0">
+                                    <a href="#!">Nama Pasien</a>
+                                  </h4>
+                                  <span class="text-success">●</span>
+                                  <small>No RM</small>
+                                </div>
+                                <div class="col-auto">
+                                  <button type="button" class="btn btn-sm btn-primary">Antri</button>
+                                </div>
+                              </div>
+                            </li>
+                            <li class="list-group-item px-0">
+                              <div class="row align-items-center">
+                                <div class="col ml--2">
+                                  <h4 class="mb-0">
+                                    <a href="#!">Nama Pasien</a>
+                                  </h4>
+                                  <span class="text-success">●</span>
+                                  <small>No RM</small>
+                                </div>
+                                <div class="col-auto">
+                                  <button type="button" class="btn btn-sm btn-primary">Antri</button>
+                                </div>
+                              </div>
+                            </li>
+                            <li class="list-group-item px-0">
+                              <div class="row align-items-center">
+                                <div class="col ml--2">
+                                  <h4 class="mb-0">
+                                    <a href="#!">Nama Pasien</a>
+                                  </h4>
+                                  <span class="text-success">●</span>
+                                  <small>No RM</small>
+                                </div>
+                                <div class="col-auto">
+                                  <button type="button" class="btn btn-sm btn-primary">Antri</button>
+                                </div>
+                              </div>
+                            </li>
+                            <li class="list-group-item px-0">
+                              <div class="row align-items-center">
+                                <div class="col ml--2">
+                                  <h4 class="mb-0">
+                                    <a href="#!">Nama Pasien</a>
+                                  </h4>
+                                  <span class="text-success">●</span>
+                                  <small>No RM</small>
+                                </div>
+                                <div class="col-auto">
+                                  <button type="button" class="btn btn-sm btn-primary">Antri</button>
+                                </div>
+                              </div>
+                            </li>
+                            <li class="list-group-item px-0">
+                              <div class="row align-items-center">
+                                <div class="col ml--2">
+                                  <h4 class="mb-0">
+                                    <a href="#!">Nama Pasien</a>
+                                  </h4>
+                                  <span class="text-success">●</span>
+                                  <small>No RM</small>
+                                </div>
+                                <div class="col-auto">
+                                  <button type="button" class="btn btn-sm btn-primary">Antri</button>
+                                </div>
+                              </div>
+                            </li>
+                            <li class="list-group-item px-0">
+                              <div class="row align-items-center">
+                                <div class="col ml--2">
+                                  <h4 class="mb-0">
+                                    <a href="#!">Nama Pasien</a>
+                                  </h4>
+                                  <span class="text-success">●</span>
+                                  <small>No RM</small>
+                                </div>
+                                <div class="col-auto">
+                                  <button type="button" class="btn btn-sm btn-primary">Antri</button>
+                                </div>
+                              </div>
+                            </li>
+                            <li class="list-group-item px-0">
+                              <div class="row align-items-center">
+                                <div class="col ml--2">
+                                  <h4 class="mb-0">
+                                    <a href="#!">Nama Pasien</a>
+                                  </h4>
+                                  <span class="text-success">●</span>
+                                  <small>No RM</small>
+                                </div>
+                                <div class="col-auto">
+                                  <button type="button" class="btn btn-sm btn-primary">Antri</button>
+                                </div>
+                              </div>
+                            </li>
+                          </ul>
+                        </div>
+                        <div class="card-footer">
+                          <a href="#!" class="text-light">Dokter Umum</a>
+                        </div>
+                      </div>
+                      <div class="card card-pricing zoom-in shadow-lg rounded border-0 text-center mb-4">
+                        <div class="card-header bg-transparent">
+                          <h4 class="text-uppercase ls-1 text-primary py-3 mb-0">dr.Nunuk Kristiani,Sp.Rad</h4>
+                        </div>
+                        <div class="card-body px-lg-7">
+                          <ul class="list-group list-group-flush list my--3 ">
+                            <li class="list-group-item px-0">
+                              <div class="row align-items-center">
+                                <div class="col ml--2">
+                                  <h4 class="mb-0">
+                                    <a href="#!">Nama Pasien</a>
+                                  </h4>
+                                  <span class="text-success">●</span>
+                                  <small>No RM</small>
+                                </div>
+                                <div class="col-auto">
+                                  <button type="button" class="btn btn-sm btn-primary">Antri</button>
+                                </div>
+                              </div>
+                            </li>
+                            <li class="list-group-item px-0">
+                              <div class="row align-items-center">
+                                <div class="col ml--2">
+                                  <h4 class="mb-0">
+                                    <a href="#!">Nama Pasien</a>
+                                  </h4>
+                                  <span class="text-success">●</span>
+                                  <small>No RM</small>
+                                </div>
+                                <div class="col-auto">
+                                  <button type="button" class="btn btn-sm btn-primary">Antri</button>
+                                </div>
+                              </div>
+                            </li>
+                            <li class="list-group-item px-0">
+                              <div class="row align-items-center">
+                                <div class="col ml--2">
+                                  <h4 class="mb-0">
+                                    <a href="#!">Nama Pasien</a>
+                                  </h4>
+                                  <span class="text-success">●</span>
+                                  <small>No RM</small>
+                                </div>
+                                <div class="col-auto">
+                                  <button type="button" class="btn btn-sm btn-primary">Antri</button>
+                                </div>
+                              </div>
+                            </li>
+                            <li class="list-group-item px-0">
+                              <div class="row align-items-center">
+                                <div class="col ml--2">
+                                  <h4 class="mb-0">
+                                    <a href="#!">Nama Pasien</a>
+                                  </h4>
+                                  <span class="text-success">●</span>
+                                  <small>No RM</small>
+                                </div>
+                                <div class="col-auto">
+                                  <button type="button" class="btn btn-sm btn-primary">Antri</button>
+                                </div>
+                              </div>
+                            </li>
+                            <li class="list-group-item px-0">
+                              <div class="row align-items-center">
+                                <div class="col ml--2">
+                                  <h4 class="mb-0">
+                                    <a href="#!">Nama Pasien</a>
+                                  </h4>
+                                  <span class="text-success">●</span>
+                                  <small>No RM</small>
+                                </div>
+                                <div class="col-auto">
+                                  <button type="button" class="btn btn-sm btn-primary">Antri</button>
+                                </div>
+                              </div>
+                            </li>
+                            <li class="list-group-item px-0">
+                              <div class="row align-items-center">
+                                <div class="col ml--2">
+                                  <h4 class="mb-0">
+                                    <a href="#!">Nama Pasien</a>
+                                  </h4>
+                                  <span class="text-success">●</span>
+                                  <small>No RM</small>
+                                </div>
+                                <div class="col-auto">
+                                  <button type="button" class="btn btn-sm btn-primary">Antri</button>
+                                </div>
+                              </div>
+                            </li>
+                            <li class="list-group-item px-0">
+                              <div class="row align-items-center">
+                                <div class="col ml--2">
+                                  <h4 class="mb-0">
+                                    <a href="#!">Nama Pasien</a>
+                                  </h4>
+                                  <span class="text-success">●</span>
+                                  <small>No RM</small>
+                                </div>
+                                <div class="col-auto">
+                                  <button type="button" class="btn btn-sm btn-primary">Antri</button>
+                                </div>
+                              </div>
+                            </li>
+                          </ul>
+                        </div>
+                        <div class="card-footer bg-transparent">
+                          <a href="#!" class="text-light">Spesialis Radiologi</a>
+                        </div>
+                      </div>
+                      <div class="card card-pricing border-0 text-center mb-4">
+                        <div class="card-header bg-transparent">
+                          <h4 class="text-uppercase ls-1 text-primary py-3 mb-0">dr.Nuryatien Husna,Sp.KFR</h4>
+                        </div>
+                        <div class="card-body px-lg-7">
+                        <ul class="list-group list-group-flush list my--3">
+                            <li class="list-group-item px-0">
+                              <div class="row align-items-center">
+                                <div class="col ml--2">
+                                  <h4 class="mb-0">
+                                    <a href="#!">Nama Pasien</a>
+                                  </h4>
+                                  <span class="text-success">●</span>
+                                  <small>No RM</small>
+                                </div>
+                                <div class="col-auto">
+                                  <button type="button" class="btn btn-sm btn-primary">Antri</button>
+                                </div>
+                              </div>
+                            </li>
+                            <li class="list-group-item px-0">
+                              <div class="row align-items-center">
+                                <div class="col ml--2">
+                                  <h4 class="mb-0">
+                                    <a href="#!">Nama Pasien</a>
+                                  </h4>
+                                  <span class="text-success">●</span>
+                                  <small>No RM</small>
+                                </div>
+                                <div class="col-auto">
+                                  <button type="button" class="btn btn-sm btn-primary">Antri</button>
+                                </div>
+                              </div>
+                            </li>
+                            <li class="list-group-item px-0">
+                              <div class="row align-items-center">
+                                <div class="col ml--2">
+                                  <h4 class="mb-0">
+                                    <a href="#!">Nama Pasien</a>
+                                  </h4>
+                                  <span class="text-success">●</span>
+                                  <small>No RM</small>
+                                </div>
+                                <div class="col-auto">
+                                  <button type="button" class="btn btn-sm btn-primary">Antri</button>
+                                </div>
+                              </div>
+                            </li>
+                            <li class="list-group-item px-0">
+                              <div class="row align-items-center">
+                                <div class="col ml--2">
+                                  <h4 class="mb-0">
+                                    <a href="#!">Nama Pasien</a>
+                                  </h4>
+                                  <span class="text-success">●</span>
+                                  <small>No RM</small>
+                                </div>
+                                <div class="col-auto">
+                                  <button type="button" class="btn btn-sm btn-primary">Antri</button>
+                                </div>
+                              </div>
+                            </li>
+                            <li class="list-group-item px-0">
+                              <div class="row align-items-center">
+                                <div class="col ml--2">
+                                  <h4 class="mb-0">
+                                    <a href="#!">Nama Pasien</a>
+                                  </h4>
+                                  <span class="text-success">●</span>
+                                  <small>No RM</small>
+                                </div>
+                                <div class="col-auto">
+                                  <button type="button" class="btn btn-sm btn-primary">Antri</button>
+                                </div>
+                              </div>
+                            </li>
+                            <li class="list-group-item px-0">
+                              <div class="row align-items-center">
+                                <div class="col ml--2">
+                                  <h4 class="mb-0">
+                                    <a href="#!">Nama Pasien</a>
+                                  </h4>
+                                  <span class="text-success">●</span>
+                                  <small>No RM</small>
+                                </div>
+                                <div class="col-auto">
+                                  <button type="button" class="btn btn-sm btn-primary">Antri</button>
+                                </div>
+                              </div>
+                            </li>
+                            <li class="list-group-item px-0">
+                              <div class="row align-items-center">
+                                <div class="col ml--2">
+                                  <h4 class="mb-0">
+                                    <a href="#!">Nama Pasien</a>
+                                  </h4>
+                                  <span class="text-success">●</span>
+                                  <small>No RM</small>
+                                </div>
+                                <div class="col-auto">
+                                  <button type="button" class="btn btn-sm btn-primary">Antri</button>
+                                </div>
+                              </div>
+                            </li>
+                          </ul>
+                        </div>
+                        <div class="card-footer">
+                          <a href="#!" class="text-light">Spesialis Kedokteran Fisik & Rehabilitas</a>
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div> -->
-                <div class="mt-4">
-                  <form role="form" class="form-danger">
-                    <div class="row">
-                      <div class="col-6">
-                        <div class="form-group">
-                          <div class="input-group input-group-alternative mb-3">
-                            <div class="input-group-prepend">
-                              <span class="input-group-text"><i class="ni ni-credit-card"></i></span>
-                            </div>
-                            <input class="form-control" placeholder="No Rekam Medis" type="text">
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-6">
-                        <div class="form-group">
-                          <div class="input-group input-group-alternative mb-3">
-                            <div class="input-group-prepend">
-                              <span class="input-group-text"><i class="ni ni-circle-08"></i></span>
-                            </div>
-                            <input class="form-control" placeholder="Nama Lengkap" type="text">
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-6">
-                        <div class="form-group">
-                          <div class="input-group input-group-alternative mb-3">
-                            <div class="input-group-prepend">
-                              <span class="input-group-text"><i class="ni ni-box-2"></i></span>
-                            </div>
-                            <input class="form-control" placeholder="No KTP" type="text">
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-6">
-                        <div class="form-group">
-                          <div class="input-group input-group-alternative mb-3">
-                            <div class="input-group-prepend">
-                              <span class="input-group-text"><i class="ni ni-pin-3"></i></span>
-                            </div>
-                            <input class="form-control" placeholder="Alamat" type="text">
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-4">
-                        <div class="form-group">
-                          <select class="form-control" id="exampleFormControlSelect1">
-                            <option selected>Jenis Kelamin</option>
-                            <option>laki-Laki</option>
-                            <option>Perempuan</option>
-                          </select>
-                        </div>
-                      </div>
-                      <div class="col-4">
-                        <div class="form-group">
-                          <select class="form-control" id="exampleFormControlSelect1">
-                            <option selected>Agama</option>
-                            <option>Islam</option>
-                            <option>Kriten</option>
-                            <option>Hindu</option>
-                            <option>Budha</option>
-                            <option>Konghucu</option>
-                          </select>
-                        </div>
-                      </div>
-                      <div class="col-4">
-                        <div class="form-group">
-                          <select class="form-control" id="exampleFormControlSelect1">
-                            <option selected>Status</option>
-                            <option>Belum Menikah</option>
-                            <option>Menikah</option>
-                          </select>
-                        </div>
-                      </div>
-                      <div class="col-6">
-                        <div class="form-group">
-                          <div class="input-group input-group-alternative mb-3">
-                            <div class="input-group-prepend">
-                              <span class="input-group-text"><i class="ni ni-calendar-grid-58"></i></span>
-                            </div>
-                            <input class="form-control datepicker" placeholder="Tanggal lahir" type="text">
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-6">
-                        <div class="form-group">
-                          <div class="input-group input-group-alternative">
-                            <div class="input-group-prepend">
-                              <span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
-                            </div>
-                            <input class="form-control" placeholder="Pekerjaan" type="text">
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-6">
-                        <div class="form-group">
-                          <div class="input-group input-group-alternative">
-                            <div class="input-group-prepend">
-                              <span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
-                            </div>
-                            <input class="form-control" placeholder="Pendidikan" type="text">
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-6">
-                        <div class="form-group">
-                          <div class="input-group input-group-alternative">
-                            <div class="input-group-prepend">
-                              <span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
-                            </div>
-                            <input class="form-control" placeholder="No Hp" type="text">
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <button type="button" class="btn btn-block btn-info">Simpan</button>
-                  </form>
                 </div>
               </div>
             </div>
