@@ -532,7 +532,7 @@
                     <div class="pricing card-group flex-column flex-md-row mb-3">
                       <div class="card card-pricing border-0 text-center mb-4">
                         <div class="card-header bg-transparent">
-                          <h4 class="text-uppercase ls-1 text-primary py-3 mb-0">dr.Mirathi Ayu Irnanda</h4>
+                          <h4 class="ls-1 text-primary py-3 mb-0">dr.Mirathi Ayu Irnanda</h4>
                         </div>
                         <div class="card-body px-lg-7">
                           <ul class="list-group list-group-flush list my--3">
@@ -642,7 +642,7 @@
                       </div>
                       <div class="card card-pricing zoom-in shadow-lg rounded border-0 text-center mb-4">
                         <div class="card-header bg-transparent">
-                          <h4 class="text-uppercase ls-1 text-primary py-3 mb-0">dr.Nunuk Kristiani,Sp.Rad</h4>
+                          <h4 class="ls-1 text-primary py-3 mb-0">dr.Nunuk Kristiani,Sp.Rad</h4>
                         </div>
                         <div class="card-body px-lg-7">
                           <ul class="list-group list-group-flush list my--3 ">
@@ -752,7 +752,7 @@
                       </div>
                       <div class="card card-pricing border-0 text-center mb-4">
                         <div class="card-header bg-transparent">
-                          <h4 class="text-uppercase ls-1 text-primary py-3 mb-0">dr.Nuryatien Husna,Sp.KFR</h4>
+                          <h4 class=" ls-1 text-primary py-3 mb-0">dr.Nuryatien Husna,Sp.KFR</h4>
                         </div>
                         <div class="card-body px-lg-7">
                         <ul class="list-group list-group-flush list my--3">

@@ -80,7 +80,7 @@
     <div class="scrollbar-inner">
       <!-- Brand -->
       <div class="sidenav-header  d-flex  align-items-center">
-        <a class="navbar-brand" href="dashboard.html">
+        <a class="navbar-brand">
           <img src="<?= base_url() ?>assets_admin/img/brand/main_logo.png" class="navbar-brand-img" alt="...">
         </a>
         <div class=" ml-auto ">
@@ -112,7 +112,7 @@
               </a>
             </li>
             <!-- <li class="nav-item">
-              <a class="nav-link" href="<?= site_url('rekam_medis') ?>">
+              <a class="nav-link" href="">
                 <i class="ni ni-planet text-orange"></i>
                 <span class="nav-link-text">Rekam Medis</span>
               </a>
@@ -132,14 +132,14 @@
                   </li>
                   <li class="nav-item">
                     <a href="../maps/vector.html" class="nav-link">
-                      <span class="sidenav-mini-icon"> A </span>
-                      <span class="sidenav-normal"> Assesment Docter </span>
+                      <span class="sidenav-mini-icon"> I </span>
+                      <span class="sidenav-normal"> Indeks Dokter </span>
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a href="../maps/vector.html" class="nav-link">
-                      <span class="sidenav-mini-icon"> A </span>
-                      <span class="sidenav-normal"> Assesment Perawat </span>
+                    <a href="<?= site_url('pasien') ?>" class="nav-link">
+                      <span class="sidenav-mini-icon"> I </span>
+                      <span class="sidenav-normal"> Indeks Pasien </span>
                     </a>
                   </li>
                   <li class="nav-item">
@@ -221,12 +221,12 @@
                 <span class="nav-link-text">Getting started</span>
               </a>
             </li> -->
-            <li class="nav-item">
-              <a class="nav-link" href="<?= site_url('pengunjung') ?>">
+            <!-- <li class="nav-item">
+              <a class="nav-link" href="">
                 <i class="ni ni-palette"></i>
-                <span class="nav-link-text">Pengunjung</span>
+                <span class="nav-link-text">Data Pasien</span>
               </a>
-            </li>
+            </li> -->
             <li class="nav-item">
               <a class="nav-link" href="<?= site_url('master') ?>">
                 <i class="ni ni-ui-04"></i>

@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class pengunjung extends CI_Controller {
+class pasien extends CI_Controller {
 
 	/**
 	 * Index Page for this controller.
@@ -21,6 +21,6 @@ class pengunjung extends CI_Controller {
 	public function index()
 	{
 		// $this->load->view('dashboard_v');
-		$this->template->load('template', 'pengunjung_v');
+		$this->template->load('template', 'pasien_v');
 	}
 }
