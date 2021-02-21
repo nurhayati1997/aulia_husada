@@ -264,17 +264,291 @@
         <div class="col">
           <div class="card">
             <div class="card bg-gradient-primary">
-              <div class="card-header bg-transparent">
-                <div class="row justify-content-center">
-                  <div class="col-lg-3 order-lg-2">
-                    <div class="card-profile-image">
-                      <a href="#">
-                        <img src="<?= base_url() ?>assets_admin/img/theme/team-4.jpg" class="rounded-circle">
-                      </a>
-                    </div>
+              <div class="row justify-content-center">
+                <div class="col-lg-3 order-lg-2">
+                  <div class="card-profile-image">
+                    <a href="#">
+                      <img src="<?= base_url() ?>assets_admin/img/theme/team-4.jpg" class="rounded-circle">
+                    </a>
                   </div>
                 </div>
-                <h4 class="text-uppercase ls-1 text-white text-center py-3 mb-0">Pendaftaran Baru</h4>
+              </div>
+              <div class="card-header bg-transparent">
+                <div class="pt-4 text-center">
+                  <div class="row">
+                    <div class="col-md-6">
+                      <button type="button" class="btn btn-default" data-toggle="modal" data-target="#modal-notification">Pasien Baru</button>
+                      <div class="modal fade" id="modal-notification" tabindex="-1" role="dialog" aria-labelledby="modal-notification" aria-hidden="true">
+                        <div class="modal-dialog modal-danger modal-dialog-centered modal-" role="document">
+                          <div class="modal-content bg-gradient-danger">
+                            <div class="modal-header">
+                              <h6 class="modal-title" id="modal-title-notification">Identitas Pasien Baru</h6>
+                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">×</span>
+                              </button>
+                            </div>
+                            <div class="modal-body">
+                              <form role="form" class="form-danger">
+                                <div class="row">
+                                  <div class="col-6">
+                                    <div class="form-group">
+                                      <div class="input-group input-group-alternative mb-3">
+                                        <div class="input-group-prepend">
+                                          <span class="input-group-text"><i class="ni ni-credit-card"></i></span>
+                                        </div>
+                                        <input class="form-control" placeholder="No Rekam Medis" type="text">
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div class="col-6">
+                                    <div class="form-group">
+                                      <div class="input-group input-group-alternative mb-3">
+                                        <div class="input-group-prepend">
+                                          <span class="input-group-text"><i class="ni ni-circle-08"></i></span>
+                                        </div>
+                                        <input class="form-control" placeholder="Nama Lengkap" type="text">
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div class="col-6">
+                                    <div class="form-group">
+                                      <div class="input-group input-group-alternative mb-3">
+                                        <div class="input-group-prepend">
+                                          <span class="input-group-text"><i class="ni ni-box-2"></i></span>
+                                        </div>
+                                        <input class="form-control" placeholder="No KTP" type="text">
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div class="col-6">
+                                    <div class="form-group">
+                                      <div class="input-group input-group-alternative mb-3">
+                                        <div class="input-group-prepend">
+                                          <span class="input-group-text"><i class="ni ni-pin-3"></i></span>
+                                        </div>
+                                        <input class="form-control" placeholder="Alamat" type="text">
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div class="col-4">
+                                    <div class="form-group">
+                                      <select class="form-control" id="exampleFormControlSelect1">
+                                        <option selected>Jenis Kelamin</option>
+                                        <option>laki-Laki</option>
+                                        <option>Perempuan</option>
+                                      </select>
+                                    </div>
+                                  </div>
+                                  <div class="col-4">
+                                    <div class="form-group">
+                                      <select class="form-control" id="exampleFormControlSelect1">
+                                        <option selected>Agama</option>
+                                        <option>Islam</option>
+                                        <option>Kriten</option>
+                                        <option>Hindu</option>
+                                        <option>Budha</option>
+                                        <option>Konghucu</option>
+                                      </select>
+                                    </div>
+                                  </div>
+                                  <div class="col-4">
+                                    <div class="form-group">
+                                      <select class="form-control" id="exampleFormControlSelect1">
+                                        <option selected>Status</option>
+                                        <option>Belum Menikah</option>
+                                        <option>Menikah</option>
+                                      </select>
+                                    </div>
+                                  </div>
+                                  <div class="col-6">
+                                    <div class="form-group">
+                                      <div class="input-group input-group-alternative mb-3">
+                                        <div class="input-group-prepend">
+                                          <span class="input-group-text"><i class="ni ni-calendar-grid-58"></i></span>
+                                        </div>
+                                        <input class="form-control datepicker" placeholder="Tanggal lahir" type="text">
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div class="col-6">
+                                    <div class="form-group">
+                                      <div class="input-group input-group-alternative">
+                                        <div class="input-group-prepend">
+                                          <span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
+                                        </div>
+                                        <input class="form-control" placeholder="Pekerjaan" type="text">
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div class="col-6">
+                                    <div class="form-group">
+                                      <div class="input-group input-group-alternative">
+                                        <div class="input-group-prepend">
+                                          <span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
+                                        </div>
+                                        <input class="form-control" placeholder="Pendidikan" type="text">
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div class="col-6">
+                                    <div class="form-group">
+                                      <div class="input-group input-group-alternative">
+                                        <div class="input-group-prepend">
+                                          <span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
+                                        </div>
+                                        <input class="form-control" placeholder="No Hp" type="text">
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <button type="button" class="btn btn-block btn-info">Simpan</button>
+                              </form>
+                            </div>
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-link text-white ml-auto" data-dismiss="modal">Close</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#modal-default">Pasien Lama</button>
+                      <div class="modal fade" id="modal-default" tabindex="-1" role="dialog" aria-labelledby="modal-default" aria-hidden="true">
+                          <div class="modal-dialog modal- modal-dialog-centered modal-" role="document">
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                <h6 class="modal-title" id="modal-title-notification">Identitas Pasien Baru</h6>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                  <span aria-hidden="true">×</span>
+                                </button>
+                              </div>
+                              <div class="modal-body">
+                                <form role="form" class="form-danger">
+                                  <div class="row">
+                                    <div class="col-6">
+                                      <div class="form-group">
+                                        <div class="input-group input-group-alternative mb-3">
+                                          <div class="input-group-prepend">
+                                            <span class="input-group-text"><i class="ni ni-credit-card"></i></span>
+                                          </div>
+                                          <input class="form-control" placeholder="No Rekam Medis" type="text">
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div class="col-6">
+                                      <div class="form-group">
+                                        <div class="input-group input-group-alternative mb-3">
+                                          <div class="input-group-prepend">
+                                            <span class="input-group-text"><i class="ni ni-circle-08"></i></span>
+                                          </div>
+                                          <input class="form-control" placeholder="Nama Lengkap" type="text">
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div class="col-6">
+                                      <div class="form-group">
+                                        <div class="input-group input-group-alternative mb-3">
+                                          <div class="input-group-prepend">
+                                            <span class="input-group-text"><i class="ni ni-box-2"></i></span>
+                                          </div>
+                                          <input class="form-control" placeholder="No KTP" type="text">
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div class="col-6">
+                                      <div class="form-group">
+                                        <div class="input-group input-group-alternative mb-3">
+                                          <div class="input-group-prepend">
+                                            <span class="input-group-text"><i class="ni ni-pin-3"></i></span>
+                                          </div>
+                                          <input class="form-control" placeholder="Alamat" type="text">
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div class="col-4">
+                                      <div class="form-group">
+                                        <select class="form-control" id="exampleFormControlSelect1">
+                                          <option selected>Jenis Kelamin</option>
+                                          <option>laki-Laki</option>
+                                          <option>Perempuan</option>
+                                        </select>
+                                      </div>
+                                    </div>
+                                    <div class="col-4">
+                                      <div class="form-group">
+                                        <select class="form-control" id="exampleFormControlSelect1">
+                                          <option selected>Agama</option>
+                                          <option>Islam</option>
+                                          <option>Kriten</option>
+                                          <option>Hindu</option>
+                                          <option>Budha</option>
+                                          <option>Konghucu</option>
+                                        </select>
+                                      </div>
+                                    </div>
+                                    <div class="col-4">
+                                      <div class="form-group">
+                                        <select class="form-control" id="exampleFormControlSelect1">
+                                          <option selected>Status</option>
+                                          <option>Belum Menikah</option>
+                                          <option>Menikah</option>
+                                        </select>
+                                      </div>
+                                    </div>
+                                    <div class="col-6">
+                                      <div class="form-group">
+                                        <div class="input-group input-group-alternative mb-3">
+                                          <div class="input-group-prepend">
+                                            <span class="input-group-text"><i class="ni ni-calendar-grid-58"></i></span>
+                                          </div>
+                                          <input class="form-control datepicker" placeholder="Tanggal lahir" type="text">
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div class="col-6">
+                                      <div class="form-group">
+                                        <div class="input-group input-group-alternative">
+                                          <div class="input-group-prepend">
+                                            <span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
+                                          </div>
+                                          <input class="form-control" placeholder="Pekerjaan" type="text">
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div class="col-6">
+                                      <div class="form-group">
+                                        <div class="input-group input-group-alternative">
+                                          <div class="input-group-prepend">
+                                            <span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
+                                          </div>
+                                          <input class="form-control" placeholder="Pendidikan" type="text">
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div class="col-6">
+                                      <div class="form-group">
+                                        <div class="input-group input-group-alternative">
+                                          <div class="input-group-prepend">
+                                            <span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
+                                          </div>
+                                          <input class="form-control" placeholder="No Hp" type="text">
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <button type="button" class="btn btn-block btn-info">Simpan</button>
+                                </form>
+                              </div>
+                              <div class="modal-footer">
+                                <button type="button" class="btn btn-link text-white ml-auto" data-dismiss="modal">Close</button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+                  </div>
+                  <h4 class="text-uppercase ls-1 text-white py-3 mb-0">Antrian Pasien</h4>
+                 </div>
               </div>
               <!-- Card body -->
               <div class="card-body">
