@@ -244,7 +244,7 @@
               <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
                 <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
                   <li class="breadcrumb-item"><a href="#"><i class="fas fa-home"></i></a></li>
-                  <li class="breadcrumb-item"><a href="#">Pengunjung</a></li>
+                  <li class="breadcrumb-item"><a href="#">Data Transaksi</a></li>
                   <!-- <li class="breadcrumb-item active" aria-current="page">Default</li> -->
                 </ol>
               </nav>
@@ -263,9 +263,9 @@
       <div class="row">
         <div class="col">
           <div class="card">
-            <div class="card-header bg-gradient-info">
+            <div class="card-header bg-gradient-warning">
               <div class="pt-4 text-center">
-                <h4 class="text-uppercase ls-1 text-white py-3 mb-0">Data Pengunjung</h4>
+                <h4 class="text-uppercase ls-1 text-white py-3 mb-0">Data Transaksi</h4>
                 
               </div>
             </div>

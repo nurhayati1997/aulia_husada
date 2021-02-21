@@ -244,7 +244,7 @@
               <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
                 <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
                   <li class="breadcrumb-item"><a href="#"><i class="fas fa-home"></i></a></li>
-                  <li class="breadcrumb-item"><a href="#">Pengunjung</a></li>
+                  <li class="breadcrumb-item"><a href="#">Data Master</a></li>
                   <!-- <li class="breadcrumb-item active" aria-current="page">Default</li> -->
                 </ol>
               </nav>
@@ -263,10 +263,56 @@
       <div class="row">
         <div class="col">
           <div class="card">
-            <div class="card-header bg-gradient-info">
+            <div class="card-header bg-gradient-primary">
               <div class="pt-4 text-center">
-                <h4 class="text-uppercase ls-1 text-white py-3 mb-0">Data Pengunjung</h4>
-                
+                <h4 class="text-uppercase ls-1 text-white py-3 mb-0">Data Master</h4>
+                <div class="row">
+                  <div class="col-md-4">
+                  </div>
+                  <div class="col-md-4">
+                    <button type="button" class="btn btn-block btn-default" data-toggle="modal" data-target="#modal-form">Tambah</button>
+                    <div class="modal fade" id="modal-form" tabindex="-1" role="dialog" aria-labelledby="modal-form" aria-hidden="true">
+                      <div class="modal-dialog modal- modal-dialog-centered modal-sm" role="document">
+                        <div class="modal-content">
+                          <div class="modal-body p-0">
+                            <div class="card bg-secondary border-0 mb-0">
+                              <div class="card-header  bg-primary pb-1">
+                                <div class="text-muted text-center mt-2 mb-3">
+                                  <span class="text-muted text-white">Form Master Data</span>
+                                </div>
+                              </div>
+                              <div class="card-body px-lg-5 py-lg-5">
+                                <form role="form">
+                                  <div class="form-group mb-3">
+                                    <div class="input-group input-group-merge input-group-alternative">
+                                      <div class="input-group-prepend">
+                                        <span class="input-group-text"><i class="ni ni-active-40"></i></span>
+                                      </div>
+                                      <input class="form-control" placeholder="Nama Tindakan" type="text">
+                                    </div>
+                                  </div>
+                                  <div class="form-group">
+                                    <div class="input-group input-group-merge input-group-alternative">
+                                      <div class="input-group-prepend">
+                                        <span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
+                                      </div>
+                                      <input class="form-control" placeholder="Harga" type="text">
+                                    </div>
+                                  </div>
+                                  <div class="text-center">
+                                    <button type="button" class="btn btn-primary my-4">Tambah</button>
+                                  </div>
+                                </form>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                  </div>
+                </div>
               </div>
             </div>
             <div class="card-body ">

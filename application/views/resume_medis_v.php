@@ -244,7 +244,7 @@
               <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
                 <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
                   <li class="breadcrumb-item"><a href="#"><i class="fas fa-home"></i></a></li>
-                  <li class="breadcrumb-item"><a href="#">Pendaftaran</a></li>
+                  <li class="breadcrumb-item"><a href="#">Resume Medis</a></li>
                   <!-- <li class="breadcrumb-item active" aria-current="page">Default</li> -->
                 </ol>
               </nav>
@@ -263,7 +263,7 @@
       <div class="row">
         <div class="col">
           <div class="card">
-            <div class="card bg-gradient-primary">
+            <div class="card bg-gradient-info">
               <div class="card-header bg-transparent">
                 <div class="row justify-content-center">
                   <div class="col-lg-3 order-lg-2">
@@ -274,7 +274,7 @@
                     </div>
                   </div>
                 </div>
-                <h4 class="text-uppercase ls-1 text-white text-center py-3 mb-0">Pendaftaran Baru</h4>
+                <h4 class="text-uppercase ls-1 text-white text-center py-3 mb-0">Simpan</h4>
               </div>
               <!-- Card body -->
               <div class="card-body">

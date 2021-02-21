@@ -121,14 +121,54 @@
                 <span class="nav-link-text">Pendaftaran</span>
               </a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="examples/icons.html">
+            <!-- <li class="nav-item">
+              <a class="nav-link" href="<?= site_url('rekam_medis') ?>">
                 <i class="ni ni-planet text-orange"></i>
                 <span class="nav-link-text">Rekam Medis</span>
               </a>
+            </li> -->
+            <li class="nav-item">
+              <a class="nav-link" href="#navbar-maps" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="navbar-maps">
+                <i class="ni ni-map-big text-primary"></i>
+                <span class="nav-link-text">Rekam Medis</span>
+              </a>
+              <div class="collapse" id="navbar-maps">
+                <ul class="nav nav-sm flex-column">
+                  <li class="nav-item">
+                    <a href="<?= site_url('resume_medis') ?>" class="nav-link">
+                      <span class="sidenav-mini-icon"> R </span>
+                      <span class="sidenav-normal"> Resume Medis </span>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="../maps/vector.html" class="nav-link">
+                      <span class="sidenav-mini-icon"> A </span>
+                      <span class="sidenav-normal"> Assesment Docter </span>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="../maps/vector.html" class="nav-link">
+                      <span class="sidenav-mini-icon"> A </span>
+                      <span class="sidenav-normal"> Assesment Perawat </span>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="../maps/vector.html" class="nav-link">
+                      <span class="sidenav-mini-icon"> P </span>
+                      <span class="sidenav-normal"> Persetujuan Tindakan </span>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="../maps/vector.html" class="nav-link">
+                      <span class="sidenav-mini-icon"> P </span>
+                      <span class="sidenav-normal"> Penolakan Tindakan </span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="examples/login.html">
+              <a class="nav-link" href="<?= site_url('transaksi') ?>">
                 <i class="ni ni-key-25 text-info"></i>
                 <span class="nav-link-text">Transaksi</span>
               </a>
@@ -198,7 +238,7 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="../../docs/components/alerts.html" target="_blank">
+              <a class="nav-link" href="<?= site_url('master') ?>">
                 <i class="ni ni-ui-04"></i>
                 <span class="nav-link-text">Master Data</span>
               </a>
