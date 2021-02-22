@@ -450,6 +450,69 @@
                       <div class="col-12">
                         <h4 class="card-title text-white text-center mb-0">Pemeriksaan Fisik</h3>
                       </div>
+                      <div class="col-6">
+                        <div class="form-group">
+                          <select class="form-control" id="exampleFormControlSelect1">
+                            <option selected>Kesadaran Umum</option>
+                            <option>Baik</option>
+                            <option>Sedang</option>
+                            <option>Lemah</option>
+                            <option>Jelek</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="col-6">
+                        <div class="form-group">
+                          <select class="form-control" id="exampleFormControlSelect1">
+                            <option selected>Kesadaran</option>
+                            <option>Composmentis</option>
+                            <option>Apatis</option>
+                            <option>Somnolen</option>
+                            <option>Sopor</option>
+                            <option>Koma</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="col-3">
+                        <div class="form-group">
+                          <div class="input-group input-group-alternative mb-3">
+                            <div class="input-group-prepend">
+                              <span class="input-group-text"><i class="ni ni-box-2"></i></span>
+                            </div>
+                            <input class="form-control" placeholder="Tekanan Darah" type="text">
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-3">
+                        <div class="form-group">
+                          <div class="input-group input-group-alternative mb-3">
+                            <div class="input-group-prepend">
+                              <span class="input-group-text"><i class="ni ni-briefcase-24"></i></span>
+                            </div>
+                            <input class="form-control" placeholder="Nadi" type="text">
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-3">
+                        <div class="form-group">
+                          <div class="input-group input-group-alternative mb-3">
+                            <div class="input-group-prepend">
+                              <span class="input-group-text"><i class="ni ni-building"></i></span>
+                            </div>
+                            <input class="form-control" placeholder="Suhu" type="text">
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-3">
+                        <div class="form-group">
+                          <div class="input-group input-group-alternative mb-3">
+                            <div class="input-group-prepend">
+                              <span class="input-group-text"><i class="ni ni-button-pause"></i></span>
+                            </div>
+                            <input class="form-control" placeholder="RR" type="text">
+                          </div>
+                        </div>
+                      </div>
                   </div>
                   <button type="button" class="btn btn-block btn-info">Simpan</button>
                 </form>
