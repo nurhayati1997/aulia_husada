@@ -131,12 +131,6 @@
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a href="../maps/vector.html" class="nav-link">
-                      <span class="sidenav-mini-icon"> I </span>
-                      <span class="sidenav-normal"> Indeks Dokter </span>
-                    </a>
-                  </li>
-                  <li class="nav-item">
                     <a href="<?= site_url('pasien') ?>" class="nav-link">
                       <span class="sidenav-mini-icon"> I </span>
                       <span class="sidenav-normal"> Indeks Pasien </span>
