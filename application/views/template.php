@@ -126,8 +126,8 @@
                 <ul class="nav nav-sm flex-column">
                   <li class="nav-item">
                     <a href="<?= site_url('resume_medis') ?>" class="nav-link">
-                      <span class="sidenav-mini-icon"> R </span>
-                      <span class="sidenav-normal"> Resume Medis </span>
+                      <span class="sidenav-mini-icon"> A </span>
+                      <span class="sidenav-normal"> Asesmen Medis Pasien </span>
                     </a>
                   </li>
                   <li class="nav-item">

@@ -244,7 +244,7 @@
               <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
                 <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
                   <li class="breadcrumb-item"><a href="#"><i class="fas fa-home"></i></a></li>
-                  <li class="breadcrumb-item"><a href="#">Resume Medis</a></li>
+                  <li class="breadcrumb-item"><a href="#">Asesmen Medis Pasien</a></li>
                   <!-- <li class="breadcrumb-item active" aria-current="page">Default</li> -->
                 </ol>
               </nav>
@@ -266,7 +266,7 @@
           <!-- Card header -->
           <div class="card-header">
             <!-- Title -->
-            <h5 class="h3 mb-0">Latest notifications</h5>
+            <h5 class="h3 mb-0">Nama pasien</h5>
           </div>
           <!-- Card body -->
           <div class="card-body">
@@ -278,45 +278,45 @@
                 <div class="timeline-content">
                   <div class="d-flex justify-content-between pt-1">
                      <div>
-                      <span class="text-muted text-sm font-weight-bold">New message</span>
+                      <span class="text-muted text-sm font-weight-bold">Nama Dokter</span>
                     </div>
                     <div class="text-right">
-                      <small class="text-muted"><i class="fas fa-clock mr-1"></i>2 hrs ago</small>
+                      <small class="text-muted"><i class="fas fa-clock mr-1"></i>Tanggal (Periksa)</small>
                     </div>
                   </div>
-                  <h6 class="text-sm mt-1 mb-0">Let's meet at Starbucks at 11:30. Wdyt?</h6>
+                  <h6 class="text-sm mt-1 mb-0">Isi Diagnosa</h6>
                 </div>
               </div>
               <div class="timeline-block">
                 <span class="timeline-step badge-danger">
-                  <i class="ni ni-html5"></i>
+                  <i class="ni ni-bell-55"></i>
                 </span>
                 <div class="timeline-content">
                   <div class="d-flex justify-content-between pt-1">
                     <div>
-                      <span class="text-muted text-sm font-weight-bold">Product issue</span>
+                      <span class="text-muted text-sm font-weight-bold">Nama Dokter</span>
                     </div>
                     <div class="text-right">
-                      <small class="text-muted"><i class="fas fa-clock mr-1"></i>3 hrs ago</small>
+                      <small class="text-muted"><i class="fas fa-clock mr-1"></i>Tanggal (Periksa)</small>
                     </div>
                   </div>
-                  <h6 class="text-sm mt-1 mb-0">A new issue has been reported for Argon.</h6>
+                  <h6 class="text-sm mt-1 mb-0">Isi Diagnosa</h6>
                 </div>
               </div>
               <div class="timeline-block">
                 <span class="timeline-step badge-info">
-                  <i class="ni ni-like-2"></i>
+                  <i class="ni ni-bell-55"></i>
                 </span>
                 <div class="timeline-content">
                   <div class="d-flex justify-content-between pt-1">
                     <div>
-                      <span class="text-muted text-sm font-weight-bold">New likes</span>
+                      <span class="text-muted text-sm font-weight-bold">Nama Dokter</span>
                     </div>
                     <div class="text-right">
-                      <small class="text-muted"><i class="fas fa-clock mr-1"></i>5 hrs ago</small>
+                      <small class="text-muted"><i class="fas fa-clock mr-1"></i>Tanggal (Periksa)</small>
                     </div>
                   </div>
-                  <h6 class="text-sm mt-1 mb-0">Your posts have been liked a lot.</h6>
+                  <h6 class="text-sm mt-1 mb-0">Isi Diagnosa</h6>
                 </div>
               </div>
             </div>
@@ -327,7 +327,7 @@
       <div class="card">
             <div class="card bg-gradient-info">
               <div class="card-header bg-transparent">
-                
+                <h4 class="card-title text-white mb-3">Tanggal : </h3>
               </div>
               <!-- Card body -->
               <div class="card-body">
@@ -371,76 +371,6 @@
                               <span class="input-group-text"><i class="ni ni-pin-3"></i></span>
                             </div>
                             <input class="form-control" placeholder="Alamat" type="text">
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-4">
-                        <div class="form-group">
-                          <select class="form-control" id="exampleFormControlSelect1">
-                            <option selected>Jenis Kelamin</option>
-                            <option>laki-Laki</option>
-                            <option>Perempuan</option>
-                          </select>
-                        </div>
-                      </div>
-                      <div class="col-4">
-                        <div class="form-group">
-                          <select class="form-control" id="exampleFormControlSelect1">
-                            <option selected>Agama</option>
-                            <option>Islam</option>
-                            <option>Kriten</option>
-                            <option>Hindu</option>
-                            <option>Budha</option>
-                            <option>Konghucu</option>
-                          </select>
-                        </div>
-                      </div>
-                      <div class="col-4">
-                        <div class="form-group">
-                          <select class="form-control" id="exampleFormControlSelect1">
-                            <option selected>Status</option>
-                            <option>Belum Menikah</option>
-                            <option>Menikah</option>
-                          </select>
-                        </div>
-                      </div>
-                      <div class="col-6">
-                        <div class="form-group">
-                          <div class="input-group input-group-alternative mb-3">
-                            <div class="input-group-prepend">
-                              <span class="input-group-text"><i class="ni ni-calendar-grid-58"></i></span>
-                            </div>
-                            <input class="form-control datepicker" placeholder="Tanggal lahir" type="text">
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-6">
-                        <div class="form-group">
-                          <div class="input-group input-group-alternative">
-                            <div class="input-group-prepend">
-                              <span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
-                            </div>
-                            <input class="form-control" placeholder="Pekerjaan" type="text">
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-6">
-                        <div class="form-group">
-                          <div class="input-group input-group-alternative">
-                            <div class="input-group-prepend">
-                              <span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
-                            </div>
-                            <input class="form-control" placeholder="Pendidikan" type="text">
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-6">
-                        <div class="form-group">
-                          <div class="input-group input-group-alternative">
-                            <div class="input-group-prepend">
-                              <span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
-                            </div>
-                            <input class="form-control" placeholder="No Hp" type="text">
                           </div>
                         </div>
                       </div>
