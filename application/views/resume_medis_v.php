@@ -375,7 +375,7 @@
                         </div>
                       </div>
                       <div class="col-12">
-                        <h4 class="card-title text-white text-center mb-0">Anamnesa</h3>
+                        <h4 class="card-title text-white text-center mb-0">Anamnesa</h4>
                       </div>
                       <div class="col-12">
                         <div class="form-group">
@@ -448,7 +448,7 @@
                         </div>
                       </div>
                       <div class="col-12">
-                        <h4 class="card-title text-white text-center mb-0">Pemeriksaan Fisik</h3>
+                        <h4 class="card-title text-white text-center mb-0">Pemeriksaan Fisik</h4>
                       </div>
                       <div class="col-6">
                         <div class="form-group">
@@ -510,6 +510,61 @@
                               <span class="input-group-text"><i class="ni ni-button-pause"></i></span>
                             </div>
                             <input class="form-control" placeholder="RR" type="text">
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-6">
+                        <div class="form-group">
+                          <div class="input-group input-group-alternative mb-3">
+                            <div class="input-group-prepend">
+                              <span class="input-group-text"><i class="ni ni-bullet-list-67"></i></span>
+                            </div>
+                            <input class="form-control form-control-lg" placeholder="Diagnosa" type="text">
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-6">
+                        <div class="form-group">
+                          <div class="input-group input-group-alternative mb-3">
+                            <div class="input-group-prepend">
+                              <span class="input-group-text"><i class="ni ni-caps-small"></i></span>
+                            </div>
+                            <input class="form-control form-control-lg" placeholder="Terapi" type="text">
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-12">
+                        <h4 class="card-title text-white text-center mb-0">Penunjang</h4>
+                      </div>
+                      <div class="col-6">
+                        <h4 class="card-title text-white text-center mb-0">Lab</h4>
+                        <div class="dropzone dropzone-single mb-3" data-toggle="dropzone" data-dropzone-url="http://">
+                          <div class="fallback">
+                            <div class="custom-file">
+                              <input type="file" class="custom-file-input" id="projectCoverUploads">
+                              <label class="custom-file-label" for="projectCoverUploads">Choose file</label>
+                            </div>
+                          </div>
+                          <div class="dz-preview dz-preview-single">
+                            <div class="dz-preview-cover">
+                              <img class="dz-preview-img" src="...html" alt="..." data-dz-thumbnail>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-6">
+                        <h4 class="card-title text-white text-center mb-0">Radiologi</h4>
+                        <div class="dropzone dropzone-single mb-3" data-toggle="dropzone" data-dropzone-url="http://">
+                          <div class="fallback">
+                            <div class="custom-file">
+                              <input type="file" class="custom-file-input" id="projectCoverUploads">
+                              <label class="custom-file-label" for="projectCoverUploads">Choose file</label>
+                            </div>
+                          </div>
+                          <div class="dz-preview dz-preview-single">
+                            <div class="dz-preview-cover">
+                              <img class="dz-preview-img" src="...html" alt="..." data-dz-thumbnail>
+                            </div>
                           </div>
                         </div>
                       </div>
