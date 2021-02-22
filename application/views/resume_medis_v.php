@@ -266,7 +266,7 @@
           <!-- Card header -->
           <div class="card-header">
             <!-- Title -->
-            <h5 class="h3 mb-0">Nama pasien</h5>
+            <h5 class="h3 mb-0">Riwayat Kunjungan : </h5>
           </div>
           <!-- Card body -->
           <div class="card-body">
@@ -324,16 +324,16 @@
         </div>
       </div>
       <div class="col-lg-8">
-      <div class="card">
-            <div class="card bg-gradient-info">
-              <div class="card-header bg-transparent">
-                <h4 class="card-title text-white mb-3">Tanggal : </h3>
-              </div>
-              <!-- Card body -->
-              <div class="card-body">
-                <div class="mt-4">
-                  <form role="form" class="form-danger">
-                    <div class="row">
+        <div class="card">
+          <div class="card bg-gradient-info">
+            <div class="card-header bg-transparent">
+                <h4 class="card-title text-white mb-0">Tanggal : </h3>
+            </div>
+            <!-- Card body -->
+            <div class="card-body">
+              <div class="mt-4">
+                <form role="form" class="form-danger">
+                  <div class="row">
                       <div class="col-6">
                         <div class="form-group">
                           <div class="input-group input-group-alternative mb-3">
@@ -374,13 +374,86 @@
                           </div>
                         </div>
                       </div>
-                    </div>
-                    <button type="button" class="btn btn-block btn-info">Simpan</button>
-                  </form>
-                </div>
+                      <div class="col-12">
+                        <h4 class="card-title text-white text-center mb-0">Anamnesa</h3>
+                      </div>
+                      <div class="col-12">
+                        <div class="form-group">
+                          <div class="input-group input-group-alternative mb-3">
+                            <div class="input-group-prepend">
+                              <span class="input-group-text"><i class="ni ni-active-40"></i></span>
+                            </div>
+                            <input class="form-control form-control-lg" placeholder="Keluhan Utama" type="text">
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-6">
+                        <div class="form-group">
+                          <div class="input-group input-group-alternative mb-3">
+                            <div class="input-group-prepend">
+                              <span class="input-group-text"><i class="ni ni-air-baloon"></i></span>
+                            </div>
+                            <input class="form-control" placeholder="Riwayat penyakit Sekarang" type="text">
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-6">
+                        <div class="form-group">
+                          <div class="input-group input-group-alternative mb-3">
+                            <div class="input-group-prepend">
+                              <span class="input-group-text"><i class="ni ni-app"></i></span>
+                            </div>
+                            <input class="form-control" placeholder="Riwayat Penyakit Dahulu" type="text">
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-6">
+                        <div class="form-group">
+                          <div class="input-group input-group-alternative mb-3">
+                            <div class="input-group-prepend">
+                              <span class="input-group-text"><i class="ni ni-bag-17"></i></span>
+                            </div>
+                            <input class="form-control" placeholder="Riwayat Alergi" type="text">
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-6">
+                        <div class="form-group">
+                          <div class="input-group input-group-alternative mb-3">
+                            <div class="input-group-prepend">
+                              <span class="input-group-text"><i class="ni ni-book-bookmark"></i></span>
+                            </div>
+                            <input class="form-control" placeholder="Riwayat Operasi" type="text">
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-6">
+                        <div class="form-group">
+                          <div class="input-group input-group-alternative mb-3">
+                            <div class="input-group-prepend">
+                              <span class="input-group-text"><i class="ni ni-books"></i></span>
+                            </div>
+                            <input class="form-control" placeholder="Riwayat Transfusi" type="text">
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-6">
+                        <div class="form-group">
+                          <div class="input-group input-group-alternative mb-3">
+                            <div class="input-group-prepend">
+                              <span class="input-group-text"><i class="ni ni-basket"></i></span>
+                            </div>
+                            <input class="form-control" placeholder="Riwayat Penggunaan Obat" type="text">
+                          </div>
+                        </div>
+                      </div>
+                  </div>
+                  <button type="button" class="btn btn-block btn-info">Simpan</button>
+                </form>
               </div>
             </div>
           </div>
+        </div>
       </div>
     </div>
    </div>
