@@ -244,7 +244,7 @@
               <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
                 <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
                   <li class="breadcrumb-item"><a href="#"><i class="fas fa-home"></i></a></li>
-                  <li class="breadcrumb-item"><a href="#">Pengunjung</a></li>
+                  <li class="breadcrumb-item"><a href="#">Indeks Pasien</a></li>
                   <!-- <li class="breadcrumb-item active" aria-current="page">Default</li> -->
                 </ol>
               </nav>
@@ -263,23 +263,64 @@
       <div class="row">
         <div class="col">
           <div class="card">
-            <div class="card-header bg-gradient-info">
-              <div class="pt-4 text-center">
-                <h4 class="text-uppercase ls-1 text-white py-3 mb-0">Data Pengunjung</h4>
-                
-              </div>
+            <div class="card-header bg-gradient-success">
+                <div class="pt-4 text-center">
+                  <h4 class="text-uppercase ls-1 text-white py-3 mb-0">Antrian Pasien</h4>
+                  <div class="row">
+                    <div class="col-md-3">
+                      <div class="form-group">
+                        <div class="input-group input-group-alternative mb-3">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="ni ni-calendar-grid-58"></i></span>
+                          </div>
+                          <input class="form-control datepicker" placeholder="Tanggal Periksa" type="text">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-3">
+                      <div class="form-group">
+                        <select class="form-control" id="exampleFormControlSelect1">
+                          <option selected>Berdasarkan dokter</option>
+                          <option>dr.Nunuk Kristiani,Sp.Rad</option>
+                          <option>dr.Nuryatien Husna,Sp.KFR</option>
+                          <option>dr.Mirathi Ayu Irnanda</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="col-md-3">
+                      <div class="form-group">
+                        <select class="form-control" id="exampleFormControlSelect1">
+                          <option selected>Berdasarkan Alamat</option>
+                          <option>Bangkalan</option>
+                          <option>Burneh</option>
+                          <option>Tanjungbumi</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="col-md-3">
+                      <div class="form-group">
+                        <select class="form-control" id="exampleFormControlSelect1">
+                          <option selected>Berdasarkan Diagnosa</option>
+                          <option>diagnosa 1</option>
+                          <option>diagnosa 2</option>
+                          <option>diagnosa 3</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                </div>
             </div>
             <div class="card-body ">
               <div class="table-responsive py-4">
                   <table class="table table-flush" id="datatable-basic">
                       <thead class="thead-light">
                           <tr>
-                              <th>Name</th>
-                              <th>Position</th>
-                              <th>Office</th>
-                              <th>Age</th>
-                              <th>Start date</th>
-                              <th>Salary</th>
+                              <th>Nama</th>
+                              <th>No Rekam Medik</th>
+                              <th>NIK</th>
+                              <th>Alamat</th>
+                              <th>Diagnosa</th>
+                              <th>Terapi</th>
                           </tr>
                       </thead>
                       <tfoot>

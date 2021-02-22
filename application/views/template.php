@@ -137,7 +137,7 @@
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a href="../maps/vector.html" class="nav-link">
+                    <a href="<?= site_url('persetujuan') ?>" class="nav-link">
                       <span class="sidenav-mini-icon"> P </span>
                       <span class="sidenav-normal"> Persetujuan Tindakan </span>
                     </a>
