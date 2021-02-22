@@ -447,6 +447,9 @@
                           </div>
                         </div>
                       </div>
+                      <div class="col-12">
+                        <h4 class="card-title text-white text-center mb-0">Pemeriksaan Fisik</h3>
+                      </div>
                   </div>
                   <button type="button" class="btn btn-block btn-info">Simpan</button>
                 </form>
