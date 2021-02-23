@@ -270,13 +270,26 @@
           </div>
           <div class="card-body p-4">
             <div class="row">
-              <div class="col-6"><select class="form-control" style="border:2px solid orange;">
+              <div class="col-xl-3 col-md-6 pb-2">
+                <select class="form-control" id="idPasien" onChange="aktifkanTombolTransaksi()" style="border:2px solid orange;">
+                  <option value="0" selected disabled>Pilih Pasien</option>
                   <option value="1">Pasien 1</option>
                   <option value="2">Pasien 2</option>
-                </select></div>
-              <div class="col-3"><button id="proses" class="btn btn-warning">Proses Transaksi</button></div>
-              <div class="col-3">
-                <h2 class="text-warning mt-2">Rp. 0.00</h2>
+                </select>
+              </div>
+              <div class="col-xl-3 col-md-6 pb-2">
+                <select class="form-control" id="idDokter" onChange="aktifkanTombolTransaksi()" style="border:2px solid orange;">
+                  <option value="0" selected disabled>Pilih Dokter</option>
+                  <?php
+                  foreach ($dokter as $key => $value) {
+                    echo "<option value='" . $value["id_user"] . "'>" . $value["username"] . "</option>";
+                  }
+                  ?>
+                </select>
+              </div>
+              <div class="col-xl-3 col-md-6"><button id="proses" class="btn btn-warning" onclick="prosesTransaksi()" disabled>Proses</button></div>
+              <div class="col-xl-3 col-md-6">
+                <h2 class="text-warning mt-2" id="totalHarga">Rp. 0.00</h2>
               </div>
             </div>
             <div id="tempatCheck"></div>
@@ -333,6 +346,13 @@
 </div>
 <script>
   tampilkan()
+  pasienBayar();
+  var tindakanTerpilih = [];
+  var hargaTerpilih = [];
+
+  var indeksTindakan = 0;
+  var indeksHarga = 0;
+  var totalHarga = 0;
 
   function tampilkan() {
     $("#tempatCheck").html('<i class="fas fa-spinner fa-pulse"></i> Memuat...')
@@ -344,7 +364,7 @@
       dataType: 'json',
       success: function(data) {
         for (let i = 0; i < data.length; i++) {
-          baris += '<div class="col-xl-3 col-md-6"><button onClick="updateHarga(' + data[i].id_tindakan + ')" class="btn btn-outline-secondary" id="tindakan' + data[i].id_tindakan + '">' + data[i].nama_tindakan + ' (Rp. ' + data[i].harga + ') </button></div>'
+          baris += '<div class="col-xl-3 col-md-3 col-sm-4 pt-2"><button onClick="updateHarga(' + data[i].id_tindakan + ',' + data[i].harga + ')" class="btn btn-outline-secondary" id="tindakan' + data[i].id_tindakan + '">' + data[i].nama_tindakan + ' (Rp. ' + formatRupiah(data[i].harga.toString()) + ') </button></div>'
         }
         baris += '</div>'
         $("#tempatCheck").html(baris);
@@ -352,13 +372,99 @@
     });
   }
 
-  function updateHarga(id) {
+  function pasienBayar() {
+    var baris = '<option value="0" selected disabled>Pilih Pasien..</option>';
+    $.ajax({
+      url: '<?= base_url() ?>transaksi/pasienBayar',
+      method: 'post',
+      dataType: 'json',
+      success: function(data) {
+        for (let i = 0; i < data.length; i++) {
+          baris += '<option value="' + data[i].id + '">' + data[i].nama + '</option>'
+        }
+        $("#idPasien").html(baris);
+      }
+    });
+  }
+
+  function updateHarga(id, harga) {
     if ($("#tindakan" + id).hasClass("btn-outline-secondary")) {
       $("#tindakan" + id).removeClass("btn-outline-secondary")
       $("#tindakan" + id).addClass("btn-success")
+      tindakanTerpilih.push(id)
+      hargaTerpilih.push(harga)
     } else {
       $("#tindakan" + id).removeClass("btn-success")
       $("#tindakan" + id).addClass("btn-outline-secondary")
+      indeksTindakan = tindakanTerpilih.indexOf(id);
+      tindakanTerpilih.splice(indeksTindakan, 1);
+      indeksHarga = hargaTerpilih.indexOf(harga);
+      hargaTerpilih.splice(indeksHarga, 1);
     }
+
+    indeksHarga = 0;
+    indeksTindakan = 0;
+    totalHarga = 0;
+
+    for (let i = 0; i < hargaTerpilih.length; i++) {
+      totalHarga += hargaTerpilih[i];
+    }
+    $("#totalHarga").html("Rp. " + formatRupiah(totalHarga.toString()));
+    aktifkanTombolTransaksi();
+  }
+
+  function aktifkanTombolTransaksi() {
+    if (tindakanTerpilih.length && $("#idPasien").val() && $("#idDokter").val()) {
+      $("#proses").prop('disabled', false);
+    } else {
+      $("#proses").prop('disabled', true);
+    }
+  }
+
+  function prosesTransaksi() {
+    $("#proses").html('<i class="fas fa-spinner fa-pulse"></i> Memproses..')
+    var idPasien = $("#idPasien").val()
+    var idDokter = $("#idDokter").val()
+    $.ajax({
+      url: '<?= base_url() ?>transaksi/prosesTransaksi',
+      method: 'post',
+      data: {
+        idTindakan: tindakanTerpilih,
+        idPasien: idPasien,
+        idDokter: idDokter
+      },
+      dataType: 'json',
+      success: function(data) {
+        for (let i = 0; i < tindakanTerpilih.length; i++) {
+          $("#tindakan" + tindakanTerpilih[i]).removeClass("btn-success")
+          $("#tindakan" + tindakanTerpilih[i]).addClass("btn-outline-secondary")
+        }
+
+        tindakanTerpilih = []
+        hargaTerpilih = []
+        $("#proses").prop('disabled', true);
+        $("#totalHarga").html("Rp. 0.00");
+        $("#proses").html('Proses')
+        $("#idPasien").val(0)
+        $("#idDokter").val(0)
+      }
+    });
+  }
+
+  function formatRupiah(angka, prefix) {
+    var number_string = angka.replace(/[^,\d]/g, '').toString(),
+      split = number_string.split(','),
+      sisa = split[0].length % 3,
+      rupiah = split[0].substr(0, sisa),
+      ribuan = split[0].substr(sisa).match(/\d{3}/gi);
+
+    // tambahkan titik jika yang di input sudah menjadi angka ribuan
+    if (ribuan) {
+      separator = sisa ? '.' : '';
+      rupiah += separator + ribuan.join('.');
+    }
+
+    rupiah = split[1] != undefined ? rupiah + ',' + split[1] : rupiah;
+    return prefix == undefined ? rupiah : (rupiah ? 'Rp. ' + rupiah : '');
   }
 </script>
