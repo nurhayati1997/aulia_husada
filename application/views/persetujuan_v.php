@@ -267,18 +267,11 @@
             </div>
             <!-- Card body -->
             <div class="card-body">
-              <div class="mt-4">
+              <div class="mt-1">
                 <form role="form" class="form-danger">
                   <div class="row">
-                      <div class="col-6">
-                        <div class="form-group">
-                          <div class="input-group input-group-alternative mb-3">
-                            <div class="input-group-prepend">
-                              <span class="input-group-text"><i class="ni ni-credit-card"></i></span>
-                            </div>
-                            <input class="form-control" placeholder="No Rekam Medis" type="text">
-                          </div>
-                        </div>
+                      <div class="col-12">
+                        <h4 class="card-title text-white mb-0">Saya Yang bertanda Tangan Dibawah Ini :</h4>
                       </div>
                       <div class="col-6">
                         <div class="form-group">
@@ -294,33 +287,59 @@
                         <div class="form-group">
                           <div class="input-group input-group-alternative mb-3">
                             <div class="input-group-prepend">
-                              <span class="input-group-text"><i class="ni ni-box-2"></i></span>
-                            </div>
-                            <input class="form-control" placeholder="No KTP" type="text">
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-6">
-                        <div class="form-group">
-                          <div class="input-group input-group-alternative mb-3">
-                            <div class="input-group-prepend">
                               <span class="input-group-text"><i class="ni ni-pin-3"></i></span>
                             </div>
                             <input class="form-control" placeholder="Alamat" type="text">
                           </div>
                         </div>
                       </div>
-                      <div class="col-12">
-                        <h4 class="card-title text-white text-center mb-0">Anamnesa</h4>
-                      </div>
-                      <div class="col-12">
+                      <div class="col-4">
                         <div class="form-group">
                           <div class="input-group input-group-alternative mb-3">
                             <div class="input-group-prepend">
-                              <span class="input-group-text"><i class="ni ni-active-40"></i></span>
+                              <span class="input-group-text"><i class="ni ni-calendar-grid-58"></i></span>
                             </div>
-                            <input class="form-control form-control-lg" placeholder="Keluhan Utama" type="text">
+                            <input class="form-control datepicker" placeholder="Tanggal lahir" type="text">
                           </div>
+                        </div>
+                      </div>
+                      <div class="col-4">
+                        <div class="form-group">
+                          <select class="form-control" id="exampleFormControlSelect1">
+                            <option selected>Jenis Kelamin</option>
+                            <option>laki-Laki</option>
+                            <option>Perempuan</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="col-4">
+                        <div class="form-group">
+                          <div class="input-group input-group-alternative mb-3">
+                            <div class="input-group-prepend">
+                              <span class="input-group-text"><i class="ni ni-box-2"></i></span>
+                            </div>
+                            <input class="form-control" placeholder="No KTP" type="text">
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-12">
+                        <h4 class="card-title text-white mb-0">Dengan Ini Menyatakan dengan sesungguhnya telah memberikan :</h4>
+                      </div>
+                      <div class="col-12">
+                        <h3 class="card-title text-white text-center mb-0">PERSETUJUAN</h3>
+                      </div>
+                      <div class="col-3">
+                        <div class="form-group">
+                          <select class="form-control" id="exampleFormControlSelect1">
+                            <option selected>Terhadap</option>
+                            <option>diri saya sendiri</option>
+                            <option>Istri</option>
+                            <option>Suami</option>
+                            <option>anak</option>
+                            <option>Ayah</option>
+                            <option>Ibu</option>
+                            <option>Saudara</option>
+                          </select>
                         </div>
                       </div>
                       <div class="col-6">
@@ -329,18 +348,26 @@
                             <div class="input-group-prepend">
                               <span class="input-group-text"><i class="ni ni-air-baloon"></i></span>
                             </div>
-                            <input class="form-control" placeholder="Riwayat penyakit Sekarang" type="text">
+                            <input class="form-control" placeholder="Nama" type="text">
                           </div>
                         </div>
                       </div>
-                      <div class="col-6">
+                      <div class="col-3">
                         <div class="form-group">
                           <div class="input-group input-group-alternative mb-3">
                             <div class="input-group-prepend">
                               <span class="input-group-text"><i class="ni ni-app"></i></span>
                             </div>
-                            <input class="form-control" placeholder="Riwayat Penyakit Dahulu" type="text">
+                            <input class="form-control" placeholder="Umur" type="text">
                           </div>
+                        </div>
+                      </div><div class="col-3">
+                        <div class="form-group">
+                          <select class="form-control" id="exampleFormControlSelect1">
+                            <option selected>Jenis Kelamin</option>
+                            <option>laki-Laki</option>
+                            <option>Perempuan</option>
+                          </select>
                         </div>
                       </div>
                       <div class="col-6">
@@ -349,160 +376,25 @@
                             <div class="input-group-prepend">
                               <span class="input-group-text"><i class="ni ni-bag-17"></i></span>
                             </div>
-                            <input class="form-control" placeholder="Riwayat Alergi" type="text">
+                            <input class="form-control" placeholder="Alamat" type="text">
                           </div>
                         </div>
                       </div>
-                      <div class="col-6">
+                      <div class="col-3">
                         <div class="form-group">
                           <div class="input-group input-group-alternative mb-3">
                             <div class="input-group-prepend">
                               <span class="input-group-text"><i class="ni ni-book-bookmark"></i></span>
                             </div>
-                            <input class="form-control" placeholder="Riwayat Operasi" type="text">
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-6">
-                        <div class="form-group">
-                          <div class="input-group input-group-alternative mb-3">
-                            <div class="input-group-prepend">
-                              <span class="input-group-text"><i class="ni ni-books"></i></span>
-                            </div>
-                            <input class="form-control" placeholder="Riwayat Transfusi" type="text">
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-6">
-                        <div class="form-group">
-                          <div class="input-group input-group-alternative mb-3">
-                            <div class="input-group-prepend">
-                              <span class="input-group-text"><i class="ni ni-basket"></i></span>
-                            </div>
-                            <input class="form-control" placeholder="Riwayat Penggunaan Obat" type="text">
+                            <input class="form-control" placeholder="No Rekam Medik" type="text">
                           </div>
                         </div>
                       </div>
                       <div class="col-12">
-                        <h4 class="card-title text-white text-center mb-0">Pemeriksaan Fisik</h4>
-                      </div>
-                      <div class="col-6">
-                        <div class="form-group">
-                          <select class="form-control" id="exampleFormControlSelect1">
-                            <option selected>Kesadaran Umum</option>
-                            <option>Baik</option>
-                            <option>Sedang</option>
-                            <option>Lemah</option>
-                            <option>Jelek</option>
-                          </select>
-                        </div>
-                      </div>
-                      <div class="col-6">
-                        <div class="form-group">
-                          <select class="form-control" id="exampleFormControlSelect1">
-                            <option selected>Kesadaran</option>
-                            <option>Composmentis</option>
-                            <option>Apatis</option>
-                            <option>Somnolen</option>
-                            <option>Sopor</option>
-                            <option>Koma</option>
-                          </select>
-                        </div>
-                      </div>
-                      <div class="col-3">
-                        <div class="form-group">
-                          <div class="input-group input-group-alternative mb-3">
-                            <div class="input-group-prepend">
-                              <span class="input-group-text"><i class="ni ni-box-2"></i></span>
-                            </div>
-                            <input class="form-control" placeholder="Tekanan Darah" type="text">
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-3">
-                        <div class="form-group">
-                          <div class="input-group input-group-alternative mb-3">
-                            <div class="input-group-prepend">
-                              <span class="input-group-text"><i class="ni ni-briefcase-24"></i></span>
-                            </div>
-                            <input class="form-control" placeholder="Nadi" type="text">
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-3">
-                        <div class="form-group">
-                          <div class="input-group input-group-alternative mb-3">
-                            <div class="input-group-prepend">
-                              <span class="input-group-text"><i class="ni ni-building"></i></span>
-                            </div>
-                            <input class="form-control" placeholder="Suhu" type="text">
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-3">
-                        <div class="form-group">
-                          <div class="input-group input-group-alternative mb-3">
-                            <div class="input-group-prepend">
-                              <span class="input-group-text"><i class="ni ni-button-pause"></i></span>
-                            </div>
-                            <input class="form-control" placeholder="RR" type="text">
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-6">
-                        <div class="form-group">
-                          <div class="input-group input-group-alternative mb-3">
-                            <div class="input-group-prepend">
-                              <span class="input-group-text"><i class="ni ni-bullet-list-67"></i></span>
-                            </div>
-                            <input class="form-control form-control-lg" placeholder="Diagnosa" type="text">
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-6">
-                        <div class="form-group">
-                          <div class="input-group input-group-alternative mb-3">
-                            <div class="input-group-prepend">
-                              <span class="input-group-text"><i class="ni ni-caps-small"></i></span>
-                            </div>
-                            <input class="form-control form-control-lg" placeholder="Terapi" type="text">
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-12">
-                        <h4 class="card-title text-white text-center mb-0">Penunjang</h4>
-                      </div>
-                      <div class="col-6">
-                        <h4 class="card-title text-white text-center mb-0">Lab</h4>
-                        <div class="dropzone dropzone-single mb-3" data-toggle="dropzone" data-dropzone-url="http://">
-                          <div class="fallback">
-                            <div class="custom-file">
-                              <input type="file" class="custom-file-input" id="projectCoverUploads">
-                              <label class="custom-file-label" for="projectCoverUploads">Choose file</label>
-                            </div>
-                          </div>
-                          <div class="dz-preview dz-preview-single">
-                            <div class="dz-preview-cover">
-                              <img class="dz-preview-img" src="...html" alt="..." data-dz-thumbnail>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-6">
-                        <h4 class="card-title text-white text-center mb-0">Radiologi</h4>
-                        <div class="dropzone dropzone-single mb-3" data-toggle="dropzone" data-dropzone-url="http://">
-                          <div class="fallback">
-                            <div class="custom-file">
-                              <input type="file" class="custom-file-input" id="projectCoverUploads">
-                              <label class="custom-file-label" for="projectCoverUploads">Choose file</label>
-                            </div>
-                          </div>
-                          <div class="dz-preview dz-preview-single">
-                            <div class="dz-preview-cover">
-                              <img class="dz-preview-img" src="...html" alt="..." data-dz-thumbnail>
-                            </div>
-                          </div>
-                        </div>
+                        <h4 class="card-title text-white mb-0">Yang tujuan, sifat dan perlunya tindakan medis 
+                        tersebut diatas, serta resiko yang ditimbulkan telah cukup dijelasan oleh dokter
+                        dan telah saya mengerti seperti demikian pernyataan ini saya buat dengan penuh 
+                        kesadaran dan tanpa paksaan.</h4>
                       </div>
                   </div>
                   <button type="button" class="btn btn-block btn-info">Simpan</button>
