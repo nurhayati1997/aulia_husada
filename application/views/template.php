@@ -3,7 +3,9 @@
 
 
 <!-- Mirrored from demos.creative-tim.com/argon-dashboard-pro/pages/dashboards/dashboard.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 17 Feb 2021 03:16:33 GMT -->
-<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<!-- Added by HTTrack -->
+<meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -51,6 +53,8 @@
   <link rel="stylesheet" href="<?= base_url() ?>assets_admin/vendor/datatables.net-select-bs4/css/select.bootstrap4.min.css">
   <!-- Argon CSS -->
   <link rel="stylesheet" href="<?= base_url() ?>assets_admin/css/argon.min5438.css?v=1.2.0" type="text/css">
+
+  <script src="<?= base_url() ?>assets_admin/vendor/jquery/dist/jquery.min.js"></script>
   <!-- Google Tag Manager -->
   <script>
     (function(w, d, s, l, i) {
@@ -240,33 +244,33 @@
   </nav>
   <!-- Main content -->
   <div class="main-content" id="panel">
-      <?php echo $contents ?>
-      <!-- Footer -->
-      <footer class="footer pt-0">
-        <div class="row align-items-center justify-content-lg-between">
-          <div class="col-lg-6">
-            <div class="copyright text-center  text-lg-left  text-muted">
-              &copy; 2020 <a href="https://www.creative-tim.com/" class="font-weight-bold ml-1" target="_blank">Creative Tim</a>
-            </div>
-          </div>
-          <div class="col-lg-6">
-            <ul class="nav nav-footer justify-content-center justify-content-lg-end">
-              <li class="nav-item">
-                <a href="https://www.creative-tim.com/" class="nav-link" target="_blank">Creative Tim</a>
-              </li>
-              <li class="nav-item">
-                <a href="https://www.creative-tim.com/presentation" class="nav-link" target="_blank">About Us</a>
-              </li>
-              <li class="nav-item">
-                <a href="http://blog.creative-tim.com/" class="nav-link" target="_blank">Blog</a>
-              </li>
-              <li class="nav-item">
-                <a href="https://www.creative-tim.com/license" class="nav-link" target="_blank">License</a>
-              </li>
-            </ul>
+    <?php echo $contents ?>
+    <!-- Footer -->
+    <footer class="footer pt-0">
+      <div class="row align-items-center justify-content-lg-between">
+        <div class="col-lg-6">
+          <div class="copyright text-center  text-lg-left  text-muted">
+            &copy; 2020 <a href="https://www.creative-tim.com/" class="font-weight-bold ml-1" target="_blank">Creative Tim</a>
           </div>
         </div>
-      </footer>
+        <div class="col-lg-6">
+          <ul class="nav nav-footer justify-content-center justify-content-lg-end">
+            <li class="nav-item">
+              <a href="https://www.creative-tim.com/" class="nav-link" target="_blank">Creative Tim</a>
+            </li>
+            <li class="nav-item">
+              <a href="https://www.creative-tim.com/presentation" class="nav-link" target="_blank">About Us</a>
+            </li>
+            <li class="nav-item">
+              <a href="http://blog.creative-tim.com/" class="nav-link" target="_blank">Blog</a>
+            </li>
+            <li class="nav-item">
+              <a href="https://www.creative-tim.com/license" class="nav-link" target="_blank">License</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </footer>
   </div>
   <!-- Argon Scripts -->
   <!-- Core -->
@@ -349,4 +353,5 @@
 
 
 <!-- Mirrored from demos.creative-tim.com/argon-dashboard-pro/pages/dashboards/dashboard.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 17 Feb 2021 03:16:46 GMT -->
+
 </html>
