@@ -1,3 +1,60 @@
+<style>
+/* The spinner */
+
+@keyframes spinner {
+  to {transform: rotate(360deg);}
+}
+
+.spinner,
+.spinner:before {
+  width: 20px;
+  height: 20px;
+  box-sizing: border-box;
+}
+
+.spinner:before {
+  content: '';
+  display: block;
+  border-radius: 50%;
+  border: 2px solid #ccc;
+  border-top-color: #333;
+  animation: spinner .6s linear infinite;
+}
+
+.spinner-absolute {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -10px;
+  margin-left: -10px;
+}
+
+/* Animations */
+
+.spinner-add,
+.spinner-remove {
+  animation-fill-mode: both;
+  animation-duration: .4s;
+}
+
+.spinner-add {
+  animation-name: spinner-add;
+}
+
+@keyframes spinner-add {
+  from {transform: scale(0);}
+  to {transform: scale(1);}
+}
+
+.spinner-remove {
+  animation-name: spinner-remove;
+}
+
+@keyframes spinner-remove {
+  to {transform: scale(0);}
+}
+</style>
+
 <div class="content">
     <nav class="navbar navbar-top navbar-expand navbar-dark bg-primary border-bottom">
       <div class="container-fluid">
@@ -63,8 +120,8 @@
               </nav>
             </div>
             <div class="col-lg-6 col-5 text-right">
-              <a href="#" class="btn btn-sm btn-neutral">New</a>
-              <a href="#" class="btn btn-sm btn-neutral">Filters</a>
+              <!-- <a href="#" class="btn btn-sm btn-neutral">New</a>
+              <a href="#" class="btn btn-sm btn-neutral">Filters</a> -->
             </div>
           </div>
         </div>
@@ -90,7 +147,7 @@
                 <div class="pt-4 text-center">
                   <div class="row">
                     <div class="col-md-6">
-                      <button type="button" class="btn btn-default" data-toggle="modal" data-target="#modal-notification">Input Pasien Baru</button>
+                      <button type="button" class="btn btn-default" onclick="tampil_input_modal()">Input Pasien Baru</button>
                       <div class="modal fade" id="modal-notification" tabindex="-1" role="dialog" aria-labelledby="modal-notification" aria-hidden="true">
                         <div class="modal-dialog modal-danger modal-dialog-centered modal-" role="document">
                           <div class="modal-content bg-gradient-danger">
@@ -109,7 +166,7 @@
                                         <div class="input-group-prepend">
                                           <span class="input-group-text"><i class="ni ni-credit-card"></i></span>
                                         </div>
-                                        <input class="form-control" placeholder="No Rekam Medis" type="text">
+                                        <input class="form-control" placeholder="No Rekam Medis" id="nrm" readonly type="text">
                                       </div>
                                     </div>
                                   </div>
@@ -119,7 +176,7 @@
                                         <div class="input-group-prepend">
                                           <span class="input-group-text"><i class="ni ni-box-2"></i></span>
                                         </div>
-                                        <input class="form-control" placeholder="No KTP" type="text">
+                                        <input class="form-control" placeholder="No KTP" id="nik" type="number">
                                       </div>
                                     </div>
                                   </div>
@@ -129,72 +186,64 @@
                                         <div class="input-group-prepend">
                                           <span class="input-group-text"><i class="ni ni-circle-08"></i></span>
                                         </div>
-                                        <input class="form-control" placeholder="Nama Lengkap" type="text">
+                                        <input class="form-control" placeholder="Nama Lengkap" id="nama" type="text">
                                       </div>
                                     </div>
                                   </div>
                                   <div class="col-6">
                                     <div class="form-group">
-                                      <select class="form-control" id="exampleFormControlSelect1">
-                                        <option selected>Kecamatan</option>
-                                        <option>Arosbaya</option>
-                                        <option>Bangkalan</option>
-                                        <option>Burneh</option>
-                                        <option>Galis</option>
-                                        <option>Geger</option>
-                                        <option>Kamal</option>
-                                        <option>Klampis</option>
-                                        <option>Kokop</option>
-                                        <option>Konang</option>
-                                        <option>Kwanyar</option>
-                                        <option>Labang</option>
-                                        <option>Modung</option>
-                                        <option>Sepulu</option>
-                                        <option>Socah</option>
-                                        <option>Tanah Merah</option>
-                                        <option>Tanjungbumi</option>
-                                        <option>Tragah</option>
-                                        <option>luar Bangkalan</option>
+                                      <select class="form-control" onchange="get_nrm()" id="kec">
+                                        
                                       </select>
                                     </div>
                                   </div>
-                                  <div class="col-12">
+                                   <div class="col-6">
+                                    <div class="form-group">
+                                      <div class="input-group input-group-alternative mb-3">
+                                        <div class="input-group-prepend">
+                                          <span class="input-group-text"><i class="ni ni-circle-08"></i></span>
+                                        </div>
+                                        <input class="form-control" placeholder="Nama Orang Tua" id="ortu" type="text">
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div class="col-6">
                                     <div class="form-group">
                                       <div class="input-group input-group-alternative mb-3">
                                         <div class="input-group-prepend">
                                           <span class="input-group-text"><i class="ni ni-pin-3"></i></span>
                                         </div>
-                                        <input class="form-control" placeholder="Alamat" type="text">
+                                        <input class="form-control" placeholder="Alamat" id="alamat" type="text">
                                       </div>
                                     </div>
                                   </div>
                                   <div class="col-4">
                                     <div class="form-group">
-                                      <select class="form-control" id="exampleFormControlSelect1">
-                                        <option selected>Jenis Kelamin</option>
-                                        <option>laki-Laki</option>
-                                        <option>Perempuan</option>
+                                      <select class="form-control" onchange="get_nrm()" id="jk">
+                                        <option value="">-Pilih Jenis Kelamin-</option>
+                                        <option value="0">laki-Laki</option>
+                                        <option value="1">Perempuan</option>
                                       </select>
                                     </div>
                                   </div>
                                   <div class="col-4">
                                     <div class="form-group">
-                                      <select class="form-control" id="exampleFormControlSelect1">
-                                        <option selected>Agama</option>
-                                        <option>Islam</option>
-                                        <option>Kriten</option>
-                                        <option>Hindu</option>
-                                        <option>Budha</option>
-                                        <option>Konghucu</option>
+                                      <select class="form-control" id="agama">
+                                        <option value="">-Pilih Agama-</option>
+                                        <option value="0">Islam</option>
+                                        <option value="1">Kriten</option>
+                                        <option value="2">Hindu</option>
+                                        <option value="3">Budha</option>
+                                        <option value="4">Konghucu</option>
                                       </select>
                                     </div>
                                   </div>
                                   <div class="col-4">
                                     <div class="form-group">
-                                      <select class="form-control" id="exampleFormControlSelect1">
-                                        <option selected>Status</option>
-                                        <option>Belum Menikah</option>
-                                        <option>Menikah</option>
+                                      <select class="form-control" id="status">
+                                        <option value="">-Pilih Status-</option>
+                                        <option value="0">Belum Menikah</option>
+                                        <option value="1">Menikah</option>
                                       </select>
                                     </div>
                                   </div>
@@ -204,7 +253,7 @@
                                         <div class="input-group-prepend">
                                           <span class="input-group-text"><i class="ni ni-calendar-grid-58"></i></span>
                                         </div>
-                                        <input class="form-control datepicker" placeholder="Tanggal lahir" type="text">
+                                        <input class="form-control datepicker" id="ttl" placeholder="Tanggal lahir" type="text">
                                       </div>
                                     </div>
                                   </div>
@@ -214,7 +263,7 @@
                                         <div class="input-group-prepend">
                                           <span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
                                         </div>
-                                        <input class="form-control" placeholder="Pekerjaan" type="text">
+                                        <input class="form-control" placeholder="Pekerjaan" id="pekerjaan" type="text">
                                       </div>
                                     </div>
                                   </div>
@@ -224,7 +273,7 @@
                                         <div class="input-group-prepend">
                                           <span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
                                         </div>
-                                        <input class="form-control" placeholder="Pendidikan" type="text">
+                                        <input class="form-control" placeholder="Pendidikan" id="pendd" type="text">
                                       </div>
                                     </div>
                                   </div>
@@ -234,12 +283,12 @@
                                         <div class="input-group-prepend">
                                           <span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
                                         </div>
-                                        <input class="form-control" placeholder="No Hp" type="text">
+                                        <input class="form-control" placeholder="No Hp" id="telp" type="number">
                                       </div>
                                     </div>
                                   </div>
                                 </div>
-                                <button type="button" class="btn btn-block btn-info">Simpan</button>
+                                <button type="button" id="simpan_button" class="btn btn-block btn-info" onclick="tambah_baru()"> <div id="loader"> </div> Simpan</button>
                               </form>
                             </div>
                             <div class="modal-footer">
@@ -340,7 +389,7 @@
                                     </div>
                                     <div class="col-12">
                                       <div class="form-group">
-                                        <select class="form-control" id="exampleFormControlSelect1">
+                                        <select class="form-control" id="dokter">
                                           <option selected>Praktik dokter</option>
                                           <option>dr.Nunuk Kristiani,Sp.Rad | Spesialis Radiologi</option>
                                           <option>dr.Nuryatien Husna,Sp.KFR | Spesialis Kedokteran Fisik & Rehabilitas</option>
@@ -515,7 +564,7 @@
                                                 </div>
                                                 <div class="col-6">
                                                   <div class="form-group">
-                                                    <select class="form-control" id="exampleFormControlSelect1">
+                                                    <select class="form-control" id="kesadaran_umum">
                                                       <option selected>Kesadaran Umum</option>
                                                       <option>Baik</option>
                                                       <option>Sedang</option>
@@ -526,7 +575,7 @@
                                                 </div>
                                                 <div class="col-6">
                                                   <div class="form-group">
-                                                    <select class="form-control" id="exampleFormControlSelect1">
+                                                    <select class="form-control" id="kesadaran">
                                                       <option selected>Kesadaran</option>
                                                       <option>Composmentis</option>
                                                       <option>Apatis</option>
@@ -728,3 +777,120 @@
       </div>
    </div>
 </div>
+
+<script>
+  var random_all = '';
+  $(document).ready(function() {
+      
+  });
+
+  function get_kec() {
+      $.ajax({
+          type: 'POST',
+          url: '<?= base_url() ?>pendaftaran/get_kecamatan',
+          dataType: 'json',
+          success: function(data) {
+              var html = '<option value="">-Pilih Kecamatan-</option>';
+              for (var i = 0; i < data.length; i++) {
+                  html += '<option value="' + data[i].ID + '">' + data[i].KECAMATAN + '</option>';
+              }
+              $("#kec").html(html);
+          }
+      });
+  }
+
+  function tampil_input_modal(){
+    get_kec();
+    var campur = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXTZabcdefghiklmnopqrstuvwxyz1234567890";
+    var panjang = 5;
+    for (var i=0; i<panjang; i++) {
+        var hasil = Math.floor(Math.random() * campur.length);
+        random_all += campur.substring(hasil,hasil+1);
+    }
+    get_nrm();
+    $('#modal-notification').modal('show');
+  }
+
+  function get_nrm(){
+    document.getElementById("nrm").value = document.getElementById("kec").value + "." + random_all +"." + document.getElementById("jk").value;
+  }
+
+  function tambah_baru() {
+      if (document.getElementById('nama').value == "") {
+          document.getElementById('nama').focus();
+      } else if (document.getElementById('kec').value == "") {
+          document.getElementById('kec').focus();
+      } else if (document.getElementById('alamat').value == "") {
+          document.getElementById('alamat').focus();
+      } else if (document.getElementById('jk').value == "") {
+          document.getElementById('jk').focus();
+      } else if (document.getElementById('agama').value == "") {
+          document.getElementById('agama').focus();
+      } else if (document.getElementById('status').value == "") {
+          document.getElementById('status').focus();
+      } else if (document.getElementById('ttl').value == "") {
+          document.getElementById('ttl').focus();
+      } else if (document.getElementById('telp').value == "") {
+          document.getElementById('telp').focus();
+      } else if (document.getElementById('ortu').value == "") {
+          document.getElementById('ortu').focus();
+      } else {
+          $.ajax({
+              type: 'POST',
+              data: 'nrm=' + document.getElementById("nrm").value + '&nik=' + document.getElementById('nik').value
+              + '&nama=' +  document.getElementById('nama').value + '&kec=' +  document.getElementById('kec').value
+              + '&alamat=' +  document.getElementById('alamat').value + '&jk=' +  document.getElementById('jk').value
+              + '&agama=' +  document.getElementById('agama').value + '&status=' +  document.getElementById('status').value
+              + '&ttl=' +  document.getElementById('ttl').value + '&pekerjaan=' +  document.getElementById('pekerjaan').value
+              + '&pendd=' +  document.getElementById('pendd').value + '&telp=' +  document.getElementById('telp').value
+              + '&ortu=' +  document.getElementById('ortu').value,
+              url: '<?= base_url() ?>pendaftaran/tambah_pasien',
+              dataType: 'json',
+              beforeSend: function () {
+                $('#simpan_button').attr('disabled', true);
+                $('#loader').html('');
+                addSpinner($('#loader'));
+              },
+              success: function(data) {
+                // console.log(data);
+                Swal.fire({
+                    position: 'center',
+                    icon: 'success',
+                    title: 'Data Berhasil Ditambahkan',
+                    showConfirmButton: false,
+                    timer: 1500
+                });
+                $('#simpan_button').attr('disabled', false);
+                removeSpinner($('#loader'), function () {
+                  $('#loader').html('');
+                });
+                // $('#modal-notification').modal('hide');
+              }
+          });
+      }
+  }
+
+  function addSpinner(el, static_pos)
+{
+  var spinner = el.children('.spinner');
+  if (spinner.length && !spinner.hasClass('spinner-remove')) return null;
+  !spinner.length && (spinner = $('<div class="spinner' + (static_pos ? '' : ' spinner-absolute') + '"/>').appendTo(el));
+  animateSpinner(spinner, 'add');
+}
+
+function removeSpinner(el, complete)
+{
+  var spinner = el.children('.spinner');
+  spinner.length && animateSpinner(spinner, 'remove', complete);
+}
+
+function animateSpinner(el, animation, complete)
+{
+  if (el.data('animating')) {
+    el.removeClass(el.data('animating')).data('animating', null);
+    el.data('animationTimeout') && clearTimeout(el.data('animationTimeout'));
+  }
+  el.addClass('spinner-' + animation).data('animating', 'spinner-' + animation);
+  el.data('animationTimeout', setTimeout(function() { animation == 'remove' && el.remove(); complete && complete(); }, parseFloat(el.css('animation-duration')) * 1000));
+}
+</script>

@@ -46,7 +46,7 @@
   <link rel="stylesheet" href="<?= base_url() ?>assets_admin/vendor/nucleo/css/nucleo.css" type="text/css">
   <link rel="stylesheet" href="<?= base_url() ?>assets_admin/vendor/%40fortawesome/fontawesome-free/css/all.min.css" type="text/css">
   <link rel="stylesheet" href="../../assets/vendor/animate.css/animate.min.css">
-  <link rel="stylesheet" href="../../assets/vendor/sweetalert2/dist/sweetalert2.min.css">
+  <!-- <link rel="stylesheet" href="../../assets/vendor/sweetalert2/dist/sweetalert2.min.css"> -->
   <!-- Page plugins -->
   <link rel="stylesheet" href="<?= base_url() ?>assets_admin/vendor/datatables.net-bs4/css/dataTables.bootstrap4.min.css">
   <link rel="stylesheet" href="<?= base_url() ?>assets_admin/vendor/datatables.net-buttons-bs4/css/buttons.bootstrap4.min.css">
@@ -55,6 +55,8 @@
   <link rel="stylesheet" href="<?= base_url() ?>assets_admin/css/argon.min5438.css?v=1.2.0" type="text/css">
 
   <script src="<?= base_url() ?>assets_admin/vendor/jquery/dist/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+  
   <!-- Google Tag Manager -->
   <script>
     (function(w, d, s, l, i) {
@@ -274,7 +276,7 @@
   </div>
   <!-- Argon Scripts -->
   <!-- Core -->
-  <script src="<?= base_url() ?>assets_admin/vendor/jquery/dist/jquery.min.js"></script>
+  <!-- <script src="<?= base_url() ?>assets_admin/vendor/jquery/dist/jquery.min.js"></script> -->
   <script src="<?= base_url() ?>assets_admin/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
   <script src="<?= base_url() ?>assets_admin/vendor/js-cookie/js.cookie.js"></script>
   <script src="<?= base_url() ?>assets_admin/vendor/jquery.scrollbar/jquery.scrollbar.min.js"></script>
@@ -291,7 +293,7 @@
   <script src="<?= base_url() ?>assets_admin/vendor/datatables.net-buttons/js/buttons.print.min.js"></script>
   <script src="<?= base_url() ?>assets_admin/vendor/datatables.net-select/js/dataTables.select.min.js"></script>
   <script src="<?= base_url() ?>assets_admin/vendor/dropzone/dist/min/dropzone.min.js"></script>
-  <script src="<?= base_url() ?>assets_admin/vendor/sweetalert2/dist/sweetalert2.min.js"></script>
+  <!-- <script src="<?= base_url() ?>assets_admin/vendor/sweetalert2/dist/sweetalert2.min.js"></script> -->
   <script src="<?= base_url() ?>assets_admin/vendor/bootstrap-notify/bootstrap-notify.min.js"></script>
   <script src="<?= base_url() ?>assets_admin/vendor/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
   <script src="<?= base_url() ?>assets_admin/vendor/moment.min.js"></script>
