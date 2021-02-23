@@ -304,6 +304,16 @@
                                     <div class="form-group">
                                       <div class="input-group input-group-alternative mb-3">
                                         <div class="input-group-prepend">
+                                          <span class="input-group-text"><i class="ni ni-box-2"></i></span>
+                                        </div>
+                                        <input class="form-control" placeholder="No KTP" type="text">
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div class="col-6">
+                                    <div class="form-group">
+                                      <div class="input-group input-group-alternative mb-3">
+                                        <div class="input-group-prepend">
                                           <span class="input-group-text"><i class="ni ni-circle-08"></i></span>
                                         </div>
                                         <input class="form-control" placeholder="Nama Lengkap" type="text">
@@ -312,15 +322,30 @@
                                   </div>
                                   <div class="col-6">
                                     <div class="form-group">
-                                      <div class="input-group input-group-alternative mb-3">
-                                        <div class="input-group-prepend">
-                                          <span class="input-group-text"><i class="ni ni-box-2"></i></span>
-                                        </div>
-                                        <input class="form-control" placeholder="No KTP" type="text">
-                                      </div>
+                                      <select class="form-control" id="exampleFormControlSelect1">
+                                        <option selected>Kecamatan</option>
+                                        <option>Arosbaya</option>
+                                        <option>Bangkalan</option>
+                                        <option>Burneh</option>
+                                        <option>Galis</option>
+                                        <option>Geger</option>
+                                        <option>Kamal</option>
+                                        <option>Klampis</option>
+                                        <option>Kokop</option>
+                                        <option>Konang</option>
+                                        <option>Kwanyar</option>
+                                        <option>Labang</option>
+                                        <option>Modung</option>
+                                        <option>Sepulu</option>
+                                        <option>Socah</option>
+                                        <option>Tanah Merah</option>
+                                        <option>Tanjungbumi</option>
+                                        <option>Tragah</option>
+                                        <option>luar Bangkalan</option>
+                                      </select>
                                     </div>
                                   </div>
-                                  <div class="col-6">
+                                  <div class="col-12">
                                     <div class="form-group">
                                       <div class="input-group input-group-alternative mb-3">
                                         <div class="input-group-prepend">
