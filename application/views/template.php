@@ -130,14 +130,8 @@
                 <ul class="nav nav-sm flex-column">
                   <li class="nav-item">
                     <a href="<?= site_url('resume_medis') ?>" class="nav-link">
-                      <span class="sidenav-mini-icon"> R </span>
-                      <span class="sidenav-normal"> Resume Medis </span>
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a href="../maps/vector.html" class="nav-link">
-                      <span class="sidenav-mini-icon"> I </span>
-                      <span class="sidenav-normal"> Indeks Dokter </span>
+                      <span class="sidenav-mini-icon"> A </span>
+                      <span class="sidenav-normal"> Asesmen Medis Pasien </span>
                     </a>
                   </li>
                   <li class="nav-item">
@@ -147,7 +141,7 @@
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a href="../maps/vector.html" class="nav-link">
+                    <a href="<?= site_url('persetujuan') ?>" class="nav-link">
                       <span class="sidenav-mini-icon"> P </span>
                       <span class="sidenav-normal"> Persetujuan Tindakan </span>
                     </a>
@@ -296,6 +290,7 @@
   <script src="<?= base_url() ?>assets_admin/vendor/datatables.net-buttons/js/buttons.flash.min.js"></script>
   <script src="<?= base_url() ?>assets_admin/vendor/datatables.net-buttons/js/buttons.print.min.js"></script>
   <script src="<?= base_url() ?>assets_admin/vendor/datatables.net-select/js/dataTables.select.min.js"></script>
+  <script src="<?= base_url() ?>assets_admin/vendor/dropzone/dist/min/dropzone.min.js"></script>
   <script src="<?= base_url() ?>assets_admin/vendor/sweetalert2/dist/sweetalert2.min.js"></script>
   <script src="<?= base_url() ?>assets_admin/vendor/bootstrap-notify/bootstrap-notify.min.js"></script>
   <script src="<?= base_url() ?>assets_admin/vendor/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>

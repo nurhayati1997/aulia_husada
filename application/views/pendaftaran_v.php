@@ -523,7 +523,7 @@
                     </div>
                   </div>
                   <h4 class="text-uppercase ls-1 text-white py-3 mb-0">Antrian Pasien</h4>
-                 </div>
+                </div>
               </div>
               <!-- Card body -->
               <div class="card-body">
