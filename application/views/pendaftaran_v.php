@@ -119,10 +119,6 @@
                 </ol>
               </nav>
             </div>
-            <div class="col-lg-6 col-5 text-right">
-              <!-- <a href="#" class="btn btn-sm btn-neutral">New</a>
-              <a href="#" class="btn btn-sm btn-neutral">Filters</a> -->
-            </div>
           </div>
         </div>
       </div>
@@ -436,7 +432,7 @@
                                   <button type="button" class="btn btn-sm btn-primary" data-toggle="modal" data-target="#modal-asesmen">Antri</button>
                                   <div class="modal fade" id="modal-asesmen" tabindex="-1" role="dialog" aria-labelledby="modal-asesmen" aria-hidden="true">
                                     <div class="modal-dialog modal- modal-dialog-centered modal-" role="document">
-                                      <div class="modal-content bg-gradient-danger">
+                                      <div class="modal-content bg-gradient-primary">
                                         <div class="modal-header">
                                           <h6 class="modal-title" id="modal-title-notification">Asesmen Awal Pasien</h6>
                                           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
