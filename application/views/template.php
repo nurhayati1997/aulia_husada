@@ -143,7 +143,7 @@
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a href="../maps/vector.html" class="nav-link">
+                    <a href="<?= site_url('penolakan') ?>" class="nav-link">
                       <span class="sidenav-mini-icon"> P </span>
                       <span class="sidenav-normal"> Penolakan Tindakan </span>
                     </a>

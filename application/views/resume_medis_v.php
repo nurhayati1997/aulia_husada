@@ -569,7 +569,7 @@
                         </div>
                       </div>
                   </div>
-                  <button type="button" class="btn btn-block btn-info">Simpan</button>
+                  <button type="button" class="btn btn-block btn-warning">Simpan</button>
                 </form>
               </div>
             </div>

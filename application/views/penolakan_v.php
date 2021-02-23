@@ -244,13 +244,13 @@
               <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
                 <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
                   <li class="breadcrumb-item"><a href="#"><i class="fas fa-home"></i></a></li>
-                  <li class="breadcrumb-item"><a href="#">Persetujuan Tindakan Medis</a></li>
+                  <li class="breadcrumb-item"><a href="#">Penolakan Tindakan Medis</a></li>
                   <!-- <li class="breadcrumb-item active" aria-current="page">Default</li> -->
                 </ol>
               </nav>
             </div>
             <div class="col-lg-6 col-5 text-right">
-              <a href="#" class="btn btn-sm btn-neutral">Print Persetujuan Tindakan Medis</a>
+              <a href="#" class="btn btn-sm btn-neutral">Print Penolakan Tindakan Medis</a>
             </div>
           </div>
         </div>
@@ -261,9 +261,9 @@
   <div class="container-fluid mt--6">
     <div class="row card-wrapper">
         <div class="card">
-          <div class="card bg-gradient-info">
+          <div class="card bg-gradient-success">
             <div class="card-header bg-transparent">
-                <h4 class="card-title text-white mb-0">Form Persetujuan Tindakan Medis </h3>
+                <h4 class="card-title text-white mb-0">Form Penolakan Tindakan Medis </h3>
             </div>
             <!-- Card body -->
             <div class="card-body">
@@ -326,7 +326,7 @@
                         <h4 class="card-title text-white mb-0">Dengan Ini Menyatakan dengan sesungguhnya telah memberikan :</h4>
                       </div>
                       <div class="col-12">
-                        <h3 class="card-title text-white text-center mb-1">PERSETUJUAN</h3>
+                        <h3 class="card-title text-white text-center mb-1">PENOLAKAN</h3>
                       </div>
                       <div class="col-12">
                         <h4 class="card-title text-white mb-0">Untuk dilakukan tindakan medis berupa :</h4>
