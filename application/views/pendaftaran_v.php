@@ -227,7 +227,7 @@
                                       <select class="form-control" id="agama">
                                         <option value="">-Pilih Agama-</option>
                                         <option value="0">Islam</option>
-                                        <option value="1">Kriten</option>
+                                        <option value="1">Kristen</option>
                                         <option value="2">Hindu</option>
                                         <option value="3">Budha</option>
                                         <option value="4">Konghucu</option>
@@ -288,14 +288,14 @@
                               </form>
                             </div>
                             <div class="modal-footer">
-                              <button type="button" class="btn btn-link text-white ml-auto" data-dismiss="modal">Close</button>
+                              <!-- <button type="button" class="btn btn-link text-white ml-auto" data-dismiss="modal">Close</button> -->
                             </div>
                           </div>
                         </div>
                       </div>
                     </div>
                     <div class="col-md-6">
-                      <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#modal-default">Pendaftaran</button>
+                      <button type="button" class="btn btn-warning" onclick="tampil_daftar_modal()">Pendaftaran</button>
                       <div class="modal fade" id="modal-default" tabindex="-1" role="dialog" aria-labelledby="modal-default" aria-hidden="true">
                           <div class="modal-dialog modal- modal-dialog-centered modal-" role="document">
                             <div class="modal-content">
@@ -312,34 +312,34 @@
                                     <div class="col-4">
                                       <div class="form-group">
                                         <div class="custom-control custom-radio mb-3">
-                                          <input name="custom-radio-1" class="custom-control-input" id="customRadio5" type="radio">
-                                          <label class="custom-control-label" for="customRadio5">No Rm</label>
+                                          <input name="custom-radio-1" class="custom-control-input" id="nrm_radio" value="0" type="radio" onchange="add_list()">
+                                          <label class="custom-control-label" for="nrm_radio">No Rm</label>
                                         </div>
                                       </div>
                                     </div>
                                     <div class="col-4">
                                       <div class="form-group">
                                         <div class="custom-control custom-radio mb-3">
-                                          <input name="custom-radio-1" class="custom-control-input" id="customRadio6" checked="" type="radio">
-                                          <label class="custom-control-label" for="customRadio6">NIK</label>
+                                          <input name="custom-radio-1" class="custom-control-input" id="nik_radio" value="1" type="radio" onchange="add_list()">
+                                          <label class="custom-control-label" for="nik_radio">NIK</label>
                                         </div>
                                       </div>
                                     </div>
                                     <div class="col-4">
                                       <div class="form-group">
                                         <div class="custom-control custom-radio mb-3">
-                                          <input name="custom-radio-1" class="custom-control-input" id="customRadio7" checked="" type="radio">
-                                          <label class="custom-control-label" for="customRadio7">Nama</label>
+                                          <input name="custom-radio-1" class="custom-control-input" id="nama_radio" value="2" type="radio" onchange="add_list()">
+                                          <label class="custom-control-label" for="nama_radio">Nama</label>
                                         </div>
                                       </div>
                                     </div>
                                     <div class="col-12">
                                       <div class="form-group">
-                                        <div class='input-group' id=''>
-                                          <input type='text' class="form-control" />
-                                          <span class="input-group-addon input-group-append">
-                                            <button class="btn btn-outline-primary" type="button" id="button-addon2"> <span class="fa fa-search"></span></button>
-                                          </span>
+                                        <div class='input-group'>
+                                          <!-- <input type='text' id="kata_kunci" class="form-control" /> -->
+                                          <select style="color: white!important;" onchange="pencarian()" class="selectpicker form-control" id="kata_kunci" name="kata_kunci" data-live-search="true" placeholder="-Pilih-">
+                                          
+                                          </select>
                                         </div>
                                       </div>
                                     </div>
@@ -349,7 +349,7 @@
                                           <div class="input-group-prepend">
                                             <span class="input-group-text"><i class="ni ni-credit-card"></i></span>
                                           </div>
-                                          <input class="form-control" placeholder="No Rekam Medis" type="text">
+                                          <input class="form-control" placeholder="No Rekam Medis" id="nrm_show" type="text" readonly>
                                         </div>
                                       </div>
                                     </div>
@@ -359,7 +359,7 @@
                                           <div class="input-group-prepend">
                                             <span class="input-group-text"><i class="ni ni-circle-08"></i></span>
                                           </div>
-                                          <input class="form-control" placeholder="Nama Lengkap" type="text">
+                                          <input class="form-control" placeholder="Nama Lengkap" id="nama_show" type="text" readonly>
                                         </div>
                                       </div>
                                     </div>
@@ -369,7 +369,7 @@
                                           <div class="input-group-prepend">
                                             <span class="input-group-text"><i class="ni ni-box-2"></i></span>
                                           </div>
-                                          <input class="form-control" placeholder="No KTP" type="text">
+                                          <input class="form-control" placeholder="No KTP" id="nik_show" type="text" readonly>
                                         </div>
                                       </div>
                                     </div>
@@ -379,17 +379,14 @@
                                           <div class="input-group-prepend">
                                             <span class="input-group-text"><i class="ni ni-pin-3"></i></span>
                                           </div>
-                                          <input class="form-control" placeholder="Alamat" type="text">
+                                          <input class="form-control" placeholder="Alamat" id="alamat_show" type="text" readonly>
                                         </div>
                                       </div>
                                     </div>
                                     <div class="col-12">
                                       <div class="form-group">
                                         <select class="form-control" id="dokter">
-                                          <option selected>Praktik dokter</option>
-                                          <option>dr.Nunuk Kristiani,Sp.Rad | Spesialis Radiologi</option>
-                                          <option>dr.Nuryatien Husna,Sp.KFR | Spesialis Kedokteran Fisik & Rehabilitas</option>
-                                          <option>dr.Mirathi Ayu Irnanda | Dokter Umum</option>
+                                          
                                         </select>
                                       </div>
                                     </div>
@@ -398,7 +395,7 @@
                                 </form>
                               </div>
                               <div class="modal-footer">
-                                <button type="button" class="btn btn-link text-white ml-auto" data-dismiss="modal">Close</button>
+                                <!-- <button type="button" class="btn btn-link text-white ml-auto" data-dismiss="modal">Close</button> -->
                               </div>
                             </div>
                           </div>
@@ -777,7 +774,10 @@
 <script>
   var random_all = '';
   $(document).ready(function() {
-      
+      // $('#kata_kunci').selectize({
+      //     create: true,
+      //     sortField: 'text'
+      // });
   });
 
   function get_kec() {
@@ -795,8 +795,92 @@
       });
   }
 
+  function get_dokter() {
+      $.ajax({
+          type: 'POST',
+          url: '<?= base_url() ?>pendaftaran/get_dokter',
+          dataType: 'json',
+          success: function(data) {
+              var html = '<option value="">-Pilih Dokter-</option>';
+              for (var i = 0; i < data.length; i++) {
+                  html += '<option value="' + data[i].id_user + '">' + data[i].nama + ' | ' +  data[i].jabatan  + '</option>';
+              }
+              $("#dokter").html(html);
+          }
+      });
+  }
+
+  function add_list() {
+      $.ajax({
+          type: 'POST',
+          url: '<?= base_url() ?>pendaftaran/add_list',
+          dataType: 'json',
+          success: function(data) {
+            console.log(data);
+            var html = '<option value="">-Pilih-</option>';
+            for (var i = 0; i < data.length; i++) {
+                if(get_radio()==0){
+                  html += "<option value='" + data[i].id_user + "'>" + data[i].kode + '</option>';
+                } else if(get_radio()==1){
+                  html += "<option value='" + data[i].id_user + "'>" + data[i].nik  + '</option>';
+                } else{
+                  html += "<option value='" + data[i].id_user + "'>" + data[i].nama + '</option>';
+                }
+                
+            }
+            $("#kata_kunci").html(html);
+            $('#kata_kunci').selectpicker('refresh');
+            // $('#kata_kunci').select2({
+            //     dropdownParent: $('#modal-default'),
+            //     theme: "classic",
+            //     tags: true,
+            //     width: 'resolve'
+            // });
+            
+            // $('.js-example-basic-single').select2();
+          }
+      });
+  }
+
+  function pencarian() {
+    console.log( $('#kata_kunci').selectpicker('val'));
+      // $.ajax({
+      //     type: 'POST',
+      //     url: '<?= base_url() ?>pendaftaran/pencarian',
+      //     data: 'kata_kunci=' + document.getElementById("kata_kunci").value + '&kategori=' +  get_radio(),
+      //     dataType: 'json',
+      //     success: function(data) {
+      //         console.log(data);
+      //     }
+      // });
+  }
+
+  function reset_form(){
+    random_all = '';
+    document.getElementById('nik').value = "";
+    document.getElementById('nama').value = "";
+    document.getElementById('kec').value = "";
+    document.getElementById('alamat').value = "";
+    document.getElementById('jk').value = "";
+    document.getElementById('agama').value = "";
+    document.getElementById('status').value = "";
+    document.getElementById('ttl').value = "";
+    document.getElementById('pekerjaan').value = "";
+    document.getElementById('pendd').value = "";
+    document.getElementById('telp').value = "";
+    document.getElementById('ortu').value = "";
+  }
+  
+  function tampil_daftar_modal(){
+    document.getElementById("nrm_radio").checked = true;
+    get_dokter();
+    add_list();
+    $('#modal-default').modal('show');
+  }
+
   function tampil_input_modal(){
     get_kec();
+    reset_form();
     var campur = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXTZabcdefghiklmnopqrstuvwxyz1234567890";
     var panjang = 5;
     for (var i=0; i<panjang; i++) {
@@ -810,6 +894,17 @@
   function get_nrm(){
     document.getElementById("nrm").value = document.getElementById("kec").value + "." + random_all +"." + document.getElementById("jk").value;
   }
+  
+  function get_radio(){
+    var ele = document.getElementsByName('custom-radio-1');   
+    for(i = 0; i < ele.length; i++) { 
+        if(ele[i].checked){
+          return ele[i].value;
+        }
+    }
+  }
+
+   
 
   function tambah_baru() {
       if (document.getElementById('nama').value == "") {
@@ -860,7 +955,7 @@
                 removeSpinner($('#loader'), function () {
                   $('#loader').html('');
                 });
-                // $('#modal-notification').modal('hide');
+                $('#modal-notification').modal('hide');
               }
           });
       }
