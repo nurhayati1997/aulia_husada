@@ -423,6 +423,7 @@
 
   function prosesTransaksi() {
     $("#proses").html('<i class="fas fa-spinner fa-pulse"></i> Memproses..')
+    $("#proses").prop('disabled', true);
     var idPasien = $("#idPasien").val()
     var idDokter = $("#idDokter").val()
     $.ajax({
@@ -442,7 +443,6 @@
 
         tindakanTerpilih = []
         hargaTerpilih = []
-        $("#proses").prop('disabled', true);
         $("#totalHarga").html("Rp. 0.00");
         $("#proses").html('Proses')
         $("#idPasien").val(0)
