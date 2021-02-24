@@ -177,20 +177,7 @@
                         </div>
                         <div class="card-body px-lg-7">
                           <ul class="list-group list-group-flush list my--3 list_pasien">
-                            <li class="list-group-item px-0">
-                              <div class="row align-items-center">
-                                <div class="col ml--4">
-                                  <h4 class="mb-0">
-                                    <a href="#!">Nama Pasien</a>
-                                  </h4>
-                                  <span class="text-success">●</span>
-                                  <small>No RM</small>
-                                </div>
-                                <div class="col-auto">
-                                <button type="button" class="btn btn-sm btn-primary" data-toggle="modal" data-target="#modal-asesmen">Antri</button>
-                                </div>
-                              </div>
-                            </li>
+                            
                           </ul>
                         </div>
                         <div class="card-footer bg-transparent">
@@ -202,21 +189,8 @@
                           <h4 class=" ls-1 text-primary py-3 mb-0 nama_dokter"></h4>
                         </div>
                         <div class="card-body px-lg-7">
-                        <ul class="list-group list-group-flush list my--3 list_pasien">
-                            <li class="list-group-item px-0">
-                              <div class="row align-items-center">
-                                <div class="col ml--4">
-                                  <h4 class="mb-0">
-                                    <a href="#!">Nama Pasien</a>
-                                  </h4>
-                                  <span class="text-success">●</span>
-                                  <small>No RM</small>
-                                </div>
-                                <div class="col-auto">
-                                <button type="button" class="btn btn-sm btn-primary" data-toggle="modal" data-target="#modal-asesmen">Antri</button>
-                                </div>
-                              </div>
-                            </li>
+                          <ul class="list-group list-group-flush list my--3 list_pasien">
+                            
                           </ul>
                         </div>
                         <div class="card-footer">
@@ -480,7 +454,7 @@
               </div>
             </div>
           </div>
-          <button id="simpan_antrian_button" type="button" class="btn btn-block btn-info" onclick="tambah_antrian()">Simpan</button>
+          <button id="simpan_antrian_button" type="button" class="btn btn-block btn-info" onclick="tambah_antrian()"><div id="loader_antrian"> </div> Simpan</button>
         </form>
       </div>
       <div class="modal-footer">
@@ -825,15 +799,34 @@
       });
   }
 
-  function get_list(id, dokter) {
+  function get_list(id, i) {
       $.ajax({
           type: 'POST',
           url: '<?= base_url() ?>pendaftaran/get_list',
           data: 'id=' + id,
           dataType: 'json',
           success: function(data) {
+            var html = '';
+            for (var i = 0; i < data.length; i++) {
+              html += '<li class="list-group-item px-0">';
+              html += '<div class="row align-items-center">';
+              html += '<div class="col ml--4">';
+              html += '<h4 class="mb-0">';
+              html += '<a href="#!">'+data[i].id_pasien+'</a>';
+              html += '</h4>';
+              html += '<span class="text-success">●</span>';
+              html += '<small>'+data[i].id_pasien+'</small>';
+              html += '</div>';
+              html += '<div class="col-auto">';
+              html += '<button type="button" class="btn btn-sm btn-primary" data-toggle="modal" data-target="#modal-asesmen">Antri</button>';
+              html += '</div>';
+              html += '</div>';
+              html += '</li>';
+            }
+            
              var z = document.getElementsByClassName("list_pasien");
-             console.log(data);
+             z[i].innerHTML = html;
+            //  console.log(data);
           }
       });
   }
@@ -1005,8 +998,8 @@
               dataType: 'json',
               beforeSend: function () {
                 $('#simpan_antrian_button').attr('disabled', true);
-                $('#loader').html('');
-                addSpinner($('#loader'));
+                $('#loader_antrian').html('');
+                addSpinner($('#loader_antrian'));
               },
               success: function(data) {
                 // console.log(data);
@@ -1018,8 +1011,8 @@
                     timer: 1500
                 });
                 $('#simpan_antrian_button').attr('disabled', false);
-                removeSpinner($('#loader'), function () {
-                  $('#loader').html('');
+                removeSpinner($('#loader_antrian'), function () {
+                  $('#loader_antrian').html('');
                 });
                 $('#modal-default').modal('hide');
               }
