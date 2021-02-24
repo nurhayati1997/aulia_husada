@@ -823,7 +823,7 @@
               html += '</div>';
               html += '</li>';
             }
-            
+
              var z = document.getElementsByClassName("list_pasien");
              z[i].innerHTML = html;
             //  console.log(data);
