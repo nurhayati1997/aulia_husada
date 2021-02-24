@@ -46,15 +46,28 @@
   <link rel="stylesheet" href="<?= base_url() ?>assets_admin/vendor/nucleo/css/nucleo.css" type="text/css">
   <link rel="stylesheet" href="<?= base_url() ?>assets_admin/vendor/%40fortawesome/fontawesome-free/css/all.min.css" type="text/css">
   <link rel="stylesheet" href="../../assets/vendor/animate.css/animate.min.css">
-  <link rel="stylesheet" href="../../assets/vendor/sweetalert2/dist/sweetalert2.min.css">
+  <!-- <link rel="stylesheet" href="../../assets/vendor/sweetalert2/dist/sweetalert2.min.css"> -->
   <!-- Page plugins -->
   <link rel="stylesheet" href="<?= base_url() ?>assets_admin/vendor/datatables.net-bs4/css/dataTables.bootstrap4.min.css">
   <link rel="stylesheet" href="<?= base_url() ?>assets_admin/vendor/datatables.net-buttons-bs4/css/buttons.bootstrap4.min.css">
   <link rel="stylesheet" href="<?= base_url() ?>assets_admin/vendor/datatables.net-select-bs4/css/select.bootstrap4.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.2/css/bootstrap-select.min.css">
   <!-- Argon CSS -->
   <link rel="stylesheet" href="<?= base_url() ?>assets_admin/css/argon.min5438.css?v=1.2.0" type="text/css">
 
+  
   <script src="<?= base_url() ?>assets_admin/vendor/jquery/dist/jquery.min.js"></script>
+
+  <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+<!-- 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.6/css/selectize.bootstrap3.min.css" integrity="sha256-ze/OEYGcFbPRmvCnrSeKbRTtjG4vGLHXgOqsyLFTRjg=" crossorigin="anonymous" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.6/js/standalone/selectize.min.js" integrity="sha256-+C0A5Ilqmu4QcSPxrlGpaZxJ04VjsRjKu+G82kl5UJk=" crossorigin="anonymous"></script>
+   -->
+   
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+  
+  
   <!-- Google Tag Manager -->
   <script>
     (function(w, d, s, l, i) {
@@ -274,7 +287,7 @@
   </div>
   <!-- Argon Scripts -->
   <!-- Core -->
-  <script src="<?= base_url() ?>assets_admin/vendor/jquery/dist/jquery.min.js"></script>
+  <!-- <script src="<?= base_url() ?>assets_admin/vendor/jquery/dist/jquery.min.js"></script> -->
   <script src="<?= base_url() ?>assets_admin/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
   <script src="<?= base_url() ?>assets_admin/vendor/js-cookie/js.cookie.js"></script>
   <script src="<?= base_url() ?>assets_admin/vendor/jquery.scrollbar/jquery.scrollbar.min.js"></script>
@@ -291,11 +304,12 @@
   <script src="<?= base_url() ?>assets_admin/vendor/datatables.net-buttons/js/buttons.print.min.js"></script>
   <script src="<?= base_url() ?>assets_admin/vendor/datatables.net-select/js/dataTables.select.min.js"></script>
   <script src="<?= base_url() ?>assets_admin/vendor/dropzone/dist/min/dropzone.min.js"></script>
-  <script src="<?= base_url() ?>assets_admin/vendor/sweetalert2/dist/sweetalert2.min.js"></script>
+  <!-- <script src="<?= base_url() ?>assets_admin/vendor/sweetalert2/dist/sweetalert2.min.js"></script> -->
   <script src="<?= base_url() ?>assets_admin/vendor/bootstrap-notify/bootstrap-notify.min.js"></script>
   <script src="<?= base_url() ?>assets_admin/vendor/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
   <script src="<?= base_url() ?>assets_admin/vendor/moment.min.js"></script>
   <script src="<?= base_url() ?>assets_admin/vendor/bootstrap-datetimepicker.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.2/js/bootstrap-select.min.js"></script>
   <script type="text/javascript">
     $(function() {
       $('#datetimepicker1').datetimepicker({

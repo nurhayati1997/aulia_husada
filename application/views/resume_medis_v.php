@@ -2,20 +2,6 @@
     <nav class="navbar navbar-top navbar-expand navbar-dark bg-primary border-bottom">
       <div class="container-fluid">
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <!-- Search form -->
-          <form class="navbar-search navbar-search-light form-inline mr-sm-3" id="navbar-search-main">
-            <div class="form-group mb-0">
-              <div class="input-group input-group-alternative input-group-merge">
-                <div class="input-group-prepend">
-                  <span class="input-group-text"><i class="fas fa-search"></i></span>
-                </div>
-                <input class="form-control" placeholder="Search" type="text">
-              </div>
-            </div>
-            <button type="button" class="close" data-action="search-close" data-target="#navbar-search-main" aria-label="Close">
-              <span aria-hidden="true">×</span>
-            </button>
-          </form>
           <!-- Navbar links -->
           <ul class="navbar-nav align-items-center  ml-md-auto ">
             <li class="nav-item d-xl-none">
@@ -32,162 +18,6 @@
               <a class="nav-link" href="#" data-action="search-show" data-target="#navbar-search-main">
                 <i class="ni ni-zoom-split-in"></i>
               </a>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <i class="ni ni-bell-55"></i>
-              </a>
-              <div class="dropdown-menu dropdown-menu-xl  dropdown-menu-right  py-0 overflow-hidden">
-                <!-- Dropdown header -->
-                <div class="px-3 py-3">
-                  <h6 class="text-sm text-muted m-0">You have <strong class="text-primary">13</strong> notifications.</h6>
-                </div>
-                <!-- List group -->
-                <div class="list-group list-group-flush">
-                  <a href="#!" class="list-group-item list-group-item-action">
-                    <div class="row align-items-center">
-                      <div class="col-auto">
-                        <!-- Avatar -->
-                        <img alt="Image placeholder" src="<?= base_url() ?>assets_admin/img/theme/team-1.jpg" class="avatar rounded-circle">
-                      </div>
-                      <div class="col ml--2">
-                        <div class="d-flex justify-content-between align-items-center">
-                          <!-- <div>
-                            <h4 class="mb-0 text-sm">John Snow</h4>
-                          </div> -->
-                          <div class="text-right text-muted">
-                            <small>2 hrs ago</small>
-                          </div>
-                        </div>
-                        <p class="text-sm mb-0">Let's meet at Starbucks at 11:30. Wdyt?</p>
-                      </div>
-                    </div>
-                  </a>
-                  <a href="#!" class="list-group-item list-group-item-action">
-                    <div class="row align-items-center">
-                      <div class="col-auto">
-                        <!-- Avatar -->
-                        <img alt="Image placeholder" src="<?= base_url() ?>assets_admin/img/theme/team-2.jpg" class="avatar rounded-circle">
-                      </div>
-                      <div class="col ml--2">
-                        <div class="d-flex justify-content-between align-items-center">
-                          <!-- <div>
-                            <h4 class="mb-0 text-sm">John Snow</h4>
-                          </div> -->
-                          <div class="text-right text-muted">
-                            <small>3 hrs ago</small>
-                          </div>
-                        </div>
-                        <p class="text-sm mb-0">A new issue has been reported for Argon.</p>
-                      </div>
-                    </div>
-                  </a>
-                  <a href="#!" class="list-group-item list-group-item-action">
-                    <div class="row align-items-center">
-                      <div class="col-auto">
-                        <!-- Avatar -->
-                        <img alt="Image placeholder" src="<?= base_url() ?>assets_admin/img/theme/team-3.jpg" class="avatar rounded-circle">
-                      </div>
-                      <div class="col ml--2">
-                        <div class="d-flex justify-content-between align-items-center">
-                          <!-- <div>
-                            <h4 class="mb-0 text-sm">John Snow</h4>
-                          </div> -->
-                          <div class="text-right text-muted">
-                            <small>5 hrs ago</small>
-                          </div>
-                        </div>
-                        <p class="text-sm mb-0">Your posts have been liked a lot.</p>
-                      </div>
-                    </div>
-                  </a>
-                  <a href="#!" class="list-group-item list-group-item-action">
-                    <div class="row align-items-center">
-                      <div class="col-auto">
-                        <!-- Avatar -->
-                        <img alt="Image placeholder" src="<?= base_url() ?>assets_admin/img/theme/team-4.jpg" class="avatar rounded-circle">
-                      </div>
-                      <div class="col ml--2">
-                        <div class="d-flex justify-content-between align-items-center">
-                          <!-- <div>
-                            <h4 class="mb-0 text-sm">John Snow</h4>
-                          </div> -->
-                          <div class="text-right text-muted">
-                            <small>2 hrs ago</small>
-                          </div>
-                        </div>
-                        <p class="text-sm mb-0">Let's meet at Starbucks at 11:30. Wdyt?</p>
-                      </div>
-                    </div>
-                  </a>
-                  <a href="#!" class="list-group-item list-group-item-action">
-                    <div class="row align-items-center">
-                      <div class="col-auto">
-                        <!-- Avatar -->
-                        <img alt="Image placeholder" src="<?= base_url() ?>assets_admin/img/theme/team-5.jpg" class="avatar rounded-circle">
-                      </div>
-                      <div class="col ml--2">
-                        <div class="d-flex justify-content-between align-items-center">
-                          <!-- <div>
-                            <h4 class="mb-0 text-sm">John Snow</h4>
-                          </div> -->
-                          <div class="text-right text-muted">
-                            <small>3 hrs ago</small>
-                          </div>
-                        </div>
-                        <p class="text-sm mb-0">A new issue has been reported for Argon.</p>
-                      </div>
-                    </div>
-                  </a>
-                </div>
-                <!-- View all -->
-                <a href="#!" class="dropdown-item text-center text-primary font-weight-bold py-3">View all</a>
-              </div>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <i class="ni ni-ungroup"></i>
-              </a>
-              <div class="dropdown-menu dropdown-menu-lg dropdown-menu-dark bg-default  dropdown-menu-right ">
-                <div class="row shortcuts px-4">
-                  <a href="#!" class="col-4 shortcut-item">
-                    <span class="shortcut-media avatar rounded-circle bg-gradient-red">
-                      <i class="ni ni-calendar-grid-58"></i>
-                    </span>
-                    <small>Calendar</small>
-                  </a>
-                  <a href="#!" class="col-4 shortcut-item">
-                    <span class="shortcut-media avatar rounded-circle bg-gradient-orange">
-                      <i class="ni ni-email-83"></i>
-                    </span>
-                    <small>Email</small>
-                  </a>
-                  <a href="#!" class="col-4 shortcut-item">
-                    <span class="shortcut-media avatar rounded-circle bg-gradient-info">
-                      <i class="ni ni-credit-card"></i>
-                    </span>
-                    <small>Payments</small>
-                  </a>
-                  <a href="#!" class="col-4 shortcut-item">
-                    <span class="shortcut-media avatar rounded-circle bg-gradient-green">
-                      <i class="ni ni-books"></i>
-                    </span>
-                    <small>Reports</small>
-                  </a>
-                  <a href="#!" class="col-4 shortcut-item">
-                    <span class="shortcut-media avatar rounded-circle bg-gradient-purple">
-                      <i class="ni ni-pin-3"></i>
-                    </span>
-                    <small>Maps</small>
-                  </a>
-                  <a href="#!" class="col-4 shortcut-item">
-                    <span class="shortcut-media avatar rounded-circle bg-gradient-yellow">
-                      <i class="ni ni-basket"></i>
-                    </span>
-                    <small>Shop</small>
-                  </a>
-                </div>
-              </div>
             </li>
           </ul>
           <ul class="navbar-nav align-items-center  ml-auto ml-md-0 ">
@@ -258,324 +88,82 @@
     </div>
     <!-- Page content -->
   <!-- Dark table -->
-  <div class="container-fluid mt--6">
-    <div class="row card-wrapper">
-      <div class="col-lg-4">
-        <!-- Timeline card -->
-        <div class="card">
-          <!-- Card header -->
-          <div class="card-header">
-            <!-- Title -->
-            <h5 class="h3 mb-0">Riwayat Kunjungan : </h5>
-          </div>
-          <!-- Card body -->
-          <div class="card-body">
-            <div class="timeline timeline-one-side" data-timeline-content="axis" data-timeline-axis-style="dashed">
-                <div class="timeline-block">
-                  <span class="timeline-step badge-success">
-                    <i class="ni ni-bell-55"></i>
-                  </span>
-                <div class="timeline-content">
-                  <div class="d-flex justify-content-between pt-1">
-                     <div>
-                      <span class="text-muted text-sm font-weight-bold">Nama Dokter</span>
-                    </div>
-                    <div class="text-right">
-                      <small class="text-muted"><i class="fas fa-clock mr-1"></i>Tanggal (Periksa)</small>
-                    </div>
-                  </div>
-                  <h6 class="text-sm mt-1 mb-0">Isi Diagnosa</h6>
-                </div>
-              </div>
-              <div class="timeline-block">
-                <span class="timeline-step badge-danger">
-                  <i class="ni ni-bell-55"></i>
-                </span>
-                <div class="timeline-content">
-                  <div class="d-flex justify-content-between pt-1">
-                    <div>
-                      <span class="text-muted text-sm font-weight-bold">Nama Dokter</span>
-                    </div>
-                    <div class="text-right">
-                      <small class="text-muted"><i class="fas fa-clock mr-1"></i>Tanggal (Periksa)</small>
-                    </div>
-                  </div>
-                  <h6 class="text-sm mt-1 mb-0">Isi Diagnosa</h6>
-                </div>
-              </div>
-              <div class="timeline-block">
-                <span class="timeline-step badge-info">
-                  <i class="ni ni-bell-55"></i>
-                </span>
-                <div class="timeline-content">
-                  <div class="d-flex justify-content-between pt-1">
-                    <div>
-                      <span class="text-muted text-sm font-weight-bold">Nama Dokter</span>
-                    </div>
-                    <div class="text-right">
-                      <small class="text-muted"><i class="fas fa-clock mr-1"></i>Tanggal (Periksa)</small>
-                    </div>
-                  </div>
-                  <h6 class="text-sm mt-1 mb-0">Isi Diagnosa</h6>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-8">
-        <div class="card">
-          <div class="card bg-gradient-info">
-            <div class="card-header bg-transparent">
-                <h4 class="card-title text-white mb-0">Tanggal : </h3>
-            </div>
-            <!-- Card body -->
-            <div class="card-body">
-              <div class="mt-4">
-                <form role="form" class="form-danger">
+    <div class="container-fluid mt--6">
+      <div class="row">
+        <div class="col">
+          <div class="card">
+            <div class="card-header bg-gradient-info">
+                <div class="pt-4 text-center">
+                  <h4 class="text-uppercase ls-1 text-white py-3 mb-0">Resume Medis</h4>
                   <div class="row">
-                      <div class="col-6">
-                        <div class="form-group">
-                          <div class="input-group input-group-alternative mb-3">
+                    <div class="col-md-4">
+                    </div>
+                    <div class="col-md-4">
+                      <form class="navbar-search navbar-search-light form-inline mr-sm-3" id="navbar-search-main">
+                        <div class="form-group mb-0">
+                          <div class="input-group input-group-alternative input-group-merge">
                             <div class="input-group-prepend">
-                              <span class="input-group-text"><i class="ni ni-credit-card"></i></span>
+                              <span class="input-group-text"><i class="fas fa-search"></i></span>
                             </div>
-                            <input class="form-control" placeholder="No Rekam Medis" type="text">
+                            <input class="form-control" placeholder="masukkan No Rekam Medis" type="text">
                           </div>
                         </div>
-                      </div>
-                      <div class="col-6">
-                        <div class="form-group">
-                          <div class="input-group input-group-alternative mb-3">
-                            <div class="input-group-prepend">
-                              <span class="input-group-text"><i class="ni ni-circle-08"></i></span>
-                            </div>
-                            <input class="form-control" placeholder="Nama Lengkap" type="text">
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-6">
-                        <div class="form-group">
-                          <div class="input-group input-group-alternative mb-3">
-                            <div class="input-group-prepend">
-                              <span class="input-group-text"><i class="ni ni-box-2"></i></span>
-                            </div>
-                            <input class="form-control" placeholder="No KTP" type="text">
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-6">
-                        <div class="form-group">
-                          <div class="input-group input-group-alternative mb-3">
-                            <div class="input-group-prepend">
-                              <span class="input-group-text"><i class="ni ni-pin-3"></i></span>
-                            </div>
-                            <input class="form-control" placeholder="Alamat" type="text">
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-12">
-                        <h4 class="card-title text-white text-center mb-0">Anamnesa</h4>
-                      </div>
-                      <div class="col-12">
-                        <div class="form-group">
-                          <div class="input-group input-group-alternative mb-3">
-                            <div class="input-group-prepend">
-                              <span class="input-group-text"><i class="ni ni-active-40"></i></span>
-                            </div>
-                            <input class="form-control form-control-lg" placeholder="Keluhan Utama" type="text">
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-6">
-                        <div class="form-group">
-                          <div class="input-group input-group-alternative mb-3">
-                            <div class="input-group-prepend">
-                              <span class="input-group-text"><i class="ni ni-air-baloon"></i></span>
-                            </div>
-                            <input class="form-control" placeholder="Riwayat penyakit Sekarang" type="text">
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-6">
-                        <div class="form-group">
-                          <div class="input-group input-group-alternative mb-3">
-                            <div class="input-group-prepend">
-                              <span class="input-group-text"><i class="ni ni-app"></i></span>
-                            </div>
-                            <input class="form-control" placeholder="Riwayat Penyakit Dahulu" type="text">
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-6">
-                        <div class="form-group">
-                          <div class="input-group input-group-alternative mb-3">
-                            <div class="input-group-prepend">
-                              <span class="input-group-text"><i class="ni ni-bag-17"></i></span>
-                            </div>
-                            <input class="form-control" placeholder="Riwayat Alergi" type="text">
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-6">
-                        <div class="form-group">
-                          <div class="input-group input-group-alternative mb-3">
-                            <div class="input-group-prepend">
-                              <span class="input-group-text"><i class="ni ni-book-bookmark"></i></span>
-                            </div>
-                            <input class="form-control" placeholder="Riwayat Operasi" type="text">
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-6">
-                        <div class="form-group">
-                          <div class="input-group input-group-alternative mb-3">
-                            <div class="input-group-prepend">
-                              <span class="input-group-text"><i class="ni ni-books"></i></span>
-                            </div>
-                            <input class="form-control" placeholder="Riwayat Transfusi" type="text">
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-6">
-                        <div class="form-group">
-                          <div class="input-group input-group-alternative mb-3">
-                            <div class="input-group-prepend">
-                              <span class="input-group-text"><i class="ni ni-basket"></i></span>
-                            </div>
-                            <input class="form-control" placeholder="Riwayat Penggunaan Obat" type="text">
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-12">
-                        <h4 class="card-title text-white text-center mb-0">Pemeriksaan Fisik</h4>
-                      </div>
-                      <div class="col-6">
-                        <div class="form-group">
-                          <select class="form-control" id="exampleFormControlSelect1">
-                            <option selected>Kesadaran Umum</option>
-                            <option>Baik</option>
-                            <option>Sedang</option>
-                            <option>Lemah</option>
-                            <option>Jelek</option>
-                          </select>
-                        </div>
-                      </div>
-                      <div class="col-6">
-                        <div class="form-group">
-                          <select class="form-control" id="exampleFormControlSelect1">
-                            <option selected>Kesadaran</option>
-                            <option>Composmentis</option>
-                            <option>Apatis</option>
-                            <option>Somnolen</option>
-                            <option>Sopor</option>
-                            <option>Koma</option>
-                          </select>
-                        </div>
-                      </div>
-                      <div class="col-3">
-                        <div class="form-group">
-                          <div class="input-group input-group-alternative mb-3">
-                            <div class="input-group-prepend">
-                              <span class="input-group-text"><i class="ni ni-box-2"></i></span>
-                            </div>
-                            <input class="form-control" placeholder="Tekanan Darah" type="text">
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-3">
-                        <div class="form-group">
-                          <div class="input-group input-group-alternative mb-3">
-                            <div class="input-group-prepend">
-                              <span class="input-group-text"><i class="ni ni-briefcase-24"></i></span>
-                            </div>
-                            <input class="form-control" placeholder="Nadi" type="text">
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-3">
-                        <div class="form-group">
-                          <div class="input-group input-group-alternative mb-3">
-                            <div class="input-group-prepend">
-                              <span class="input-group-text"><i class="ni ni-building"></i></span>
-                            </div>
-                            <input class="form-control" placeholder="Suhu" type="text">
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-3">
-                        <div class="form-group">
-                          <div class="input-group input-group-alternative mb-3">
-                            <div class="input-group-prepend">
-                              <span class="input-group-text"><i class="ni ni-button-pause"></i></span>
-                            </div>
-                            <input class="form-control" placeholder="RR" type="text">
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-6">
-                        <div class="form-group">
-                          <div class="input-group input-group-alternative mb-3">
-                            <div class="input-group-prepend">
-                              <span class="input-group-text"><i class="ni ni-bullet-list-67"></i></span>
-                            </div>
-                            <input class="form-control form-control-lg" placeholder="Diagnosa" type="text">
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-6">
-                        <div class="form-group">
-                          <div class="input-group input-group-alternative mb-3">
-                            <div class="input-group-prepend">
-                              <span class="input-group-text"><i class="ni ni-caps-small"></i></span>
-                            </div>
-                            <input class="form-control form-control-lg" placeholder="Terapi" type="text">
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-12">
-                        <h4 class="card-title text-white text-center mb-0">Penunjang</h4>
-                      </div>
-                      <div class="col-6">
-                        <h4 class="card-title text-white text-center mb-0">Lab</h4>
-                        <div class="dropzone dropzone-single mb-3" data-toggle="dropzone" data-dropzone-url="http://">
-                          <div class="fallback">
-                            <div class="custom-file">
-                              <input type="file" class="custom-file-input" id="projectCoverUploads">
-                              <label class="custom-file-label" for="projectCoverUploads">Choose file</label>
-                            </div>
-                          </div>
-                          <div class="dz-preview dz-preview-single">
-                            <div class="dz-preview-cover">
-                              <img class="dz-preview-img" src="...html" alt="..." data-dz-thumbnail>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-6">
-                        <h4 class="card-title text-white text-center mb-0">Radiologi</h4>
-                        <div class="dropzone dropzone-single mb-3" data-toggle="dropzone" data-dropzone-url="http://">
-                          <div class="fallback">
-                            <div class="custom-file">
-                              <input type="file" class="custom-file-input" id="projectCoverUploads">
-                              <label class="custom-file-label" for="projectCoverUploads">Choose file</label>
-                            </div>
-                          </div>
-                          <div class="dz-preview dz-preview-single">
-                            <div class="dz-preview-cover">
-                              <img class="dz-preview-img" src="...html" alt="..." data-dz-thumbnail>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
+                        <!-- <button type="button" class="close" data-action="search-close" data-target="#navbar-search-main" aria-label="Close">
+                          <span aria-hidden="true">×</span>
+                        </button> -->
+                      </form>
+                    </div>
+                    <div class="col-md-4">
+                    </div>
                   </div>
-                  <button type="button" class="btn btn-block btn-warning">Simpan</button>
-                </form>
+                </div>
+            </div>
+            <div class="card-body ">
+              <div class="table-responsive py-4">
+                  <table class="table table-flush" id="datatable-basic">
+                      <thead class="thead-light">
+                          <tr>
+                              <th>Tanggal</th>
+                              <th>Nama Dokter</th>
+                              <th>Diagnosa</th>
+                              <th>Terapi</th>
+                              <th>Keterangan</th>
+                              <th>Action</th>
+                          </tr>
+                      </thead>
+                      <tfoot>
+                          <tr>
+                              <th>Name</th>
+                              <th>Position</th>
+                              <th>Office</th>
+                              <th>Age</th>
+                              <th>Start date</th>
+                              <th>Salary</th>
+                          </tr>
+                      </tfoot>
+                      <tbody>
+                          <tr>
+                              <td>Tiger Nixon</td>
+                              <td>System Architect</td>
+                              <td>Edinburgh</td>
+                              <td>61</td>
+                              <td>2011/04/25</td>
+                              <td>$320,800</td>
+                          </tr>
+                          <tr>
+                              <td>Garrett Winters</td>
+                              <td>Accountant</td>
+                              <td>Tokyo</td>
+                              <td>63</td>
+                              <td>2011/07/25</td>
+                              <td>$170,750</td>
+                          </tr>
+                      </tbody>
+                  </table>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-   </div>
 </div>
