@@ -483,7 +483,7 @@
                     <div class="input-group-prepend">
                       <span class="input-group-text"><i class="ni ni-credit-card"></i></span>
                     </div>
-                    <input class="form-control" placeholder="No Rekam Medis" type="text">
+                    <input class="form-control" placeholder="No Rekam Medis" id="nrm_antri" type="text">
                   </div>
                 </div>
               </div>
@@ -493,7 +493,7 @@
                     <div class="input-group-prepend">
                       <span class="input-group-text"><i class="ni ni-circle-08"></i></span>
                     </div>
-                    <input class="form-control" placeholder="Nama Lengkap" type="text">
+                    <input class="form-control" placeholder="Nama Lengkap" id="nama_antri" type="text">
                   </div>
                 </div>
               </div>
@@ -503,7 +503,7 @@
                     <div class="input-group-prepend">
                       <span class="input-group-text"><i class="ni ni-box-2"></i></span>
                     </div>
-                    <input class="form-control" placeholder="No KTP" type="text">
+                    <input class="form-control" placeholder="No KTP" id="nik_antri" type="text">
                   </div>
                 </div>
               </div>
@@ -513,7 +513,7 @@
                     <div class="input-group-prepend">
                       <span class="input-group-text"><i class="ni ni-pin-3"></i></span>
                     </div>
-                    <input class="form-control" placeholder="Alamat" type="text">
+                    <input class="form-control" placeholder="Alamat" id="alamat_antri" type="text">
                   </div>
                 </div>
               </div>
@@ -818,7 +818,7 @@
               html += '<small>'+data[i].id_pasien+'</small>';
               html += '</div>';
               html += '<div class="col-auto">';
-              html += '<button type="button" class="btn btn-sm btn-primary" data-toggle="modal" data-target="#modal-asesmen">Antri</button>';
+              html += '<button type="button" class="btn btn-sm btn-primary" onclick="tampil_modal_antrian('+ data[i].id_antrian + ","+ id +')">Antri</button>';
               html += '</div>';
               html += '</div>';
               html += '</li>';
@@ -900,6 +900,24 @@
     get_dokter();
     add_list();
     $('#modal-default').modal('show');
+  }
+
+  function tampil_modal_antrian(id_antrian, id_user){
+    $.ajax({
+        type: 'POST',
+        url: '<?= base_url() ?>pendaftaran/pencarian',
+        data: 'kata_kunci=' + id_user,
+        dataType: 'json',
+        success: function(data) {
+            // console.log(data);
+            document.getElementById("nrm_antri").value = data.kode;
+            document.getElementById("nama_antri").value = data.nama;
+            document.getElementById("nik_antri").value = data.nik;
+            document.getElementById("alamat_antri").value = data.alamat;
+
+            $('#modal-asesmen').modal('show');
+        }
+    });
   }
 
   function tampil_input_modal(){
