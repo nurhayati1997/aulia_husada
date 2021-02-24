@@ -160,7 +160,7 @@
                     <div class="pricing card-group flex-column flex-md-row mb-3">
                       <div class="card card-pricing border-0 text-center mb-4">
                         <div class="card-header bg-transparent">
-                          <h4 class="ls-1 text-primary py-3 mb-0">dr.Mirathi Ayu Irnanda</h4>
+                          <h4 class="ls-1 text-primary py-3 mb-0 nama_dokter"></h4>
                         </div>
                         <div class="card-body px-lg-7">
                           <ul class="list-group list-group-flush list my--3">
@@ -182,12 +182,12 @@
                           </ul>
                         </div>
                         <div class="card-footer">
-                          <a href="#!" class="text-light">Dokter Umum</a>
+                          <a href="#!" class="text-light spesialis"></a>
                         </div>
                       </div>
                       <div class="card card-pricing zoom-in shadow-lg rounded border-0 text-center mb-4">
                         <div class="card-header bg-transparent">
-                          <h4 class="ls-1 text-primary py-3 mb-0">dr.Nunuk Kristiani,Sp.Rad</h4>
+                          <h4 class="ls-1 text-primary py-3 mb-0 nama_dokter"></h4>
                         </div>
                         <div class="card-body px-lg-7">
                           <ul class="list-group list-group-flush list my--3 ">
@@ -208,12 +208,12 @@
                           </ul>
                         </div>
                         <div class="card-footer bg-transparent">
-                          <a href="#!" class="text-light">Spesialis Radiologi</a>
+                          <a href="#!" class="text-light spesialis"></a>
                         </div>
                       </div>
                       <div class="card card-pricing border-0 text-center mb-4">
                         <div class="card-header bg-transparent">
-                          <h4 class=" ls-1 text-primary py-3 mb-0">dr.Nuryatien Husna,Sp.KFR</h4>
+                          <h4 class=" ls-1 text-primary py-3 mb-0 nama_dokter"></h4>
                         </div>
                         <div class="card-body px-lg-7">
                         <ul class="list-group list-group-flush list my--3">
@@ -234,7 +234,7 @@
                           </ul>
                         </div>
                         <div class="card-footer">
-                          <a href="#!" class="text-light">Spesialis Kedokteran Fisik & Rehabilitas</a>
+                          <a href="#!" class="text-light spesialis"></a>
                         </div>
                       </div>
                     </div>
@@ -785,7 +785,7 @@
       //     create: true,
       //     sortField: 'text'
       // });
-
+      get_card();
       // $('#kata_kunci').change(function(){
       //   console.log($('#kata_kunci').val());
       // });
@@ -817,6 +817,23 @@
                   html += '<option value="' + data[i].id_user + '">' + data[i].nama + ' | ' +  data[i].jabatan  + '</option>';
               }
               $("#dokter").html(html);
+          }
+      });
+  }
+
+  function get_card() {
+      $.ajax({
+          type: 'POST',
+          url: '<?= base_url() ?>pendaftaran/get_dokter',
+          dataType: 'json',
+          success: function(data) {
+            var x = document.getElementsByClassName("nama_dokter");
+            var y = document.getElementsByClassName("spesialis");
+            for (var i = 0; i < x.length; i++) {
+                x[i].innerHTML = data[i].nama;
+                y[i].innerHTML = data[i].jabatan;
+            }
+            
           }
       });
   }
