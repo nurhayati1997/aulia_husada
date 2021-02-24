@@ -249,23 +249,19 @@
                 </ol>
               </nav>
             </div>
-            <div class="col-lg-6 col-5 text-right">
-              <a href="#" class="btn btn-sm btn-neutral">New</a>
-              <a href="#" class="btn btn-sm btn-neutral">Filters</a>
-            </div>
           </div>
         </div>
       </div>
     </div>
     <!-- Page content -->
   <!-- Dark table -->
-  <div class="container-fluid mt--6">
+    <div class="container-fluid mt--6">
       <div class="row">
         <div class="col">
           <div class="card">
             <div class="card-header bg-gradient-success">
                 <div class="pt-4 text-center">
-                  <h4 class="text-uppercase ls-1 text-white py-3 mb-0">Antrian Pasien</h4>
+                  <h4 class="text-uppercase ls-1 text-white py-3 mb-0">Data Pasien</h4>
                   <div class="row">
                     <div class="col-md-3">
                       <div class="form-group">
@@ -797,5 +793,5 @@
           </div>
         </div>
       </div>
-   </div>
+    </div>
 </div>
