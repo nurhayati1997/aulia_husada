@@ -144,262 +144,10 @@
                   <div class="row">
                     <div class="col-md-6">
                       <button type="button" class="btn btn-default" onclick="tampil_input_modal()">Input Pasien Baru</button>
-                      <div class="modal fade" id="modal-notification" tabindex="-1" role="dialog" aria-labelledby="modal-notification" aria-hidden="true">
-                        <div class="modal-dialog modal-danger modal-dialog-centered modal-" role="document">
-                          <div class="modal-content bg-gradient-danger">
-                            <div class="modal-header">
-                              <h6 class="modal-title" id="modal-title-notification">Identitas Pasien Baru</h6>
-                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">×</span>
-                              </button>
-                            </div>
-                            <div class="modal-body">
-                              <form role="form" class="form-danger">
-                                <div class="row">
-                                  <div class="col-6">
-                                    <div class="form-group">
-                                      <div class="input-group input-group-alternative mb-3">
-                                        <div class="input-group-prepend">
-                                          <span class="input-group-text"><i class="ni ni-credit-card"></i></span>
-                                        </div>
-                                        <input class="form-control" placeholder="No Rekam Medis" id="nrm" readonly type="text">
-                                      </div>
-                                    </div>
-                                  </div>
-                                  <div class="col-6">
-                                    <div class="form-group">
-                                      <div class="input-group input-group-alternative mb-3">
-                                        <div class="input-group-prepend">
-                                          <span class="input-group-text"><i class="ni ni-box-2"></i></span>
-                                        </div>
-                                        <input class="form-control" placeholder="No KTP" id="nik" type="number">
-                                      </div>
-                                    </div>
-                                  </div>
-                                  <div class="col-6">
-                                    <div class="form-group">
-                                      <div class="input-group input-group-alternative mb-3">
-                                        <div class="input-group-prepend">
-                                          <span class="input-group-text"><i class="ni ni-circle-08"></i></span>
-                                        </div>
-                                        <input class="form-control" placeholder="Nama Lengkap" id="nama" type="text">
-                                      </div>
-                                    </div>
-                                  </div>
-                                  <div class="col-6">
-                                    <div class="form-group">
-                                      <select class="form-control" onchange="get_nrm()" id="kec">
-                                        
-                                      </select>
-                                    </div>
-                                  </div>
-                                   <div class="col-6">
-                                    <div class="form-group">
-                                      <div class="input-group input-group-alternative mb-3">
-                                        <div class="input-group-prepend">
-                                          <span class="input-group-text"><i class="ni ni-circle-08"></i></span>
-                                        </div>
-                                        <input class="form-control" placeholder="Nama Orang Tua" id="ortu" type="text">
-                                      </div>
-                                    </div>
-                                  </div>
-                                  <div class="col-6">
-                                    <div class="form-group">
-                                      <div class="input-group input-group-alternative mb-3">
-                                        <div class="input-group-prepend">
-                                          <span class="input-group-text"><i class="ni ni-pin-3"></i></span>
-                                        </div>
-                                        <input class="form-control" placeholder="Alamat" id="alamat" type="text">
-                                      </div>
-                                    </div>
-                                  </div>
-                                  <div class="col-4">
-                                    <div class="form-group">
-                                      <select class="form-control" onchange="get_nrm()" id="jk">
-                                        <option value="">-Pilih Jenis Kelamin-</option>
-                                        <option value="0">laki-Laki</option>
-                                        <option value="1">Perempuan</option>
-                                      </select>
-                                    </div>
-                                  </div>
-                                  <div class="col-4">
-                                    <div class="form-group">
-                                      <select class="form-control" id="agama">
-                                        <option value="">-Pilih Agama-</option>
-                                        <option value="0">Islam</option>
-                                        <option value="1">Kristen</option>
-                                        <option value="2">Hindu</option>
-                                        <option value="3">Budha</option>
-                                        <option value="4">Konghucu</option>
-                                      </select>
-                                    </div>
-                                  </div>
-                                  <div class="col-4">
-                                    <div class="form-group">
-                                      <select class="form-control" id="status">
-                                        <option value="">-Pilih Status-</option>
-                                        <option value="0">Belum Menikah</option>
-                                        <option value="1">Menikah</option>
-                                      </select>
-                                    </div>
-                                  </div>
-                                  <div class="col-6">
-                                    <div class="form-group">
-                                      <div class="input-group input-group-alternative mb-3">
-                                        <div class="input-group-prepend">
-                                          <span class="input-group-text"><i class="ni ni-calendar-grid-58"></i></span>
-                                        </div>
-                                        <input class="form-control datepicker" id="ttl" placeholder="Tanggal lahir" type="text">
-                                      </div>
-                                    </div>
-                                  </div>
-                                  <div class="col-6">
-                                    <div class="form-group">
-                                      <div class="input-group input-group-alternative">
-                                        <div class="input-group-prepend">
-                                          <span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
-                                        </div>
-                                        <input class="form-control" placeholder="Pekerjaan" id="pekerjaan" type="text">
-                                      </div>
-                                    </div>
-                                  </div>
-                                  <div class="col-6">
-                                    <div class="form-group">
-                                      <div class="input-group input-group-alternative">
-                                        <div class="input-group-prepend">
-                                          <span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
-                                        </div>
-                                        <input class="form-control" placeholder="Pendidikan" id="pendd" type="text">
-                                      </div>
-                                    </div>
-                                  </div>
-                                  <div class="col-6">
-                                    <div class="form-group">
-                                      <div class="input-group input-group-alternative">
-                                        <div class="input-group-prepend">
-                                          <span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
-                                        </div>
-                                        <input class="form-control" placeholder="No Hp" id="telp" type="number">
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                                <button type="button" id="simpan_button" class="btn btn-block btn-info" onclick="tambah_baru()"> <div id="loader"> </div> Simpan</button>
-                              </form>
-                            </div>
-                            <div class="modal-footer">
-                              <!-- <button type="button" class="btn btn-link text-white ml-auto" data-dismiss="modal">Close</button> -->
-                            </div>
-                          </div>
-                        </div>
-                      </div>
+                      
                     </div>
                     <div class="col-md-6">
                       <button type="button" class="btn btn-warning" onclick="tampil_daftar_modal()">Pendaftaran</button>
-                      <div class="modal fade" id="modal-default" tabindex="-1" role="dialog" aria-labelledby="modal-default" aria-hidden="true">
-                          <div class="modal-dialog modal- modal-dialog-centered modal-" role="document">
-                            <div class="modal-content">
-                              <div class="modal-header">
-                              <h6 class="text-center modal-title " id="modal-title-notification">Pendaftaran Pasien</h6>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                  <span aria-hidden="true">×</span>
-                                </button>
-                              </div>
-                              <div class="modal-body">
-                              <h4 class="text-center " id="modal-title-notification">Jenis Identitas</h4>
-                                <form role="form" class="form-danger">
-                                  <div class="row">
-                                    <div class="col-4">
-                                      <div class="form-group">
-                                        <div class="custom-control custom-radio mb-3">
-                                          <input name="custom-radio-1" class="custom-control-input" id="nrm_radio" value="0" type="radio" onchange="add_list()">
-                                          <label class="custom-control-label" for="nrm_radio">No Rm</label>
-                                        </div>
-                                      </div>
-                                    </div>
-                                    <div class="col-4">
-                                      <div class="form-group">
-                                        <div class="custom-control custom-radio mb-3">
-                                          <input name="custom-radio-1" class="custom-control-input" id="nik_radio" value="1" type="radio" onchange="add_list()">
-                                          <label class="custom-control-label" for="nik_radio">NIK</label>
-                                        </div>
-                                      </div>
-                                    </div>
-                                    <div class="col-4">
-                                      <div class="form-group">
-                                        <div class="custom-control custom-radio mb-3">
-                                          <input name="custom-radio-1" class="custom-control-input" id="nama_radio" value="2" type="radio" onchange="add_list()">
-                                          <label class="custom-control-label" for="nama_radio">Nama</label>
-                                        </div>
-                                      </div>
-                                    </div>
-                                    <div class="col-12">
-                                      <div class="form-group">
-                                        <div class='input-group'>
-                                          <!-- <input type='hidden' id="kata_kunci_hidden" class="form-control" /> -->
-                                          <select style="color: white!important;" title="- Pilih -" onchange="pencarian()" class="selectpicker form-control" id="kata_kunci" name="kata_kunci" data-live-search="true" placeholder="-Pilih-">
-                                          
-                                          </select>
-                                        </div>
-                                      </div>
-                                    </div>
-                                    <div class="col-6">
-                                      <div class="form-group">
-                                        <div class="input-group input-group-alternative mb-3">
-                                          <div class="input-group-prepend">
-                                            <span class="input-group-text"><i class="ni ni-credit-card"></i></span>
-                                          </div>
-                                          <input class="form-control" placeholder="No Rekam Medis" id="nrm_show" type="text" readonly>
-                                        </div>
-                                      </div>
-                                    </div>
-                                    <div class="col-6">
-                                      <div class="form-group">
-                                        <div class="input-group input-group-alternative mb-3">
-                                          <div class="input-group-prepend">
-                                            <span class="input-group-text"><i class="ni ni-circle-08"></i></span>
-                                          </div>
-                                          <input class="form-control" placeholder="Nama Lengkap" id="nama_show" type="text" readonly>
-                                        </div>
-                                      </div>
-                                    </div>
-                                    <div class="col-6">
-                                      <div class="form-group">
-                                        <div class="input-group input-group-alternative mb-3">
-                                          <div class="input-group-prepend">
-                                            <span class="input-group-text"><i class="ni ni-box-2"></i></span>
-                                          </div>
-                                          <input class="form-control" placeholder="No KTP" id="nik_show" type="text" readonly>
-                                        </div>
-                                      </div>
-                                    </div>
-                                    <div class="col-6">
-                                      <div class="form-group">
-                                        <div class="input-group input-group-alternative mb-3">
-                                          <div class="input-group-prepend">
-                                            <span class="input-group-text"><i class="ni ni-pin-3"></i></span>
-                                          </div>
-                                          <input class="form-control" placeholder="Alamat" id="alamat_show" type="text" readonly>
-                                        </div>
-                                      </div>
-                                    </div>
-                                    <div class="col-12">
-                                      <div class="form-group">
-                                        <select class="form-control" id="dokter">
-                                          
-                                        </select>
-                                      </div>
-                                    </div>
-                                  </div>
-                                  <button id="simpan_antrian_button" type="button" class="btn btn-block btn-info" onclick="tambah_antrian()">Simpan</button>
-                                </form>
-                              </div>
-                              <div class="modal-footer">
-                                <!-- <button type="button" class="btn btn-link text-white ml-auto" data-dismiss="modal">Close</button> -->
-                              </div>
-                            </div>
-                          </div>
-                        </div>
                     </div>
                   </div>
                   <h4 class="text-uppercase ls-1 text-white py-3 mb-0">Antrian Pasien</h4>
@@ -427,278 +175,7 @@
                                 </div>
                                 <div class="col-auto">
                                   <button type="button" class="btn btn-sm btn-primary" data-toggle="modal" data-target="#modal-asesmen">Antri</button>
-                                  <div class="modal fade" id="modal-asesmen" tabindex="-1" role="dialog" aria-labelledby="modal-asesmen" aria-hidden="true">
-                                    <div class="modal-dialog modal- modal-dialog-centered modal-" role="document">
-                                      <div class="modal-content bg-gradient-primary">
-                                        <div class="modal-header">
-                                          <h6 class="modal-title" id="modal-title-notification">Asesmen Awal Pasien</h6>
-                                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                            <span aria-hidden="true">×</span>
-                                          </button>
-                                        </div>
-                                        <div class="modal-body">
-                                          <form role="form" class="form-danger">
-                                            <div class="row">
-                                                <div class="col-6">
-                                                  <div class="form-group">
-                                                    <div class="input-group input-group-alternative mb-3">
-                                                      <div class="input-group-prepend">
-                                                        <span class="input-group-text"><i class="ni ni-credit-card"></i></span>
-                                                      </div>
-                                                      <input class="form-control" placeholder="No Rekam Medis" type="text">
-                                                    </div>
-                                                  </div>
-                                                </div>
-                                                <div class="col-6">
-                                                  <div class="form-group">
-                                                    <div class="input-group input-group-alternative mb-3">
-                                                      <div class="input-group-prepend">
-                                                        <span class="input-group-text"><i class="ni ni-circle-08"></i></span>
-                                                      </div>
-                                                      <input class="form-control" placeholder="Nama Lengkap" type="text">
-                                                    </div>
-                                                  </div>
-                                                </div>
-                                                <div class="col-6">
-                                                  <div class="form-group">
-                                                    <div class="input-group input-group-alternative mb-3">
-                                                      <div class="input-group-prepend">
-                                                        <span class="input-group-text"><i class="ni ni-box-2"></i></span>
-                                                      </div>
-                                                      <input class="form-control" placeholder="No KTP" type="text">
-                                                    </div>
-                                                  </div>
-                                                </div>
-                                                <div class="col-6">
-                                                  <div class="form-group">
-                                                    <div class="input-group input-group-alternative mb-3">
-                                                      <div class="input-group-prepend">
-                                                        <span class="input-group-text"><i class="ni ni-pin-3"></i></span>
-                                                      </div>
-                                                      <input class="form-control" placeholder="Alamat" type="text">
-                                                    </div>
-                                                  </div>
-                                                </div>
-                                                <div class="col-12">
-                                                  <h4 class="card-title text-white text-center mb-0">Anamnesa</h4>
-                                                </div>
-                                                <div class="col-12">
-                                                  <div class="form-group">
-                                                    <div class="input-group input-group-alternative mb-3">
-                                                      <div class="input-group-prepend">
-                                                        <span class="input-group-text"><i class="ni ni-active-40"></i></span>
-                                                      </div>
-                                                      <input class="form-control form-control-lg" placeholder="Keluhan Utama" type="text">
-                                                    </div>
-                                                  </div>
-                                                </div>
-                                                <div class="col-6">
-                                                  <div class="form-group">
-                                                    <div class="input-group input-group-alternative mb-3">
-                                                      <div class="input-group-prepend">
-                                                        <span class="input-group-text"><i class="ni ni-air-baloon"></i></span>
-                                                      </div>
-                                                      <input class="form-control" placeholder="Riwayat penyakit Sekarang" type="text">
-                                                    </div>
-                                                  </div>
-                                                </div>
-                                                <div class="col-6">
-                                                  <div class="form-group">
-                                                    <div class="input-group input-group-alternative mb-3">
-                                                      <div class="input-group-prepend">
-                                                        <span class="input-group-text"><i class="ni ni-app"></i></span>
-                                                      </div>
-                                                      <input class="form-control" placeholder="Riwayat Penyakit Dahulu" type="text">
-                                                    </div>
-                                                  </div>
-                                                </div>
-                                                <div class="col-6">
-                                                  <div class="form-group">
-                                                    <div class="input-group input-group-alternative mb-3">
-                                                      <div class="input-group-prepend">
-                                                        <span class="input-group-text"><i class="ni ni-bag-17"></i></span>
-                                                      </div>
-                                                      <input class="form-control" placeholder="Riwayat Alergi" type="text">
-                                                    </div>
-                                                  </div>
-                                                </div>
-                                                <div class="col-6">
-                                                  <div class="form-group">
-                                                    <div class="input-group input-group-alternative mb-3">
-                                                      <div class="input-group-prepend">
-                                                        <span class="input-group-text"><i class="ni ni-book-bookmark"></i></span>
-                                                      </div>
-                                                      <input class="form-control" placeholder="Riwayat Operasi" type="text">
-                                                    </div>
-                                                  </div>
-                                                </div>
-                                                <div class="col-6">
-                                                  <div class="form-group">
-                                                    <div class="input-group input-group-alternative mb-3">
-                                                      <div class="input-group-prepend">
-                                                        <span class="input-group-text"><i class="ni ni-books"></i></span>
-                                                      </div>
-                                                      <input class="form-control" placeholder="Riwayat Transfusi" type="text">
-                                                    </div>
-                                                  </div>
-                                                </div>
-                                                <div class="col-6">
-                                                  <div class="form-group">
-                                                    <div class="input-group input-group-alternative mb-3">
-                                                      <div class="input-group-prepend">
-                                                        <span class="input-group-text"><i class="ni ni-basket"></i></span>
-                                                      </div>
-                                                      <input class="form-control" placeholder="Riwayat Penggunaan Obat" type="text">
-                                                    </div>
-                                                  </div>
-                                                </div>
-                                                <div class="col-12">
-                                                  <h4 class="card-title text-white text-center mb-0">Pemeriksaan Fisik</h4>
-                                                </div>
-                                                <div class="col-6">
-                                                  <div class="form-group">
-                                                    <select class="form-control" id="kesadaran_umum">
-                                                      <option selected>Kesadaran Umum</option>
-                                                      <option>Baik</option>
-                                                      <option>Sedang</option>
-                                                      <option>Lemah</option>
-                                                      <option>Jelek</option>
-                                                    </select>
-                                                  </div>
-                                                </div>
-                                                <div class="col-6">
-                                                  <div class="form-group">
-                                                    <select class="form-control" id="kesadaran">
-                                                      <option selected>Kesadaran</option>
-                                                      <option>Composmentis</option>
-                                                      <option>Apatis</option>
-                                                      <option>Somnolen</option>
-                                                      <option>Sopor</option>
-                                                      <option>Koma</option>
-                                                    </select>
-                                                  </div>
-                                                </div>
-                                                <div class="col-3">
-                                                  <div class="form-group">
-                                                    <div class="input-group input-group-alternative mb-3">
-                                                      <div class="input-group-prepend">
-                                                        <span class="input-group-text"><i class="ni ni-box-2"></i></span>
-                                                      </div>
-                                                      <input class="form-control" placeholder="Tekanan Darah" type="text">
-                                                    </div>
-                                                  </div>
-                                                </div>
-                                                <div class="col-3">
-                                                  <div class="form-group">
-                                                    <div class="input-group input-group-alternative mb-3">
-                                                      <div class="input-group-prepend">
-                                                        <span class="input-group-text"><i class="ni ni-briefcase-24"></i></span>
-                                                      </div>
-                                                      <input class="form-control" placeholder="Nadi" type="text">
-                                                    </div>
-                                                  </div>
-                                                </div>
-                                                <div class="col-3">
-                                                  <div class="form-group">
-                                                    <div class="input-group input-group-alternative mb-3">
-                                                      <div class="input-group-prepend">
-                                                        <span class="input-group-text"><i class="ni ni-building"></i></span>
-                                                      </div>
-                                                      <input class="form-control" placeholder="Suhu" type="text">
-                                                    </div>
-                                                  </div>
-                                                </div>
-                                                <div class="col-3">
-                                                  <div class="form-group">
-                                                    <div class="input-group input-group-alternative mb-3">
-                                                      <div class="input-group-prepend">
-                                                        <span class="input-group-text"><i class="ni ni-button-pause"></i></span>
-                                                      </div>
-                                                      <input class="form-control" placeholder="RR" type="text">
-                                                    </div>
-                                                  </div>
-                                                </div>
-                                                <div class="col-12">
-                                                  <div class="form-group">
-                                                    <div class="input-group input-group-alternative mb-3">
-                                                      <div class="input-group-prepend">
-                                                        <span class="input-group-text"><i class="ni ni-bullet-list-67"></i></span>
-                                                      </div>
-                                                      <input class="form-control form-control-lg" placeholder="Diagnosa" type="text">
-                                                    </div>
-                                                  </div>
-                                                </div>
-                                                <div class="col-12">
-                                                  <div class="form-group">
-                                                    <div class="input-group input-group-alternative mb-3">
-                                                      <div class="input-group-prepend">
-                                                        <span class="input-group-text"><i class="ni ni-caps-small"></i></span>
-                                                      </div>
-                                                      <input class="form-control form-control-lg" placeholder="Terapi" type="text">
-                                                    </div>
-                                                  </div>
-                                                </div>
-                                                <div class="col-12">
-                                                  <h4 class="card-title text-white text-center mb-0">Penunjang</h4>
-                                                </div>
-                                                <div class="col-6">
-                                                  <h4 class="card-title text-white text-center mb-0">Lab</h4>
-                                                  <div class="dropzone dropzone-single mb-3" data-toggle="dropzone" data-dropzone-url="http://">
-                                                    <div class="fallback">
-                                                      <div class="custom-file">
-                                                        <input type="file" class="custom-file-input" id="projectCoverUploads">
-                                                        <label class="custom-file-label" for="projectCoverUploads">Choose file</label>
-                                                      </div>
-                                                    </div>
-                                                    <div class="dz-preview dz-preview-single">
-                                                      <div class="dz-preview-cover">
-                                                        <img class="dz-preview-img" src="...html" alt="..." data-dz-thumbnail>
-                                                      </div>
-                                                    </div>
-                                                  </div>
-                                                </div>
-                                                <div class="col-6">
-                                                  <h4 class="card-title text-white text-center mb-0">Radiologi</h4>
-                                                  <div class="dropzone dropzone-single mb-3" data-toggle="dropzone" data-dropzone-url="http://">
-                                                    <div class="fallback">
-                                                      <div class="custom-file">
-                                                        <input type="file" class="custom-file-input" id="projectCoverUploads">
-                                                        <label class="custom-file-label" for="projectCoverUploads">Choose file</label>
-                                                      </div>
-                                                    </div>
-                                                    <div class="dz-preview dz-preview-single">
-                                                      <div class="dz-preview-cover">
-                                                        <img class="dz-preview-img" src="...html" alt="..." data-dz-thumbnail>
-                                                      </div>
-                                                    </div>
-                                                  </div>
-                                                </div>
-                                                <div class="col-12">
-                                                  <h4 class="card-title text-white text-center mb-0">Catatan</h4>
-                                                  <div class="dropzone dropzone-single mb-3" data-toggle="dropzone" data-dropzone-url="http://">
-                                                    <div class="fallback">
-                                                      <div class="custom-file">
-                                                        <input type="file" class="custom-file-input" id="projectCoverUploads">
-                                                        <label class="custom-file-label" for="projectCoverUploads">Choose file</label>
-                                                      </div>
-                                                    </div>
-                                                    <div class="dz-preview dz-preview-single">
-                                                      <div class="dz-preview-cover">
-                                                        <img class="dz-preview-img" src="...html" alt="..." data-dz-thumbnail>
-                                                      </div>
-                                                    </div>
-                                                  </div>
-                                                </div>
-                                            </div>
-                                            <button type="button" class="btn btn-block btn-info">Simpan</button>
-                                          </form>
-                                        </div>
-                                        <div class="modal-footer">
-                                          <button type="button" class="btn btn-link text-white ml-auto" data-dismiss="modal">Close</button>
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </div>
+                                  
                                 </div>
                               </div>
                             </li>
@@ -769,6 +246,536 @@
         </div>
       </div>
    </div>
+</div>
+<!-- Pasien Baru -->
+<div class="modal fade" id="modal-notification" tabindex="-1" role="dialog" aria-labelledby="modal-notification" aria-hidden="true">
+  <div class="modal-dialog modal-danger modal-dialog-centered modal-" role="document">
+    <div class="modal-content bg-gradient-danger">
+      <div class="modal-header">
+        <h6 class="modal-title" id="modal-title-notification">Identitas Pasien Baru</h6>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">×</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form role="form" class="form-danger">
+          <div class="row">
+            <div class="col-6">
+              <div class="form-group">
+                <div class="input-group input-group-alternative mb-3">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="ni ni-credit-card"></i></span>
+                  </div>
+                  <input class="form-control" placeholder="No Rekam Medis" id="nrm" readonly type="text">
+                </div>
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="form-group">
+                <div class="input-group input-group-alternative mb-3">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="ni ni-box-2"></i></span>
+                  </div>
+                  <input class="form-control" placeholder="No KTP" id="nik" type="number">
+                </div>
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="form-group">
+                <div class="input-group input-group-alternative mb-3">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="ni ni-circle-08"></i></span>
+                  </div>
+                  <input class="form-control" placeholder="Nama Lengkap" id="nama" type="text">
+                </div>
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="form-group">
+                <select class="form-control" onchange="get_nrm()" id="kec">
+                  
+                </select>
+              </div>
+            </div>
+              <div class="col-6">
+              <div class="form-group">
+                <div class="input-group input-group-alternative mb-3">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="ni ni-circle-08"></i></span>
+                  </div>
+                  <input class="form-control" placeholder="Nama Orang Tua" id="ortu" type="text">
+                </div>
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="form-group">
+                <div class="input-group input-group-alternative mb-3">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="ni ni-pin-3"></i></span>
+                  </div>
+                  <input class="form-control" placeholder="Alamat" id="alamat" type="text">
+                </div>
+              </div>
+            </div>
+            <div class="col-4">
+              <div class="form-group">
+                <select class="form-control" onchange="get_nrm()" id="jk">
+                  <option value="">-Pilih Jenis Kelamin-</option>
+                  <option value="0">laki-Laki</option>
+                  <option value="1">Perempuan</option>
+                </select>
+              </div>
+            </div>
+            <div class="col-4">
+              <div class="form-group">
+                <select class="form-control" id="agama">
+                  <option value="">-Pilih Agama-</option>
+                  <option value="0">Islam</option>
+                  <option value="1">Kristen</option>
+                  <option value="2">Hindu</option>
+                  <option value="3">Budha</option>
+                  <option value="4">Konghucu</option>
+                </select>
+              </div>
+            </div>
+            <div class="col-4">
+              <div class="form-group">
+                <select class="form-control" id="status">
+                  <option value="">-Pilih Status-</option>
+                  <option value="0">Belum Menikah</option>
+                  <option value="1">Menikah</option>
+                </select>
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="form-group">
+                <div class="input-group input-group-alternative mb-3">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="ni ni-calendar-grid-58"></i></span>
+                  </div>
+                  <input class="form-control datepicker" id="ttl" placeholder="Tanggal lahir" type="text">
+                </div>
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="form-group">
+                <div class="input-group input-group-alternative">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
+                  </div>
+                  <input class="form-control" placeholder="Pekerjaan" id="pekerjaan" type="text">
+                </div>
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="form-group">
+                <div class="input-group input-group-alternative">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
+                  </div>
+                  <input class="form-control" placeholder="Pendidikan" id="pendd" type="text">
+                </div>
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="form-group">
+                <div class="input-group input-group-alternative">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
+                  </div>
+                  <input class="form-control" placeholder="No Hp" id="telp" type="number">
+                </div>
+              </div>
+            </div>
+          </div>
+          <button type="button" id="simpan_button" class="btn btn-block btn-info" onclick="tambah_baru()"> <div id="loader"> </div> Simpan</button>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <!-- <button type="button" class="btn btn-link text-white ml-auto" data-dismiss="modal">Close</button> -->
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Pendaftaran -->
+<div class="modal fade" id="modal-default" tabindex="-1" role="dialog" aria-labelledby="modal-default" aria-hidden="true">
+  <div class="modal-dialog modal- modal-dialog-centered modal-" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+      <h6 class="text-center modal-title " id="modal-title-notification">Pendaftaran Pasien</h6>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">×</span>
+        </button>
+      </div>
+      <div class="modal-body">
+      <h4 class="text-center " id="modal-title-notification">Jenis Identitas</h4>
+        <form role="form" class="form-danger">
+          <div class="row">
+            <div class="col-4">
+              <div class="form-group">
+                <div class="custom-control custom-radio mb-3">
+                  <input name="custom-radio-1" class="custom-control-input" id="nrm_radio" value="0" type="radio" onchange="add_list()">
+                  <label class="custom-control-label" for="nrm_radio">No Rm</label>
+                </div>
+              </div>
+            </div>
+            <div class="col-4">
+              <div class="form-group">
+                <div class="custom-control custom-radio mb-3">
+                  <input name="custom-radio-1" class="custom-control-input" id="nik_radio" value="1" type="radio" onchange="add_list()">
+                  <label class="custom-control-label" for="nik_radio">NIK</label>
+                </div>
+              </div>
+            </div>
+            <div class="col-4">
+              <div class="form-group">
+                <div class="custom-control custom-radio mb-3">
+                  <input name="custom-radio-1" class="custom-control-input" id="nama_radio" value="2" type="radio" onchange="add_list()">
+                  <label class="custom-control-label" for="nama_radio">Nama</label>
+                </div>
+              </div>
+            </div>
+            <div class="col-12">
+              <div class="form-group">
+                <div class='input-group'>
+                  <!-- <input type='hidden' id="kata_kunci_hidden" class="form-control" /> -->
+                  <select style="color: white!important;" title="- Pilih -" onchange="pencarian()" class="selectpicker form-control" id="kata_kunci" name="kata_kunci" data-live-search="true" placeholder="-Pilih-">
+                  
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="form-group">
+                <div class="input-group input-group-alternative mb-3">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="ni ni-credit-card"></i></span>
+                  </div>
+                  <input class="form-control" placeholder="No Rekam Medis" id="nrm_show" type="text" readonly>
+                </div>
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="form-group">
+                <div class="input-group input-group-alternative mb-3">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="ni ni-circle-08"></i></span>
+                  </div>
+                  <input class="form-control" placeholder="Nama Lengkap" id="nama_show" type="text" readonly>
+                </div>
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="form-group">
+                <div class="input-group input-group-alternative mb-3">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="ni ni-box-2"></i></span>
+                  </div>
+                  <input class="form-control" placeholder="No KTP" id="nik_show" type="text" readonly>
+                </div>
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="form-group">
+                <div class="input-group input-group-alternative mb-3">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="ni ni-pin-3"></i></span>
+                  </div>
+                  <input class="form-control" placeholder="Alamat" id="alamat_show" type="text" readonly>
+                </div>
+              </div>
+            </div>
+            <div class="col-12">
+              <div class="form-group">
+                <select class="form-control" id="dokter">
+                  
+                </select>
+              </div>
+            </div>
+          </div>
+          <button id="simpan_antrian_button" type="button" class="btn btn-block btn-info" onclick="tambah_antrian()">Simpan</button>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <!-- <button type="button" class="btn btn-link text-white ml-auto" data-dismiss="modal">Close</button> -->
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Rekam Medis -->
+<div class="modal fade" id="modal-asesmen" tabindex="-1" role="dialog" aria-labelledby="modal-asesmen" aria-hidden="true">
+  <div class="modal-dialog modal- modal-dialog-centered modal-" role="document">
+    <div class="modal-content bg-gradient-primary">
+      <div class="modal-header">
+        <h6 class="modal-title" id="modal-title-notification">Asesmen Awal Pasien</h6>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">×</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form role="form" class="form-danger">
+          <div class="row">
+              <div class="col-6">
+                <div class="form-group">
+                  <div class="input-group input-group-alternative mb-3">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="ni ni-credit-card"></i></span>
+                    </div>
+                    <input class="form-control" placeholder="No Rekam Medis" type="text">
+                  </div>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="form-group">
+                  <div class="input-group input-group-alternative mb-3">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="ni ni-circle-08"></i></span>
+                    </div>
+                    <input class="form-control" placeholder="Nama Lengkap" type="text">
+                  </div>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="form-group">
+                  <div class="input-group input-group-alternative mb-3">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="ni ni-box-2"></i></span>
+                    </div>
+                    <input class="form-control" placeholder="No KTP" type="text">
+                  </div>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="form-group">
+                  <div class="input-group input-group-alternative mb-3">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="ni ni-pin-3"></i></span>
+                    </div>
+                    <input class="form-control" placeholder="Alamat" type="text">
+                  </div>
+                </div>
+              </div>
+              <div class="col-12">
+                <h4 class="card-title text-white text-center mb-0">Anamnesa</h4>
+              </div>
+              <div class="col-12">
+                <div class="form-group">
+                  <div class="input-group input-group-alternative mb-3">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="ni ni-active-40"></i></span>
+                    </div>
+                    <input class="form-control form-control-lg" placeholder="Keluhan Utama" type="text">
+                  </div>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="form-group">
+                  <div class="input-group input-group-alternative mb-3">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="ni ni-air-baloon"></i></span>
+                    </div>
+                    <input class="form-control" placeholder="Riwayat penyakit Sekarang" type="text">
+                  </div>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="form-group">
+                  <div class="input-group input-group-alternative mb-3">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="ni ni-app"></i></span>
+                    </div>
+                    <input class="form-control" placeholder="Riwayat Penyakit Dahulu" type="text">
+                  </div>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="form-group">
+                  <div class="input-group input-group-alternative mb-3">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="ni ni-bag-17"></i></span>
+                    </div>
+                    <input class="form-control" placeholder="Riwayat Alergi" type="text">
+                  </div>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="form-group">
+                  <div class="input-group input-group-alternative mb-3">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="ni ni-book-bookmark"></i></span>
+                    </div>
+                    <input class="form-control" placeholder="Riwayat Operasi" type="text">
+                  </div>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="form-group">
+                  <div class="input-group input-group-alternative mb-3">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="ni ni-books"></i></span>
+                    </div>
+                    <input class="form-control" placeholder="Riwayat Transfusi" type="text">
+                  </div>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="form-group">
+                  <div class="input-group input-group-alternative mb-3">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="ni ni-basket"></i></span>
+                    </div>
+                    <input class="form-control" placeholder="Riwayat Penggunaan Obat" type="text">
+                  </div>
+                </div>
+              </div>
+              <div class="col-12">
+                <h4 class="card-title text-white text-center mb-0">Pemeriksaan Fisik</h4>
+              </div>
+              <div class="col-6">
+                <div class="form-group">
+                  <select class="form-control" id="kesadaran_umum">
+                    <option selected>Kesadaran Umum</option>
+                    <option>Baik</option>
+                    <option>Sedang</option>
+                    <option>Lemah</option>
+                    <option>Jelek</option>
+                  </select>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="form-group">
+                  <select class="form-control" id="kesadaran">
+                    <option selected>Kesadaran</option>
+                    <option>Composmentis</option>
+                    <option>Apatis</option>
+                    <option>Somnolen</option>
+                    <option>Sopor</option>
+                    <option>Koma</option>
+                  </select>
+                </div>
+              </div>
+              <div class="col-3">
+                <div class="form-group">
+                  <div class="input-group input-group-alternative mb-3">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="ni ni-box-2"></i></span>
+                    </div>
+                    <input class="form-control" placeholder="Tekanan Darah" type="text">
+                  </div>
+                </div>
+              </div>
+              <div class="col-3">
+                <div class="form-group">
+                  <div class="input-group input-group-alternative mb-3">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="ni ni-briefcase-24"></i></span>
+                    </div>
+                    <input class="form-control" placeholder="Nadi" type="text">
+                  </div>
+                </div>
+              </div>
+              <div class="col-3">
+                <div class="form-group">
+                  <div class="input-group input-group-alternative mb-3">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="ni ni-building"></i></span>
+                    </div>
+                    <input class="form-control" placeholder="Suhu" type="text">
+                  </div>
+                </div>
+              </div>
+              <div class="col-3">
+                <div class="form-group">
+                  <div class="input-group input-group-alternative mb-3">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="ni ni-button-pause"></i></span>
+                    </div>
+                    <input class="form-control" placeholder="RR" type="text">
+                  </div>
+                </div>
+              </div>
+              <div class="col-12">
+                <div class="form-group">
+                  <div class="input-group input-group-alternative mb-3">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="ni ni-bullet-list-67"></i></span>
+                    </div>
+                    <input class="form-control form-control-lg" placeholder="Diagnosa" type="text">
+                  </div>
+                </div>
+              </div>
+              <div class="col-12">
+                <div class="form-group">
+                  <div class="input-group input-group-alternative mb-3">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="ni ni-caps-small"></i></span>
+                    </div>
+                    <input class="form-control form-control-lg" placeholder="Terapi" type="text">
+                  </div>
+                </div>
+              </div>
+              <div class="col-12">
+                <h4 class="card-title text-white text-center mb-0">Penunjang</h4>
+              </div>
+              <div class="col-6">
+                <h4 class="card-title text-white text-center mb-0">Lab</h4>
+                <div class="dropzone dropzone-single mb-3" data-toggle="dropzone" data-dropzone-url="http://">
+                  <div class="fallback">
+                    <div class="custom-file">
+                      <input type="file" class="custom-file-input" id="projectCoverUploads">
+                      <label class="custom-file-label" for="projectCoverUploads">Choose file</label>
+                    </div>
+                  </div>
+                  <div class="dz-preview dz-preview-single">
+                    <div class="dz-preview-cover">
+                      <img class="dz-preview-img" src="...html" alt="..." data-dz-thumbnail>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-6">
+                <h4 class="card-title text-white text-center mb-0">Radiologi</h4>
+                <div class="dropzone dropzone-single mb-3" data-toggle="dropzone" data-dropzone-url="http://">
+                  <div class="fallback">
+                    <div class="custom-file">
+                      <input type="file" class="custom-file-input" id="projectCoverUploads">
+                      <label class="custom-file-label" for="projectCoverUploads">Choose file</label>
+                    </div>
+                  </div>
+                  <div class="dz-preview dz-preview-single">
+                    <div class="dz-preview-cover">
+                      <img class="dz-preview-img" src="...html" alt="..." data-dz-thumbnail>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12">
+                <h4 class="card-title text-white text-center mb-0">Catatan</h4>
+                <div class="dropzone dropzone-single mb-3" data-toggle="dropzone" data-dropzone-url="http://">
+                  <div class="fallback">
+                    <div class="custom-file">
+                      <input type="file" class="custom-file-input" id="projectCoverUploads">
+                      <label class="custom-file-label" for="projectCoverUploads">Choose file</label>
+                    </div>
+                  </div>
+                  <div class="dz-preview dz-preview-single">
+                    <div class="dz-preview-cover">
+                      <img class="dz-preview-img" src="...html" alt="..." data-dz-thumbnail>
+                    </div>
+                  </div>
+                </div>
+              </div>
+          </div>
+          <button type="button" class="btn btn-block btn-info">Simpan</button>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-link text-white ml-auto" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
 </div>
 
 <script>
