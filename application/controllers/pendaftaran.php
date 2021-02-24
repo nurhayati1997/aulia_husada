@@ -74,4 +74,34 @@ class pendaftaran extends CI_Controller {
 		// echo json_encode($data);
 		echo json_encode($this->Db_model->insert_get("tbl_antrian", $data));
 	}
+
+	public function do_upload()
+	{
+		$config['allowed_types'] = 'pdf';
+		$config['upload_path'] = './document/ip/';
+		
+		$config['file_name'] = 'test';
+
+        $this->load->library('upload', $config);
+
+        if ($this->upload->do_upload('file')) {
+			// date_default_timezone_set('Asia/Jakarta');
+			// $tgl = date('Y-m-d H:i:s');
+			
+			$data = [
+				"judul" => $this->input->post('judul', TRUE),
+				"unit_kerja" => $this->input->post('unit', TRUE),
+				"berkas" => $this->upload->data('file_name'),
+				"kategori" => $this->input->post('kategori', TRUE),
+				"tgl_upload" => $this->input->post('tgl', TRUE)
+			];
+
+			$this->Database_model->insert("tbl_berkas", $data);
+
+            echo json_encode("");
+        } else {
+            echo json_encode($this->upload->display_errors());
+        }
+        // echo json_encode($this->input->post('judul', TRUE));
+	}
 }

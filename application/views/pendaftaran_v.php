@@ -946,8 +946,6 @@
     }
   }
 
-   
-
   function tambah_baru() {
       if (document.getElementById('nama').value == "") {
           document.getElementById('nama').focus();
@@ -1036,6 +1034,61 @@
               }
           });
       }
+  }
+
+  function tambah_asessmen() {
+    if(document.getElementById("judul").value == ""){
+      document.getElementById("judul").focus();
+    } else if(document.getElementById("unit").value == ""){
+      document.getElementById("unit").focus();
+    } else if(document.getElementById("f_kategori").value == ""){
+      document.getElementById("f_kategori").focus();
+    } else if(document.getElementById("judul").value == ""){
+      document.getElementById("judul").focus();
+    } else if(document.getElementById("berkas").value == ""){
+      document.getElementById("berkas").focus();
+    } else if(document.getElementById("tgl").value == ""){
+      document.getElementById("tgl").focus();
+    } else{
+      var form_data = new FormData();
+      form_data.append('file', $('#berkas').prop('files')[0]);
+      form_data.append('judul', document.getElementById("judul").value);
+      form_data.append('unit', document.getElementById("unit").value);
+      form_data.append('kategori', document.getElementById("f_kategori").value);
+      form_data.append('tgl', document.getElementById("tgl").value);
+
+      $.ajax({
+        type: 'POST',
+        data: form_data,
+        url: '<?= base_url() ?>admin/do_upload',
+        processData:false,
+        contentType:false,
+        cache:false,
+        dataType: 'json',
+        success: function(data) {
+          ambil_data();
+          $("#exampleModal").modal("hide");
+          if(data==""){
+            Swal.fire({
+              position: 'center',
+              icon: 'success',
+              title: 'Data Berhasil Diupload',
+              showConfirmButton: false,
+              timer: 2500
+            });
+          }else{
+            Swal.fire({
+              position: 'center',
+              icon: 'error',
+              title: 'Upload Data Gagal',
+              showConfirmButton: false,
+              timer: 2500
+            });
+          }
+          
+        }
+      });
+    }
   }
   
 
