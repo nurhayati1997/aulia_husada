@@ -32,14 +32,7 @@ class pendaftaran extends CI_Controller {
 
 	function pencarian()
 	{
-		// if($this->input->post('kategori', TRUE)==0){
-		// 	echo json_encode($this->Db_model->get_where('tbl_user', array('kode' => $this->input->post('kata_kunci', TRUE)))->row());
-		// } else if($this->input->post('kategori', TRUE)==1){
-		// 	echo json_encode($this->Db_model->get_where('tbl_user', array('nik' => $this->input->post('kata_kunci', TRUE)))->row());
-		// } else {
-		// 	echo json_encode($this->Db_model->get_where('tbl_user', array('nama' => $this->input->post('kata_kunci', TRUE)))->row());
-		// }
-		echo json_encode($this->input->post('kata_kunci', TRUE));
+		echo json_encode($this->Db_model->get_where('tbl_pasien', array('id' => $this->input->post('kata_kunci', TRUE)))->row());
 	}
 
 	function tambah_pasien()
@@ -62,5 +55,16 @@ class pendaftaran extends CI_Controller {
 
 		// echo json_encode($data);
 		echo json_encode($this->Db_model->insert_get("tbl_pasien", $data));
+	}
+
+	function tambah_antrian()
+	{
+		$data = [
+			"id_pasien" => $this->input->post('id', TRUE),
+			"id_user" => $this->input->post('dokter', TRUE)
+		];
+
+		// echo json_encode($data);
+		echo json_encode($this->Db_model->insert_get("tbl_antrian", $data));
 	}
 }

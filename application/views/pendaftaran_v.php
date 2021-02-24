@@ -336,8 +336,8 @@
                                     <div class="col-12">
                                       <div class="form-group">
                                         <div class='input-group'>
-                                          <!-- <input type='text' id="kata_kunci" class="form-control" /> -->
-                                          <select style="color: white!important;" onchange="pencarian()" class="selectpicker form-control" id="kata_kunci" name="kata_kunci" data-live-search="true" placeholder="-Pilih-">
+                                          <!-- <input type='hidden' id="kata_kunci_hidden" class="form-control" /> -->
+                                          <select style="color: white!important;" title="- Pilih -" onchange="pencarian()" class="selectpicker form-control" id="kata_kunci" name="kata_kunci" data-live-search="true" placeholder="-Pilih-">
                                           
                                           </select>
                                         </div>
@@ -391,7 +391,7 @@
                                       </div>
                                     </div>
                                   </div>
-                                  <button type="button" class="btn btn-block btn-info">Simpan</button>
+                                  <button id="simpan_antrian_button" type="button" class="btn btn-block btn-info" onclick="tambah_antrian()">Simpan</button>
                                 </form>
                               </div>
                               <div class="modal-footer">
@@ -778,6 +778,10 @@
       //     create: true,
       //     sortField: 'text'
       // });
+
+      // $('#kata_kunci').change(function(){
+      //   console.log($('#kata_kunci').val());
+      // });
   });
 
   function get_kec() {
@@ -816,15 +820,15 @@
           url: '<?= base_url() ?>pendaftaran/add_list',
           dataType: 'json',
           success: function(data) {
-            console.log(data);
-            var html = '<option value="">-Pilih-</option>';
+            // console.log(data);
+            var html = '';
             for (var i = 0; i < data.length; i++) {
                 if(get_radio()==0){
-                  html += "<option value='" + data[i].id_user + "'>" + data[i].kode + '</option>';
+                  html += "<option value='" + data[i].id + "'>" + data[i].kode + '</option>';
                 } else if(get_radio()==1){
-                  html += "<option value='" + data[i].id_user + "'>" + data[i].nik  + '</option>';
+                  html += "<option value='" + data[i].id + "'>" + data[i].nik  + '</option>';
                 } else{
-                  html += "<option value='" + data[i].id_user + "'>" + data[i].nama + '</option>';
+                  html += "<option value='" + data[i].id + "'>" + data[i].nama + '</option>';
                 }
                 
             }
@@ -843,16 +847,19 @@
   }
 
   function pencarian() {
-    console.log( $('#kata_kunci').selectpicker('val'));
-      // $.ajax({
-      //     type: 'POST',
-      //     url: '<?= base_url() ?>pendaftaran/pencarian',
-      //     data: 'kata_kunci=' + document.getElementById("kata_kunci").value + '&kategori=' +  get_radio(),
-      //     dataType: 'json',
-      //     success: function(data) {
-      //         console.log(data);
-      //     }
-      // });
+    $.ajax({
+        type: 'POST',
+        url: '<?= base_url() ?>pendaftaran/pencarian',
+        data: 'kata_kunci=' + document.getElementById("kata_kunci").value,
+        dataType: 'json',
+        success: function(data) {
+            // console.log(data);
+            document.getElementById("nrm_show").value = data.kode;
+            document.getElementById("nama_show").value = data.nama;
+            document.getElementById("nik_show").value = data.nik;
+            document.getElementById("alamat_show").value = data.alamat;
+        }
+    });
   }
 
   function reset_form(){
@@ -960,6 +967,42 @@
           });
       }
   }
+
+  function tambah_antrian() {
+      if (document.getElementById('kata_kunci').value == "") {
+          document.getElementById('kata_kunci').focus();
+      } else if (document.getElementById('dokter').value == "") {
+          document.getElementById('dokter').focus();
+      } else {
+          $.ajax({
+              type: 'POST',
+              data: 'id=' + document.getElementById("kata_kunci").value + '&dokter=' + document.getElementById('dokter').value,
+              url: '<?= base_url() ?>pendaftaran/tambah_antrian',
+              dataType: 'json',
+              beforeSend: function () {
+                $('#simpan_antrian_button').attr('disabled', true);
+                $('#loader').html('');
+                addSpinner($('#loader'));
+              },
+              success: function(data) {
+                // console.log(data);
+                Swal.fire({
+                    position: 'center',
+                    icon: 'success',
+                    title: 'Data Berhasil Ditambahkan',
+                    showConfirmButton: false,
+                    timer: 1500
+                });
+                $('#simpan_antrian_button').attr('disabled', false);
+                removeSpinner($('#loader'), function () {
+                  $('#loader').html('');
+                });
+                $('#modal-default').modal('hide');
+              }
+          });
+      }
+  }
+  
 
   function addSpinner(el, static_pos)
 {
