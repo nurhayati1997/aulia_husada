@@ -30,6 +30,11 @@ class pendaftaran extends CI_Controller {
 		echo json_encode($this->Db_model->get_all('tbl_pasien')->result());
 	}
 
+	function get_list()
+	{
+		echo json_encode($this->Db_model->get_where('tbl_antrian', array('id_user' => $this->input->post('id', TRUE), 'status' => 0))->result());
+	}
+
 	function pencarian()
 	{
 		echo json_encode($this->Db_model->get_where('tbl_pasien', array('id' => $this->input->post('kata_kunci', TRUE)))->row());

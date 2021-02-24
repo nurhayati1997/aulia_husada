@@ -163,22 +163,8 @@
                           <h4 class="ls-1 text-primary py-3 mb-0 nama_dokter"></h4>
                         </div>
                         <div class="card-body px-lg-7">
-                          <ul class="list-group list-group-flush list my--3">
-                            <li class="list-group-item px-0">
-                              <div class="row align-items-center">
-                                <div class="col ml--4">
-                                  <h4 class="mb-0">
-                                    <a href="">Nama Pasien</a>
-                                  </h4>
-                                  <span class="text-success">●</span>
-                                  <small>No RM</small>
-                                </div>
-                                <div class="col-auto">
-                                  <button type="button" class="btn btn-sm btn-primary" data-toggle="modal" data-target="#modal-asesmen">Antri</button>
-                                  
-                                </div>
-                              </div>
-                            </li>
+                          <ul class="list-group list-group-flush list my--3 list_pasien">
+                            
                           </ul>
                         </div>
                         <div class="card-footer">
@@ -190,7 +176,7 @@
                           <h4 class="ls-1 text-primary py-3 mb-0 nama_dokter"></h4>
                         </div>
                         <div class="card-body px-lg-7">
-                          <ul class="list-group list-group-flush list my--3 ">
+                          <ul class="list-group list-group-flush list my--3 list_pasien">
                             <li class="list-group-item px-0">
                               <div class="row align-items-center">
                                 <div class="col ml--4">
@@ -216,7 +202,7 @@
                           <h4 class=" ls-1 text-primary py-3 mb-0 nama_dokter"></h4>
                         </div>
                         <div class="card-body px-lg-7">
-                        <ul class="list-group list-group-flush list my--3">
+                        <ul class="list-group list-group-flush list my--3 list_pasien">
                             <li class="list-group-item px-0">
                               <div class="row align-items-center">
                                 <div class="col ml--4">
@@ -832,8 +818,22 @@
             for (var i = 0; i < x.length; i++) {
                 x[i].innerHTML = data[i].nama;
                 y[i].innerHTML = data[i].jabatan;
+                get_list(data[i].id_user, i);
             }
             
+          }
+      });
+  }
+
+  function get_list(id, dokter) {
+      $.ajax({
+          type: 'POST',
+          url: '<?= base_url() ?>pendaftaran/get_list',
+          data: 'id=' + id,
+          dataType: 'json',
+          success: function(data) {
+             var z = document.getElementsByClassName("list_pasien");
+             console.log(data);
           }
       });
   }
