@@ -33,6 +33,26 @@ class Db_model extends CI_Model
         return $this->db->get(); 
     }
 
+    public function get_tbl_pasien($tabel, $order, $tgl, $dokter, $kec, $diagnosa)
+    {
+        $this->db->select('*');
+        $this->db->from($tabel);
+        if($tgl!=null){
+            $this->db->where('tanggal_antri', $tgl);
+        }
+        if($dokter!=null){
+            $this->db->where('id_dokter', $dokter);
+        }
+        if($kec!=null){
+            $this->db->where('id_kecamatan', $kec);
+        }
+        if($diagnosa!=null){
+            $this->db->where('diagnosa', $diagnosa);
+        }
+        $this->db->group_by($order);
+        return $this->db->get(); 
+    }
+
     public function update($tabel, $data, $where)
     {
         $this->db->update($tabel, $data, $where);

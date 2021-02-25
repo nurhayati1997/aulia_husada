@@ -35,27 +35,27 @@
                           <div class="input-group-prepend">
                             <span class="input-group-text"><i class="ni ni-calendar-grid-58"></i></span>
                           </div>
-                          <input class="form-control datepicker" placeholder="Tanggal Periksa" type="text">
+                          <input class="form-control datepicker" onchange="ambil_data()" placeholder="Tanggal Periksa" id="tgl" type="text">
                         </div>
                       </div>
                     </div>
                     <div class="col-md-3">
                       <div class="form-group">
-                        <select class="form-control" id="dokter">
+                        <select class="form-control" id="dokter" onchange="ambil_data()">
                           
                         </select>
                       </div>
                     </div>
                     <div class="col-md-3">
                       <div class="form-group">
-                        <select class="form-control" id="kec">
+                        <select class="form-control" id="kec" onchange="ambil_data()">
                           
                         </select>
                       </div>
                     </div>
                     <div class="col-md-3">
                       <div class="form-group">
-                        <select class="form-control" id="diagnosa">
+                        <select class="form-control" id="diagnosa" onchange="ambil_data()">
                           
                         </select>
                       </div>
@@ -99,10 +99,10 @@
 </div>
 <script>
     $(document).ready(function() {
-        ambil_data();
         get_dokter();
         get_kec();
         get_diagnosa();
+        ambil_data();
     });
 
     function get_kec() {
@@ -158,9 +158,10 @@
               "type": "POST",
                 "url": "<?php echo site_url("pasien/get_pasien") ?>",
                 "data": function(data) {
-                    // data.tahun = $("#tahun").val();
-                    // data.kode = $("#kode").val();
-                    // data.jurusan = $("#jurusan").val();
+                    data.tgl = $("#tgl").val();
+                    data.dokter = $("#dokter").val();
+                    data.kec = $("#kec").val();
+                    data.diagnosa = $("#diagnosa").val();
                 },
                 "dataSrc": ""
             },
