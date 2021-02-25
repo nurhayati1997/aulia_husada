@@ -133,12 +133,12 @@
                       </thead>
                       <tfoot>
                           <tr>
-                              <th>Name</th>
-                              <th>Position</th>
-                              <th>Office</th>
-                              <th>Age</th>
-                              <th>Start date</th>
-                              <th>Salary</th>
+                              <th>Tanggal</th>
+                              <th>Nama Dokter</th>
+                              <th>Diagnosa</th>
+                              <th>Terapi</th>
+                              <th>Keterangan</th>
+                              <th>Action</th>
                           </tr>
                       </tfoot>
                       <tbody>
@@ -148,7 +148,20 @@
                               <td>Edinburgh</td>
                               <td>61</td>
                               <td>2011/04/25</td>
-                              <td>$320,800</td>
+                              <td>
+                                <div class="dropdown">
+                                  <a class="btn btn-sm btn-icon-only text-light" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <i class="fas fa-ellipsis-v"></i>
+                                  </a>
+                                  <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
+                                    <a class="dropdown-item" href="#">Lihat</a>
+                                    <a class="dropdown-item" href="#">Edit</a>
+                                    <a class="dropdown-item" href="#">Upload Data</a>
+                                    <a class="dropdown-item" href="#">Persetujuan</a>
+                                    <a class="dropdown-item" href="#">Penolakan</a>
+                                  </div>
+                                </div>
+                              </td>
                           </tr>
                           <tr>
                               <td>Garrett Winters</td>
@@ -156,7 +169,19 @@
                               <td>Tokyo</td>
                               <td>63</td>
                               <td>2011/07/25</td>
-                              <td>$170,750</td>
+                              <td>                                
+                                <div class="dropdown">
+                                  <a class="btn btn-sm btn-icon-only text-light" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <i class="fas fa-ellipsis-v"></i>
+                                  </a>
+                                  <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
+                                    <a class="dropdown-item" href="#">Lihat</a>
+                                    <a class="dropdown-item" href="#">Edit</a>
+                                    <a class="dropdown-item" href="#">Upload Data</a>
+                                    <a class="dropdown-item" href="#">Persetujuan</a>
+                                    <a class="dropdown-item" href="#">Penolakan</a>
+                                  </div>
+                                </div></td>
                           </tr>
                       </tbody>
                   </table>
