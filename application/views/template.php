@@ -314,7 +314,7 @@
                     <img alt="Image placeholder" src="<?= base_url() ?>assets_admin/img/theme/profile.jpg">
                   </span>
                   <div class="media-body  ml-2  d-none d-lg-block">
-                    <span class="mb-0 text-sm  font-weight-bold">Hello Admin</span>
+                    <span class="mb-0 text-sm  font-weight-bold">Hello <?= $this->session->userdata("nama") ?></span>
                   </div>
                 </div>
               </a>
