@@ -239,11 +239,33 @@
               </a>
             </li> -->
             <li class="nav-item">
+              <a class="nav-link" href="#navbar-examples" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="navbar-examples">
+                <i class="ni ni-ui-04"></i>
+                <span class="nav-link-text">Master</span>
+              </a>
+              <div class="collapse" id="navbar-examples">
+                <ul class="nav nav-sm flex-column">
+                  <li class="nav-item">
+                    <a href="<?= site_url('master_tindakan') ?>" class="nav-link">
+                      <span class="sidenav-mini-icon"> T </span>
+                      <span class="sidenav-normal"> Tindakan </span>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="<?= site_url('master_user') ?>" class="nav-link">
+                      <span class="sidenav-mini-icon"> M </span>
+                      <span class="sidenav-normal"> Managemen User </span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <!-- <li class="nav-item">
               <a class="nav-link" href="<?= site_url('master') ?>">
                 <i class="ni ni-ui-04"></i>
                 <span class="nav-link-text">Master Data</span>
               </a>
-            </li>
+            </li> -->
             <!-- <li class="nav-item">
               <a class="nav-link" href="../../docs/plugins/charts.html" target="_blank">
                 <i class="ni ni-chart-pie-35"></i>
