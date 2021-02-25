@@ -113,41 +113,41 @@
                     <div class="pricing card-group flex-column flex-md-row mb-3">
                       <div class="card card-pricing border-0 text-center mb-4">
                         <div class="card-header bg-transparent">
-                          <h4 class="ls-1 text-primary py-3 mb-0 nama_dokter"></h4>
+                          <h4 class="ls-1 text-primary py-3 mb-0 nama_dokter 1"></h4>
                         </div>
                         <div class="card-body px-lg-7">
-                          <ul class="list-group list-group-flush list my--3 list_pasien">
+                          <ul class="list-group list-group-flush list my--3 list_pasien 1">
                             
                           </ul>
                         </div>
                         <div class="card-footer">
-                          <a href="#!" class="text-light spesialis"></a>
+                          <a href="#!" class="text-light spesialis 1"></a>
                         </div>
                       </div>
                       <div class="card card-pricing zoom-in shadow-lg rounded border-0 text-center mb-4">
                         <div class="card-header bg-transparent">
-                          <h4 class="ls-1 text-primary py-3 mb-0 nama_dokter"></h4>
+                          <h4 class="ls-1 text-primary py-3 mb-0 nama_dokter 2"></h4>
                         </div>
                         <div class="card-body px-lg-7">
-                          <ul class="list-group list-group-flush list my--3 list_pasien">
+                          <ul class="list-group list-group-flush list my--3 list_pasien 2">
                             
                           </ul>
                         </div>
                         <div class="card-footer bg-transparent">
-                          <a href="#!" class="text-light spesialis"></a>
+                          <a href="#!" class="text-light spesialis 2"></a>
                         </div>
                       </div>
                       <div class="card card-pricing border-0 text-center mb-4">
                         <div class="card-header bg-transparent">
-                          <h4 class=" ls-1 text-primary py-3 mb-0 nama_dokter"></h4>
+                          <h4 class=" ls-1 text-primary py-3 mb-0 nama_dokter 3"></h4>
                         </div>
                         <div class="card-body px-lg-7">
-                          <ul class="list-group list-group-flush list my--3 list_pasien">
+                          <ul class="list-group list-group-flush list my--3 list_pasien 3">
                             
                           </ul>
                         </div>
                         <div class="card-footer">
-                          <a href="#!" class="text-light spesialis"></a>
+                          <a href="#!" class="text-light spesialis 3"></a>
                         </div>
                       </div>
                     </div>
@@ -743,11 +743,14 @@
           dataType: 'json',
           success: function(data) {
             var x = document.getElementsByClassName("nama_dokter");
-            var y = document.getElementsByClassName("spesialis");
+            
             for (var i = 0; i < x.length; i++) {
-                x[i].innerHTML = data[i].nama;
-                y[i].innerHTML = data[i].jabatan;
-                get_list(data[i].id_user, i);
+                var o = document.getElementsByClassName("nama_dokter"+" "+(i+1));
+                var y = document.getElementsByClassName("spesialis"+" "+(i+1));
+                var z = document.getElementsByClassName("list_pasien"+" "+(i+1));
+                o[0].innerHTML = data[i].nama;
+                y[0].innerHTML = data[i].jabatan;
+                get_list(data[i].id_user, z);
             }
             
           }
@@ -766,23 +769,24 @@
       get_card();
   }
 
-  function get_list(id, i) {
+  function get_list(id, z) {
       $.ajax({
           type: 'POST',
           url: '<?= base_url() ?>pendaftaran/get_list',
           data: 'id=' + id,
           dataType: 'json',
           success: function(data) {
+            // console.log(data);
             var html = '';
             for (var i = 0; i < data.length; i++) {
               html += '<li class="list-group-item px-0">';
               html += '<div class="row align-items-center">';
               html += '<div class="col ml--4">';
               html += '<h4 class="mb-0">';
-              html += '<a href="#!">'+data[i].id_pasien+'</a>';
+              html += '<a href="#!">'+data[i].kode+'</a>';
               html += '</h4>';
               html += '<span class="text-success">●</span>';
-              html += '<small>'+data[i].id_pasien+'</small>';
+              html += '<small>'+data[i].nama+'</small>';
               html += '</div>';
               html += '<div class="col-auto">';
               html += '<button type="button" class="btn btn-sm btn-primary" onclick="tampil_modal_antrian('+ data[i].id_antrian + ","+ id +')">Antri</button>';
@@ -791,8 +795,7 @@
               html += '</li>';
             }
 
-             var z = document.getElementsByClassName("list_pasien");
-             z[i].innerHTML = html;
+             z[0].innerHTML = html;
             //  console.log(data);
           }
       });

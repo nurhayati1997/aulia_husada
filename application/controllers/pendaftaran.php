@@ -35,7 +35,7 @@ class pendaftaran extends CI_Controller {
 	{
 		date_default_timezone_set('Asia/Jakarta');
 		// echo json_encode(date('Y-m-d'));
-		echo json_encode($this->Db_model->get_where('tbl_antrian', array('id_user' => $this->input->post('id', TRUE), 'status' => 0 , 'tanggal_antri' => strval(date('Y-m-d'))))->result());
+		echo json_encode($this->Db_model->get_where('v_antrian', array('id_dokter' => $this->input->post('id', TRUE), 'status_antrian' => 0 , 'tanggal_antri' => strval(date('Y-m-d'))))->result());
 	}
 
 	function pencarian()
