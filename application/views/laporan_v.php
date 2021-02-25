@@ -9,14 +9,14 @@
               <h6 class="h2 text-white d-inline-block mb-0">Husada Raya</h6>
               <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
                 <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
-                  <li class="breadcrumb-item"><a href="#"><i class="fas fa-home"></i></a></li>
-                  <li class="breadcrumb-item"><a href="#">Asesmen Medis Pasien</a></li>
+                  <li class="breadcrumb-item"><a><i class="fas fa-home"></i></a></li>
+                  <li class="breadcrumb-item"><a>Laporan</a></li>
                   <!-- <li class="breadcrumb-item active" aria-current="page">Default</li> -->
                 </ol>
               </nav>
             </div>
             <div class="col-lg-6 col-5 text-right">
-              <a href="#" class="btn btn-sm btn-neutral">Print Resume Medis</a>
+              <a href="#" class="btn btn-sm btn-neutral">Print Laporan</a>
             </div>
           </div>
         </div>
@@ -30,24 +30,19 @@
           <div class="card">
             <div class="card-header bg-gradient-info">
                 <div class="pt-4 text-center">
-                  <h4 class="text-uppercase ls-1 text-white py-3 mb-0">Resume Medis</h4>
+                  <h4 class="text-uppercase ls-1 text-white py-3 mb-0">Laporan</h4>
                   <div class="row">
                     <div class="col-md-4">
                     </div>
                     <div class="col-md-4">
-                      <form class="navbar-search navbar-search-light form-inline mr-sm-3" id="navbar-search-main">
-                        <div class="form-group mb-0">
-                          <div class="input-group input-group-alternative input-group-merge">
-                            <div class="input-group-prepend">
-                              <span class="input-group-text"><i class="fas fa-search"></i></span>
-                            </div>
-                            <input class="form-control" placeholder="masukkan No Rekam Medis" type="text">
+                      <div class="form-group">
+                        <div class="input-group input-group-alternative mb-3">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="ni ni-calendar-grid-58"></i></span>
                           </div>
+                          <input class="form-control datepicker" placeholder="Tanggal Periksa" type="text">
                         </div>
-                        <!-- <button type="button" class="close" data-action="search-close" data-target="#navbar-search-main" aria-label="Close">
-                          <span aria-hidden="true">×</span>
-                        </button> -->
-                      </form>
+                      </div>
                     </div>
                     <div class="col-md-4">
                     </div>
@@ -60,21 +55,17 @@
                       <thead class="thead-light">
                           <tr>
                               <th>Tanggal</th>
-                              <th>Nama Dokter</th>
-                              <th>Diagnosa</th>
-                              <th>Terapi</th>
-                              <th>Keterangan</th>
+                              <th>Tindakan</th>
+                              <th>Harga</th>
                               <th>Action</th>
                           </tr>
                       </thead>
                       <tfoot>
                           <tr>
-                              <th>Tanggal</th>
-                              <th>Nama Dokter</th>
-                              <th>Diagnosa</th>
-                              <th>Terapi</th>
-                              <th>Keterangan</th>
-                              <th>Action</th>
+                              <<th>Tanggal</th>
+                              <th>Tindakan</th>
+                              <th>Harga</th>
+                              <th>action</th>
                           </tr>
                       </tfoot>
                       <tbody>
@@ -82,8 +73,6 @@
                               <td>Tiger Nixon</td>
                               <td>System Architect</td>
                               <td>Edinburgh</td>
-                              <td>61</td>
-                              <td>2011/04/25</td>
                               <td>
                                 <div class="dropdown">
                                   <a class="btn btn-sm btn-icon-only text-light" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -92,9 +81,7 @@
                                   <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
                                     <a class="dropdown-item" href="#">Lihat</a>
                                     <a class="dropdown-item" href="#">Edit</a>
-                                    <a class="dropdown-item" href="#">Upload Data</a>
-                                    <a class="dropdown-item" href="#">Persetujuan</a>
-                                    <a class="dropdown-item" href="#">Penolakan</a>
+                                    <a class="dropdown-item" href="#">Hapus</a>
                                   </div>
                                 </div>
                               </td>
@@ -103,8 +90,6 @@
                               <td>Garrett Winters</td>
                               <td>Accountant</td>
                               <td>Tokyo</td>
-                              <td>63</td>
-                              <td>2011/07/25</td>
                               <td>                                
                                 <div class="dropdown">
                                   <a class="btn btn-sm btn-icon-only text-light" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -113,9 +98,7 @@
                                   <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
                                     <a class="dropdown-item" href="#">Lihat</a>
                                     <a class="dropdown-item" href="#">Edit</a>
-                                    <a class="dropdown-item" href="#">Upload Data</a>
-                                    <a class="dropdown-item" href="#">Persetujuan</a>
-                                    <a class="dropdown-item" href="#">Penolakan</a>
+                                    <a class="dropdown-item" href="#">Hapus</a>
                                   </div>
                                 </div></td>
                           </tr>

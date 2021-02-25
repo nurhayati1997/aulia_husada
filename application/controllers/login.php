@@ -1,25 +1,48 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 
-class login extends CI_Controller {
+class login extends CI_Controller
+{
+	public function __construct()
+	{
+		parent::__construct();
+		$this->load->model('db_model');
+		$this->load->library('form_validation');
+	}
 
-	/**
-	 * Index Page for this controller.
-	 *
-	 * Maps to the following URL
-	 * 		http://example.com/index.php/welcome
-	 *	- or -
-	 * 		http://example.com/index.php/welcome/index
-	 *	- or -
-	 * Since this controller is set as the default controller in
-	 * config/routes.php, it's displayed at http://example.com/
-	 *
-	 * So any other public methods not prefixed with an underscore will
-	 * map to /index.php/welcome/<method_name>
-	 * @see https://codeigniter.com/user_guide/general/urls.html
-	 */
 	public function index()
 	{
 		$this->load->view('login_v');
+	}
+
+	public function tryLogin()
+	{
+		$email = $this->input->post("email");
+		$pass = $this->input->post("pass");
+
+		echo json_encode($this->_login($email, $pass));
+	}
+
+	private function _login($email, $pass)
+	{
+		$user = $this->db_model->get_where("tbl_user", ["email" => $email])->row_array();
+
+		if ($user) {
+			// if (password_verify($pass, $user['password'])) {
+			if ($pass == $user['password']) {
+				$data = [
+					'id_user' => $user['id_user'],
+					'nama' => $user['nama'],
+					'rule' => $user['rule']
+				];
+				$this->session->set_userdata($data);
+
+				return false;
+			} else {
+				return 'pass';
+			}
+		} else {
+			return 'email';
+		}
 	}
 }
