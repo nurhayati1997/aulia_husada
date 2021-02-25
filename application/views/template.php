@@ -239,11 +239,63 @@
               </a>
             </li> -->
             <li class="nav-item">
+              <a class="nav-link" href="#navbar-examples" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="navbar-examples">
+                <i class="ni ni-ui-04"></i>
+                <span class="nav-link-text">Master</span>
+              </a>
+              <div class="collapse" id="navbar-examples">
+                <ul class="nav nav-sm flex-column">
+                  <li class="nav-item">
+                    <a href="<?= site_url('master_tindakan') ?>" class="nav-link">
+                      <span class="sidenav-mini-icon"> T </span>
+                      <span class="sidenav-normal"> Tindakan </span>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="<?= site_url('master_user') ?>" class="nav-link">
+                      <span class="sidenav-mini-icon"> M </span>
+                      <span class="sidenav-normal"> Managemen User </span>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="../examples/register.html" class="nav-link">
+                      <span class="sidenav-mini-icon"> R </span>
+                      <span class="sidenav-normal"> Register </span>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="../examples/lock.html" class="nav-link">
+                      <span class="sidenav-mini-icon"> L </span>
+                      <span class="sidenav-normal"> Lock </span>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="../examples/timeline.html" class="nav-link">
+                      <span class="sidenav-mini-icon"> T </span>
+                      <span class="sidenav-normal"> Timeline </span>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="../examples/profile.html" class="nav-link">
+                      <span class="sidenav-mini-icon"> P </span>
+                      <span class="sidenav-normal"> Profile </span>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="../examples/rtl-support.html" class="nav-link">
+                      <span class="sidenav-mini-icon"> RP </span>
+                      <span class="sidenav-normal"> RTL Support </span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <!-- <li class="nav-item">
               <a class="nav-link" href="<?= site_url('master') ?>">
                 <i class="ni ni-ui-04"></i>
                 <span class="nav-link-text">Master Data</span>
               </a>
-            </li>
+            </li> -->
             <!-- <li class="nav-item">
               <a class="nav-link" href="../../docs/plugins/charts.html" target="_blank">
                 <i class="ni ni-chart-pie-35"></i>

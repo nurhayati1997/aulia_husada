@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class master extends CI_Controller
+class master_tindakan extends CI_Controller
 {
 
 	public function __construct()
@@ -14,7 +14,7 @@ class master extends CI_Controller
 	public function index()
 	{
 		// $this->load->view('dashboard_v');
-		$this->template->load('template', 'master_v');
+		$this->template->load('template', 'master_tindakan_v');
 	}
 
 	public function tampil()
