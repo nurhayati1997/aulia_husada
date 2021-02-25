@@ -257,36 +257,6 @@
                       <span class="sidenav-normal"> Managemen User </span>
                     </a>
                   </li>
-                  <li class="nav-item">
-                    <a href="../examples/register.html" class="nav-link">
-                      <span class="sidenav-mini-icon"> R </span>
-                      <span class="sidenav-normal"> Register </span>
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a href="../examples/lock.html" class="nav-link">
-                      <span class="sidenav-mini-icon"> L </span>
-                      <span class="sidenav-normal"> Lock </span>
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a href="../examples/timeline.html" class="nav-link">
-                      <span class="sidenav-mini-icon"> T </span>
-                      <span class="sidenav-normal"> Timeline </span>
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a href="../examples/profile.html" class="nav-link">
-                      <span class="sidenav-mini-icon"> P </span>
-                      <span class="sidenav-normal"> Profile </span>
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a href="../examples/rtl-support.html" class="nav-link">
-                      <span class="sidenav-mini-icon"> RP </span>
-                      <span class="sidenav-normal"> RTL Support </span>
-                    </a>
-                  </li>
                 </ul>
               </div>
             </li>
