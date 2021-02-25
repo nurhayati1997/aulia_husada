@@ -3,24 +3,24 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class pasien extends CI_Controller {
 
-	/**
-	 * Index Page for this controller.
-	 *
-	 * Maps to the following URL
-	 * 		http://example.com/index.php/welcome
-	 *	- or -
-	 * 		http://example.com/index.php/welcome/index
-	 *	- or -
-	 * Since this controller is set as the default controller in
-	 * config/routes.php, it's displayed at http://example.com/
-	 *
-	 * So any other public methods not prefixed with an underscore will
-	 * map to /index.php/welcome/<method_name>
-	 * @see https://codeigniter.com/user_guide/general/urls.html
-	 */
+	function __construct()
+	{
+		parent::__construct();
+		$this->load->model('Db_model');
+	}
+
 	public function index()
 	{
-		// $this->load->view('dashboard_v');
 		$this->template->load('template', 'pasien_v');
+	}
+
+	function get_pasien()
+	{
+		echo json_encode($this->Db_model->get_group('v_riwayat_diagnosa','nama')->result());
+	}
+
+	function get_diagnosa()
+	{
+		echo json_encode($this->Db_model->get_group('tbl_riwayat_diagnosa','diagnosa')->result());
 	}
 }
