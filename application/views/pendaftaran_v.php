@@ -755,21 +755,15 @@
   }
 
   function reset_card() {
-      $.ajax({
-          type: 'POST',
-          url: '<?= base_url() ?>pendaftaran/get_dokter',
-          dataType: 'json',
-          success: function(data) {
-            var x = document.getElementsByClassName("nama_dokter");
-            var y = document.getElementsByClassName("spesialis");
-            for (var i = 0; i < x.length; i++) {
-                x[i].innerHTML = data[i].nama;
-                y[i].innerHTML = data[i].jabatan;
-                get_list(data[i].id_user, i);
-            }
-            
-          }
-      });
+      var x = document.getElementsByClassName("nama_dokter");
+      var y = document.getElementsByClassName("spesialis");
+      var z = document.getElementsByClassName("list_pasien");
+      for (var i = 0; i < x.length; i++) {
+          x[i].innerHTML = "";
+          y[i].innerHTML = '';
+          z[i].innerHTML = '';
+      }
+      get_card();
   }
 
   function get_list(id, i) {
@@ -1064,7 +1058,7 @@
         },
         success: function(data) {
           // console.log(data);
-          get_card();
+          reset_card();
           $('#simpan_asessmen').attr('disabled', false);
           removeSpinner($('#loader_asessmen'), function () {
             $('#loader_asessmen').html('');
