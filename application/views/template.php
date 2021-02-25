@@ -246,13 +246,13 @@
               <div class="collapse" id="navbar-examples">
                 <ul class="nav nav-sm flex-column">
                   <li class="nav-item">
-                    <a href="<?= site_url('master_tindakan') ?>" class="nav-link">
+                    <a href="<?= site_url('master_tindakan')?>" class="nav-link">
                       <span class="sidenav-mini-icon"> T </span>
                       <span class="sidenav-normal"> Tindakan </span>
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a href="<?= site_url('master_user') ?>" class="nav-link">
+                    <a href="<?= site_url('master_user')?>" class="nav-link">
                       <span class="sidenav-mini-icon"> M </span>
                       <span class="sidenav-normal"> Managemen User </span>
                     </a>
