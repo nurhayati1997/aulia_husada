@@ -25,6 +25,14 @@ class Db_model extends CI_Model
         return $this->db->get($tabel);
     }
 
+    public function get_group($tabel, $order)
+    {
+        $this->db->select('*');
+        $this->db->from($tabel);
+        $this->db->group_by($order);
+        return $this->db->get(); 
+    }
+
     public function update($tabel, $data, $where)
     {
         $this->db->update($tabel, $data, $where);
