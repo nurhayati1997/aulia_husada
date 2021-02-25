@@ -174,6 +174,12 @@
                 <span class="nav-link-text">Transaksi</span>
               </a>
             </li>
+            <li class="nav-item">
+              <a class="nav-link" href="<?= site_url('Laporan') ?>">
+                <i class="ni ni-bullet-list-67 text-default"></i>
+                <span class="nav-link-text">Laporan</span>
+              </a>
+            </li>
             <!-- <li class="nav-item">
               <a class="nav-link" href="examples/icons.html">
                 <i class="ni ni-planet text-orange"></i>
@@ -190,12 +196,6 @@
               <a class="nav-link" href="examples/profile.html">
                 <i class="ni ni-single-02 text-yellow"></i>
                 <span class="nav-link-text">Profile</span>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="examples/tables.html">
-                <i class="ni ni-bullet-list-67 text-default"></i>
-                <span class="nav-link-text">Tables</span>
               </a>
             </li>
             <li class="nav-item">
