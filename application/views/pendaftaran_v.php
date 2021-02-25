@@ -483,7 +483,8 @@
                     <div class="input-group-prepend">
                       <span class="input-group-text"><i class="ni ni-credit-card"></i></span>
                     </div>
-                    <input class="form-control" placeholder="No Rekam Medis" id="nrm_antri" type="text">
+                    <input class="form-control" placeholder="No Rekam Medis" id="nrm_antri" type="text" readonly>
+                    <input class="form-control" id="id_antri" type="hidden">
                   </div>
                 </div>
               </div>
@@ -493,7 +494,7 @@
                     <div class="input-group-prepend">
                       <span class="input-group-text"><i class="ni ni-circle-08"></i></span>
                     </div>
-                    <input class="form-control" placeholder="Nama Lengkap" id="nama_antri" type="text">
+                    <input class="form-control" placeholder="Nama Lengkap" id="nama_antri" type="text" readonly>
                   </div>
                 </div>
               </div>
@@ -503,7 +504,7 @@
                     <div class="input-group-prepend">
                       <span class="input-group-text"><i class="ni ni-box-2"></i></span>
                     </div>
-                    <input class="form-control" placeholder="No KTP" id="nik_antri" type="text">
+                    <input class="form-control" placeholder="No KTP" id="nik_antri" type="text" readonly>
                   </div>
                 </div>
               </div>
@@ -513,7 +514,7 @@
                     <div class="input-group-prepend">
                       <span class="input-group-text"><i class="ni ni-pin-3"></i></span>
                     </div>
-                    <input class="form-control" placeholder="Alamat" id="alamat_antri" type="text">
+                    <input class="form-control" placeholder="Alamat" id="alamat_antri" type="text" readonly>
                   </div>
                 </div>
               </div>
@@ -526,7 +527,7 @@
                     <div class="input-group-prepend">
                       <span class="input-group-text"><i class="ni ni-active-40"></i></span>
                     </div>
-                    <input class="form-control form-control-lg" placeholder="Keluhan Utama" type="text">
+                    <input class="form-control form-control-lg" placeholder="Keluhan Utama" id="keluhan" type="text">
                   </div>
                 </div>
               </div>
@@ -536,7 +537,7 @@
                     <div class="input-group-prepend">
                       <span class="input-group-text"><i class="ni ni-air-baloon"></i></span>
                     </div>
-                    <input class="form-control" placeholder="Riwayat penyakit Sekarang" type="text">
+                    <input class="form-control" placeholder="Riwayat penyakit Sekarang" id="penyakit_sekarang" type="text">
                   </div>
                 </div>
               </div>
@@ -546,7 +547,7 @@
                     <div class="input-group-prepend">
                       <span class="input-group-text"><i class="ni ni-app"></i></span>
                     </div>
-                    <input class="form-control" placeholder="Riwayat Penyakit Dahulu" type="text">
+                    <input class="form-control" placeholder="Riwayat Penyakit Dahulu" id="penyakit_dahulu" type="text">
                   </div>
                 </div>
               </div>
@@ -556,7 +557,7 @@
                     <div class="input-group-prepend">
                       <span class="input-group-text"><i class="ni ni-bag-17"></i></span>
                     </div>
-                    <input class="form-control" placeholder="Riwayat Alergi" type="text">
+                    <input class="form-control" placeholder="Riwayat Alergi" id="riwayat_alergi" type="text">
                   </div>
                 </div>
               </div>
@@ -566,7 +567,7 @@
                     <div class="input-group-prepend">
                       <span class="input-group-text"><i class="ni ni-book-bookmark"></i></span>
                     </div>
-                    <input class="form-control" placeholder="Riwayat Operasi" type="text">
+                    <input class="form-control" placeholder="Riwayat Operasi" id="riwayat_operasi" type="text">
                   </div>
                 </div>
               </div>
@@ -576,7 +577,7 @@
                     <div class="input-group-prepend">
                       <span class="input-group-text"><i class="ni ni-books"></i></span>
                     </div>
-                    <input class="form-control" placeholder="Riwayat Transfusi" type="text">
+                    <input class="form-control" placeholder="Riwayat Transfusi" id="riwayat_transfusi" type="text">
                   </div>
                 </div>
               </div>
@@ -586,7 +587,7 @@
                     <div class="input-group-prepend">
                       <span class="input-group-text"><i class="ni ni-basket"></i></span>
                     </div>
-                    <input class="form-control" placeholder="Riwayat Penggunaan Obat" type="text">
+                    <input class="form-control" placeholder="Riwayat Penggunaan Obat" id="riwayat_obat" type="text">
                   </div>
                 </div>
               </div>
@@ -596,23 +597,23 @@
               <div class="col-6">
                 <div class="form-group">
                   <select class="form-control" id="kesadaran_umum">
-                    <option selected>Kesadaran Umum</option>
-                    <option>Baik</option>
-                    <option>Sedang</option>
-                    <option>Lemah</option>
-                    <option>Jelek</option>
+                    <option value="" selected>-Kesadaran Umum-</option>
+                    <option value="baik" >Baik</option>
+                    <option value="sedang">Sedang</option>
+                    <option value="lemah">Lemah</option>
+                    <option value="jelek">Jelek</option>
                   </select>
                 </div>
               </div>
               <div class="col-6">
                 <div class="form-group">
                   <select class="form-control" id="kesadaran">
-                    <option selected>Kesadaran</option>
-                    <option>Composmentis</option>
-                    <option>Apatis</option>
-                    <option>Somnolen</option>
-                    <option>Sopor</option>
-                    <option>Koma</option>
+                    <option value="" selected>-Kesadaran-</option>
+                    <option value="Composmentis">Composmentis</option>
+                    <option value="Apatis">Apatis</option>
+                    <option value="Somnolen">Somnolen</option>
+                    <option value="Sopor">Sopor</option>
+                    <option value="Koma">Koma</option>
                   </select>
                 </div>
               </div>
@@ -622,7 +623,7 @@
                     <div class="input-group-prepend">
                       <span class="input-group-text"><i class="ni ni-box-2"></i></span>
                     </div>
-                    <input class="form-control" placeholder="Tekanan Darah" type="text">
+                    <input class="form-control" placeholder="Tekanan Darah" id="tekanan_darah" type="text">
                   </div>
                 </div>
               </div>
@@ -632,7 +633,7 @@
                     <div class="input-group-prepend">
                       <span class="input-group-text"><i class="ni ni-briefcase-24"></i></span>
                     </div>
-                    <input class="form-control" placeholder="Nadi" type="text">
+                    <input class="form-control" placeholder="Nadi" id="nadi" type="text">
                   </div>
                 </div>
               </div>
@@ -642,7 +643,7 @@
                     <div class="input-group-prepend">
                       <span class="input-group-text"><i class="ni ni-building"></i></span>
                     </div>
-                    <input class="form-control" placeholder="Suhu" type="text">
+                    <input class="form-control" placeholder="Suhu" id="suhu" type="text">
                   </div>
                 </div>
               </div>
@@ -652,7 +653,7 @@
                     <div class="input-group-prepend">
                       <span class="input-group-text"><i class="ni ni-button-pause"></i></span>
                     </div>
-                    <input class="form-control" placeholder="RR" type="text">
+                    <input class="form-control" placeholder="RR" id="rr" type="text">
                   </div>
                 </div>
               </div>
@@ -662,7 +663,7 @@
                     <div class="input-group-prepend">
                       <span class="input-group-text"><i class="ni ni-bullet-list-67"></i></span>
                     </div>
-                    <input class="form-control form-control-lg" placeholder="Diagnosa" type="text">
+                    <input class="form-control form-control-lg" placeholder="Diagnosa" id="diagnosa" type="text">
                   </div>
                 </div>
               </div>
@@ -672,7 +673,7 @@
                     <div class="input-group-prepend">
                       <span class="input-group-text"><i class="ni ni-caps-small"></i></span>
                     </div>
-                    <input class="form-control form-control-lg" placeholder="Terapi" type="text">
+                    <input class="form-control form-control-lg" placeholder="Terapi" id="terapi" type="text">
                   </div>
                 </div>
               </div>
@@ -684,8 +685,8 @@
                 <div class="dropzone dropzone-single mb-3" data-toggle="dropzone" data-dropzone-url="http://">
                   <div class="fallback">
                     <div class="custom-file">
-                      <input type="file" class="custom-file-input" id="projectCoverUploads">
-                      <label class="custom-file-label" for="projectCoverUploads">Choose file</label>
+                      <input type="file" class="custom-file-input" id="hasil_lab">
+                      <label class="custom-file-label" for="hasil_lab">Choose file</label>
                     </div>
                   </div>
                   <div class="dz-preview dz-preview-single">
@@ -700,8 +701,8 @@
                 <div class="dropzone dropzone-single mb-3" data-toggle="dropzone" data-dropzone-url="http://">
                   <div class="fallback">
                     <div class="custom-file">
-                      <input type="file" class="custom-file-input" id="projectCoverUploads">
-                      <label class="custom-file-label" for="projectCoverUploads">Choose file</label>
+                      <input type="file" class="custom-file-input" id="hasil_radiologi">
+                      <label class="custom-file-label" for="hasil_radiologi">Choose file</label>
                     </div>
                   </div>
                   <div class="dz-preview dz-preview-single">
@@ -716,8 +717,8 @@
                 <div class="dropzone dropzone-single mb-3" data-toggle="dropzone" data-dropzone-url="http://">
                   <div class="fallback">
                     <div class="custom-file">
-                      <input type="file" class="custom-file-input" id="projectCoverUploads">
-                      <label class="custom-file-label" for="projectCoverUploads">Choose file</label>
+                      <input type="file" class="custom-file-input" id="hasil_catatan">
+                      <label class="custom-file-label" for="hasil_catatan">Choose file</label>
                     </div>
                   </div>
                   <div class="dz-preview dz-preview-single">
@@ -728,7 +729,8 @@
                 </div>
               </div>
           </div>
-          <button type="button" class="btn btn-block btn-info">Simpan</button>
+          <div id="antrian_footer">
+          </div>
         </form>
       </div>
       <div class="modal-footer">
@@ -782,6 +784,24 @@
   }
 
   function get_card() {
+      $.ajax({
+          type: 'POST',
+          url: '<?= base_url() ?>pendaftaran/get_dokter',
+          dataType: 'json',
+          success: function(data) {
+            var x = document.getElementsByClassName("nama_dokter");
+            var y = document.getElementsByClassName("spesialis");
+            for (var i = 0; i < x.length; i++) {
+                x[i].innerHTML = data[i].nama;
+                y[i].innerHTML = data[i].jabatan;
+                get_list(data[i].id_user, i);
+            }
+            
+          }
+      });
+  }
+
+  function reset_card() {
       $.ajax({
           type: 'POST',
           url: '<?= base_url() ?>pendaftaran/get_dokter',
@@ -910,11 +930,14 @@
         dataType: 'json',
         success: function(data) {
             // console.log(data);
+            document.getElementById("id_antri").value = data.id;
             document.getElementById("nrm_antri").value = data.kode;
             document.getElementById("nama_antri").value = data.nama;
             document.getElementById("nik_antri").value = data.nik;
             document.getElementById("alamat_antri").value = data.alamat;
 
+            var tombol = '<button id="simpan_asessmen" type="button" class="btn btn-block btn-info" onclick="tambah_asessmen()" ><div id="loader_asessmen"> </div> Simpan</button>';
+            $("#antrian_footer").html(tombol);
             $('#modal-asesmen').modal('show');
         }
     });
@@ -1037,55 +1060,70 @@
   }
 
   function tambah_asessmen() {
-    if(document.getElementById("judul").value == ""){
-      document.getElementById("judul").focus();
-    } else if(document.getElementById("unit").value == ""){
-      document.getElementById("unit").focus();
-    } else if(document.getElementById("f_kategori").value == ""){
-      document.getElementById("f_kategori").focus();
-    } else if(document.getElementById("judul").value == ""){
-      document.getElementById("judul").focus();
-    } else if(document.getElementById("berkas").value == ""){
-      document.getElementById("berkas").focus();
-    } else if(document.getElementById("tgl").value == ""){
-      document.getElementById("tgl").focus();
+    // console.log(id);
+    if(document.getElementById("keluhan").value == ""){
+      document.getElementById("keluhan").focus();
+    } else if(document.getElementById("tekanan_darah").value == ""){
+      document.getElementById("tekanan_darah").focus();
+    } else if(document.getElementById("nadi").value == ""){
+      document.getElementById("nadi").focus();
+    } else if(document.getElementById("suhu").value == ""){
+      document.getElementById("suhu").focus();
+    } else if(document.getElementById("rr").value == ""){
+      document.getElementById("rr").focus();
+    } else if(document.getElementById("diagnosa").value == ""){
+      document.getElementById("diagnosa").focus();
+    } else if(document.getElementById("terapi").value == ""){
+      document.getElementById("terapi").focus();
     } else{
       var form_data = new FormData();
-      form_data.append('file', $('#berkas').prop('files')[0]);
-      form_data.append('judul', document.getElementById("judul").value);
-      form_data.append('unit', document.getElementById("unit").value);
-      form_data.append('kategori', document.getElementById("f_kategori").value);
-      form_data.append('tgl', document.getElementById("tgl").value);
+      form_data.append('keluhan', document.getElementById("keluhan").value);
+      form_data.append('penyakit_sekarang', document.getElementById("penyakit_sekarang").value);
+      form_data.append('penyakit_dahulu', document.getElementById("penyakit_dahulu").value);
+      form_data.append('riwayat_alergi', document.getElementById("riwayat_alergi").value);
+      form_data.append('riwayat_operasi', document.getElementById("riwayat_operasi").value);
+      form_data.append('riwayat_transfusi', document.getElementById("riwayat_transfusi").value);
+      form_data.append('riwayat_obat', document.getElementById("riwayat_obat").value);
+      form_data.append('kesadaran_umum', document.getElementById("kesadaran_umum").value);
+      form_data.append('kesadaran', document.getElementById("kesadaran").value);
+      form_data.append('tekanan_darah', document.getElementById("tekanan_darah").value);
+      form_data.append('nadi', document.getElementById("nadi").value);
+      form_data.append('suhu', document.getElementById("suhu").value);
+      form_data.append('rr', document.getElementById("rr").value);
+      form_data.append('diagnosa', document.getElementById("diagnosa").value);
+      form_data.append('terapi', document.getElementById("terapi").value);
+
+      form_data.append('kode', document.getElementById("nrm_antri").value);
+      form_data.append('id_antrian', document.getElementById("id_antri").value);
 
       $.ajax({
         type: 'POST',
         data: form_data,
-        url: '<?= base_url() ?>admin/do_upload',
+        url: '<?= base_url() ?>pendaftaran/tambah_asessmen',
         processData:false,
         contentType:false,
         cache:false,
         dataType: 'json',
+        beforeSend: function () {
+          $('#simpan_asessmen').attr('disabled', true);
+          $('#loader_asessmen').html('');
+          addSpinner($('#loader_asessmen'));
+        },
         success: function(data) {
-          ambil_data();
-          $("#exampleModal").modal("hide");
-          if(data==""){
-            Swal.fire({
-              position: 'center',
-              icon: 'success',
-              title: 'Data Berhasil Diupload',
-              showConfirmButton: false,
-              timer: 2500
-            });
-          }else{
-            Swal.fire({
-              position: 'center',
-              icon: 'error',
-              title: 'Upload Data Gagal',
-              showConfirmButton: false,
-              timer: 2500
-            });
-          }
-          
+          // console.log(data);
+          get_card();
+          $('#simpan_asessmen').attr('disabled', false);
+          removeSpinner($('#loader_asessmen'), function () {
+            $('#loader_asessmen').html('');
+          });
+          $("#modal-asesmen").modal("hide");
+          Swal.fire({
+            position: 'center',
+            icon: 'success',
+            title: 'Data Berhasil Diupload',
+            showConfirmButton: false,
+            timer: 2500
+          });
         }
       });
     }
