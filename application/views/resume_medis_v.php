@@ -1,3 +1,8 @@
+<style>
+  .swal2-container {
+    z-index: 3000;
+  }
+</style>
 <div class="content">
     <!-- Header -->
     <!-- Header -->
@@ -78,33 +83,7 @@
                           </tr>
                       </tfoot>
                       <tbody>
-                          <!-- <tr>
-                              <td>Tiger Nixon</td>
-                              <td>System Architect</td>
-                              <td>Edinburgh</td>
-                              <td>61</td>
-                              <td>2011/04/25</td>
-                              <td>
-                                    <div id="social-buttons-icon-component" class="tab-pane tab-example-result fade show active" role="tabpanel" aria-labelledby="social-buttons-icon-component-tab">
-                                      <div class="row">
-                                          <div class="col-md-3">
-                                            <button type="button" class="btn btn-vimeo btn-icon-only" data-toggle="modal" data-target="#modal-default" title="Lihat">
-                                              <span class="btn-inner--icon"><i class="fas fa-search"></i></span>
-                                            </button>
-                                          </div>
-                                          <div class="col-md-3">
-                                            <button type="button" class="btn btn-pinterest btn-icon-only" data-toggle="modal" data-target="#modal-upload" title="Upload Data">
-                                              <span class="btn-inner--icon"><i class="fas fa-upload"></i></span>
-                                            </button>
-                                          </div>
-                                          <div class="col-md-3">
-                                            <button type="button" class="btn btn-slack btn-icon-only" data-toggle="modal" data-target="#modal-edit" title="Edit">
-                                              <span class="btn-inner--icon"><i class="fas fa-edit"></i></span>
-                                            </button>
-                                          </div>
-                                    </div>
-                              </td>
-                          </tr> -->
+                         
                       </tbody>
                   </table>
               </div>
@@ -532,7 +511,7 @@
       document.getElementById("diagnosa").disabled = false;
       document.getElementById("terapi").disabled = false;
 
-      var tombol = '<button type="button" class="btn btn-block btn-danger" onclick="disable_form()" > Simpan</button>';
+      var tombol = '<button type="button" class="btn btn-block btn-danger" id="ubah_button" onclick="ubah_asessmen()" ><div id="loader"> </div> Simpan</button>';
       $("#antrian_footer").html(tombol);
       $("#modal-title-notification").html("Edit Asessmen");
     }
@@ -544,17 +523,127 @@
           data: 'id_antrian=' + id_antrian,
           dataType: 'json',
           success: function(data) {
-            // alert(data.kode);
-              console.log(data);
-              // document.getElementById("id_antri").value = data.id_antrian;
+              // console.log(data);
+              document.getElementById("id_antri").value = data.id_antrian;
               document.getElementById("nrm_antri").value = data.kode;
-              // document.getElementById("nama_antri").value = data.nama;
-              // document.getElementById("nik_antri").value = data.nik;
-              // document.getElementById("alamat_antri").value = data.alamat;
+              document.getElementById("nama_antri").value = data.nama;
+              document.getElementById("nik_antri").value = data.nik;
+              document.getElementById("alamat_antri").value = data.alamat;
+
+              document.getElementById("keluhan").value = data.keluhan;
+              document.getElementById("penyakit_sekarang").value = data.penyakit_sekarang;
+              document.getElementById("penyakit_dahulu").value = data.penyakit_dahulu;
+              document.getElementById("riwayat_alergi").value = data.riwayat_alergi;
+              document.getElementById("riwayat_operasi").value = data.riwayat_operasi;
+              document.getElementById("riwayat_transfusi").value = data.riwayat_transfusi;
+              document.getElementById("riwayat_obat").value = data.riwayat_obat;
+              document.getElementById("kesadaran_umum").value = data.kesadaran_umum;
+              document.getElementById("kesadaran").value = data.kesadaran;
+              document.getElementById("tekanan_darah").value = data.tekanan_darah;
+              document.getElementById("nadi").value = data.nadi;
+              document.getElementById("suhu").value = data.suhu;
+              document.getElementById("rr").value = data.rr;
+              document.getElementById("diagnosa").value = data.diagnosa;
+              document.getElementById("terapi").value = data.terapi;
 
               disable_form();
               $('#modal-edit').modal('show');
           }
       });
     }
+
+    function ubah_asessmen() {
+    // console.log(id);
+    if(document.getElementById("keluhan").value == ""){
+      document.getElementById("keluhan").focus();
+    } else if(document.getElementById("tekanan_darah").value == ""){
+      document.getElementById("tekanan_darah").focus();
+    } else if(document.getElementById("nadi").value == ""){
+      document.getElementById("nadi").focus();
+    } else if(document.getElementById("suhu").value == ""){
+      document.getElementById("suhu").focus();
+    } else if(document.getElementById("rr").value == ""){
+      document.getElementById("rr").focus();
+    } else if(document.getElementById("diagnosa").value == ""){
+      document.getElementById("diagnosa").focus();
+    } else if(document.getElementById("terapi").value == ""){
+      document.getElementById("terapi").focus();
+    } else{
+      var form_data = new FormData();
+      form_data.append('keluhan', document.getElementById("keluhan").value);
+      form_data.append('penyakit_sekarang', document.getElementById("penyakit_sekarang").value);
+      form_data.append('penyakit_dahulu', document.getElementById("penyakit_dahulu").value);
+      form_data.append('riwayat_alergi', document.getElementById("riwayat_alergi").value);
+      form_data.append('riwayat_operasi', document.getElementById("riwayat_operasi").value);
+      form_data.append('riwayat_transfusi', document.getElementById("riwayat_transfusi").value);
+      form_data.append('riwayat_obat', document.getElementById("riwayat_obat").value);
+      form_data.append('kesadaran_umum', document.getElementById("kesadaran_umum").value);
+      form_data.append('kesadaran', document.getElementById("kesadaran").value);
+      form_data.append('tekanan_darah', document.getElementById("tekanan_darah").value);
+      form_data.append('nadi', document.getElementById("nadi").value);
+      form_data.append('suhu', document.getElementById("suhu").value);
+      form_data.append('rr', document.getElementById("rr").value);
+      form_data.append('diagnosa', document.getElementById("diagnosa").value);
+      form_data.append('terapi', document.getElementById("terapi").value);
+
+      form_data.append('kode', document.getElementById("nrm_antri").value);
+      form_data.append('id_antrian', document.getElementById("id_antri").value);
+
+      $.ajax({
+        type: 'POST',
+        data: form_data,
+        url: '<?= base_url() ?>pendaftaran/tambah_asessmen',
+        processData:false,
+        contentType:false,
+        cache:false,
+        dataType: 'json',
+        beforeSend: function () {
+          $('#ubah_button').attr('disabled', true);
+          $('#loader').html('');
+          addSpinner($('#loader'));
+        },
+        success: function(data) {
+          // console.log(data);
+          $('#ubah_button').attr('disabled', false);
+          removeSpinner($('#loader'), function () {
+            $('#loader').html('');
+          });
+          disable_form();
+          Swal.fire({
+            position: 'center',
+            icon: 'success',
+            title: 'Data Berhasil Diupload',
+            showConfirmButton: false,
+            timer: 2500
+          });
+        }
+      });
+    }
+  }
+
+  
+  function addSpinner(el, static_pos)
+{
+  var spinner = el.children('.spinner');
+  if (spinner.length && !spinner.hasClass('spinner-remove')) return null;
+  !spinner.length && (spinner = $('<div class="spinner' + (static_pos ? '' : ' spinner-absolute') + '"/>').appendTo(el));
+  animateSpinner(spinner, 'add');
+}
+
+function removeSpinner(el, complete)
+{
+  var spinner = el.children('.spinner');
+  spinner.length && animateSpinner(spinner, 'remove', complete);
+}
+
+function animateSpinner(el, animation, complete)
+{
+  if (el.data('animating')) {
+    el.removeClass(el.data('animating')).data('animating', null);
+    el.data('animationTimeout') && clearTimeout(el.data('animationTimeout'));
+  }
+  el.addClass('spinner-' + animation).data('animating', 'spinner-' + animation);
+  el.data('animationTimeout', setTimeout(function() { animation == 'remove' && el.remove(); complete && complete(); }, parseFloat(el.css('animation-duration')) * 1000));
+}
+
 </script>
