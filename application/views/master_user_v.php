@@ -6,7 +6,7 @@
       <div class="header-body">
         <div class="row align-items-center py-4">
           <div class="col-lg-6 col-7">
-            <h6 class="h2 text-white d-inline-block mb-0">Husada Raya</h6>
+            <h6 class="h2 text-white d-inline-block mb-0">Aulia Husada</h6>
             <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
               <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
                 <li class="breadcrumb-item"><a href="#"><i class="fas fa-home"></i></a></li>
@@ -56,6 +56,14 @@
                                     </div>
                                     <input class="form-control" id="nama" placeholder="Nama" type="text">
                                   </div>
+                                </div>
+                                <div class="form-group mb-3">
+                                  <select class="form-control">
+                                    <option value="">-Pilih Level-</option>
+                                    <option value="0">Owner</option>
+                                    <option value="1">Admin</option>
+                                    <option value="2">Dokter</option>
+                                  </select>
                                 </div>
                                 <div class="form-group mb-3">
                                   <div class="input-group input-group-merge input-group-alternative">

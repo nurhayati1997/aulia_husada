@@ -1,26 +1,27 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 
-class laporan extends CI_Controller {
+class laporan extends CI_Controller
+{
 
-	/**
-	 * Index Page for this controller.
-	 *
-	 * Maps to the following URL
-	 * 		http://example.com/index.php/welcome
-	 *	- or -
-	 * 		http://example.com/index.php/welcome/index
-	 *	- or -
-	 * Since this controller is set as the default controller in
-	 * config/routes.php, it's displayed at http://example.com/
-	 *
-	 * So any other public methods not prefixed with an underscore will
-	 * map to /index.php/welcome/<method_name>
-	 * @see https://codeigniter.com/user_guide/general/urls.html
-	 */
+	public function __construct()
+	{
+		parent::__construct();
+		$this->load->model('db_model');
+		$this->load->library('form_validation');
+	}
 	public function index()
 	{
 		// $this->load->view('dashboard_v');
 		$this->template->load('template', 'laporan_v');
+	}
+
+	public function dataLaporan()
+	{
+		$tanggalMulai = $this->input->post('tanggalMulai') . " 00:00:00";
+		$tanggalSelesai = $this->input->post('tanggalSelesai') . " 23:59:59";
+		$this->db->order_by("tanggal DESC");
+		$data = $this->db_model->get_where("vw_transaksi", ['tanggal >=' => $tanggalMulai, 'tanggal <=' => $tanggalSelesai])->result_array();
+		echo json_encode($data);
 	}
 }

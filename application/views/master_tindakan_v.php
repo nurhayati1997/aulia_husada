@@ -6,7 +6,7 @@
       <div class="header-body">
         <div class="row align-items-center py-4">
           <div class="col-lg-6 col-7">
-            <h6 class="h2 text-white d-inline-block mb-0">Husada Raya</h6>
+            <h6 class="h2 text-white d-inline-block mb-0">Aulia Husada</h6>
             <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
               <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
                 <li class="breadcrumb-item"><a href="#"><i class="fas fa-home"></i></a></li>
@@ -83,7 +83,7 @@
           </div>
           <div class="card-body ">
             <div class="table-responsive py-4">
-              <table class="table table-flush" id="datatable-basic">
+              <table class="table table-flush" id="tabelTindakan">
                 <thead class="thead-light">
                   <tr>
                     <th>ID</th>
@@ -138,7 +138,7 @@
     $("#tempatTabel").html('<i class="fas fa-spinner fa-pulse"></i> Memuat...')
     var baris = ''
     $.ajax({
-      url: '<?= base_url() ?>master/tampil',
+      url: '<?= base_url() ?>master_tindakan/tampil',
       method: 'post',
       dataType: 'json',
       success: function(data) {
@@ -151,6 +151,9 @@
           baris += '</div></td></tr>'
         }
         $("#tempatTabel").html(baris);
+        $('#tabelTindakan').DataTable({
+          "pageLength": 10,
+        });
       }
     });
   }
@@ -167,7 +170,7 @@
     var nama = $("#namaTindakan").val()
     var harga = $("#hargaTindakan").val()
     $.ajax({
-      url: '<?= base_url() ?>master/tambah',
+      url: '<?= base_url() ?>master_tindakan/tambah',
       method: 'post',
       data: "target=tbl_tindakan&nama=" + nama + "&harga=" + harga,
       dataType: 'json',
@@ -188,7 +191,7 @@
   function tryHapus(id) {
     $("#hapus" + id).html('<i class="fas fa-spinner fa-pulse"></i>')
     $.ajax({
-      url: '<?= base_url() ?>master/dataById',
+      url: '<?= base_url() ?>master_tindakan/dataById',
       method: 'post',
       data: "target=tbl_master&id=" + id,
       dataType: 'json',
@@ -206,7 +209,7 @@
     $("#hapus").html('<i class="fas fa-spinner fa-pulse"></i> Memproses..')
     var id = $("#id_hapus").val()
     $.ajax({
-      url: '<?= base_url() ?>master/hapus',
+      url: '<?= base_url() ?>master_tindakan/hapus',
       method: 'post',
       data: "target=tbl_tindakan&id=" + id,
       dataType: 'json',
