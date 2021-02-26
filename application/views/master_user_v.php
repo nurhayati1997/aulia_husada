@@ -105,7 +105,9 @@
                     <th>ID</th>
                     <th>Nama</th>
                     <th>Email</th>
-                    <th>Pasword</th>
+                    <th>Jabatan</th>
+                    <th>Spesialis</th>
+                    <th>Action</th>
                   </tr>
                 </thead>
                 <tbody id="tempatTabel">
@@ -154,15 +156,17 @@
     $("#tempatTabel").html('<i class="fas fa-spinner fa-pulse"></i> Memuat...')
     var baris = ''
     $.ajax({
-      url: '<?= base_url() ?>master/tampil',
+      url: '<?= base_url() ?>master_user/tampil',
       method: 'post',
       dataType: 'json',
       success: function(data) {
         for (let i = 0; i < data.length; i++) {
           baris += '<tr>'
-          baris += '<td>' + data[i].id_tindakan + '</td>'
-          baris += '<td>' + data[i].nama_tindakan + '</td>'
-          baris += '<td>' + formatRupiah(data[i].harga.toString()) + '</td>'
+          baris += '<td>' + data[i].id_user + '</td>'
+          baris += '<td>' + data[i].nama + '</td>'
+          baris += '<td>' + data[i].email + '</td>'
+          baris += '<td>' + data[i].rule + '</td>'
+          baris += '<td>' + data[i].spesialis + '</td>'
           baris += '<td><a href="#" title="hapus?" class="badge badge-danger" id="hapus' + data[i].id_tindakan + '" onClick="tryHapus(' + data[i].id_tindakan + ')"><i class="fa fa-times"></i></a>'
           baris += '</div></td></tr>'
         }

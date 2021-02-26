@@ -19,7 +19,7 @@ class master_user extends CI_Controller
 
 	public function tampil()
 	{
-		echo json_encode($this->db_model->get_where("tbl_tindakan", ["status" => 0])->result());
+		echo json_encode($this->db_model->get_where("tbl_user", ["status" => 0])->result());
 	}
 
 	public function tambah()
