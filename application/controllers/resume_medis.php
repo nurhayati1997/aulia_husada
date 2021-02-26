@@ -18,4 +18,10 @@ class resume_medis extends CI_Controller {
 	{
 		echo json_encode($this->Db_model->get_all('v_riwayat_diagnosa')->result());
 	}
+
+	function pencarian()
+	{
+		// echo json_encode($this->input->post('id_diagnosa', TRUE));
+		echo json_encode($this->Db_model->get_where('v_riwayat_diagnosa', array('id_antrian' => $this->input->post('id_antrian', TRUE)))->row());
+	}
 }
