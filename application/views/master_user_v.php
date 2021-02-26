@@ -58,11 +58,11 @@
                                   </div>
                                 </div>
                                 <div class="form-group mb-3">
-                                  <select class="form-control">
-                                    <option value="">-Pilih Level-</option>
-                                    <option value="0">Owner</option>
-                                    <option value="1">Admin</option>
-                                    <option value="2">Dokter</option>
+                                  <select class="form-control" id="ruleUser">
+                                    <option value="0" disabled selected>-Pilih Level-</option>
+                                    <option value="1">Owner</option>
+                                    <option value="2">Admin</option>
+                                    <option value="3">Dokter</option>
                                   </select>
                                 </div>
                                 <div class="form-group mb-3">
@@ -70,7 +70,7 @@
                                     <div class="input-group-prepend">
                                       <span class="input-group-text"><i class="ni ni-email-83"></i></span>
                                     </div>
-                                    <input class="form-control" id="namaTindakan" placeholder="email" type="email">
+                                    <input class="form-control" id="email" placeholder="email" type="email">
                                   </div>
                                 </div>
                                 <div class="form-group mb-3">
@@ -78,7 +78,7 @@
                                     <div class="input-group-prepend">
                                       <span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
                                     </div>
-                                    <input class="form-control" id="passwordLama" placeholder="Pasword Lama" type="password">
+                                    <input class="form-control" id="password" placeholder="Pasword" type="password">
                                   </div>
                                 </div>
                                 <div class="form-group mb-3">
@@ -86,11 +86,44 @@
                                     <div class="input-group-prepend">
                                       <span class="input-group-text"><i class="ni ni-paper-diploma"></i></span>
                                     </div>
-                                    <input class="form-control" id="passwordBaru" placeholder="Pasword Baru" type="password">
+                                    <input class="form-control" id="konfirPass" placeholder="Konfirmasi Pasword" type="password">
                                   </div>
                                 </div>
+                                <div class="badge badge-danger" id="pesanErrorTambah"></div>
                                 <div class="text-center">
-                                  <button type="button" onClick="tambah()" id="tombolTambah" class="btn btn-success my-4">Tambah</button>
+                                  <button type="button" onClick="tambah()" id="tombolTambah" class="btn btn-success my-2">Tambah</button>
+                                </div>
+                              </form>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="modal fade" id="modalEdit" tabindex="-1" role="dialog" aria-labelledby="modal-form" aria-hidden="true">
+                    <div class="modal-dialog modal- modal-dialog-centered modal-sm" role="document">
+                      <div class="modal-content">
+                        <div class="modal-body p-0">
+                          <div class="card bg-secondary border-0 mb-0">
+                            <div class="card-header bg-success pb-1">
+                              <div class="text-muted text-center mt-2 mb-3">
+                                <span class="text-muted text-white">Form Edit Data User </span>
+                              </div>
+                            </div>
+                            <div class="card-body px-lg-5 py-lg-5">
+                              <form role="form">
+                                <div class="form-group mb-3">
+                                  <div class="input-group input-group-merge input-group-alternative">
+                                    <div class="input-group-prepend">
+                                      <span class="input-group-text"><i class="ni ni-badge"></i></span>
+                                    </div>
+                                    <input id="idUser" type="hidden">
+                                    <input class="form-control" id="editNama" placeholder="Nama" type="text">
+                                  </div>
+                                </div>
+                                <div class="badge badge-danger" id="pesanErrorEdit"></div>
+                                <div class="text-center">
+                                  <button type="button" onClick="edit()" id="tombolEdit" class="btn btn-success my-2">Edit</button>
                                 </div>
                               </form>
                             </div>
@@ -175,8 +208,9 @@
           baris += '<td>' + data[i].email + '</td>'
           baris += '<td>' + data[i].rule + '</td>'
           baris += '<td>' + data[i].spesialis + '</td>'
-          baris += '<td><a href="#" title="hapus?" class="badge badge-danger" id="hapus' + data[i].id_tindakan + '" onClick="tryHapus(' + data[i].id_tindakan + ')"><i class="fa fa-times"></i></a>'
-          baris += '</div></td></tr>'
+          baris += '<td><a href="#" title="hapus?" class="badge badge-danger" id="hapus' + data[i].id_user + '" onClick="tryHapus(' + data[i].id_user + ')"><i class="fa fa-times"></i></a>'
+          baris += ' <a href="#" title="edit?" class="badge badge-info" id="edit' + data[i].id_user + '" onClick="tryEdit(' + data[i].id_user + ')"><i class="fa fa-edit"></i></a>'
+          baris += '</td></tr>'
         }
         $("#tempatTabel").html(baris);
       }
@@ -184,31 +218,101 @@
   }
 
   function tryTambah() {
-    $("#nama_jasa").val("")
-    $("#harga_jasa").val("")
+    $("#nama").val("")
+    $("#rule").val("")
+    $("#email").val("")
+    $("#password").val("")
+    $("#konfirPass").val("")
+    $("#dokter").val("")
     $("#modalTambah").modal('show')
     $('#pesan_error_tambah').html("")
   }
 
   function tambah() {
     $("#tombolTambah").html('<i class="fas fa-spinner fa-pulse"></i> Memproses..')
-    var nama = $("#namaTindakan").val()
-    var harga = $("#hargaTindakan").val()
+    var nama = $("#nama").val()
+    var rule = $("#ruleUser").val()
+    var email = $("#email").val()
+    var password = $("#password").val()
+    var konfirPass = $("#konfirPass").val()
+    var dokter = $("#dokter").val()
+    if (rule == null) {
+      rule = 0;
+    }
     $.ajax({
-      url: '<?= base_url() ?>master/tambah',
+      url: '<?= base_url() ?>master_user/tambah',
       method: 'post',
-      data: "target=tbl_tindakan&nama=" + nama + "&harga=" + harga,
+      data: {
+        nama: nama,
+        rule: rule,
+        email: email,
+        password: password,
+        konfirPass: konfirPass,
+        dokter: dokter
+      },
       dataType: 'json',
       success: function(data) {
         if (data == "") {
           $("#modalTambah").modal('hide')
           tampilkan()
-          $("#namaTindakan").val("")
-          $("#hargaTindakan").val("")
+          $("#nama").val("")
+          $("#rule").val("")
+          $("#email").val("")
+          $("#password").val("")
+          $("#konfirPass").val("")
+          $("#dokter").val("")
+          $('#pesanErroTambah').html("")
         } else {
-          $('#pesan_error_tambah').html(data)
+          data = data.replace("<p>", "");
+          data = data.replace("</p>", "");
+          $('#pesanErrorTambah').html(data)
         }
+        console.log(data)
         $("#tombolTambah").html('Tambah')
+      }
+    });
+  }
+
+  function tryEdit(id) {
+    $("#tombolEdit" + id).html('<i class="fas fa-spinner fa-pulse"></i>')
+    $("#idUser").val(id)
+    $.ajax({
+      url: '<?= base_url() ?>master_user/dataByid',
+      method: 'post',
+      data: "target=tbl_user&id=" + id,
+      dataType: 'json',
+      success: function(data) {
+        $("#modalEdit").modal('show')
+        $("#editNama").val(data.nama)
+        console.log(data)
+        $("#edit" + id).html('<i class="fa fa-edit"></i>')
+      }
+    });
+  }
+
+  function edit() {
+    $("#tombolEdit").html('<i class="fas fa-spinner fa-pulse"></i> Memproses..')
+    var nama = $("#editNama").val()
+    var id = $("#idUser").val()
+    $.ajax({
+      url: '<?= base_url() ?>master_user/edit',
+      method: 'post',
+      data: {
+        id: id,
+        nama: nama
+      },
+      dataType: 'json',
+      success: function(data) {
+        if (data == "") {
+          $("#modalEdit").modal('hide')
+          tampilkan()
+          $("#idUser").val("")
+          $("#nama").val("")
+          $('#pesanErrorTambah').html("")
+        } else {
+          $('#pesanErrorEdit').html(data)
+        }
+        $("#tombolEdit").html('Edit')
       }
     });
   }
@@ -216,13 +320,13 @@
   function tryHapus(id) {
     $("#hapus" + id).html('<i class="fas fa-spinner fa-pulse"></i>')
     $.ajax({
-      url: '<?= base_url() ?>master/dataById',
+      url: '<?= base_url() ?>master_user/dataById',
       method: 'post',
-      data: "target=tbl_master&id=" + id,
+      data: "target=tbl_user&id=" + id,
       dataType: 'json',
       success: function(data) {
         $("#id_hapus").val(id)
-        $("#teksHapus").html("apakah anda yakin ingin menghapus Jasa dengan nama '" + data[0].nama_tindakan + "' ?")
+        $("#teksHapus").html("apakah anda yakin ingin menghapus Jasa dengan nama '" + data.nama + "' ?")
 
         $("#hapus" + id).html('<i class="fa fa-times"></i>')
       }
@@ -234,9 +338,9 @@
     $("#hapus").html('<i class="fas fa-spinner fa-pulse"></i> Memproses..')
     var id = $("#id_hapus").val()
     $.ajax({
-      url: '<?= base_url() ?>master/hapus',
+      url: '<?= base_url() ?>master_user/hapus',
       method: 'post',
-      data: "target=tbl_tindakan&id=" + id,
+      data: "target=tbl_user&id=" + id,
       dataType: 'json',
       success: function(data) {
         $("#id_hapus").val("")
@@ -246,22 +350,5 @@
         $("#hapus").html('Hapus')
       }
     });
-  }
-
-  function formatRupiah(angka, prefix) {
-    var number_string = angka.replace(/[^,\d]/g, '').toString(),
-      split = number_string.split(','),
-      sisa = split[0].length % 3,
-      rupiah = split[0].substr(0, sisa),
-      ribuan = split[0].substr(sisa).match(/\d{3}/gi);
-
-    // tambahkan titik jika yang di input sudah menjadi angka ribuan
-    if (ribuan) {
-      separator = sisa ? '.' : '';
-      rupiah += separator + ribuan.join('.');
-    }
-
-    rupiah = split[1] != undefined ? rupiah + ',' + split[1] : rupiah;
-    return prefix == undefined ? rupiah : (rupiah ? 'Rp. ' + rupiah : '');
   }
 </script>
