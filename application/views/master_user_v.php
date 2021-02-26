@@ -58,6 +58,14 @@
                                   </div>
                                 </div>
                                 <div class="form-group mb-3">
+                                  <select class="form-control">
+                                    <option value="">-Pilih Level-</option>
+                                    <option value="0">Owner</option>
+                                    <option value="1">Admin</option>
+                                    <option value="2">Dokter</option>
+                                  </select>
+                                </div>
+                                <div class="form-group mb-3">
                                   <div class="input-group input-group-merge input-group-alternative">
                                     <div class="input-group-prepend">
                                       <span class="input-group-text"><i class="ni ni-email-83"></i></span>
