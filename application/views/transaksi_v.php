@@ -48,7 +48,7 @@
                   <option value="0" selected disabled>Pilih Dokter</option>
                   <?php
                   foreach ($dokter as $key => $value) {
-                    echo "<option value='" . $value["id_user"] . "'>" . $value["username"] . "</option>";
+                    echo "<option value='" . $value["id_user"] . "'>" . $value["nama"] . "</option>";
                   }
                   ?>
                 </select>

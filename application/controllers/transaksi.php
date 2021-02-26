@@ -14,7 +14,7 @@ class transaksi extends CI_Controller
 	public function index()
 	{
 		// $this->load->view('dashboard_v');
-		$data["dokter"] = $this->db_model->get_where("tbl_user", ["rule" => 2])->result_array();
+		$data["dokter"] = $this->db_model->get_where("tbl_user", ["rule" => 2, "status" => 0])->result_array();
 		$this->template->load('template', 'transaksi_v', $data);
 	}
 
