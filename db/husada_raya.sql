@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 25 Feb 2021 pada 17.47
+-- Waktu pembuatan: 27 Feb 2021 pada 09.27
 -- Versi server: 10.4.11-MariaDB
 -- Versi PHP: 7.4.4
 
@@ -139,7 +139,7 @@ CREATE TABLE `tbl_riwayat_diagnosa` (
   `hasil_lab` varchar(200) DEFAULT NULL,
   `hasil_radiologi` varchar(200) DEFAULT NULL,
   `hasil_catatan` varchar(200) DEFAULT NULL,
-  `tindakan` int(2) NOT NULL DEFAULT 0,
+  `tindakan` int(2) DEFAULT NULL,
   `berkas_tindakan` varchar(200) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -148,7 +148,7 @@ CREATE TABLE `tbl_riwayat_diagnosa` (
 --
 
 INSERT INTO `tbl_riwayat_diagnosa` (`id_diagnosa`, `id_antrian`, `keluhan`, `penyakit_sekarang`, `penyakit_dahulu`, `riwayat_alergi`, `riwayat_operasi`, `riwayat_transfusi`, `riwayat_obat`, `kesadaran_umum`, `kesadaran`, `tekanan_darah`, `nadi`, `suhu`, `rr`, `diagnosa`, `terapi`, `hasil_lab`, `hasil_radiologi`, `hasil_catatan`, `tindakan`, `berkas_tindakan`) VALUES
-(1, 1, 'rindu', '', '', '', '', '', '', '', '', '12', '13', '12', '32', 'Butuh Kasih Sayang', 'NIKAH', NULL, NULL, NULL, 0, NULL);
+(1, 1, 'rindu', '', '', '', '', '', '', '', '', '11', '13', '12', '31', 'Butuh Kasih Sayang', 'NIKAH', NULL, NULL, NULL, 0, '2021-02-25_1_inas1.pdf');
 
 -- --------------------------------------------------------
 
@@ -345,7 +345,7 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW 
 --
 DROP TABLE IF EXISTS `v_riwayat_diagnosa`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `v_riwayat_diagnosa`  AS  select `tbl_riwayat_diagnosa`.`id_diagnosa` AS `id_diagnosa`,`v_antrian`.`id_antrian` AS `id_antrian`,`v_antrian`.`id_pasien` AS `id_pasien`,`v_antrian`.`kode` AS `kode`,`v_antrian`.`nik` AS `nik`,`v_antrian`.`nama` AS `nama`,`v_antrian`.`ortu` AS `ortu`,`v_antrian`.`alamat` AS `alamat`,`v_antrian`.`nohp` AS `nohp`,`v_antrian`.`ttl` AS `ttl`,`v_antrian`.`id_kecamatan` AS `id_kecamatan`,`v_antrian`.`nama_kecamatan` AS `nama_kecamatan`,`v_antrian`.`jenis_kelamin` AS `jenis_kelamin`,`v_antrian`.`agama` AS `agama`,`v_antrian`.`status` AS `status`,`v_antrian`.`pekerjaan` AS `pekerjaan`,`v_antrian`.`pendidikan` AS `pendidikan`,`v_antrian`.`tgl_input` AS `tgl_input`,`v_antrian`.`id_dokter` AS `id_dokter`,`v_antrian`.`nama_dokter` AS `nama_dokter`,`v_antrian`.`spesialis` AS `spesialis`,`v_antrian`.`tanggal_antri` AS `tanggal_antri`,`v_antrian`.`status_antrian` AS `status_antrian`,`tbl_riwayat_diagnosa`.`keluhan` AS `keluhan`,`tbl_riwayat_diagnosa`.`penyakit_sekarang` AS `penyakit_sekarang`,`tbl_riwayat_diagnosa`.`penyakit_dahulu` AS `penyakit_dahulu`,`tbl_riwayat_diagnosa`.`riwayat_alergi` AS `riwayat_alergi`,`tbl_riwayat_diagnosa`.`riwayat_operasi` AS `riwayat_operasi`,`tbl_riwayat_diagnosa`.`riwayat_transfusi` AS `riwayat_transfusi`,`tbl_riwayat_diagnosa`.`riwayat_obat` AS `riwayat_obat`,`tbl_riwayat_diagnosa`.`kesadaran_umum` AS `kesadaran_umum`,`tbl_riwayat_diagnosa`.`kesadaran` AS `kesadaran`,`tbl_riwayat_diagnosa`.`tekanan_darah` AS `tekanan_darah`,`tbl_riwayat_diagnosa`.`nadi` AS `nadi`,`tbl_riwayat_diagnosa`.`suhu` AS `suhu`,`tbl_riwayat_diagnosa`.`rr` AS `rr`,`tbl_riwayat_diagnosa`.`diagnosa` AS `diagnosa`,`tbl_riwayat_diagnosa`.`terapi` AS `terapi`,`tbl_riwayat_diagnosa`.`hasil_lab` AS `hasil_lab`,`tbl_riwayat_diagnosa`.`hasil_radiologi` AS `hasil_radiologi`,`tbl_riwayat_diagnosa`.`hasil_catatan` AS `hasil_catatan`,`tbl_riwayat_diagnosa`.`tindakan` AS `tindakan`,`tbl_riwayat_diagnosa`.`berkas_tindakan` AS `berkas_tindakan` from (`tbl_riwayat_diagnosa` left join `v_antrian` on(`tbl_riwayat_diagnosa`.`id_antrian` = `v_antrian`.`id_antrian`)) ;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `v_riwayat_diagnosa`  AS  select `tbl_riwayat_diagnosa`.`id_diagnosa` AS `id_diagnosa`,`v_antrian`.`id_antrian` AS `id_antrian`,`v_antrian`.`id_pasien` AS `id_pasien`,`v_antrian`.`kode` AS `kode`,`v_antrian`.`nik` AS `nik`,`v_antrian`.`nama` AS `nama`,`v_antrian`.`ortu` AS `ortu`,`v_antrian`.`alamat` AS `alamat`,`v_antrian`.`nohp` AS `nohp`,`v_antrian`.`ttl` AS `ttl`,`v_antrian`.`id_kecamatan` AS `id_kecamatan`,`v_antrian`.`nama_kecamatan` AS `nama_kecamatan`,`v_antrian`.`jenis_kelamin` AS `jenis_kelamin`,`v_antrian`.`agama` AS `agama`,`v_antrian`.`status` AS `status`,`v_antrian`.`pekerjaan` AS `pekerjaan`,`v_antrian`.`pendidikan` AS `pendidikan`,`v_antrian`.`tgl_input` AS `tgl_input`,`v_antrian`.`id_dokter` AS `id_dokter`,`v_antrian`.`nama_dokter` AS `nama_dokter`,`v_antrian`.`spesialis` AS `spesialis`,`v_antrian`.`tanggal_antri` AS `tanggal_antri`,`v_antrian`.`status_antrian` AS `status_antrian`,`tbl_riwayat_diagnosa`.`keluhan` AS `keluhan`,`tbl_riwayat_diagnosa`.`penyakit_sekarang` AS `penyakit_sekarang`,`tbl_riwayat_diagnosa`.`penyakit_dahulu` AS `penyakit_dahulu`,`tbl_riwayat_diagnosa`.`riwayat_alergi` AS `riwayat_alergi`,`tbl_riwayat_diagnosa`.`riwayat_operasi` AS `riwayat_operasi`,`tbl_riwayat_diagnosa`.`riwayat_transfusi` AS `riwayat_transfusi`,`tbl_riwayat_diagnosa`.`riwayat_obat` AS `riwayat_obat`,`tbl_riwayat_diagnosa`.`kesadaran_umum` AS `kesadaran_umum`,`tbl_riwayat_diagnosa`.`kesadaran` AS `kesadaran`,`tbl_riwayat_diagnosa`.`tekanan_darah` AS `tekanan_darah`,`tbl_riwayat_diagnosa`.`nadi` AS `nadi`,`tbl_riwayat_diagnosa`.`suhu` AS `suhu`,`tbl_riwayat_diagnosa`.`rr` AS `rr`,`tbl_riwayat_diagnosa`.`diagnosa` AS `diagnosa`,`tbl_riwayat_diagnosa`.`terapi` AS `terapi`,`tbl_riwayat_diagnosa`.`hasil_lab` AS `hasil_lab`,`tbl_riwayat_diagnosa`.`hasil_radiologi` AS `hasil_radiologi`,`tbl_riwayat_diagnosa`.`hasil_catatan` AS `hasil_catatan`,`tbl_riwayat_diagnosa`.`tindakan` AS `tindakan`,`tbl_riwayat_diagnosa`.`berkas_tindakan` AS `berkas_tindakan` from (`v_antrian` left join `tbl_riwayat_diagnosa` on(`tbl_riwayat_diagnosa`.`id_antrian` = `v_antrian`.`id_antrian`)) ;
 
 --
 -- Indexes for dumped tables
