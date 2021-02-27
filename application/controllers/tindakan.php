@@ -37,9 +37,14 @@ class tindakan extends CI_Controller {
 		echo json_encode($session_data);
 	}
 
-	function open_form()
+	function cetak_asessmen($id){
+		$data["id"] = $id;
+		$this->load->view('cetak',$data);
+	}
+
+	function isi_tabel()
 	{
-		$this->load->view('form');
+		echo json_encode($this->Db_model->get_where('v_riwayat_diagnosa', array('id_pasien' =>  $this->input->post('kata_kunci', TRUE)))->result());
 	}
 
 }

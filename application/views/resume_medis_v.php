@@ -29,7 +29,7 @@
               </nav>
             </div>
             <div class="col-lg-6 col-5 text-right">
-              <a href="#" class="btn btn-sm btn-neutral">Print Resume Medis</a>
+              <a onclick="cetak()" class="btn btn-sm btn-neutral">Print Resume Medis</a>
             </div>
           </div>
         </div>
@@ -707,6 +707,14 @@
       }
   }
 
+  function cetak(){
+    if($("#kata_kunci").val()!=""){
+      window.open(
+        '<?= site_url('tindakan/cetak_asessmen/') ?>'+$("#kata_kunci").val(),
+        '_blank'
+      );
+    }
+  }
 
   function add_list() {
       $.ajax({
