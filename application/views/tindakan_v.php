@@ -1,3 +1,8 @@
+<style>
+   .bootstrap-select>.dropdown-toggle.bs-placeholder, .bootstrap-select>.dropdown-toggle.bs-placeholder:active, .bootstrap-select>.dropdown-toggle.bs-placeholder:focus, .bootstrap-select>.dropdown-toggle.bs-placeholder:hover{
+    color: white;
+  }
+</style>
 <div class="content">
     <!-- Header -->
     <!-- Header -->
@@ -138,7 +143,11 @@
                         </div>
                       </div><div class="col-3">
                         <div class="form-group">
-                          <input class="form-control" placeholder="Jenis Kelamin" id="jk_2" type="text" readonly> 
+                          <select class="form-control" id="jk_2" readonly>
+                            <option value="">-Pilih Jenis Kelamin-</option>
+                            <option value="0">laki-Laki</option>
+                            <option value="1">Perempuan</option>
+                          </select>
                         </div>
                       </div>
                       <div class="col-6">
@@ -157,7 +166,7 @@
                             <div class="input-group-prepend">
                               <span class="input-group-text"><i class="ni ni-book-bookmark"></i></span>
                             </div>
-                            <select style="color: white!important;" title="- Pilih -" onchange="pencarian()" class="selectpicker form-control" id="nrm" name="nrm" data-live-search="true" placeholder="-Pilih-">
+                            <select style="color: white!important;" title="-No Rekam Medis-" onchange="pencarian()" class="selectpicker form-control" id="nrm" name="nrm" data-live-search="true" placeholder="-Pilih-">
                   
                             </select>
                           </div>
@@ -170,7 +179,7 @@
                         kesadaran dan tanpa paksaan.</h4>
                       </div>
                   </div>
-                  <button type="button" class="btn btn-block btn-warning">Cetak</button>
+                  <button type="button" onclick="send_form()" class="btn btn-block btn-warning">Cetak</button>
                 </form>
               </div>
             </div>
@@ -180,6 +189,10 @@
    </div>
 </div>
 <script>
+$(document).ready(function() {
+     add_list();
+  }); 
+
   function reset_form(){
     document.getElementById("nama_1").value = "";
     document.getElementById("alamat_1").value = "";
@@ -196,5 +209,97 @@
     document.getElementById("jk_2").value = "";
     document.getElementById("alamat_2").value = "";
     document.getElementById("nrm").value = "";
+    $('#nrm').selectpicker('refresh');
+  }
+
+  function add_list() {
+      $.ajax({
+          type: 'POST',
+          url: '<?= base_url() ?>pendaftaran/add_list',
+          dataType: 'json',
+          success: function(data) {
+            // console.log(data);
+            var html = '';
+            for (var i = 0; i < data.length; i++) {
+                html += "<option value='" + data[i].id + "'>" + data[i].kode + '</option>';  
+            }
+            $("#nrm").html(html);
+            $('#nrm').selectpicker('refresh');
+            
+          }
+      });
+  }
+
+  function pencarian() {
+    $.ajax({
+        type: 'POST',
+        url: '<?= base_url() ?>pendaftaran/pencarian',
+        data: 'kata_kunci=' + document.getElementById("nrm").value,
+        dataType: 'json',
+        success: function(data) {
+            // console.log(data);
+            $tgl = data.ttl.split("/");
+            var d = new Date();
+            var n = d.getFullYear();
+            document.getElementById("nama_2").value = data.nama;
+            document.getElementById("jk_2").value = data.jenis_kelamin;
+            document.getElementById("alamat_2").value = data.alamat;
+            document.getElementById("umur").value = n-$tgl[2] + " Tahun";
+        }
+    });
+  }
+
+  function send_form() {
+      // console.log(id);
+      if(document.getElementById("nama_1").value == ""){
+        document.getElementById("nama_1").focus();
+      } else if(document.getElementById("alamat_1").value == ""){
+        document.getElementById("alamat_1").focus();
+      } else if(document.getElementById("ttl_1").value == ""){
+        document.getElementById("ttl_1").focus();
+      } else if(document.getElementById("jk_1").value == ""){
+        document.getElementById("jk_1").focus();
+      } else if(document.getElementById("nik_1").value == ""){
+        document.getElementById("nik_1").focus();
+      } else if(document.getElementById("tindakan").value == ""){
+        document.getElementById("tindakan").focus();
+      } else if(document.getElementById("relasi").value == ""){
+        document.getElementById("relasi").focus();
+      } else if(document.getElementById("nama_2").value == ""){
+        document.getElementById("nama_2").focus();
+      } else if(document.getElementById("umur").value == ""){
+        document.getElementById("umur").focus();
+      } else if(document.getElementById("jk_2").value == ""){
+        document.getElementById("jk_2").focus();
+      } else if(document.getElementById("alamat_2").value == ""){
+        document.getElementById("alamat_2").focus();
+      } else if(document.getElementById("nrm").value == ""){
+        document.getElementById("nrm").focus();
+      } else{
+       
+        $.ajax({
+          type: 'POST',
+          data: 'nama_1='+ document.getElementById("nama_1").value +
+          + '&alamat_1='+ document.getElementById("alamat_1").value
+          + '&ttl_1='+ document.getElementById("ttl_1").value
+          + '&jk_1='+ document.getElementById("jk_1").value
+          + '&nik_1='+ document.getElementById("nik_1").value
+          + '&tindakan='+ document.getElementById("tindakan").value
+          + '&relasi='+ document.getElementById("relasi").value
+          + '&nama_2='+ document.getElementById("nama_2").value
+          + '&umur='+ document.getElementById("umur").value
+          + '&jk_2='+ document.getElementById("jk_2").value
+          + '&alamat_2='+ document.getElementById("alamat_2").value
+          + '&nrm='+ document.getElementById("nrm").value,
+          url: '<?= base_url() ?>tindakan/send_form',
+          dataType: 'json',
+          success: function(data) {
+            window.open(
+              '<?= site_url('tindakan/open_form') ?>',
+              '_blank'
+            );
+          }
+        });
+      }
   }
 </script>
