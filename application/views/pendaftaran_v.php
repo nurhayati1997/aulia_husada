@@ -53,6 +53,10 @@
 @keyframes spinner-remove {
   to {transform: scale(0);}
 }
+
+  .bootstrap-select>.dropdown-toggle.bs-placeholder, .bootstrap-select>.dropdown-toggle.bs-placeholder:active, .bootstrap-select>.dropdown-toggle.bs-placeholder:focus, .bootstrap-select>.dropdown-toggle.bs-placeholder:hover{
+    color: white;
+  }
 </style>
 
 <div class="content">

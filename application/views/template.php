@@ -154,17 +154,17 @@
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a href="<?= site_url('persetujuan') ?>" class="nav-link">
+                    <a href="<?= site_url('tindakan') ?>" class="nav-link">
                       <span class="sidenav-mini-icon"> P </span>
-                      <span class="sidenav-normal"> Persetujuan Tindakan </span>
+                      <span class="sidenav-normal"> Form Tindakan </span>
                     </a>
                   </li>
-                  <li class="nav-item">
+                  <!-- <li class="nav-item">
                     <a href="<?= site_url('penolakan') ?>" class="nav-link">
                       <span class="sidenav-mini-icon"> P </span>
                       <span class="sidenav-normal"> Penolakan Tindakan </span>
                     </a>
-                  </li>
+                  </li> -->
                 </ul>
               </div>
             </li>
@@ -356,7 +356,7 @@
   </div>
   <!-- Argon Scripts -->
   <!-- Core -->
-  <!-- <script src="<?= base_url() ?>assets_admin/vendor/jquery/dist/jquery.min.js"></script> -->
+  <!-- <script src="<?= base_url() ?>assets_admin/vendor/jquery/dist/jquery.min.js"></script> -->\
   <script src="<?= base_url() ?>assets_admin/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
   <script src="<?= base_url() ?>assets_admin/vendor/js-cookie/js.cookie.js"></script>
   <script src="<?= base_url() ?>assets_admin/vendor/jquery.scrollbar/jquery.scrollbar.min.js"></script>
@@ -378,7 +378,7 @@
   <script src="<?= base_url() ?>assets_admin/vendor/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
   <script src="<?= base_url() ?>assets_admin/vendor/moment.min.js"></script>
   <script src="<?= base_url() ?>assets_admin/vendor/bootstrap-datetimepicker.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.2/js/bootstrap-select.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/js/bootstrap-select.min.js"></script>
   <script type="text/javascript">
     $(function() {
       $('#datetimepicker1').datetimepicker({

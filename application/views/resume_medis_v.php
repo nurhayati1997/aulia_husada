@@ -2,6 +2,14 @@
   .swal2-container {
     z-index: 3000;
   }
+  .selectpicker{
+    background-color: white!important;
+  }
+
+  .bootstrap-select>.dropdown-toggle.bs-placeholder, .bootstrap-select>.dropdown-toggle.bs-placeholder:active, .bootstrap-select>.dropdown-toggle.bs-placeholder:focus, .bootstrap-select>.dropdown-toggle.bs-placeholder:hover{
+    color: white;
+  }
+
 </style>
 <div class="content">
     <!-- Header -->
@@ -40,19 +48,9 @@
                     <div class="col-md-4">
                     </div>
                     <div class="col-md-4">
-                      <form class="navbar-search navbar-search-light form-inline mr-sm-3" id="navbar-search-main">
-                        <div class="form-group mb-0">
-                          <div class="input-group input-group-alternative input-group-merge">
-                            <div class="input-group-prepend">
-                              <span class="input-group-text"><i class="fas fa-search"></i></span>
-                            </div>
-                            <input class="form-control" placeholder="masukkan No Rekam Medis" type="text">
-                          </div>
-                        </div>
-                        <!-- <button type="button" class="close" data-action="search-close" data-target="#navbar-search-main" aria-label="Close">
-                          <span aria-hidden="true">×</span>
-                        </button> -->
-                      </form>
+                      <select data-live-search-style="startsWith" onchange="ambil_data()" title="-Masukkan No Rekam Medis-" onchange="pencarian()" class="selectpicker form-control" id="kata_kunci" name="kata_kunci" data-live-search="true">
+                  
+                      </select>
                     </div>
                     <div class="col-md-4">
                     </div>
@@ -391,13 +389,14 @@
                       </select>
                     </div>
                     <div class="custom-file mb-3">
-                      <input type="file" class="custom-file-input" id="customFileLang" lang="en">
-                      <label class="custom-file-label" for="customFileLang"></label>
+                      <input type="file" class="custom-file-input" id="berkas" accept="image/jpeg,image/jpg,application/pdf">
+                      <label class="custom-file-label" for="berkas"></label>
                     </div>
                 </form>
               </div>
           </div>
-          <button type="button" class="btn btn-block btn-info">Simpan</button>
+          <div id="div_upload">
+          </div>
         </form>
       </div>
       <div class="modal-footer">
@@ -409,8 +408,10 @@
 
 <script>
     $(document).ready(function() {
-        ambil_data();
-        get_diagnosa();
+      add_list();  
+      // et_diagnosa();
+      ambil_data();
+        
     });
 
     function get_diagnosa() {
@@ -418,6 +419,7 @@
           type: 'POST',
           url: '<?= base_url() ?>resume_medis/get_pasien',
           dataType: 'json',
+          data: 'nrm=' + $("#kata_kunci").val(),
           success: function(data) {
               console.log(data);
           }
@@ -430,6 +432,9 @@
               "ajax": {
               "type": "POST",
                 "url": "<?php echo site_url("resume_medis/get_pasien") ?>",
+                "data": function(data) {
+                    data.nrm = $("#kata_kunci").val();
+                },
                 "dataSrc": ""
             },
             "columns": [
@@ -446,7 +451,21 @@
                     "data": "terapi"
                 },
                 {
-                    "data": "id_diagnosa"
+                    "data": "tindakan",
+                    "render": function(data, type, row) {
+                        var html = '';
+                        if(data!=null){
+                          if(data==0){
+                            var style = 'style="color:red"';
+                            var title = 'Penolakan.pdf';
+                          }else{
+                            var style = 'style="color:green"';
+                            var title = 'Persetujuan.pdf';
+                          }
+                          html += ' <a '+style+' href="<?= base_url() ?>document/pernyataan/'+row.berkas_tindakan+'" target="_blank">'+title+'</a>';
+                        }
+                      return html
+                    }
                 },
                 {
                     "data": "id_diagnosa",
@@ -460,7 +479,7 @@
                         html += '</button>';
                         html += '</div>';
                         html += '<div class="col-md-3">';
-                        html += '<button type="button" class="btn btn-pinterest btn-icon-only" data-toggle="modal" data-target="#modal-upload" title="Upload Data">';
+                        html += '<button type="button" class="btn btn-pinterest btn-icon-only" onclick="tampil_modal_upload('+data+')" title="Upload Data">';
                         html += '<span class="btn-inner--icon"><i class="fas fa-upload"></i></span>';
                         html += '</button>';
                         html += '</div>';
@@ -552,75 +571,160 @@
       });
     }
 
-    function ubah_asessmen() {
-    // console.log(id);
-    if(document.getElementById("keluhan").value == ""){
-      document.getElementById("keluhan").focus();
-    } else if(document.getElementById("tekanan_darah").value == ""){
-      document.getElementById("tekanan_darah").focus();
-    } else if(document.getElementById("nadi").value == ""){
-      document.getElementById("nadi").focus();
-    } else if(document.getElementById("suhu").value == ""){
-      document.getElementById("suhu").focus();
-    } else if(document.getElementById("rr").value == ""){
-      document.getElementById("rr").focus();
-    } else if(document.getElementById("diagnosa").value == ""){
-      document.getElementById("diagnosa").focus();
-    } else if(document.getElementById("terapi").value == ""){
-      document.getElementById("terapi").focus();
-    } else{
-      var form_data = new FormData();
-      form_data.append('keluhan', document.getElementById("keluhan").value);
-      form_data.append('penyakit_sekarang', document.getElementById("penyakit_sekarang").value);
-      form_data.append('penyakit_dahulu', document.getElementById("penyakit_dahulu").value);
-      form_data.append('riwayat_alergi', document.getElementById("riwayat_alergi").value);
-      form_data.append('riwayat_operasi', document.getElementById("riwayat_operasi").value);
-      form_data.append('riwayat_transfusi', document.getElementById("riwayat_transfusi").value);
-      form_data.append('riwayat_obat', document.getElementById("riwayat_obat").value);
-      form_data.append('kesadaran_umum', document.getElementById("kesadaran_umum").value);
-      form_data.append('kesadaran', document.getElementById("kesadaran").value);
-      form_data.append('tekanan_darah', document.getElementById("tekanan_darah").value);
-      form_data.append('nadi', document.getElementById("nadi").value);
-      form_data.append('suhu', document.getElementById("suhu").value);
-      form_data.append('rr', document.getElementById("rr").value);
-      form_data.append('diagnosa', document.getElementById("diagnosa").value);
-      form_data.append('terapi', document.getElementById("terapi").value);
+    function tampil_modal_upload(id_diagnosa){
+      document.getElementById("jenis_pernyataan").value = "";
+      document.getElementById("berkas").value = "";
 
-      form_data.append('kode', document.getElementById("nrm_antri").value);
-      form_data.append('id_antrian', document.getElementById("id_antri").value);
+      var tombol = '<button type="button" onclick="pernyataan('+id_diagnosa+')" id="simpan_pernyataan" class="btn btn-block btn-info"><div id="loader_upload"> </div> Simpan</button>';
+      $("#div_upload").html(tombol);
 
-      $.ajax({
-        type: 'POST',
-        data: form_data,
-        url: '<?= base_url() ?>pendaftaran/tambah_asessmen',
-        processData:false,
-        contentType:false,
-        cache:false,
-        dataType: 'json',
-        beforeSend: function () {
-          $('#ubah_button').attr('disabled', true);
-          $('#loader').html('');
-          addSpinner($('#loader'));
-        },
-        success: function(data) {
-          // console.log(data);
-          $('#ubah_button').attr('disabled', false);
-          removeSpinner($('#loader'), function () {
-            $('#loader').html('');
-          });
-          disable_form();
-          Swal.fire({
-            position: 'center',
-            icon: 'success',
-            title: 'Data Berhasil Diupload',
-            showConfirmButton: false,
-            timer: 2500
-          });
-        }
-      });
+      $('#modal-upload').modal('show');
     }
+
+    function ubah_asessmen() {
+      // console.log(id);
+      if(document.getElementById("keluhan").value == ""){
+        document.getElementById("keluhan").focus();
+      } else if(document.getElementById("tekanan_darah").value == ""){
+        document.getElementById("tekanan_darah").focus();
+      } else if(document.getElementById("nadi").value == ""){
+        document.getElementById("nadi").focus();
+      } else if(document.getElementById("suhu").value == ""){
+        document.getElementById("suhu").focus();
+      } else if(document.getElementById("rr").value == ""){
+        document.getElementById("rr").focus();
+      } else if(document.getElementById("diagnosa").value == ""){
+        document.getElementById("diagnosa").focus();
+      } else if(document.getElementById("terapi").value == ""){
+        document.getElementById("terapi").focus();
+      } else{
+        var form_data = new FormData();
+        form_data.append('keluhan', document.getElementById("keluhan").value);
+        form_data.append('penyakit_sekarang', document.getElementById("penyakit_sekarang").value);
+        form_data.append('penyakit_dahulu', document.getElementById("penyakit_dahulu").value);
+        form_data.append('riwayat_alergi', document.getElementById("riwayat_alergi").value);
+        form_data.append('riwayat_operasi', document.getElementById("riwayat_operasi").value);
+        form_data.append('riwayat_transfusi', document.getElementById("riwayat_transfusi").value);
+        form_data.append('riwayat_obat', document.getElementById("riwayat_obat").value);
+        form_data.append('kesadaran_umum', document.getElementById("kesadaran_umum").value);
+        form_data.append('kesadaran', document.getElementById("kesadaran").value);
+        form_data.append('tekanan_darah', document.getElementById("tekanan_darah").value);
+        form_data.append('nadi', document.getElementById("nadi").value);
+        form_data.append('suhu', document.getElementById("suhu").value);
+        form_data.append('rr', document.getElementById("rr").value);
+        form_data.append('diagnosa', document.getElementById("diagnosa").value);
+        form_data.append('terapi', document.getElementById("terapi").value);
+
+        form_data.append('kode', document.getElementById("nrm_antri").value);
+        form_data.append('id_antrian', document.getElementById("id_antri").value);
+
+        $.ajax({
+          type: 'POST',
+          data: form_data,
+          url: '<?= base_url() ?>pendaftaran/tambah_asessmen',
+          processData:false,
+          contentType:false,
+          cache:false,
+          dataType: 'json',
+          beforeSend: function () {
+            $('#ubah_button').attr('disabled', true);
+            $('#loader').html('');
+            addSpinner($('#loader'));
+          },
+          success: function(data) {
+            // console.log(data);
+            $('#ubah_button').attr('disabled', false);
+            removeSpinner($('#loader'), function () {
+              $('#loader').html('');
+            });
+            disable_form();
+            Swal.fire({
+              position: 'center',
+              icon: 'success',
+              title: 'Data Berhasil Diupload',
+              showConfirmButton: false,
+              timer: 2500
+            });
+          }
+        });
+      }
   }
 
+  function pernyataan(id) {
+      // console.log(id);
+      if(document.getElementById("jenis_pernyataan").value == ""){
+        document.getElementById("jenis_pernyataan").focus();
+      } else if(document.getElementById("berkas").value == ""){
+        document.getElementById("berkas").focus();
+      } else{
+        var format = $('#berkas').prop('files')[0].type;
+        if (format.includes('pdf') || format.includes('jpg') || format.includes('jpeg')) {
+          var form_data = new FormData();
+          form_data.append('id', id);
+          form_data.append('jenis', document.getElementById("jenis_pernyataan").value);
+          form_data.append('berkas', $('#berkas').prop('files')[0]);
+
+          $.ajax({
+            type: 'POST',
+            data: form_data,
+            url: '<?= base_url() ?>resume_medis/upload_pernyataan',
+            processData:false,
+            contentType:false,
+            cache:false,
+            dataType: 'json',
+            beforeSend: function () {
+              $('#simpan_pernyataan').attr('disabled', true);
+              $('#loader_upload').html('');
+              addSpinner($('#loader_upload'));
+            },
+            success: function(data) {
+              // alert(data);
+              // console.log(data);
+              $('#simpan_pernyataan').attr('disabled', false);
+              removeSpinner($('#loader_upload'), function () {
+                $('#loader_upload').html('');
+              });
+              ambil_data();
+              $('#modal-upload').modal('hide');
+              Swal.fire({
+                position: 'center',
+                icon: 'success',
+                title: 'Data Berhasil Diupload',
+                showConfirmButton: false,
+                timer: 2500
+              });
+            }
+          });
+        }else{
+           Swal.fire({
+              position: 'center',
+              icon: 'error',
+              title: 'Type file harus PDF atau JPEG atau JPG',
+              showConfirmButton: false,
+              timer: 2500
+            });
+        }
+      }
+  }
+
+
+  function add_list() {
+      $.ajax({
+          type: 'POST',
+          url: '<?= base_url() ?>pendaftaran/add_list',
+          dataType: 'json',
+          success: function(data) {
+            console.log(data);
+            var html = '';
+            for (var i = 0; i < data.length; i++) {
+                html += "<option value='" + data[i].id + "'>" + data[i].kode + '</option>'; 
+            }
+            $("#kata_kunci").html(html);
+            $('#kata_kunci').selectpicker('refresh');
+          
+          }
+      });
+  }
   
   function addSpinner(el, static_pos)
 {
