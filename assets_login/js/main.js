@@ -21,9 +21,8 @@
 
     $('.validate-form').on('submit', function () {
         var check = true;
-        $("#peringatanPass").attr("data-validate", "Silahkan isi Password..")
-        $("#peringatanEmail").attr("data-validate", "Silahkan isi Email..")
-
+        $("#pesanEmail").attr("data-validate", "Silahkan isi Email.")
+        $("#pesanPass").attr("data-validate", "Silahkan isi Password.")
         for (var i = 0; i < input.length; i++) {
             if (validate(input[i]) == false) {
                 showValidate(input[i]);
@@ -31,38 +30,7 @@
             }
         }
 
-        var email = $("#email").val()
-        var pass = $("#pass").val()
-
-        if (check) {
-            $("#peringatanEmail").attr("data-validate", "Email tidak terdaftar.")
-            $("#peringatanPass").attr("data-validate", "Password anda salah.")
-            $("#tombolLogin").html('<i class="fas fa-spinner fa-pulse"></i> Memproses..')
-            $("#tombolLogin").prop('disabled', true);
-            $.ajax({
-                url: 'login/tryLogin',
-                method: 'post',
-                data: {
-                    email: email,
-                    pass: pass
-                },
-                dataType: 'json',
-                success: function (data) {
-                    if (!data) {
-                        location.href = "dashboard"
-                    } else {
-                        if (data == "email") {
-                            $("#peringatanEmail").addClass("alert-validate");
-                        } else {
-                            $("#peringatanPass").addClass("alert-validate");
-                        }
-                    }
-                    $("#tombolLogin").html('Login')
-                    $("#tombolLogin").prop('disabled', false);
-                }
-            });
-        }
-        return false;
+        return check;
     });
 
 
