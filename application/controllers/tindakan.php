@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class persetujuan extends CI_Controller {
+class tindakan extends CI_Controller {
 
 	/**
 	 * Index Page for this controller.
@@ -21,6 +21,6 @@ class persetujuan extends CI_Controller {
 	public function index()
 	{
 		// $this->load->view('dashboard_v');
-		$this->template->load('template', 'persetujuan_v');
+		$this->template->load('template', 'tindakan_v');
 	}
 }

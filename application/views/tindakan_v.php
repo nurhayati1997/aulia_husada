@@ -10,13 +10,13 @@
               <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
                 <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
                   <li class="breadcrumb-item"><a href="#"><i class="fas fa-home"></i></a></li>
-                  <li class="breadcrumb-item"><a href="#">Persetujuan Tindakan Medis</a></li>
+                  <li class="breadcrumb-item"><a href="#">Form Tindakan Medis</a></li>
                   <!-- <li class="breadcrumb-item active" aria-current="page">Default</li> -->
                 </ol>
               </nav>
             </div>
             <div class="col-lg-6 col-5 text-right">
-              <a href="#" class="btn btn-sm btn-neutral">Print Persetujuan Tindakan Medis</a>
+              <a onclick="reset_form()" class="btn btn-sm btn-neutral">Reset</a>
             </div>
           </div>
         </div>
@@ -29,7 +29,7 @@
         <div class="card">
           <div class="card bg-gradient-info">
             <div class="card-header bg-transparent">
-                <h4 class="card-title text-white mb-0">Form Persetujuan Tindakan Medis </h3>
+                <h4 class="card-title text-white mb-0">Form Tindakan Medis </h3>
             </div>
             <!-- Card body -->
             <div class="card-body">
@@ -45,7 +45,7 @@
                             <div class="input-group-prepend">
                               <span class="input-group-text"><i class="ni ni-circle-08"></i></span>
                             </div>
-                            <input class="form-control" placeholder="Nama Lengkap" type="text">
+                            <input class="form-control" placeholder="Nama Lengkap" id="nama_1" type="text">
                           </div>
                         </div>
                       </div>
@@ -55,7 +55,7 @@
                             <div class="input-group-prepend">
                               <span class="input-group-text"><i class="ni ni-pin-3"></i></span>
                             </div>
-                            <input class="form-control" placeholder="Alamat" type="text">
+                            <input class="form-control" placeholder="Alamat" id="alamat_1" type="text">
                           </div>
                         </div>
                       </div>
@@ -65,16 +65,16 @@
                             <div class="input-group-prepend">
                               <span class="input-group-text"><i class="ni ni-calendar-grid-58"></i></span>
                             </div>
-                            <input class="form-control datepicker" placeholder="Tanggal lahir" type="text">
+                            <input class="form-control datepicker" placeholder="Tanggal lahir" id="ttl_1" type="text">
                           </div>
                         </div>
                       </div>
                       <div class="col-4">
                         <div class="form-group">
-                          <select class="form-control" id="exampleFormControlSelect1">
-                            <option selected>Jenis Kelamin</option>
-                            <option>laki-Laki</option>
-                            <option>Perempuan</option>
+                          <select class="form-control" id="jk_1">
+                            <option value="">-Pilih Jenis Kelamin-</option>
+                            <option value="0">laki-Laki</option>
+                            <option value="1">Perempuan</option>
                           </select>
                         </div>
                       </div>
@@ -84,7 +84,7 @@
                             <div class="input-group-prepend">
                               <span class="input-group-text"><i class="ni ni-box-2"></i></span>
                             </div>
-                            <input class="form-control" placeholder="No KTP" type="text">
+                            <input class="form-control" placeholder="No KTP" id="nik_1" type="number">
                           </div>
                         </div>
                       </div>
@@ -92,22 +92,28 @@
                         <h4 class="card-title text-white mb-0">Dengan Ini Menyatakan dengan sesungguhnya telah memberikan :</h4>
                       </div>
                       <div class="col-12">
-                        <h3 class="card-title text-white text-center mb-1">PERSETUJUAN</h3>
+                        <div class="form-group">
+                          <select class="form-control" id="tindakan">
+                            <option value="">-Pilih Tindakan-</option>
+                            <option value="PERSETUJUAN">PERSETUJUAN</option>
+                            <option value="PENOLAKAN">PENOLAKAN</option>
+                          </select>
+                        </div>
                       </div>
                       <div class="col-12">
                         <h4 class="card-title text-white mb-0">Untuk dilakukan tindakan medis berupa :</h4>
                       </div>
                       <div class="col-3">
                         <div class="form-group">
-                          <select class="form-control" id="exampleFormControlSelect1">
-                            <option selected>Terhadap</option>
-                            <option>diri saya sendiri</option>
-                            <option>Istri</option>
-                            <option>Suami</option>
-                            <option>anak</option>
-                            <option>Ayah</option>
-                            <option>Ibu</option>
-                            <option>Saudara</option>
+                          <select class="form-control" id="relasi">
+                            <option value="">-Pilih Terhadap-</option>
+                            <option value="diri saya sendiri">diri saya sendiri</option>
+                            <option value="Istri">Istri</option>
+                            <option value="Suami">Suami</option>
+                            <option value="Anak">Anak</option>
+                            <option value="Ayah">Ayah</option>
+                            <option value="Ibu">Ibu</option>
+                            <option value="Saudara">Saudara</option>
                           </select>
                         </div>
                       </div>
@@ -117,7 +123,7 @@
                             <div class="input-group-prepend">
                               <span class="input-group-text"><i class="ni ni-air-baloon"></i></span>
                             </div>
-                            <input class="form-control" placeholder="Nama" type="text">
+                            <input class="form-control" placeholder="Nama" id="nama_2" type="text" readonly>
                           </div>
                         </div>
                       </div>
@@ -127,16 +133,12 @@
                             <div class="input-group-prepend">
                               <span class="input-group-text"><i class="ni ni-app"></i></span>
                             </div>
-                            <input class="form-control" placeholder="Umur" type="text">
+                            <input class="form-control" placeholder="Umur" id="umur" type="text" readonly>
                           </div>
                         </div>
                       </div><div class="col-3">
                         <div class="form-group">
-                          <select class="form-control" id="exampleFormControlSelect1">
-                            <option selected>Jenis Kelamin</option>
-                            <option>laki-Laki</option>
-                            <option>Perempuan</option>
-                          </select>
+                          <input class="form-control" placeholder="Jenis Kelamin" id="jk_2" type="text" readonly> 
                         </div>
                       </div>
                       <div class="col-6">
@@ -145,7 +147,7 @@
                             <div class="input-group-prepend">
                               <span class="input-group-text"><i class="ni ni-bag-17"></i></span>
                             </div>
-                            <input class="form-control" placeholder="Alamat" type="text">
+                            <input class="form-control" placeholder="Alamat" id="alamat_2" type="text" readonly>
                           </div>
                         </div>
                       </div>
@@ -155,7 +157,9 @@
                             <div class="input-group-prepend">
                               <span class="input-group-text"><i class="ni ni-book-bookmark"></i></span>
                             </div>
-                            <input class="form-control" placeholder="No Rekam Medik" type="text">
+                            <select style="color: white!important;" title="- Pilih -" onchange="pencarian()" class="selectpicker form-control" id="nrm" name="nrm" data-live-search="true" placeholder="-Pilih-">
+                  
+                            </select>
                           </div>
                         </div>
                       </div>
@@ -166,7 +170,7 @@
                         kesadaran dan tanpa paksaan.</h4>
                       </div>
                   </div>
-                  <button type="button" class="btn btn-block btn-warning">Simpan</button>
+                  <button type="button" class="btn btn-block btn-warning">Cetak</button>
                 </form>
               </div>
             </div>
@@ -175,3 +179,22 @@
     </div>
    </div>
 </div>
+<script>
+  function reset_form(){
+    document.getElementById("nama_1").value = "";
+    document.getElementById("alamat_1").value = "";
+    document.getElementById("ttl_1").value = "";
+    document.getElementById("jk_1").value = "";
+    document.getElementById("nik_1").value = "";
+
+    document.getElementById("tindakan").value = "";
+
+    document.getElementById("relasi").value = "";
+
+    document.getElementById("nama_2").value = "";
+    document.getElementById("umur").value = "";
+    document.getElementById("jk_2").value = "";
+    document.getElementById("alamat_2").value = "";
+    document.getElementById("nrm").value = "";
+  }
+</script>

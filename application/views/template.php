@@ -155,17 +155,17 @@
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a href="<?= site_url('persetujuan') ?>" class="nav-link">
+                    <a href="<?= site_url('tindakan') ?>" class="nav-link">
                       <span class="sidenav-mini-icon"> P </span>
-                      <span class="sidenav-normal"> Persetujuan Tindakan </span>
+                      <span class="sidenav-normal"> Form Tindakan </span>
                     </a>
                   </li>
-                  <li class="nav-item">
+                  <!-- <li class="nav-item">
                     <a href="<?= site_url('penolakan') ?>" class="nav-link">
                       <span class="sidenav-mini-icon"> P </span>
                       <span class="sidenav-normal"> Penolakan Tindakan </span>
                     </a>
-                  </li>
+                  </li> -->
                 </ul>
               </div>
             </li>
