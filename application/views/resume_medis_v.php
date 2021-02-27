@@ -389,7 +389,7 @@
                       </select>
                     </div>
                     <div class="custom-file mb-3">
-                      <input type="file" class="custom-file-input" id="berkas" lang="id">
+                      <input type="file" class="custom-file-input" id="berkas" accept="image/jpeg,image/jpg,application/pdf">
                       <label class="custom-file-label" for="berkas"></label>
                     </div>
                 </form>
@@ -451,7 +451,21 @@
                     "data": "terapi"
                 },
                 {
-                    "data": "id_diagnosa"
+                    "data": "tindakan",
+                    "render": function(data, type, row) {
+                        var html = '';
+                        if(data!=null){
+                          if(data==0){
+                            var style = 'style="color:red"';
+                            var title = 'Penolakan.pdf';
+                          }else{
+                            var style = 'style="color:green"';
+                            var title = 'Persetujuan.pdf';
+                          }
+                          html += ' <a '+style+' href="<?= base_url() ?>document/pernyataan/'+row.berkas_tindakan+'" target="_blank">'+title+'</a>';
+                        }
+                      return html
+                    }
                 },
                 {
                     "data": "id_diagnosa",
@@ -561,7 +575,7 @@
       document.getElementById("jenis_pernyataan").value = "";
       document.getElementById("berkas").value = "";
 
-      var tombol = '<button type="button" onclick="pernyataan('+id_diagnosa+')" id="simpan_pernyataan" class="btn btn-block btn-info">Simpan</button>';
+      var tombol = '<button type="button" onclick="pernyataan('+id_diagnosa+')" id="simpan_pernyataan" class="btn btn-block btn-info"><div id="loader_upload"> </div> Simpan</button>';
       $("#div_upload").html(tombol);
 
       $('#modal-upload').modal('show');
@@ -645,7 +659,42 @@
       } else{
         var format = $('#berkas').prop('files')[0].type;
         if (format.includes('pdf') || format.includes('jpg') || format.includes('jpeg')) {
-          alert(id)
+          var form_data = new FormData();
+          form_data.append('id', id);
+          form_data.append('jenis', document.getElementById("jenis_pernyataan").value);
+          form_data.append('berkas', $('#berkas').prop('files')[0]);
+
+          $.ajax({
+            type: 'POST',
+            data: form_data,
+            url: '<?= base_url() ?>resume_medis/upload_pernyataan',
+            processData:false,
+            contentType:false,
+            cache:false,
+            dataType: 'json',
+            beforeSend: function () {
+              $('#simpan_pernyataan').attr('disabled', true);
+              $('#loader_upload').html('');
+              addSpinner($('#loader_upload'));
+            },
+            success: function(data) {
+              // alert(data);
+              // console.log(data);
+              $('#simpan_pernyataan').attr('disabled', false);
+              removeSpinner($('#loader_upload'), function () {
+                $('#loader_upload').html('');
+              });
+              ambil_data();
+              $('#modal-upload').modal('hide');
+              Swal.fire({
+                position: 'center',
+                icon: 'success',
+                title: 'Data Berhasil Diupload',
+                showConfirmButton: false,
+                timer: 2500
+              });
+            }
+          });
         }else{
            Swal.fire({
               position: 'center',
@@ -655,39 +704,6 @@
               timer: 2500
             });
         }
-        // var form_data = new FormData();
-        // form_data.append('keluhan', document.getElementById("jenis_pernyataan").value);
-        // form_data.append('penyakit_sekarang', document.getElementById("penyakit_sekarang").value);
-
-        // $.ajax({
-        //   type: 'POST',
-        //   data: form_data,
-        //   url: '<?= base_url() ?>pendaftaran/tambah_asessmen',
-        //   processData:false,
-        //   contentType:false,
-        //   cache:false,
-        //   dataType: 'json',
-        //   beforeSend: function () {
-        //     $('#ubah_button').attr('disabled', true);
-        //     $('#loader').html('');
-        //     addSpinner($('#loader'));
-        //   },
-        //   success: function(data) {
-        //     // console.log(data);
-        //     $('#ubah_button').attr('disabled', false);
-        //     removeSpinner($('#loader'), function () {
-        //       $('#loader').html('');
-        //     });
-        //     disable_form();
-        //     Swal.fire({
-        //       position: 'center',
-        //       icon: 'success',
-        //       title: 'Data Berhasil Diupload',
-        //       showConfirmButton: false,
-        //       timer: 2500
-        //     });
-        //   }
-        // });
       }
   }
 
