@@ -3,12 +3,15 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 class laporan extends CI_Controller
 {
-
 	public function __construct()
 	{
 		parent::__construct();
 		$this->load->model('db_model');
 		$this->load->library('form_validation');
+		if (!$this->session->userdata("id_user") or $this->session->userdata("rule") != 1) {
+			redirect("login");
+		}
+		date_default_timezone_set('Asia/Jakarta');
 	}
 	public function index()
 	{

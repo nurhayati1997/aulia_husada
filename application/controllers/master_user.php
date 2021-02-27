@@ -7,6 +7,9 @@ class master_user extends CI_Controller
 	public function __construct()
 	{
 		parent::__construct();
+		// if (!$this->session->userdata("id_user") or ($this->session->userdata("rule") != 1 and $this->session->userdata("rule") != 2)) {
+		// 	redirect("login");
+		// }
 		$this->load->model('db_model');
 		$this->load->library('form_validation');
 	}
@@ -53,9 +56,9 @@ class master_user extends CI_Controller
 			$data = [
 				"nama" => $this->input->post("nama", TRUE),
 				"email" => $this->input->post("email", TRUE),
-				"password" => password_hash($this->enkripsi($this->input->post("password")), PASSWORD_DEFAULT),
+				"password" =>  $this->spin(password_hash($this->enkripsi($this->input->post("password")), PASSWORD_DEFAULT)),
 				"rule" => $this->input->post("rule", TRUE),
-				"spesialis" => $this->input->post("dokter", TRUE),
+				"jabatan" => $this->input->post("jabatan", TRUE),
 				"status" => 0
 			];
 			$this->db_model->insert('tbl_user', $data);
@@ -132,5 +135,4 @@ class master_user extends CI_Controller
 		}
 		return $hasil;
 	}
-}
 }

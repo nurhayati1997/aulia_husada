@@ -1,23 +1,19 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 
-class Profile extends CI_Controller {
+class Profile extends CI_Controller
+{
 
-	/**
-	 * Index Page for this controller.
-	 *
-	 * Maps to the following URL
-	 * 		http://example.com/index.php/welcome
-	 *	- or -
-	 * 		http://example.com/index.php/welcome/index
-	 *	- or -
-	 * Since this controller is set as the default controller in
-	 * config/routes.php, it's displayed at http://example.com/
-	 *
-	 * So any other public methods not prefixed with an underscore will
-	 * map to /index.php/welcome/<method_name>
-	 * @see https://codeigniter.com/user_guide/general/urls.html
-	 */
+	public function __construct()
+	{
+		if (!$this->session->userdata("id_user") or ($this->session->userdata("rule") != 1 and $this->session->userdata("rule") != 2)) {
+			redirect("login");
+		}
+		parent::__construct();
+		$this->load->model('db_model');
+		$this->load->library('form_validation');
+	}
+
 	public function index()
 	{
 		$this->load->view('profile_v');

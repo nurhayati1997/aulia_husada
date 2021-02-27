@@ -1,11 +1,15 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 
-class pendaftaran extends CI_Controller {
+class pendaftaran extends CI_Controller
+{
 
 	function __construct()
 	{
 		parent::__construct();
+		if (!$this->session->userdata("id_user")) {
+			redirect("login");
+		}
 		$this->load->model('Db_model');
 		$this->load->helper('url');
 	}
@@ -35,7 +39,7 @@ class pendaftaran extends CI_Controller {
 	{
 		date_default_timezone_set('Asia/Jakarta');
 		// echo json_encode(date('Y-m-d'));
-		echo json_encode($this->Db_model->get_where('v_antrian', array('id_dokter' => $this->input->post('id', TRUE), 'status_antrian' => 0 , 'tanggal_antri' => strval(date('Y-m-d'))))->result());
+		echo json_encode($this->Db_model->get_where('v_antrian', array('id_dokter' => $this->input->post('id', TRUE), 'status_antrian' => 0, 'tanggal_antri' => strval(date('Y-m-d'))))->result());
 	}
 
 	function pencarian()
@@ -103,9 +107,9 @@ class pendaftaran extends CI_Controller {
 			"id_antrian" => $this->input->post('id_antrian', TRUE)
 		];
 		$this->Db_model->update("tbl_antrian", $update, array('id_antrian' => $this->input->post("id_antrian", TRUE)));
-		if($cek > 0){
+		if ($cek > 0) {
 			echo json_encode($this->Db_model->update("tbl_riwayat_diagnosa", $data, array('id_antrian' => $this->input->post("id_antrian", TRUE))));
-		}else{
+		} else {
 			echo json_encode($this->Db_model->insert_get("tbl_riwayat_diagnosa", $data));
 		}
 		// echo json_encode($cek > 0);

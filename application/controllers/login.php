@@ -3,6 +3,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 class login extends CI_Controller
 {
+
 	public function __construct()
 	{
 		parent::__construct();
@@ -12,6 +13,9 @@ class login extends CI_Controller
 
 	public function index()
 	{
+		if ($this->session->userdata("id_user")) {
+			redirect("dashboard");
+		}
 		$this->form_validation->set_rules('email', 'Email', 'required|trim|valid_email', [
 			"required" => "Email tidak boleh kosong.",
 			"valid_email" => "Email tidak valid."
@@ -31,7 +35,7 @@ class login extends CI_Controller
 		$user = $this->db_model->get_where("tbl_user", ["email" => $email])->row_array();
 
 		if ($user) {
-			if (password_verify($password, $this->spin($user['password']))) {
+			if (password_verify($pass, $this->spin($user['password']))) {
 				$data = [
 					'id_user' => $user['id_user'],
 					'nama' => $user['nama'],
@@ -99,5 +103,4 @@ class login extends CI_Controller
 		}
 		return $hasil;
 	}
-}
 }

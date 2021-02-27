@@ -122,12 +122,15 @@
                 <span class="nav-link-text">Dashboard</span>
               </a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="<?= site_url('pendaftaran') ?>">
-                <i class="ni ni-circle-08 text-pink"></i>
-                <span class="nav-link-text">Pendaftaran</span>
-              </a>
-            </li>
+
+            <?php if ($this->session->userdata("rule") == 1 or $this->session->userdata("rule") == 2) { ?>
+              <li class="nav-item">
+                <a class="nav-link" href="<?= site_url('pendaftaran') ?>">
+                  <i class="ni ni-circle-08 text-pink"></i>
+                  <span class="nav-link-text">Pendaftaran</span>
+                </a>
+              </li>
+            <?php } ?>
             <!-- <li class="nav-item">
               <a class="nav-link" href="">
                 <i class="ni ni-planet text-orange"></i>
@@ -168,18 +171,23 @@
                 </ul>
               </div>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="<?= site_url('transaksi') ?>">
-                <i class="ni ni-key-25 text-info"></i>
-                <span class="nav-link-text">Transaksi</span>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="<?= site_url('Laporan') ?>">
-                <i class="ni ni-bullet-list-67 text-default"></i>
-                <span class="nav-link-text">Laporan</span>
-              </a>
-            </li>
+
+            <?php if ($this->session->userdata("rule") == 1 or $this->session->userdata("rule") == 2) { ?>
+              <li class="nav-item">
+                <a class="nav-link" href="<?= site_url('transaksi') ?>">
+                  <i class="ni ni-key-25 text-info"></i>
+                  <span class="nav-link-text">Transaksi</span>
+                </a>
+              </li>
+            <?php }
+            if ($this->session->userdata("rule") == 1) { ?>
+              <li class="nav-item">
+                <a class="nav-link" href="<?= site_url('Laporan') ?>">
+                  <i class="ni ni-bullet-list-67 text-default"></i>
+                  <span class="nav-link-text">Laporan</span>
+                </a>
+              </li>
+            <?php } ?>
             <!-- <li class="nav-item">
               <a class="nav-link" href="examples/icons.html">
                 <i class="ni ni-planet text-orange"></i>
@@ -238,28 +246,31 @@
                 <span class="nav-link-text">Data Pasien</span>
               </a>
             </li> -->
-            <li class="nav-item">
-              <a class="nav-link" href="#navbar-examples" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="navbar-examples">
-                <i class="ni ni-ui-04"></i>
-                <span class="nav-link-text">Master</span>
-              </a>
-              <div class="collapse" id="navbar-examples">
-                <ul class="nav nav-sm flex-column">
-                  <li class="nav-item">
-                    <a href="<?= site_url('master_tindakan') ?>" class="nav-link">
-                      <span class="sidenav-mini-icon"> T </span>
-                      <span class="sidenav-normal"> Tindakan </span>
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a href="<?= site_url('master_user') ?>" class="nav-link">
-                      <span class="sidenav-mini-icon"> M </span>
-                      <span class="sidenav-normal"> Managemen User </span>
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            </li>
+
+            <?php if ($this->session->userdata("rule") == 1 or $this->session->userdata("rule") == 2) { ?>
+              <li class="nav-item">
+                <a class="nav-link" href="#navbar-examples" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="navbar-examples">
+                  <i class="ni ni-ui-04"></i>
+                  <span class="nav-link-text">Master</span>
+                </a>
+                <div class="collapse" id="navbar-examples">
+                  <ul class="nav nav-sm flex-column">
+                    <li class="nav-item">
+                      <a href="<?= site_url('master_tindakan') ?>" class="nav-link">
+                        <span class="sidenav-mini-icon"> T </span>
+                        <span class="sidenav-normal"> Tindakan </span>
+                      </a>
+                    </li>
+                    <li class="nav-item">
+                      <a href="<?= site_url('master_user') ?>" class="nav-link">
+                        <span class="sidenav-mini-icon"> M </span>
+                        <span class="sidenav-normal"> Managemen User </span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+            <?php } ?>
             <!-- <li class="nav-item">
               <a class="nav-link" href="<?= site_url('master') ?>">
                 <i class="ni ni-ui-04"></i>

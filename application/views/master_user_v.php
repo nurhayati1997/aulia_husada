@@ -89,6 +89,14 @@
                                     <input class="form-control" id="konfirPass" placeholder="Konfirmasi Pasword" type="password">
                                   </div>
                                 </div>
+                                <div class="form-group mb-3">
+                                  <div class="input-group input-group-merge input-group-alternative">
+                                    <div class="input-group-prepend">
+                                      <span class="input-group-text"><i class="ni ni-badge"></i></span>
+                                    </div>
+                                    <input class="form-control" id="jabatan" placeholder="Jabatan" type="text">
+                                  </div>
+                                </div>
                                 <div class="badge badge-danger" id="pesanErrorTambah"></div>
                                 <div class="text-center">
                                   <button type="button" onClick="tambah()" id="tombolTambah" class="btn btn-success my-2">Tambah</button>
@@ -147,7 +155,7 @@
                     <th>Nama</th>
                     <th>Email</th>
                     <th>Jabatan</th>
-                    <th>Spesialis</th>
+                    <th>Dokter/spesialis</th>
                     <th>Action</th>
                   </tr>
                 </thead>
@@ -169,7 +177,7 @@
             <span class="fw-mediumbold">
               Hapus Data Master</span>
             <span class="fw-light">
-              Barang
+              User
             </span>
           </h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -207,7 +215,7 @@
           baris += '<td>' + data[i].nama + '</td>'
           baris += '<td>' + data[i].email + '</td>'
           baris += '<td>' + data[i].rule + '</td>'
-          baris += '<td>' + data[i].spesialis + '</td>'
+          baris += '<td>' + data[i].jabatan + '</td>'
           baris += '<td><a href="#" title="hapus?" class="badge badge-danger" id="hapus' + data[i].id_user + '" onClick="tryHapus(' + data[i].id_user + ')"><i class="fa fa-times"></i></a>'
           baris += ' <a href="#" title="edit?" class="badge badge-info" id="edit' + data[i].id_user + '" onClick="tryEdit(' + data[i].id_user + ')"><i class="fa fa-edit"></i></a>'
           baris += '</td></tr>'
@@ -223,7 +231,7 @@
     $("#email").val("")
     $("#password").val("")
     $("#konfirPass").val("")
-    $("#dokter").val("")
+    $("#jabatan").val("")
     $("#modalTambah").modal('show')
     $('#pesan_error_tambah').html("")
   }
@@ -235,7 +243,7 @@
     var email = $("#email").val()
     var password = $("#password").val()
     var konfirPass = $("#konfirPass").val()
-    var dokter = $("#dokter").val()
+    var jabatan = $("#jabatan").val()
     if (rule == null) {
       rule = 0;
     }
@@ -248,7 +256,7 @@
         email: email,
         password: password,
         konfirPass: konfirPass,
-        dokter: dokter
+        jabatan: jabatan
       },
       dataType: 'json',
       success: function(data) {
@@ -260,14 +268,13 @@
           $("#email").val("")
           $("#password").val("")
           $("#konfirPass").val("")
-          $("#dokter").val("")
+          $("#jabatan").val("")
           $('#pesanErroTambah').html("")
         } else {
           data = data.replace("<p>", "");
           data = data.replace("</p>", "");
           $('#pesanErrorTambah').html(data)
         }
-        console.log(data)
         $("#tombolTambah").html('Tambah')
       }
     });
