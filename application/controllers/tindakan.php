@@ -28,7 +28,8 @@ class tindakan extends CI_Controller {
 			'umur' => $this->input->post('umur', TRUE),
 			'jk_2' => $this->input->post('jk_2', TRUE),
 			'alamat_2' => $this->input->post('alamat_2', TRUE),
-			'nrm' => $this->input->post('nrm', TRUE)
+			'nrm' => $this->input->post('nrm', TRUE),
+			'nrm_2' => $this->input->post('nrm_2', TRUE)
 		);
 
 		$this->session->set_userdata($session_data);

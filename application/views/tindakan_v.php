@@ -78,7 +78,7 @@
                         <div class="form-group">
                           <select class="form-control" id="jk_1">
                             <option value="">-Pilih Jenis Kelamin-</option>
-                            <option value="0">laki-Laki</option>
+                            <option value="0">Laki-Laki</option>
                             <option value="1">Perempuan</option>
                           </select>
                         </div>
@@ -145,7 +145,7 @@
                         <div class="form-group">
                           <select class="form-control" id="jk_2" readonly>
                             <option value="">-Pilih Jenis Kelamin-</option>
-                            <option value="0">laki-Laki</option>
+                            <option value="0">Laki-Laki</option>
                             <option value="1">Perempuan</option>
                           </select>
                         </div>
@@ -157,6 +157,7 @@
                               <span class="input-group-text"><i class="ni ni-bag-17"></i></span>
                             </div>
                             <input class="form-control" placeholder="Alamat" id="alamat_2" type="text" readonly>
+                            <input class="form-control" id="nrm_2" type="hidden" readonly>
                           </div>
                         </div>
                       </div>
@@ -244,6 +245,7 @@ $(document).ready(function() {
             document.getElementById("nama_2").value = data.nama;
             document.getElementById("jk_2").value = data.jenis_kelamin;
             document.getElementById("alamat_2").value = data.alamat;
+            document.getElementById("nrm_2").value = data.kode;
             document.getElementById("umur").value = n-$tgl[2] + " Tahun";
         }
     });
@@ -279,7 +281,7 @@ $(document).ready(function() {
        
         $.ajax({
           type: 'POST',
-          data: 'nama_1='+ document.getElementById("nama_1").value +
+          data: 'nama_1='+ document.getElementById("nama_1").value
           + '&alamat_1='+ document.getElementById("alamat_1").value
           + '&ttl_1='+ document.getElementById("ttl_1").value
           + '&jk_1='+ document.getElementById("jk_1").value
@@ -290,7 +292,8 @@ $(document).ready(function() {
           + '&umur='+ document.getElementById("umur").value
           + '&jk_2='+ document.getElementById("jk_2").value
           + '&alamat_2='+ document.getElementById("alamat_2").value
-          + '&nrm='+ document.getElementById("nrm").value,
+          + '&nrm='+ document.getElementById("nrm").value
+          + '&nrm_2='+ document.getElementById("nrm_2").value,
           url: '<?= base_url() ?>tindakan/send_form',
           dataType: 'json',
           success: function(data) {

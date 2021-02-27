@@ -16,7 +16,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   <!-- Latest compiled and minified JavaScript -->
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
   <style>
-    
+    .borderless td, .borderless th {
+      border: none!important;
+    }
   </style>
 </head>
 <body>
@@ -26,9 +28,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <h4 class="text-center"><b><?= $this->session->userdata('tindakan') ?> TINDAKAN MEDIS</b></h4>
       </div>
     </div>
-    <div class="row" style="width: 70vw;margin-left: auto; margin-right: auto;">
+    <div class="row" style="width: 90vw;margin-left: auto; margin-right: auto;">
       <div class="col">
-        <table class="table table-responsive" style="margin-top: 50px; margin-left: auto; margin-right: auto;">
+        <table class="table table-responsive borderless" style="margin-top: 50px; margin-left: auto; margin-right: auto;">
           <tr>
             <td colspan="3">Saya Yang bertanda Tangan Dibawah Ini :</td>
           </tr>
@@ -38,7 +40,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
           </tr>
           <tr>
             <td style="width: 200px;">Tanggal Lahir / Jenis Kelamin</td>
-            <td colspan="2">: <?= $this->session->userdata('ttl_1') ?> / <?= $this->session->userdata('jk_1') ?></td>
+            <td colspan="2">: <?= $this->session->userdata('ttl_1') ?> / <?php if($this->session->userdata('jk_1')==0){echo "Laki-Laki";}else{echo "Perempuan";} ?></td>
           </tr>
           <tr>
             <td style="width: 200px;">Alamat</td>
@@ -60,19 +62,19 @@ defined('BASEPATH') OR exit('No direct script access allowed');
           </tr>
           <tr>
             <td style="width: 200px;">Nama :</td>
-            <td colspan="2">: <?= $this->session->userdata('nik_1') ?></td>
+            <td colspan="2">: <?= $this->session->userdata('nama_2') ?></td>
           </tr>
           <tr>
             <td style="width: 200px;">Umur / Jenis Kelamin :</td>
-            <td colspan="2">: <?= $this->session->userdata('nik_1') ?></td>
+            <td colspan="2">: <?= $this->session->userdata('umur') ?> / <?php if($this->session->userdata('jk_2')==0){echo "Laki-Laki";}else{echo "Perempuan";} ?></td>
           </tr>
           <tr>
             <td style="width: 200px;">Dirawat di :</td>
-            <td colspan="2">: <?= $this->session->userdata('nik_1') ?></td>
+            <td colspan="2">: ...........................................................................................</td>
           </tr>
           <tr>
             <td style="width: 200px;">No Rekam Medik :</td>
-            <td colspan="2">: <?= $this->session->userdata('nik_1') ?></td>
+            <td colspan="2">: <?= $this->session->userdata('nrm_2') ?></td>
           </tr>
           <tr>
             <td colspan="3">Yang tujuan, sifat dan perlunya tindakan medis 
@@ -93,14 +95,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <td class="text-center">Tanda Tangan</td>
             <td class="text-center">Tanda Tangan</td>
           </tr>
-          <tr>
+          <tr style="height: 100px;">
             <td class="text-center"></td>
             <td class="text-center"></td>
             <td class="text-center"></td>
           </tr>
           <tr>
-            <td class="text-center">.................................................................</td>
-            <td class="text-center">.................................................................</td>
+            <td class="text-center">............................</td>
+            <td class="text-center">............................</td>
             <td class="text-center"><u><?= $this->session->userdata('nama_1') ?></u></td>
           </tr>
           <tr>
@@ -114,7 +116,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   </div>
 <script>
   $(document).ready(function() {
-    // window.print();
+    window.print();
   });
 </script>
 </body>
