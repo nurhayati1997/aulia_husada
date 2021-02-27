@@ -35,7 +35,7 @@
 	<div class="limiter">
 		<div class="container-login100" style="background-image: url('<?= base_url() ?>assets_login/images/klinik.jpg');">
 			<div class="wrap-login100">
-				<form class="login100-form validate-form" action='dashboard' method="POST">
+				<form class="login100-form validate-form" action='#' method="POST">
 					<span class="login100-form-logo">
 						<i class="zmdi zmdi-gamepad"></i>
 						<!-- <i class="zmdi zmdi-landscape"></i> -->
@@ -45,12 +45,32 @@
 						Husada Raya
 					</span>
 
-					<div class="wrap-input100 validate-input" id="peringatanEmail" data-validate="Silahkan isi Email..">
-						<input class="input100" type="email" id="email" name="email" placeholder="Email..">
+					<div class="wrap-input100 validate-input <?php if (isset($error)) {
+																	if ($error[0] == "email") echo "alert-validate";
+																} ?>" data-validate="<?php if (isset($error)) {
+																							if ($error[0] == "email") {
+																								echo $error[1];
+																							} else {
+																								echo "Silahkan isi Email.";
+																							}
+																						} else {
+																							echo "Silahkan isi Email.";
+																						} ?>" id="pesanEmail">
+						<input class="input100" type="email" id="email" name="email" placeholder="Email.." value="<?= set_value("email"); ?>">
 						<span class="focus-input100" data-placeholder="&#xf207;"></span>
 					</div>
 
-					<div class="wrap-input100 validate-input" id="peringatanPass" data-validate="Silahkan isi Password..">
+					<div class="wrap-input100 validate-input <?php if (isset($error)) {
+																	if ($error[0] == "pass") echo "alert-validate";
+																} ?>" data-validate="<?php if (isset($error)) {
+																							if ($error[0] == "pass") {
+																								echo $error[1];
+																							} else {
+																								echo "Silahkan isi password.";
+																							}
+																						} else {
+																							echo "Silahkan isi password.";
+																						} ?>" id="pesanPass">
 						<input class="input100 active" type="password" id="pass" name="pass" placeholder="Password">
 						<span class="focus-input100" data-placeholder="&#xf191;"></span>
 					</div>
@@ -65,6 +85,8 @@
 			</div>
 		</div>
 	</div>
+
+
 
 	<script src="<?= base_url() ?>assets_login/vendor/jquery/jquery-3.2.1.min.js"></script>
 	<!--===============================================================================================-->

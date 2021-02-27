@@ -55,20 +55,19 @@
   <!-- Argon CSS -->
   <link rel="stylesheet" href="<?= base_url() ?>assets_admin/css/argon.min5438.css?v=1.2.0" type="text/css">
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/css/bootstrap-select.min.css">
-  
+
   <script src="<?= base_url() ?>assets_admin/vendor/jquery/dist/jquery.min.js"></script>
 
-  <!-- <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
-  <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script> -->
-<!-- 
+  <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+  <!-- 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.6/css/selectize.bootstrap3.min.css" integrity="sha256-ze/OEYGcFbPRmvCnrSeKbRTtjG4vGLHXgOqsyLFTRjg=" crossorigin="anonymous" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.6/js/standalone/selectize.min.js" integrity="sha256-+C0A5Ilqmu4QcSPxrlGpaZxJ04VjsRjKu+G82kl5UJk=" crossorigin="anonymous"></script>
    -->
-   
+
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
-  
-  
+
+
   <!-- Google Tag Manager -->
   <script>
     (function(w, d, s, l, i) {
@@ -247,13 +246,13 @@
               <div class="collapse" id="navbar-examples">
                 <ul class="nav nav-sm flex-column">
                   <li class="nav-item">
-                    <a href="<?= site_url('master_tindakan')?>" class="nav-link">
+                    <a href="<?= site_url('master_tindakan') ?>" class="nav-link">
                       <span class="sidenav-mini-icon"> T </span>
                       <span class="sidenav-normal"> Tindakan </span>
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a href="<?= site_url('master_user')?>" class="nav-link">
+                    <a href="<?= site_url('master_user') ?>" class="nav-link">
                       <span class="sidenav-mini-icon"> M </span>
                       <span class="sidenav-normal"> Managemen User </span>
                     </a>
@@ -280,7 +279,7 @@
   </nav>
   <!-- Main content -->
   <div class="main-content" id="panel">
-    <nav class="navbar navbar-top navbar-expand navbar-dark bg-primary border-bottom">  
+    <nav class="navbar navbar-top navbar-expand navbar-dark bg-primary border-bottom">
       <div class="container-fluid">
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <!-- Navbar links -->
@@ -317,7 +316,7 @@
                   <span>Ubah Password</span>
                 </a>
                 <div class="dropdown-divider"></div>
-                <a href="#!" class="dropdown-item">
+                <a href="<?= base_url("login/logout") ?>" class="dropdown-item">
                   <i class="ni ni-user-run"></i>
                   <span>Logout</span>
                 </a>
