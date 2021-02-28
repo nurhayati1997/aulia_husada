@@ -36,25 +36,15 @@
           </div>
           <div class="card-body p-4">
             <div class="row">
-              <div class="col-xl-3 col-md-6 pb-2">
-                <select class="form-control" id="idPasien" onChange="aktifkanTombolTransaksi()" style="border:2px solid orange;">
+              <div class="col-xl-5 col-md-6 pb-2">
+                <select class="form-control" id="idAntrian" onChange="aktifkanTombolTransaksi()" style="border:2px solid orange;">
                   <option value="0" selected disabled>Pilih Pasien</option>
                   <option value="1">Pasien 1</option>
                   <option value="2">Pasien 2</option>
                 </select>
               </div>
-              <div class="col-xl-3 col-md-6 pb-2">
-                <select class="form-control" id="idDokter" onChange="aktifkanTombolTransaksi()" style="border:2px solid orange;">
-                  <option value="0" selected disabled>Pilih Dokter</option>
-                  <?php
-                  foreach ($dokter as $key => $value) {
-                    echo "<option value='" . $value["id_user"] . "'>" . $value["nama"] . "</option>";
-                  }
-                  ?>
-                </select>
-              </div>
               <div class="col-xl-3 col-md-6"><button id="proses" class="btn btn-warning" onclick="prosesTransaksi()" disabled>Proses</button></div>
-              <div class="col-xl-3 col-md-6">
+              <div class="col-xl-4 col-md-6">
                 <h2 class="text-warning mt-2" id="totalHarga">Rp. 0.00</h2>
               </div>
             </div>
@@ -146,9 +136,9 @@
       dataType: 'json',
       success: function(data) {
         for (let i = 0; i < data.length; i++) {
-          baris += '<option value="' + data[i].id + '">' + data[i].nama + '</option>'
+          baris += '<option value="' + data[i].id_antrian + '">' + data[i].nama + " (" + data[i].ortu + ")" + '</option>'
         }
-        $("#idPasien").html(baris);
+        $("#idAntrian").html(baris);
       }
     });
   }
@@ -180,7 +170,7 @@
   }
 
   function aktifkanTombolTransaksi() {
-    if (tindakanTerpilih.length && $("#idPasien").val() && $("#idDokter").val()) {
+    if (tindakanTerpilih.length && $("#idAntrian").val()) {
       $("#proses").prop('disabled', false);
     } else {
       $("#proses").prop('disabled', true);
@@ -190,15 +180,13 @@
   function prosesTransaksi() {
     $("#proses").html('<i class="fas fa-spinner fa-pulse"></i> Memproses..')
     $("#proses").prop('disabled', true);
-    var idPasien = $("#idPasien").val()
-    var idDokter = $("#idDokter").val()
+    var idAntrian = $("#idAntrian").val()
     $.ajax({
       url: '<?= base_url() ?>transaksi/prosesTransaksi',
       method: 'post',
       data: {
         idTindakan: tindakanTerpilih,
-        idPasien: idPasien,
-        idDokter: idDokter
+        idAntrian: idAntrian
       },
       dataType: 'json',
       success: function(data) {
@@ -209,10 +197,10 @@
 
         tindakanTerpilih = []
         hargaTerpilih = []
+        pasienBayar()
         $("#totalHarga").html("Rp. 0.00");
         $("#proses").html('Proses')
-        $("#idPasien").val(0)
-        $("#idDokter").val(0)
+        $("#idAntrian").val(0)
       }
     });
   }
