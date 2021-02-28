@@ -38,6 +38,7 @@ class login extends CI_Controller
 			if (password_verify($pass, $this->spin($user['password']))) {
 				$data = [
 					'id_user' => $user['id_user'],
+					'email' => $user['email'],
 					'nama' => $user['nama'],
 					'rule' => $user['rule']
 				];
@@ -51,6 +52,44 @@ class login extends CI_Controller
 		} else {
 			$data["error"] = ["email", "Email tidak terdaftar."];
 			$this->load->view('login_v', $data);
+		}
+	}
+
+	public function ubahPassword()
+	{
+		$this->form_validation->set_rules('passLama', 'Password Lama', 'required|trim', ["required" => "Isi password lama anda."]);
+		$this->form_validation->set_rules('passBaru', 'Password Baru', 'required|trim|min_length[5]|matches[konfirPass]', [
+			"required" => "Password Baru tidak boleh kosong.", "matches" => "Password tidak cocok dengan konfirmasi.",
+			"min_length" => "Pasword minimal 5 karakter."
+		]);
+		$this->form_validation->set_rules('konfirPass', 'Konfirmasi Password', 'required|trim|matches[passBaru]', [
+			"matches" => "Password tidak cocok dengan konfirmasi.",
+			"required" => "Konfirmasi password anda."
+		]);
+
+		if ($this->form_validation->run()) {
+			$email = $this->session->userdata("email");
+			$passLama = $this->enkripsi($this->input->post("passLama"));
+
+			$user = $this->db_model->get_where("tbl_user", ["email" => $email])->row_array();
+
+			if (password_verify($passLama, $this->spin($user['password']))) {
+				$data = ["password" => $this->spin(password_hash($this->enkripsi($this->input->post("passBaru")), PASSWORD_DEFAULT))];
+				$this->db_model->update("tbl_user", $data, ["email" => $email]);
+
+				echo json_encode("");
+			} else {
+				echo json_encode("Password lama anda salah.");
+			}
+		} else {
+			if (form_error("passLama")) {
+				$error = form_error("passLama");
+			} else if (form_error("passBaru")) {
+				$error = form_error("passBaru");
+			} else {
+				$error = form_error("konfirPass");
+			}
+			echo json_encode($error);
 		}
 	}
 

@@ -322,7 +322,7 @@
                 <div class="dropdown-header noti-title">
                   <h6 class="text-overflow m-0">Welcome!</h6>
                 </div>
-                <a href="#!" class="dropdown-item">
+                <a href="#" onclick="tryUbahPass()" class="dropdown-item">
                   <i class="ni ni-settings-gear-65"></i>
                   <span>Ubah Password</span>
                 </a>
@@ -365,9 +365,97 @@
       </div>
     </footer>
   </div>
+  <div class="modal fade" id="modalUbahPass" tabindex="-1" role="dialog" aria-labelledby="modal-form" aria-hidden="true">
+    <div class="modal-dialog modal- modal-dialog-centered modal-sm" role="document">
+      <div class="modal-content">
+        <div class="modal-body p-0">
+          <div class="card bg-secondary border-0 mb-0">
+            <div class="card-header bg-success pb-1">
+              <div class="text-muted text-center mt-2 mb-3">
+                <span class="text-muted text-white">Form ubah Password </span>
+              </div>
+            </div>
+            <div class="card-body px-lg-5 py-lg-5">
+              <form role="form">
+                <div class="form-group mb-3">
+                  <div class="input-group input-group-merge input-group-alternative">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="ni ni-badge"></i></span>
+                    </div>
+                    <input class="form-control" id="passLama" placeholder="Passwrod Lama" type="password">
+                  </div>
+                </div>
+                <div class="form-group mb-3">
+                  <div class="input-group input-group-merge input-group-alternative">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="ni ni-badge"></i></span>
+                    </div>
+                    <input class="form-control" id="passBaru" placeholder="Password Baru" type="password">
+                  </div>
+                </div>
+                <div class="form-group mb-3">
+                  <div class="input-group input-group-merge input-group-alternative">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="ni ni-badge"></i></span>
+                    </div>
+                    <input class="form-control" id="konfirPass" placeholder="Konfirmasi Password" type="password">
+                  </div>
+                </div>
+                <div class="text-center">
+                  <div class="badge badge-danger text-center" id="pesanErrorUbahPass"></div>
+                </div>
+                <div class="text-center">
+                  <button type="button" onClick="ubahPass()" id="tombolUbahPass" class="btn btn-success my-2">Ubah</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
   <!-- Argon Scripts -->
   <!-- Core -->
   <!-- <script src="<?= base_url() ?>assets_admin/vendor/jquery/dist/jquery.min.js"></script> -->\
+  <script>
+    function tryUbahPass() {
+      $("#passLama").val("")
+      $("#passBaru").val("")
+      $("#konfirPass").val("")
+      $("#modalUbahPass").modal("show");
+    }
+
+    function ubahPass() {
+      $("#tombolUbahPass").html('<i class="fas fa-spinner fa-pulse"></i> Memproses..')
+      var passLama = $("#passLama").val()
+      var passBaru = $("#passBaru").val()
+      var konfirPass = $("#konfirPass").val()
+      $.ajax({
+        url: '<?= base_url() ?>login/ubahPassword',
+        method: 'post',
+        data: {
+          passLama: passLama,
+          passBaru: passBaru,
+          konfirPass: konfirPass
+        },
+        dataType: 'json',
+        success: function(data) {
+          if (data == "") {
+            $("#passLama").val("")
+            $("#passBaru").val("")
+            $("#konfirPass").val("")
+            $('#pesanErroUbahPass').html("")
+            $("#modalUbahPass").modal("hide");
+          } else {
+            data = data.replace("<p>", "");
+            data = data.replace("</p>", "");
+            $('#pesanErrorUbahPass').html(data)
+          }
+          $("#tombolUbahPass").html('Ubah')
+        }
+      });
+    }
+  </script>
   <script src="<?= base_url() ?>assets_admin/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
   <script src="<?= base_url() ?>assets_admin/vendor/js-cookie/js.cookie.js"></script>
   <script src="<?= base_url() ?>assets_admin/vendor/jquery.scrollbar/jquery.scrollbar.min.js"></script>
