@@ -28,10 +28,17 @@ class transaksi extends CI_Controller
 
 	public function prosesTransaksi()
 	{
-		$dataTindakan = $this->input->post("idTindakan");
+		date_default_timezone_set("Asia/Jakarta");
+		$dataTindakan = $this->input->post("idTindakan", TRUE);
+		$idAntrian = $this->input->post("idAntrian", TRUE);
+
+		$antrian = $this->db_model->get_where('vw_belum_bayar', ["id_antrian" => $idAntrian])->row_array();
+		$idPasien = $antrian["id_pasien"];
+		$idDokter = $antrian["id_user"];
 		$data = [
-			"dokter" => $this->input->post("idDokter", TRUE),
-			"id_pasien" => $this->input->post("idPasien", TRUE),
+			"dokter" => $idDokter,
+			"id_pasien" => $idPasien,
+			"id_antrian" => $idAntrian,
 			"tanggal" => date("Y-m-d h:i:sa")
 		];
 		$this->db_model->insert('tbl_transaksi', $data);
@@ -49,6 +56,6 @@ class transaksi extends CI_Controller
 
 	function pasienBayar()
 	{
-		echo json_encode($this->db_model->get_all('tbl_pasien')->result());
+		echo json_encode($this->db_model->get_all('vw_belum_bayar')->result());
 	}
 }
