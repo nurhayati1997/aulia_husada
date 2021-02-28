@@ -7,9 +7,9 @@ class resume_medis extends CI_Controller
 	function __construct()
 	{
 		parent::__construct();
-		if (!$this->session->userdata("id_user")) {
-			redirect("login");
-		}
+		// if (!$this->session->userdata("id_user")) {
+		// 	redirect("login");
+		// }
 		$this->load->model('Db_model');
 		$this->load->helper('file');
 	}
@@ -28,6 +28,11 @@ class resume_medis extends CI_Controller
 			$newformat = $this->input->post('nrm', TRUE);
 		}
 		echo json_encode($this->Db_model->get_where('v_riwayat_diagnosa', array('id_pasien' => $newformat))->result());
+	}
+
+	function add_list()
+	{
+		echo json_encode($this->Db_model->get_all('tbl_pasien')->result());
 	}
 
 	function get_nrm()
