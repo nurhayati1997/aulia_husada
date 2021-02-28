@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 27 Feb 2021 pada 09.27
+-- Waktu pembuatan: 28 Feb 2021 pada 14.35
 -- Versi server: 10.4.11-MariaDB
 -- Versi PHP: 7.4.4
 
@@ -41,7 +41,9 @@ CREATE TABLE `tbl_antrian` (
 
 INSERT INTO `tbl_antrian` (`id_antrian`, `id_pasien`, `id_user`, `tanggal_antri`, `status`) VALUES
 (1, 1, 1, '2021-02-25', 1),
-(2, 1, 2, '2021-02-25', 0);
+(2, 1, 2, '2021-02-25', 1),
+(3, 1, 3, '2021-02-28', 1),
+(4, 1, 2, '2021-02-28', 1);
 
 -- --------------------------------------------------------
 
@@ -148,7 +150,10 @@ CREATE TABLE `tbl_riwayat_diagnosa` (
 --
 
 INSERT INTO `tbl_riwayat_diagnosa` (`id_diagnosa`, `id_antrian`, `keluhan`, `penyakit_sekarang`, `penyakit_dahulu`, `riwayat_alergi`, `riwayat_operasi`, `riwayat_transfusi`, `riwayat_obat`, `kesadaran_umum`, `kesadaran`, `tekanan_darah`, `nadi`, `suhu`, `rr`, `diagnosa`, `terapi`, `hasil_lab`, `hasil_radiologi`, `hasil_catatan`, `tindakan`, `berkas_tindakan`) VALUES
-(1, 1, 'rindu', '', '', '', '', '', '', '', '', '11', '13', '12', '31', 'Butuh Kasih Sayang', 'NIKAH', NULL, NULL, NULL, 0, '2021-02-25_1_inas1.pdf');
+(1, 1, 'rindu', '', '', '', '', '', '', '', '', '11', '13', '12', '31', 'Butuh Kasih Sayang', 'NIKAH', NULL, NULL, NULL, 0, '2021-02-25_1_inas1.pdf'),
+(2, 2, 'test', '', '', '', '', '', '', '', '', '12', '12', '12', '11', '11', '11', NULL, NULL, NULL, NULL, NULL),
+(3, 4, 'test', '', '', '', '', '', '', '', '', '12', '12', '12', '12', '11', '11', '2021-02-28_3_inas.pdf', NULL, NULL, NULL, NULL),
+(4, 3, 'test', '', '', '', '', '', '', '', '', '12', '12', '12', '12', 'test', 'test', '2021-02-28_4_inas.pdf', '2021-02-28_4_inas2.jpeg', '2021-02-28_4_inas.jpg', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -171,6 +176,7 @@ CREATE TABLE `tbl_tindakan` (
 
 CREATE TABLE `tbl_transaksi` (
   `id_transaksi` int(11) NOT NULL,
+  `id_antrian` int(1) NOT NULL,
   `tanggal` datetime NOT NULL,
   `id_pasien` int(11) NOT NULL,
   `dokter` int(11) NOT NULL
@@ -198,19 +204,56 @@ CREATE TABLE `tbl_user` (
   `id_user` int(11) NOT NULL,
   `nama` varchar(200) NOT NULL,
   `jabatan` varchar(200) DEFAULT NULL,
-  `email` varchar(20) NOT NULL,
-  `password` varchar(128) NOT NULL,
-  `rule` int(1) NOT NULL
+  `email` varchar(50) NOT NULL,
+  `password` varchar(256) NOT NULL,
+  `rule` int(1) NOT NULL,
+  `status` int(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data untuk tabel `tbl_user`
 --
 
-INSERT INTO `tbl_user` (`id_user`, `nama`, `jabatan`, `email`, `password`, `rule`) VALUES
-(1, 'dr.Nunuk Kristiani,Sp.Rad', 'Spesialis Radiologi', 'test@gmail.com', 'd8578edf8458ce06fbc5bb76a58c5ca4', 2),
-(2, 'dr.Nuryatien Husna,Sp.KFR', 'Spesialis Kedokteran Fisik & Rehabilitas', 'test@gmail.com', 'd8578edf8458ce06fbc5bb76a58c5ca4', 2),
-(3, 'dr.Mirathi Ayu Irnanda', 'Dokter Umum', 'test@gmail.com', 'd8578edf8458ce06fbc5bb76a58c5ca4', 2);
+INSERT INTO `tbl_user` (`id_user`, `nama`, `jabatan`, `email`, `password`, `rule`, `status`) VALUES
+(1, 'dr.Nunuk Kristiani,Sp.Rad', 'Spesialis Radiologi', 'test@gmail.com', 'd8578edf8458ce06fbc5bb76a58c5ca4', 2, 0),
+(2, 'dr.Nuryatien Husna,Sp.KFR', 'Spesialis Kedokteran Fisik & Rehabilitas', 'test@gmail.com', 'd8578edf8458ce06fbc5bb76a58c5ca4', 2, 0),
+(3, 'dr.Mirathi Ayu Irnanda', 'Dokter Umum', 'test@gmail.com', 'd8578edf8458ce06fbc5bb76a58c5ca4', 2, 0);
+
+-- --------------------------------------------------------
+
+--
+-- Stand-in struktur untuk tampilan `vw_belum_bayar`
+-- (Lihat di bawah untuk tampilan aktual)
+--
+CREATE TABLE `vw_belum_bayar` (
+`id_antrian` int(11)
+,`id_pasien` int(11)
+,`id_user` int(11)
+,`nama` varchar(50)
+,`ortu` varchar(50)
+,`nik` varchar(16)
+,`kode` varchar(12)
+);
+
+-- --------------------------------------------------------
+
+--
+-- Stand-in struktur untuk tampilan `vw_transaksi`
+-- (Lihat di bawah untuk tampilan aktual)
+--
+CREATE TABLE `vw_transaksi` (
+`id_tindakan` int(11)
+,`nama_tindakan` varchar(50)
+,`harga` int(11)
+,`id_transaksi` int(11)
+,`tanggal` datetime
+,`id_pasien` int(11)
+,`dokter` int(11)
+,`namaUser` varchar(200)
+,`rule` int(1)
+,`namaPasien` varchar(50)
+,`ortu` varchar(50)
+);
 
 -- --------------------------------------------------------
 
@@ -323,6 +366,24 @@ CREATE TABLE `v_riwayat_diagnosa` (
 -- --------------------------------------------------------
 
 --
+-- Struktur untuk view `vw_belum_bayar`
+--
+DROP TABLE IF EXISTS `vw_belum_bayar`;
+
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `vw_belum_bayar`  AS  select `tbl_antrian`.`id_antrian` AS `id_antrian`,`tbl_antrian`.`id_pasien` AS `id_pasien`,`tbl_antrian`.`id_user` AS `id_user`,`tbl_pasien`.`nama` AS `nama`,`tbl_pasien`.`ortu` AS `ortu`,`tbl_pasien`.`nik` AS `nik`,`tbl_pasien`.`kode` AS `kode` from (`tbl_antrian` join `tbl_pasien` on(`tbl_antrian`.`id_pasien` = `tbl_pasien`.`id`)) where !exists(select 1 from `tbl_transaksi` where `tbl_antrian`.`id_antrian` = `tbl_transaksi`.`id_antrian` limit 1) ;
+
+-- --------------------------------------------------------
+
+--
+-- Struktur untuk view `vw_transaksi`
+--
+DROP TABLE IF EXISTS `vw_transaksi`;
+
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `vw_transaksi`  AS  select `tbl_tindakan`.`id_tindakan` AS `id_tindakan`,`tbl_tindakan`.`nama_tindakan` AS `nama_tindakan`,`tbl_tindakan`.`harga` AS `harga`,`tbl_transaksi`.`id_transaksi` AS `id_transaksi`,`tbl_transaksi`.`tanggal` AS `tanggal`,`tbl_transaksi`.`id_pasien` AS `id_pasien`,`tbl_transaksi`.`dokter` AS `dokter`,`tbl_user`.`nama` AS `namaUser`,`tbl_user`.`rule` AS `rule`,`tbl_pasien`.`nama` AS `namaPasien`,`tbl_pasien`.`ortu` AS `ortu` from ((((`tbl_transaksi_tindakan` join `tbl_transaksi` on(`tbl_transaksi_tindakan`.`id_transaksi` = `tbl_transaksi`.`id_transaksi`)) join `tbl_tindakan` on(`tbl_tindakan`.`id_tindakan` = `tbl_transaksi_tindakan`.`id_tindakan`)) join `tbl_user` on(`tbl_user`.`id_user` = `tbl_transaksi`.`dokter`)) join `tbl_pasien` on(`tbl_pasien`.`id` = `tbl_transaksi`.`id_pasien`)) ;
+
+-- --------------------------------------------------------
+
+--
 -- Struktur untuk view `v_antrian`
 --
 DROP TABLE IF EXISTS `v_antrian`;
@@ -387,7 +448,8 @@ ALTER TABLE `tbl_tindakan`
 -- Indeks untuk tabel `tbl_transaksi`
 --
 ALTER TABLE `tbl_transaksi`
-  ADD PRIMARY KEY (`id_transaksi`);
+  ADD PRIMARY KEY (`id_transaksi`),
+  ADD KEY `id_antrian` (`id_antrian`);
 
 --
 -- Indeks untuk tabel `tbl_transaksi_tindakan`
@@ -409,7 +471,7 @@ ALTER TABLE `tbl_user`
 -- AUTO_INCREMENT untuk tabel `tbl_antrian`
 --
 ALTER TABLE `tbl_antrian`
-  MODIFY `id_antrian` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_antrian` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT untuk tabel `tbl_kecamatan`
@@ -427,7 +489,7 @@ ALTER TABLE `tbl_pasien`
 -- AUTO_INCREMENT untuk tabel `tbl_riwayat_diagnosa`
 --
 ALTER TABLE `tbl_riwayat_diagnosa`
-  MODIFY `id_diagnosa` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_diagnosa` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT untuk tabel `tbl_tindakan`
@@ -468,6 +530,12 @@ ALTER TABLE `tbl_pasien`
 --
 ALTER TABLE `tbl_riwayat_diagnosa`
   ADD CONSTRAINT `tbl_riwayat_diagnosa_ibfk_1` FOREIGN KEY (`id_antrian`) REFERENCES `tbl_antrian` (`id_antrian`);
+
+--
+-- Ketidakleluasaan untuk tabel `tbl_transaksi`
+--
+ALTER TABLE `tbl_transaksi`
+  ADD CONSTRAINT `tbl_transaksi_ibfk_1` FOREIGN KEY (`id_antrian`) REFERENCES `tbl_antrian` (`id_antrian`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
