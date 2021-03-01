@@ -120,7 +120,7 @@
                             <h3 class="header-sub-title wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="0.2s">Selamat Datang</h3>
                             <h3 class="header-sub-title wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="0.2s">Praktik Bersama</h3>
                             <h2 class="header-title wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="0.5s">dr.Nunuk Kristriani</h2>
-                            <p class="text wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="0.8s">Jl.raya Kusuma Bangsa Burneh, Bangkalan, Jawa Timur</p>
+                            <p class="text wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="0.8s">Jl.raya Kusuma Bangsa No.98 Burneh, Bangkalan, Jawa Timur</p>
                             <!-- <a href="#" class="main-btn wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="1.1s">Get Started</a> -->
                         </div> <!-- header hero content -->
                     </div>
@@ -585,7 +585,7 @@
                                 <li>+62 000-0000-0000</li>
                                 <li>info@gmail.com</li>
                                 <li>www.auliahusada.com</li>
-                                <li>Jl.Kusuma BangsaBurneh Bangkalan</li>
+                                <li>Jl.raya Kusuma Bangsa No.98 Burneh Bangkalan</li>
                             </ul>
                         </div> <!-- footer contact -->
                     </div>
