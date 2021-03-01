@@ -571,7 +571,7 @@
                                     <li><a href="#">Contact</a></li>
                                     <li><a href="#">Page</a></li>
                                     <li><a href="#">Portfolio</a></li>
-                                    <li><a href="#">Blog</a></li>
+                                    <li><a href="#">Alamat</a></li>
                                 </ul>
                             </div> <!-- footer wrapper -->
                         </div> <!-- footer link -->
@@ -582,10 +582,10 @@
                                 <h4 class="title">Contact Us</h4>
                             </div>
                             <ul class="contact">
-                                <li>+62 859-0375-8619</li>
+                                <li>+62 000-0000-0000</li>
                                 <li>info@gmail.com</li>
-                                <li>www.yourweb.com</li>
-                                <li>Jl.Kusuma Bangsa No.58 Burneh Bangkalan</li>
+                                <li>www.auliahusada.com</li>
+                                <li>Jl.Kusuma BangsaBurneh Bangkalan</li>
                             </ul>
                         </div> <!-- footer contact -->
                     </div>
