@@ -27,4 +27,18 @@ class laporan extends CI_Controller
 		$data = $this->db_model->get_where("vw_transaksi", ['tanggal >=' => $tanggalMulai, 'tanggal <=' => $tanggalSelesai])->result_array();
 		echo json_encode($data);
 	}
+
+	public function printLaporan()
+	{
+		$tanggalMulai =  $this->input->get('mulai') . " 00:00:00";
+		$tanggalSelesai =  $this->input->get('selesai') . " 23:59:59";
+		$this->db->order_by("tanggal DESC");
+		$data["dataTransaksi"] = $this->db_model->get_where("vw_transaksi", ['tanggal >=' => $tanggalMulai, 'tanggal <=' => $tanggalSelesai])->result_array();
+		$data["pemilik"] = $this->db_model->get_where("tbl_user", ["rule" => 1])->row_array()["nama"];
+		$data["admin"] = $this->db_model->get_where("tbl_user", ["rule" => 2])->row_array()["nama"];
+		$data['totalPasien'] = $this->db_model->get_where("tbl_transaksi", ['tanggal >=' => $tanggalMulai, 'tanggal <=' => $tanggalSelesai])->num_rows();
+		$data["mulai"] = $this->input->get('mulai');
+		$data["selesai"] = $this->input->get('selesai');
+		$this->load->view("print_laporan", $data);
+	}
 }

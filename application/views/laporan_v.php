@@ -1,23 +1,23 @@
 <div class="content">
-    <!-- Header -->
-    <!-- Header -->
-    <div class="header bg-primary pb-6">
-      <div class="container-fluid">
-        <div class="header-body">
-          <div class="row align-items-center py-4">
-            <div class="col-lg-6 col-7">
-              <h6 class="h2 text-white d-inline-block mb-0">Aulia Raya</h6>
-              <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
-                <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
-                  <li class="breadcrumb-item"><a><i class="fas fa-home"></i></a></li>
-                  <li class="breadcrumb-item"><a>Laporan</a></li>
-                  <!-- <li class="breadcrumb-item active" aria-current="page">Default</li> -->
-                </ol>
-              </nav>
-            </div>
-            <div class="col-lg-6 col-5 text-right">
-              <a href="#" class="btn btn-sm btn-neutral">Print Laporan</a>
-            </div>
+  <!-- Header -->
+  <!-- Header -->
+  <div class="header bg-primary pb-6">
+    <div class="container-fluid">
+      <div class="header-body">
+        <div class="row align-items-center py-4">
+          <div class="col-lg-6 col-7">
+            <h6 class="h2 text-white d-inline-block mb-0">Aulia Raya</h6>
+            <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
+              <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
+                <li class="breadcrumb-item"><a><i class="fas fa-home"></i></a></li>
+                <li class="breadcrumb-item"><a>Laporan</a></li>
+                <!-- <li class="breadcrumb-item active" aria-current="page">Default</li> -->
+              </ol>
+            </nav>
+          </div>
+          <div class="col-lg-6 col-5 text-right">
+            <a href="#" onclick="printLaporan()" class="btn btn-sm btn-neutral" id="linkPrintLaporan">Print Laporan</a>
+          </div>
         </div>
       </div>
     </div>
@@ -112,7 +112,6 @@
     $("#tempatTabel").html('<i class="fas fa-spinner fa-pulse"></i> Memproses....')
     var tanggalMulai = formatTanggal($("#tanggalMulai").val())
     var tanggalSelesai = formatTanggal($("#tanggalSelesai").val())
-    console.log(tanggalMulai + tanggalSelesai)
     var totalKeuntungan = 0;
     var totalPemasukan = 0;
     var tabel = '<table class="table table-flush" id="tabelKeuntungan"><thead class="thead-light"><tr><th>Hapus</th><th>Pasien</th><th>Waktu</th><th>Tindakan</th><th>Biaya</th><th>Dokter</th><th>keuntungan</th></tr></thead><tbody>';
@@ -154,11 +153,21 @@
     });
   }
 
+  function printLaporan() {
+    $("#linkPrintLaporan").html('<i class="fas fa-spinner fa-pulse"></i> Memproses....')
+    var tanggalMulai = formatTanggal($("#tanggalMulai").val())
+    var tanggalSelesai = formatTanggal($("#tanggalSelesai").val())
+
+    window.open("<?= base_url("laporan/printLaporan?") ?>mulai=" + tanggalMulai + "&selesai=" + tanggalSelesai)
+
+    $("#linkPrintLaporan").html('Print Laporan')
+  }
+
   function formatTanggal(tanggal) {
     var now = new Date(tanggal);
     var day = ("0" + now.getDate()).slice(-2);
     var month = ("0" + (now.getMonth() + 1)).slice(-2);
-    var today = now.getFullYear() + "-" + (month) + "-" + (day);
+    var today = now.getFullYear() + "%2f" + (month) + "%2f" + (day);
     return today
   }
 
