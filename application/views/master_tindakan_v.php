@@ -82,19 +82,7 @@
             </div>
           </div>
           <div class="card-body ">
-            <div class="table-responsive py-4">
-              <table class="table table-flush" id="tabelTindakan">
-                <thead class="thead-light">
-                  <tr>
-                    <th>ID</th>
-                    <th>Tindakan</th>
-                    <th>Harga</th>
-                    <th>-</th>
-                  </tr>
-                </thead>
-                <tbody id="tempatTabel">
-                </tbody>
-              </table>
+            <div class="table-responsive py-4" id="tempatTabel">
             </div>
           </div>
         </div>
@@ -136,7 +124,7 @@
 
   function tampilkan() {
     $("#tempatTabel").html('<i class="fas fa-spinner fa-pulse"></i> Memuat...')
-    var baris = ''
+    var baris = '<table class="table table-flush" id="tabelTindakan"><thead class="thead-light"><tr><th>ID</th><th>Tindakan</th><th>Harga</th><th>-</th></tr></thead><tbody>'
     $.ajax({
       url: '<?= base_url() ?>master_tindakan/tampil',
       method: 'post',
@@ -150,6 +138,7 @@
           baris += '<td><a href="#" title="hapus?" class="badge badge-danger" id="hapus' + data[i].id_tindakan + '" onClick="tryHapus(' + data[i].id_tindakan + ')"><i class="fa fa-times"></i></a>'
           baris += '</div></td></tr>'
         }
+        baris += '</tbody></table>'
         $("#tempatTabel").html(baris);
         $('#tabelTindakan').DataTable({
           "pageLength": 10,

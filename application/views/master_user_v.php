@@ -147,21 +147,7 @@
             </div>
           </div>
           <div class="card-body ">
-            <div class="table-responsive py-4">
-              <table class="table table-flush" id="datatable-basic">
-                <thead class="thead-light">
-                  <tr>
-                    <th>ID</th>
-                    <th>Nama</th>
-                    <th>Email</th>
-                    <th>Jabatan</th>
-                    <th>Dokter/spesialis</th>
-                    <th>Action</th>
-                  </tr>
-                </thead>
-                <tbody id="tempatTabel">
-                </tbody>
-              </table>
+            <div class="table-responsive py-4" id="tempatTabel">
             </div>
           </div>
         </div>
@@ -203,7 +189,7 @@
 
   function tampilkan() {
     $("#tempatTabel").html('<i class="fas fa-spinner fa-pulse"></i> Memuat...')
-    var baris = ''
+    var baris = '<table class="table table-flush" id="tabelUser"><thead class="thead-light"><tr><th>ID</th><th>Nama</th><th>Email</th><th>Jabatan</th><th>Dokter/spesialis</th><th>Action</th></tr></thead><tbody>'
     $.ajax({
       url: '<?= base_url() ?>master_user/tampil',
       method: 'post',
@@ -220,7 +206,11 @@
           baris += ' <a href="#" title="edit?" class="badge badge-info" id="edit' + data[i].id_user + '" onClick="tryEdit(' + data[i].id_user + ')"><i class="fa fa-edit"></i></a>'
           baris += '</td></tr>'
         }
+        baris += '</tbody></table>'
         $("#tempatTabel").html(baris);
+        $('#tabelUser').DataTable({
+          "pageLength": 10,
+        });
       }
     });
   }
