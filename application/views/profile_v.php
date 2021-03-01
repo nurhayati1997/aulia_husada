@@ -106,10 +106,6 @@
                                     </li> -->
                                 </ul>
                             </div> <!-- navbar collapse -->
-                            
-                            <!-- <div class="navbar-btn d-none d-sm-inline-block">
-                                <a class="main-btn" data-scroll-nav="0" href="<?= site_url('login') ?>">Login</a>
-                            </div> -->
                         </nav> <!-- navbar -->
                     </div>
                 </div> <!-- row -->
@@ -300,144 +296,7 @@
     <!--====== VIDEO COUNTER PART START ======-->
     
     <section id="facts" class="video-counter pt-70">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6">
-                    <div class="video-content mt-50 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
-                        <img class="dots" src="<?= base_url() ?>assets/images/dots.svg" alt="dots">
-                        <div class="video-wrapper">
-                            <div class="video-image">
-                                <img src="<?= base_url() ?>assets/images/video.png" alt="video">
-                            </div>
-                            <div class="video-icon">
-                                <a href="https://www.youtube.com/watch?v=r44RKWyfcFw" class="video-popup"><i class="lni-play"></i></a>
-                            </div>
-                        </div> <!-- video wrapper -->
-                    </div> <!-- video content -->
-                </div>
-                <div class="col-lg-6">
-                    <div class="counter-wrapper mt-50 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.8s">
-                        <div class="counter-content">
-                            <div class="section-title">
-                                <div class="line"></div>
-                                <h3 class="title">Cool facts <span> this about app</span></h3>
-                            </div> <!-- section title -->
-                            <p class="text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, seiam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
-                        </div> <!-- counter content -->
-                        <div class="row no-gutters">
-                            <div class="col-4">
-                                <div class="single-counter counter-color-1 d-flex align-items-center justify-content-center">
-                                    <div class="counter-items text-center">
-                                        <span class="count"><span class="counter">125</span>K</span>
-                                        <p class="text">Downloads</p>
-                                    </div>
-                                </div> <!-- single counter -->
-                            </div>
-                            <div class="col-4">
-                                <div class="single-counter counter-color-2 d-flex align-items-center justify-content-center">
-                                    <div class="counter-items text-center">
-                                        <span class="count"><span class="counter">87</span>K</span>
-                                        <p class="text">Active Users</p>
-                                    </div>
-                                </div> <!-- single counter -->
-                            </div>
-                            <div class="col-4">
-                                <div class="single-counter counter-color-3 d-flex align-items-center justify-content-center">
-                                    <div class="counter-items text-center">
-                                        <span class="count"><span class="counter">4.8</span></span>
-                                        <p class="text">User Rating</p>
-                                    </div>
-                                </div> <!-- single counter -->
-                            </div>
-                        </div> <!-- row -->
-                    </div> <!-- counter wrapper -->
-                </div>
-            </div> <!-- row -->
-        </div> <!-- container -->
-    </section>
-    
-    <!--====== VIDEO COUNTER PART ENDS ======-->
-    
-    <!--====== TEAM PART START ======-->
-    
-    <section id="team" class="team-area pt-120">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-5">
-                    <div class="section-title text-center pb-30">
-                        <div class="line m-auto"></div>
-                        <h3 class="title"><span>Meet Our</span> Creative Team Members</h3>
-                    </div> <!-- section title -->
-                </div>
-            </div> <!-- row -->
-            <div class="row justify-content-center">
-                <div class="col-lg-4 col-md-7 col-sm-8">
-                    <div class="single-team text-center mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
-                        <div class="team-image">
-                            <img src="<?= base_url() ?>assets/images/team-1.png" alt="Team">
-                            <div class="social">
-                                <ul>
-                                    <li><a href="#"><i class="lni-facebook-filled"></i></a></li>
-                                    <li><a href="#"><i class="lni-twitter-filled"></i></a></li>
-                                    <li><a href="#"><i class="lni-instagram-filled"></i></a></li>
-                                    <li><a href="#"><i class="lni-linkedin-original"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="team-content">
-                            <h5 class="holder-name"><a href="#">Isabela Moreira</a></h5>
-                            <p class="text">Founder and CEO</p>
-                        </div>
-                    </div> <!-- single team -->
-                </div>
-                <div class="col-lg-4 col-md-7 col-sm-8">
-                    <div class="single-team text-center mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
-                        <div class="team-image">
-                            <img src="<?= base_url() ?>assets/images/team-2.png" alt="Team">
-                            <div class="social">
-                                <ul>
-                                    <li><a href="#"><i class="lni-facebook-filled"></i></a></li>
-                                    <li><a href="#"><i class="lni-twitter-filled"></i></a></li>
-                                    <li><a href="#"><i class="lni-instagram-filled"></i></a></li>
-                                    <li><a href="#"><i class="lni-linkedin-original"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="team-content">
-                            <h5 class="holder-name"><a href="#">Elon Musk</a></h5>
-                            <p class="text">Sr. Software Engineer</p>
-                        </div>
-                    </div> <!-- single team -->
-                </div>
-                <div class="col-lg-4 col-md-7 col-sm-8">
-                    <div class="single-team text-center mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.8s">
-                        <div class="team-image">
-                            <img src="<?= base_url() ?>assets/images/team-3.png" alt="Team">
-                            <div class="social">
-                                <ul>
-                                    <li><a href="#"><i class="lni-facebook-filled"></i></a></li>
-                                    <li><a href="#"><i class="lni-twitter-filled"></i></a></li>
-                                    <li><a href="#"><i class="lni-instagram-filled"></i></a></li>
-                                    <li><a href="#"><i class="lni-linkedin-original"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="team-content">
-                            <h5 class="holder-name"><a href="#">Fiona Smith</a></h5>
-                            <p class="text">Business Development Manager</p>
-                        </div>
-                    </div> <!-- single team -->
-                </div>
-            </div> <!-- row -->
-        </div> <!-- container -->
-    </section>
-    
-    <!--====== TEAM PART ENDS ======-->
-    
-    <!--====== TESTIMONIAL PART START ======-->
-    
-    <section id="testimonial" class="testimonial-area pt-120">
-        <div class="container">
+    <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-5">
                     <div class="section-title text-center pb-40">
@@ -575,71 +434,91 @@
         </div> <!-- container -->
     </section>
     
-    <!--====== TESTIMONIAL PART ENDS ======-->
+    <!--====== VIDEO COUNTER PART ENDS ======-->
     
-    <!--====== BLOG PART START ======-->
+    <!--====== TEAM PART START ======-->
     
-    <section id="blog" class="blog-area pt-120">
+    <section id="team" class="team-area pt-120">
         <div class="container">
-            <div class="row">
-                <div class="col-lg-6">
-                    <div class="section-title pb-35">
-                        <div class="line"></div>
-                        <h3 class="title"><span>Our Recent</span> Blog Posts</h3>
+            <div class="row justify-content-center">
+                <div class="col-lg-5">
+                    <div class="section-title text-center pb-30">
+                        <div class="line m-auto"></div>
+                        <h3 class="title"><span>Meet Our</span> Creative Team Members</h3>
                     </div> <!-- section title -->
                 </div>
             </div> <!-- row -->
             <div class="row justify-content-center">
-                <div class="col-lg-4 col-md-7">
-                    <div class="single-blog mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
-                        <div class="blog-image">
-                            <img src="<?= base_url() ?>assets/images/blog-1.jpg" alt="blog">
+                <div class="col-lg-4 col-md-7 col-sm-8">
+                    <div class="single-team text-center mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
+                        <div class="team-image">
+                            <img src="<?= base_url() ?>assets/images/team-1.png" alt="Team">
+                            <div class="social">
+                                <ul>
+                                    <li><a href="#"><i class="lni-facebook-filled"></i></a></li>
+                                    <li><a href="#"><i class="lni-twitter-filled"></i></a></li>
+                                    <li><a href="#"><i class="lni-instagram-filled"></i></a></li>
+                                    <li><a href="#"><i class="lni-linkedin-original"></i></a></li>
+                                </ul>
+                            </div>
                         </div>
-                        <div class="blog-content">
-                            <ul class="meta">
-                                <li>Posted By: <a href="#">Admin</a></li>
-                                <li>03 June, 2023</li>
-                            </ul>
-                            <p class="text">Lorem ipsuamet conset sadips cing elitr seddiam nonu eirmod tempor invidunt labore.</p>
-                            <a class="more" href="#">Learn More <i class="lni-chevron-right"></i></a>
+                        <div class="team-content">
+                            <h5 class="holder-name"><a href="#">Isabela Moreira</a></h5>
+                            <p class="text">Founder and CEO</p>
                         </div>
-                    </div> <!-- single blog -->
-                </div> 
-                <div class="col-lg-4 col-md-7">
-                    <div class="single-blog mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
-                        <div class="blog-image">
-                            <img src="<?= base_url() ?>assets/images/blog-2.jpg" alt="blog">
+                    </div> <!-- single team -->
+                </div>
+                <div class="col-lg-4 col-md-7 col-sm-8">
+                    <div class="single-team text-center mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
+                        <div class="team-image">
+                            <img src="<?= base_url() ?>assets/images/team-2.png" alt="Team">
+                            <div class="social">
+                                <ul>
+                                    <li><a href="#"><i class="lni-facebook-filled"></i></a></li>
+                                    <li><a href="#"><i class="lni-twitter-filled"></i></a></li>
+                                    <li><a href="#"><i class="lni-instagram-filled"></i></a></li>
+                                    <li><a href="#"><i class="lni-linkedin-original"></i></a></li>
+                                </ul>
+                            </div>
                         </div>
-                        <div class="blog-content">
-                            <ul class="meta">
-                                <li>Posted By: <a href="#">Admin</a></li>
-                                <li>03 June, 2023</li>
-                            </ul>
-                            <p class="text">Lorem ipsuamet conset sadips cing elitr seddiam nonu eirmod tempor invidunt labore.</p>
-                            <a class="more" href="#">Learn More <i class="lni-chevron-right"></i></a>
+                        <div class="team-content">
+                            <h5 class="holder-name"><a href="#">Elon Musk</a></h5>
+                            <p class="text">Sr. Software Engineer</p>
                         </div>
-                    </div> <!-- single blog -->
-                </div> 
-                <div class="col-lg-4 col-md-7">
-                    <div class="single-blog mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.8s">
-                        <div class="blog-image">
-                            <img src="<?= base_url() ?>assets/images/blog-3.jpg" alt="blog">
+                    </div> <!-- single team -->
+                </div>
+                <div class="col-lg-4 col-md-7 col-sm-8">
+                    <div class="single-team text-center mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.8s">
+                        <div class="team-image">
+                            <img src="<?= base_url() ?>assets/images/team-3.png" alt="Team">
+                            <div class="social">
+                                <ul>
+                                    <li><a href="#"><i class="lni-facebook-filled"></i></a></li>
+                                    <li><a href="#"><i class="lni-twitter-filled"></i></a></li>
+                                    <li><a href="#"><i class="lni-instagram-filled"></i></a></li>
+                                    <li><a href="#"><i class="lni-linkedin-original"></i></a></li>
+                                </ul>
+                            </div>
                         </div>
-                        <div class="blog-content">
-                            <ul class="meta">
-                                <li>Posted By: <a href="#">Admin</a></li>
-                                <li>03 June, 2023</li>
-                            </ul>
-                            <p class="text">Lorem ipsuamet conset sadips cing elitr seddiam nonu eirmod tempor invidunt labore.</p>
-                            <a class="more" href="#">Learn More <i class="lni-chevron-right"></i></a>
+                        <div class="team-content">
+                            <h5 class="holder-name"><a href="#">Fiona Smith</a></h5>
+                            <p class="text">Business Development Manager</p>
                         </div>
-                    </div> <!-- single blog -->
-                </div> 
+                    </div> <!-- single team -->
+                </div>
             </div> <!-- row -->
         </div> <!-- container -->
     </section>
     
-    <!--====== BLOG PART ENDS ======-->
+    <!--====== TEAM PART ENDS ======-->
+    
+    <!--====== TESTIMONIAL PART START ======-->
+    
+    <section id="testimonial" class="testimonial-area pt-120">
+        
+    </section>
+    
+    <!--====== TESTIMONIAL PART ENDS ======-->
     
     <!--====== FOOTER PART START ======-->
     
@@ -647,19 +526,19 @@
         <div class="container">
             <div class="subscribe-area wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
                 <div class="row">
-                    <div class="col-lg-6">
+                    <div class="col-lg-12">
                         <div class="subscribe-content mt-45">
-                            <h2 class="subscribe-title">Subscribe Our Newsletter <span>get reguler updates</span></h2>
+                            <h2 class="subscribe-title text-center">Terimakasih <span>Atas Kunjungan</span></h2>
                         </div>
                     </div>
-                    <div class="col-lg-6">
+                    <!-- <div class="col-lg-6">
                         <div class="subscribe-form mt-50">
                             <form action="#">
                                 <input type="text" placeholder="Enter eamil">
                                 <button class="main-btn">Subscribe</button>
                             </form>
                         </div>
-                    </div>
+                    </div> -->
                  </div> <!-- row -->
             </div> <!-- subscribe area -->
             <div class="footer-widget pb-100">
@@ -732,7 +611,7 @@
                     </div>
                 </div> <!-- row -->
             </div> <!-- footer copyright -->
-        </div> <!-- container -->
+        </div>
         <div id="particles-2"></div>
     </footer>
     
