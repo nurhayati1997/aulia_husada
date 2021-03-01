@@ -30,6 +30,11 @@ class resume_medis extends CI_Controller
 		echo json_encode($this->Db_model->get_where('v_riwayat_diagnosa', array('id_pasien' => $newformat))->result());
 	}
 
+	function add_list()
+	{
+		echo json_encode($this->Db_model->get_all('tbl_pasien')->result());
+	}
+
 	function get_nrm()
 	{
 		echo json_encode($this->Db_model->get_all('v_riwayat_diagnosa')->result());

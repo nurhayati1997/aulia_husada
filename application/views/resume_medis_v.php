@@ -307,53 +307,41 @@
               <div class="col-12">
                 <h4 class="card-title text-white text-center mb-0">Penunjang</h4>
               </div>
-              <div class="col-6">
-                <h4 class="card-title text-white text-center mb-0">Lab</h4>
-                <div class="dropzone dropzone-single mb-3" data-toggle="dropzone" data-dropzone-url="http://">
-                  <div class="fallback">
-                    <div class="custom-file">
-                      <input type="file" class="custom-file-input" id="hasil_lab">
-                      <label class="custom-file-label" for="hasil_lab">Choose file</label>
-                    </div>
-                  </div>
-                  <div class="dz-preview dz-preview-single">
-                    <div class="dz-preview-cover">
-                      <img class="dz-preview-img" src="...html" alt="..." data-dz-thumbnail>
-                    </div>
-                  </div>
-                </div>
+              <div class="col-12">
+                <p></p>
               </div>
-              <div class="col-6">
-                <h4 class="card-title text-white text-center mb-0">Radiologi</h4>
-                <div class="dropzone dropzone-single mb-3" data-toggle="dropzone" data-dropzone-url="http://">
-                  <div class="fallback">
-                    <div class="custom-file">
-                      <input type="file" class="custom-file-input" id="hasil_radiologi">
-                      <label class="custom-file-label" for="hasil_radiologi">Choose file</label>
-                    </div>
-                  </div>
-                  <div class="dz-preview dz-preview-single">
-                    <div class="dz-preview-cover">
-                      <img class="dz-preview-img" src="...html" alt="..." data-dz-thumbnail>
-                    </div>
-                  </div>
+              <div class="col-12">
+                <h4 class="card-title text-white text-center mb-0">Lab</h4>
+                <div id="file_lab"></div>
+                <div class="custom-file form_disable" id="hidden_lab">
+                  <input type="file" class="custom-file-input" id="hasil_lab" accept="image/jpeg,image/jpg,application/pdf">
+                  <label class="custom-file-label" for="hasil_lab">Choose file</label>
                 </div>
               </div>
               <div class="col-12">
-                <h4 class="card-title text-white text-center mb-0">Catatan</h4>
-                <div class="dropzone dropzone-single mb-3" data-toggle="dropzone" data-dropzone-url="http://">
-                  <div class="fallback">
-                    <div class="custom-file">
-                      <input type="file" class="custom-file-input" id="hasil_catatan">
-                      <label class="custom-file-label" for="hasil_catatan">Choose file</label>
-                    </div>
-                  </div>
-                  <div class="dz-preview dz-preview-single">
-                    <div class="dz-preview-cover">
-                      <img class="dz-preview-img" src="...html" alt="..." data-dz-thumbnail>
-                    </div>
-                  </div>
+                <p></p>
+              </div>
+              <div class="col-12">
+                <h4 class="card-title text-white text-center mb-0">Radiologi</h4>
+                <div id="file_radiologi"></div>
+                <div class="custom-file form_disable" id="hidden_radiologi">
+                  <input type="file" class="custom-file-input" id="hasil_radiologi" accept="image/jpeg,image/jpg,application/pdf">
+                  <label class="custom-file-label" for="hasil_radiologi">Choose file</label>
                 </div>
+              </div>
+              <div class="col-12">
+                <p></p>
+              </div>
+              <div class="col-12">
+                <h4 class="card-title text-white text-center mb-0">Catatan</h4>
+                <div id="file_catatan"></div>
+                <div class="custom-file form_disable" id="hidden_catatan">
+                  <input type="file" class="custom-file-input" id="hasil_catatan" accept="image/jpeg,image/jpg,application/pdf">
+                  <label class="custom-file-label" for="hasil_catatan">Choose file</label>
+                </div>
+              </div>
+              <div class="col-12">
+                <p></p>
               </div>
           </div>
           <div id="antrian_footer">
@@ -508,6 +496,10 @@
       document.getElementById("diagnosa").disabled = true;
       document.getElementById("terapi").disabled = true;
 
+      document.getElementById("hidden_lab").style.display = "none";
+      document.getElementById("hidden_catatan").style.display = "none";
+      document.getElementById("hidden_radiologi").style.display = "none";
+
       var tombol = '<button type="button" class="btn btn-block btn-warning" onclick="enable_form()" >Ubah</button>';
       $("#antrian_footer").html(tombol);
       $("#modal-title-notification").html("Detail Asessmen");
@@ -530,6 +522,10 @@
       document.getElementById("diagnosa").disabled = false;
       document.getElementById("terapi").disabled = false;
 
+      document.getElementById("hidden_lab").style.display = "block";
+      document.getElementById("hidden_catatan").style.display = "block";
+      document.getElementById("hidden_radiologi").style.display = "block";
+
       var tombol = '<button type="button" class="btn btn-block btn-danger" id="ubah_button" onclick="ubah_asessmen()" ><div id="loader"> </div> Simpan</button>';
       $("#antrian_footer").html(tombol);
       $("#modal-title-notification").html("Edit Asessmen");
@@ -543,6 +539,10 @@
           dataType: 'json',
           success: function(data) {
               // console.log(data);
+              $("#file_radiologi").html('');
+              $("#file_catatan").html('');
+              $("#file_lab").html('');
+ 
               document.getElementById("id_antri").value = data.id_antrian;
               document.getElementById("nrm_antri").value = data.kode;
               document.getElementById("nama_antri").value = data.nama;
@@ -565,6 +565,21 @@
               document.getElementById("diagnosa").value = data.diagnosa;
               document.getElementById("terapi").value = data.terapi;
 
+              if(data.hasil_lab!=null){
+                var link = ' <a href="<?= base_url() ?>document/hasil_lab/'+data.hasil_lab+'" target="_blank">Lihat Hasil Lab</a>';
+                $("#file_lab").html(link);
+              }
+
+              if(data.hasil_catatan!=null){
+                var link = ' <a href="<?= base_url() ?>document/catatan/'+data.hasil_catatan+'" target="_blank">Lihat Catatan</a>';
+                $("#file_catatan").html(link);
+              }
+
+              if(data.hasil_radiologi!=null){
+                var link = ' <a href="<?= base_url() ?>document/radiologi/'+data.hasil_radiologi+'" target="_blank">Lihat Hasil Radiologi</a>';
+                $("#file_radiologi").html(link);
+              }
+              
               disable_form();
               $('#modal-edit').modal('show');
           }
@@ -633,6 +648,13 @@
           },
           success: function(data) {
             // console.log(data);
+
+            if(document.getElementById("hasil_lab").value!=""){berkas("#hasil_lab",document.getElementById("id_antri").value,document.getElementById("nrm_antri").value,"hasil_lab");}
+            if(document.getElementById("hasil_radiologi").value!=""){berkas("#hasil_radiologi",document.getElementById("id_antri").value,document.getElementById("nrm_antri").value,'radiologi');}
+            if(document.getElementById("hasil_catatan").value!=""){berkas("#hasil_catatan",document.getElementById("id_antri").value,document.getElementById("nrm_antri").value,'catatan');}
+          
+            $('#modal-edit').modal('hide');
+
             $('#ubah_button').attr('disabled', false);
             removeSpinner($('#loader'), function () {
               $('#loader').html('');
@@ -645,6 +667,31 @@
               showConfirmButton: false,
               timer: 2500
             });
+          }
+        });
+      }
+  }
+
+  function berkas(id,antrian,kode,path) {
+      var format = $(id).prop('files')[0].type;
+      if (format.includes('pdf') || format.includes('jpg') || format.includes('jpeg')) {
+        var form_data = new FormData();
+        form_data.append('id_antrian', antrian);
+        form_data.append('kode', kode);
+        form_data.append('path', path);
+        form_data.append('berkas', $(id).prop('files')[0]);
+
+        // console.log(antrian);
+        $.ajax({
+          type: 'POST',
+          data: form_data,
+          url: '<?= base_url() ?>pendaftaran/tambah_berkas',
+          processData:false,
+          contentType:false,
+          cache:false,
+          dataType: 'json',
+          success: function(data) {
+            // console.log(data);
           }
         });
       }
@@ -719,10 +766,10 @@
   function add_list() {
       $.ajax({
           type: 'POST',
-          url: '<?= base_url() ?>pendaftaran/add_list',
+          url: '<?= base_url() ?>resume_medis/add_list',
           dataType: 'json',
           success: function(data) {
-            console.log(data);
+            // console.log(data);
             var html = '';
             for (var i = 0; i < data.length; i++) {
                 html += "<option value='" + data[i].id + "'>" + data[i].kode + '</option>'; 

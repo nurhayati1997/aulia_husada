@@ -27,7 +27,7 @@ class pendaftaran extends CI_Controller
 
 	function get_dokter()
 	{
-		echo json_encode($this->Db_model->get_where('tbl_user', array('rule' => 2))->result());
+		echo json_encode($this->Db_model->get_where('tbl_user', array('rule' => 3))->result());
 	}
 
 	function add_list()
@@ -82,7 +82,11 @@ class pendaftaran extends CI_Controller
 
 	function tambah_asessmen()
 	{
-		$cek = $this->Db_model->get_where('tbl_riwayat_diagnosa', array('id_antrian' => $this->input->post('id_antrian', TRUE)))->num_rows();
+		$update = [
+			"status" => 1
+		];
+		$this->Db_model->update("tbl_antrian", $update, array('id_antrian' => $this->input->post("id_antrian", TRUE)));
+
 		$data = [
 			"keluhan" => $this->input->post('keluhan', TRUE),
 			"penyakit_sekarang" => $this->input->post('penyakit_sekarang', TRUE),
@@ -102,16 +106,48 @@ class pendaftaran extends CI_Controller
 			"id_antrian" => $this->input->post('id_antrian', TRUE)
 		];
 
-		$update = [
-			"status" => 1,
-			"id_antrian" => $this->input->post('id_antrian', TRUE)
-		];
-		$this->Db_model->update("tbl_antrian", $update, array('id_antrian' => $this->input->post("id_antrian", TRUE)));
+		$cek = $this->Db_model->get_where('tbl_riwayat_diagnosa', array('id_antrian' => $this->input->post('id_antrian', TRUE)))->num_rows();
+		
 		if ($cek > 0) {
 			echo json_encode($this->Db_model->update("tbl_riwayat_diagnosa", $data, array('id_antrian' => $this->input->post("id_antrian", TRUE))));
 		} else {
 			echo json_encode($this->Db_model->insert_get("tbl_riwayat_diagnosa", $data));
 		}
-		// echo json_encode($cek > 0);
+		// echo json_encode($update);
+	}
+
+	function tambah_berkas(){
+		$user = $this->Db_model->get_where('v_riwayat_diagnosa', array('id_antrian' => $this->input->post('id_antrian', TRUE)))->row();
+		$nama = $user->tanggal_antri . "_" . $user->id_diagnosa . "_" . $user->nama;
+
+		$path = './document/'.$this->input->post('path', TRUE)."/";
+		$config['allowed_types'] = 'jpg|jpeg|pdf';
+		$config['upload_path'] = $path;
+		$config['file_name'] = $nama;
+
+		$this->load->library('upload', $config);
+
+		if ($this->upload->do_upload('berkas')) {
+			$namaFotoBaru = $this->upload->data('file_name');
+
+			if($this->input->post('path', TRUE)=='hasil_lab'){
+				$kolom = "hasil_lab";
+			}else if($this->input->post('path', TRUE)=='radiologi'){
+				$kolom = "hasil_radiologi";
+			}else if($this->input->post('path', TRUE)=='catatan'){
+				$kolom = "hasil_catatan";
+			}
+
+			// echo json_encode($path);
+			$data = [
+				$kolom => $namaFotoBaru
+			];
+
+			// echo json_encode($kolom);
+			echo json_encode($this->Db_model->update("tbl_riwayat_diagnosa", $data, array('id_antrian' => $this->input->post("id_antrian", TRUE))));
+		} else {
+			echo json_encode($this->upload->display_errors());
+		}
+		
 	}
 }

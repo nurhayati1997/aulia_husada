@@ -50,4 +50,8 @@ class tindakan extends CI_Controller
 	{
 		echo json_encode($this->Db_model->get_where('v_riwayat_diagnosa', array('id_pasien' =>  $this->input->post('kata_kunci', TRUE)))->result());
 	}
+
+	function open_form(){
+		$this->load->view('form');
+	}
 }
