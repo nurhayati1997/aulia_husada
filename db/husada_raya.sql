@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 28 Feb 2021 pada 14.35
+-- Waktu pembuatan: 01 Mar 2021 pada 10.20
 -- Versi server: 10.4.11-MariaDB
 -- Versi PHP: 7.4.4
 
@@ -215,9 +215,10 @@ CREATE TABLE `tbl_user` (
 --
 
 INSERT INTO `tbl_user` (`id_user`, `nama`, `jabatan`, `email`, `password`, `rule`, `status`) VALUES
-(1, 'dr.Nunuk Kristiani,Sp.Rad', 'Spesialis Radiologi', 'test@gmail.com', 'd8578edf8458ce06fbc5bb76a58c5ca4', 2, 0),
-(2, 'dr.Nuryatien Husna,Sp.KFR', 'Spesialis Kedokteran Fisik & Rehabilitas', 'test@gmail.com', 'd8578edf8458ce06fbc5bb76a58c5ca4', 2, 0),
-(3, 'dr.Mirathi Ayu Irnanda', 'Dokter Umum', 'test@gmail.com', 'd8578edf8458ce06fbc5bb76a58c5ca4', 2, 0);
+(1, 'dr.Nunuk Kristiani,Sp.Rad', 'Spesialis Radiologi', 'test@gmail.com', 'd8578edf8458ce06fbc5bb76a58c5ca4', 3, 0),
+(2, 'dr.Nuryatien Husna,Sp.KFR', 'Spesialis Kedokteran Fisik & Rehabilitas', 'test@gmail.com', 'd8578edf8458ce06fbc5bb76a58c5ca4', 3, 0),
+(3, 'dr.Mirathi Ayu Irnanda', 'Dokter Umum', 'test@gmail.com', 'd8578edf8458ce06fbc5bb76a58c5ca4', 3, 0),
+(4, 'inas', 'admin', 'ainur.inas.annisa@gmail.com', '$y201$iiR$XdtHzKvDqiKDI8T1kQM3d2UJIuZs1yaR1JvhF0fw4BazAyKERI', 2, 0);
 
 -- --------------------------------------------------------
 
@@ -513,7 +514,7 @@ ALTER TABLE `tbl_transaksi_tindakan`
 -- AUTO_INCREMENT untuk tabel `tbl_user`
 --
 ALTER TABLE `tbl_user`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)

@@ -27,7 +27,7 @@ class pendaftaran extends CI_Controller
 
 	function get_dokter()
 	{
-		echo json_encode($this->Db_model->get_where('tbl_user', array('rule' => 2))->result());
+		echo json_encode($this->Db_model->get_where('tbl_user', array('rule' => 3))->result());
 	}
 
 	function add_list()

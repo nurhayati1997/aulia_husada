@@ -68,7 +68,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     $(document).ready(function() {
         pencarian();
         isi_tabel();
-        window.print();
+        
     });
 
     function pencarian() {
@@ -137,6 +137,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     html += "</tr>";
                 }
                 $("#myTabel").html(html);
+                window.print();
             }
         });
     }
