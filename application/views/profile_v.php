@@ -301,7 +301,7 @@
                 <div class="col-lg-5">
                     <div class="section-title text-center pb-40">
                         <div class="line m-auto"></div>
-                        <h3 class="title">Users sharing<span> their experience</span></h3>
+                        <h3 class="title">Galeri<span> Aulia Husada</span></h3>
                     </div> <!-- section title -->
                 </div>
             </div> <!-- row -->
@@ -331,8 +331,8 @@
                                 <img class="author" src="<?= base_url() ?>assets/images/author-1.png" alt="author">
                             </div>
                             <div class="author-content media-body">
-                                <h6 class="holder-name">Jenny Deo</h6>
-                                <p class="text">CEO, SpaceX</p>
+                                <h6 class="holder-name">Kegiatan 1</h6>
+                                <p class="text">Detail :</p>
                             </div>
                         </div>
                     </div> <!-- single testimonial -->
@@ -362,8 +362,8 @@
                                 <img class="author" src="assets/images/author-2.png" alt="author">
                             </div>
                             <div class="author-content media-body">
-                                <h6 class="holder-name">Marjin Otte</h6>
-                                <p class="text">UX Specialist, Yoast</p>
+                                <h6 class="holder-name">Kegiatan 2 </h6>
+                                <p class="text">Detail :</p>
                             </div>
                         </div>
                     </div> <!-- single testimonial -->
@@ -393,8 +393,8 @@
                                 <img class="author" src="<?= base_url() ?>assets/images/author-3.png" alt="author">
                             </div>
                             <div class="author-content media-body">
-                                <h6 class="holder-name">David Smith</h6>
-                                <p class="text">CTO, Alphabet</p>
+                                <h6 class="holder-name">Kegiatan 3</h6>
+                                <p class="text">Detail :</p>
                             </div>
                         </div>
                     </div> <!-- single testimonial -->
@@ -424,8 +424,8 @@
                                 <img class="author" src="<?= base_url() ?>assets/images/author-2.png" alt="author">
                             </div>
                             <div class="author-content media-body">
-                                <h6 class="holder-name">Fajar Siddiq</h6>
-                                <p class="text">COO, MakerFlix</p>
+                            <h6 class="holder-name">Kegiatan 4</h6>
+                                <p class="text">Detail :</p>
                             </div>
                         </div>
                     </div> <!-- single testimonial -->
@@ -444,7 +444,7 @@
                 <div class="col-lg-5">
                     <div class="section-title text-center pb-30">
                         <div class="line m-auto"></div>
-                        <h3 class="title"><span>Meet Our</span> Creative Team Members</h3>
+                        <h3 class="title"><span>Aulia Husada</span> Team</h3>
                     </div> <!-- section title -->
                 </div>
             </div> <!-- row -->
@@ -463,8 +463,8 @@
                             </div>
                         </div>
                         <div class="team-content">
-                            <h5 class="holder-name"><a href="#">Isabela Moreira</a></h5>
-                            <p class="text">Founder and CEO</p>
+                            <h6 class="holder-name">Nama</h6>
+                            <p class="text">Jabatan</p>
                         </div>
                     </div> <!-- single team -->
                 </div>
@@ -482,8 +482,8 @@
                             </div>
                         </div>
                         <div class="team-content">
-                            <h5 class="holder-name"><a href="#">Elon Musk</a></h5>
-                            <p class="text">Sr. Software Engineer</p>
+                            <h6 class="holder-name">Nama</h6>
+                            <p class="text">Jabatan</p>
                         </div>
                     </div> <!-- single team -->
                 </div>
@@ -501,8 +501,8 @@
                             </div>
                         </div>
                         <div class="team-content">
-                            <h5 class="holder-name"><a href="#">Fiona Smith</a></h5>
-                            <p class="text">Business Development Manager</p>
+                            <h6 class="holder-name">Nama</h6>
+                            <p class="text">Jabatan</p>
                         </div>
                     </div> <!-- single team -->
                 </div>
@@ -511,14 +511,6 @@
     </section>
     
     <!--====== TEAM PART ENDS ======-->
-    
-    <!--====== TESTIMONIAL PART START ======-->
-    
-    <section id="testimonial" class="testimonial-area pt-120">
-        
-    </section>
-    
-    <!--====== TESTIMONIAL PART ENDS ======-->
     
     <!--====== FOOTER PART START ======-->
     
@@ -548,7 +540,7 @@
                             <a class="logo" href="#">
                                 <img src="<?= base_url() ?>assets/images/logo.svg" alt="logo">
                             </a>
-                            <p class="text">Lorem ipsum dolor sit amet consetetur sadipscing elitr, sederfs diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam.</p>
+                            <p class="text">Merupakan Praktik Bersama dr.Nunuk Kristiani dengan beberapa dokter yang siap melayani Kesehatan anda dan Keluarga</p>
                             <ul class="social">
                                 <li><a href="#"><i class="lni-facebook-filled"></i></a></li>
                                 <li><a href="#"><i class="lni-twitter-filled"></i></a></li>
@@ -561,14 +553,14 @@
                         <div class="footer-link d-flex mt-50 justify-content-md-between">
                             <div class="link-wrapper wow fadeIn" data-wow-duration="1s" data-wow-delay="0.4s">
                                 <div class="footer-title">
-                                    <h4 class="title">Quick Link</h4>
+                                    <h4 class="title"> </h4>
                                 </div>
                                 <ul class="link">
-                                    <li><a href="#">Road Map</a></li>
-                                    <li><a href="#">Privacy Policy</a></li>
-                                    <li><a href="#">Refund Policy</a></li>
-                                    <li><a href="#">Terms of Service</a></li>
-                                    <li><a href="#">Pricing</a></li>
+                                    <li><a href="#"> </a></li>
+                                    <li><a href="#"> </a></li>
+                                    <li><a href="#"> </a></li>
+                                    <li><a href="#"> </a></li>
+                                    <li><a href="#"></a></li>
                                 </ul>
                             </div> <!-- footer wrapper -->
                             <div class="link-wrapper wow fadeIn" data-wow-duration="1s" data-wow-delay="0.6s">
@@ -576,11 +568,10 @@
                                     <h4 class="title">Resources</h4>
                                 </div>
                                 <ul class="link">
-                                    <li><a href="#">Home</a></li>
+                                    <li><a href="#">Contact</a></li>
                                     <li><a href="#">Page</a></li>
                                     <li><a href="#">Portfolio</a></li>
                                     <li><a href="#">Blog</a></li>
-                                    <li><a href="#">Contact</a></li>
                                 </ul>
                             </div> <!-- footer wrapper -->
                         </div> <!-- footer link -->
@@ -591,10 +582,10 @@
                                 <h4 class="title">Contact Us</h4>
                             </div>
                             <ul class="contact">
-                                <li>+809272561823</li>
+                                <li>+62 859-0375-8619</li>
                                 <li>info@gmail.com</li>
                                 <li>www.yourweb.com</li>
-                                <li>123 Stree New York City , United <br> States Of America 750.</li>
+                                <li>Jl.Kusuma Bangsa No.58 Burneh Bangkalan</li>
                             </ul>
                         </div> <!-- footer contact -->
                     </div>
@@ -605,7 +596,7 @@
                     <div class="col-lg-12">
                         <div class="copyright d-sm-flex justify-content-between">
                             <div class="copyright-content">
-                                <p class="text">Designed and Developed by <a href="https://uideck.com" rel="nofollow">UIdeck</a></p>
+                                <p class="text">Designed and Developed by <a rel="nofollow">FIND TECH</a></p>
                             </div> <!-- copyright content -->
                         </div> <!-- copyright -->
                     </div>
