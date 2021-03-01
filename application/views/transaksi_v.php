@@ -63,34 +63,17 @@
           </div>
           <div class="card-body ">
             <div class="table-responsive">
-              <table class="table table-flush" id="datatable-basic">
+              <table class="table table-flush">
                 <thead class="thead-light">
                   <tr>
-                    <th>Name</th>
-                    <th>Position</th>
-                    <th>Office</th>
-                    <th>Age</th>
-                    <th>Start date</th>
-                    <th>Salary</th>
+                    <th>Pasien</th>
+                    <th>Waktu</th>
+                    <th>Tindakan</th>
+                    <th>Biaya</th>
+                    <th>Dokter</th>
                   </tr>
                 </thead>
-                <tbody>
-                  <tr>
-                    <td>Tiger Nixon</td>
-                    <td>System Architect</td>
-                    <td>Edinburgh</td>
-                    <td>61</td>
-                    <td>2011/04/25</td>
-                    <td>$320,800</td>
-                  </tr>
-                  <tr>
-                    <td>Garrett Winters</td>
-                    <td>Accountant</td>
-                    <td>Tokyo</td>
-                    <td>63</td>
-                    <td>2011/07/25</td>
-                    <td>$170,750</td>
-                  </tr>
+                <tbody id="transaksiTerakhir">
                 </tbody>
               </table>
             </div>
@@ -103,6 +86,7 @@
 <script>
   tampilkan()
   pasienBayar();
+  getTransaksiTerakhir();
   var tindakanTerpilih = [];
   var hargaTerpilih = [];
 
@@ -194,6 +178,35 @@
           $("#tindakan" + tindakanTerpilih[i]).removeClass("btn-success")
           $("#tindakan" + tindakanTerpilih[i]).addClass("btn-outline-secondary")
         }
+        getTransaksiTerakhir();
+      }
+    });
+  }
+
+  function getTransaksiTerakhir() {
+    $.ajax({
+      url: '<?= base_url() ?>transaksi/getTransaksiTerakhir',
+      method: 'post',
+      data: {
+        tanggalMulai: tanggalHariIni(),
+        tanggalSelesai: tanggalHariIni()
+      },
+      dataType: 'json',
+      success: function(data) {
+        var tabel = ''
+        for (let j = 0; j < data.length; j++) {
+          tabel += '<tr>'
+          tabel += '<td>' + data[j].namaPasien + '</td>'
+          tabel += '<td>' + data[j].tanggal + '</td>'
+          tabel += '<td>' + data[j].nama_tindakan + '</td>'
+          tabel += '<td>' + formatRupiah(data[j].harga.toString()) + '</td>'
+          tabel += '<td>' + data[j].namaUser + '</td>'
+          tabel += '</tr>'
+        }
+        if (!tabel) {
+          tabel = '<td class="text-center" colspan="6">Data Masih kosong :)</td>'
+        }
+        $("#transaksiTerakhir").html(tabel)
 
         tindakanTerpilih = []
         hargaTerpilih = []
@@ -201,8 +214,18 @@
         $("#totalHarga").html("Rp. 0.00");
         $("#proses").html('Proses')
         $("#idAntrian").val(0)
+        console.log('bisa')
       }
+
     });
+  }
+
+  function tanggalHariIni() {
+    var now = new Date();
+    var day = ("0" + now.getDate()).slice(-2);
+    var month = ("0" + (now.getMonth() + 1)).slice(-2);
+    var today = now.getFullYear() + "-" + (month) + "-" + (day);
+    return today
   }
 
   function formatRupiah(angka, prefix) {

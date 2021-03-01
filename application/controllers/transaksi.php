@@ -58,4 +58,13 @@ class transaksi extends CI_Controller
 	{
 		echo json_encode($this->db_model->get_all('vw_belum_bayar')->result());
 	}
+
+	public function getTransaksiTerakhir()
+	{
+		$tanggalMulai = $this->input->post('tanggalMulai') . " 00:00:00";
+		$tanggalSelesai = $this->input->post('tanggalSelesai') . " 23:59:59";
+		$this->db->limit(5, 0);
+		$this->db->order_by("tanggal", 'DESC');
+		echo json_encode($this->db_model->get_where("vw_transaksi", ['tanggal >=' => $tanggalMulai, 'tanggal <=' => $tanggalSelesai])->result_array());
+	}
 }
