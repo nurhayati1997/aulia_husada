@@ -41,4 +41,28 @@ class laporan extends CI_Controller
 		$data["selesai"] = $this->input->get('selesai');
 		$this->load->view("print_laporan", $data);
 	}
+
+	public function dataByid()
+	{
+		$tabel = $this->input->post("target");
+		$id = $this->input->post("id");
+		$kondisi = $this->input->post("kondisi");
+		$data = $this->db_model->get_where($tabel, [$kondisi => $id])->row_array();
+		echo json_encode($data);
+	}
+
+	public function hapusData()
+	{
+		$idTransaksiTindakan = $this->input->post("id");
+
+		$idTransaksi = $this->db_model->get_where("vw_transaksi", ["id_transaksi_tindakan" => $idTransaksiTindakan])->row_array()["id_transaksi"];
+
+		$this->db_model->delete("tbl_transaksi_tindakan", ["id_transaksi_tindakan" => $idTransaksiTindakan]);
+
+		$jmlTransaksi = count($this->db_model->get_where("vw_transaksi", ["id_transaksi" => $idTransaksi])->result_array());
+		if ($jmlTransaksi == 0) {
+			$this->db_model->delete("tbl_transaksi", ["id_transaksi" => $idTransaksi]);
+		}
+		echo json_encode("");
+	}
 }

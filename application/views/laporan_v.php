@@ -81,6 +81,32 @@
     </div>
   </div>
 </div>
+<div class="modal fade" id="modalHapus" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header no-bd">
+        <h5 class="modal-title">
+          <span class="fw-mediumbold">
+            Hapus</span>
+          <span class="fw-light">
+            Transaksi
+          </span>
+        </h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p id="teksHapus"></p>
+        <input type="hidden" id="idHapus" name="id_hapus" />
+      </div>
+      <div class="modal-footer no-bd">
+        <button type="button" id="hapus" onClick="hapus()" class="btn btn-primary">Hapus</button>
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Batal</button>
+      </div>
+    </div>
+  </div>
+</div>
 <script>
   var tanggal = new Date;
   var hariIni = (tanggal.getMonth() + 1) + '/' + (tanggal.getDate()) + '/' + tanggal.getFullYear();
@@ -126,7 +152,7 @@
         for (let i = 0; i < data.length; i++) {
           tabel += '<tr>'
 
-          tabel += '<td><a href="#" title="hapus?" class="badge badge-danger" id="hapus' + data[i].id_transaksi + '" onClick="tryHapus(' + data[i].id_transaksi + ')"><i class="fa fa-times"></i></a></td>'
+          tabel += '<td><div style="cursor:pointer;" title="hapus?" class="badge badge-danger" id="hapus' + data[i].id_transaksi_tindakan + '" onClick="tryHapus(' + data[i].id_transaksi_tindakan + ')"><i class="fa fa-times"></i></div></td>'
           tabel += '<td>' + data[i].namaPasien + '</td>'
           tabel += '<td>' + data[i].tanggal + '</td>'
           tabel += '<td>' + data[i].nama_tindakan + '</td>'
@@ -161,6 +187,47 @@
     window.open("<?= base_url("laporan/printLaporan?") ?>mulai=" + tanggalMulai + "&selesai=" + tanggalSelesai)
 
     $("#linkPrintLaporan").html('Print Laporan')
+  }
+
+  function tryHapus(id) {
+    $("#hapus" + id).html('<i class="fas fa-spinner fa-pulse"></i>')
+    $.ajax({
+      url: '<?= base_url() ?>laporan/dataByid',
+      method: 'post',
+      data: {
+        target: "vw_transaksi",
+        id: id,
+        kondisi: "id_transaksi_tindakan"
+      },
+      dataType: 'json',
+      success: function(data) {
+        $("#idHapus").val(id)
+        $("#teksHapus").html("yakin ingin menghapus pembayaran pasien <b>'" + data.namaPasien + "'</b> dengan tindakan <b>'" + data.nama_tindakan + "'</b> dengan biaya <b>'" + data.harga + "'</b> pada tanggal dan jam : <b>'" + data.tanggal + "'</b> ?")
+
+        $("#hapus" + id).html('<i class="fa fa-times"></i>')
+      }
+    });
+    $("#modalHapus").modal('show')
+  }
+
+  function hapus() {
+    $("#hapus").html('<i class="fas fa-spinner fa-pulse"></i> Memproses..')
+    var id = $("#idHapus").val()
+    $.ajax({
+      url: '<?= base_url() ?>laporan/hapusData',
+      method: 'post',
+      data: {
+        id: id
+      },
+      dataType: 'json',
+      success: function(data) {
+        $("#idHapus").val("")
+        $("#teksHapus").html("")
+        tampilkanLaporan()
+        $("#modalHapus").modal('hide')
+        $("#hapus").html('Hapus')
+      }
+    });
   }
 
   function formatTanggal(tanggal) {
