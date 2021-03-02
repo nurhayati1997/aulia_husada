@@ -307,23 +307,25 @@
               <div class="col-12">
                 <h4 class="card-title text-white text-center mb-0">Penunjang</h4>
               </div>
-              <div class="col-12">
+              <div class="col-4">
                 <p></p>
               </div>
               <div class="col-12">
-                <h4 class="card-title text-white text-center mb-0">Lab</h4>
-                <div id="file_lab"></div>
+                <!-- <h4 class="card-title text-white text-center mb-0">Lab</h4> -->
+                <a href="#" class="btn btn-secondary btn-lg btn-block" role="button" aria-pressed="true" id="file_lab"></a>
+                <!-- <div id="file_lab"></div> -->
                 <div class="custom-file form_disable" id="hidden_lab">
                   <input type="file" class="custom-file-input" id="hasil_lab" accept="image/jpeg,image/jpg,application/pdf">
                   <label class="custom-file-label" for="hasil_lab">Choose file</label>
                 </div>
               </div>
-              <div class="col-12">
+              <div class="col-4">
                 <p></p>
               </div>
               <div class="col-12">
-                <h4 class="card-title text-white text-center mb-0">Radiologi</h4>
-                <div id="file_radiologi"></div>
+                <!-- <h4 class="card-title text-white text-center mb-0">Radiologi</h4> -->
+                <a href="#" class="btn btn-secondary btn-lg btn-block" role="button" aria-pressed="true" id="file_radiologi"></a>
+                <!-- <div id="file_radiologi"></div> -->
                 <div class="custom-file form_disable" id="hidden_radiologi">
                   <input type="file" class="custom-file-input" id="hasil_radiologi" accept="image/jpeg,image/jpg,application/pdf">
                   <label class="custom-file-label" for="hasil_radiologi">Choose file</label>
@@ -333,8 +335,9 @@
                 <p></p>
               </div>
               <div class="col-12">
-                <h4 class="card-title text-white text-center mb-0">Catatan</h4>
-                <div id="file_catatan"></div>
+                <!-- <h4 class="card-title text-white text-center mb-0">Catatan</h4> -->
+                <a href="#" class="btn btn-secondary btn-lg btn-block" role="button" aria-pressed="true" id="file_catatan"></a>
+                <!-- <div id="file_catatan"></div> -->
                 <div class="custom-file form_disable" id="hidden_catatan">
                   <input type="file" class="custom-file-input" id="hasil_catatan" accept="image/jpeg,image/jpg,application/pdf">
                   <label class="custom-file-label" for="hasil_catatan">Choose file</label>
@@ -500,7 +503,7 @@
       document.getElementById("hidden_catatan").style.display = "none";
       document.getElementById("hidden_radiologi").style.display = "none";
 
-      var tombol = '<button type="button" class="btn btn-block btn-warning" onclick="enable_form()" >Ubah</button>';
+      var tombol = '<button type="button" class="btn btn-block btn-default" onclick="enable_form()" >Ubah</button>';
       $("#antrian_footer").html(tombol);
       $("#modal-title-notification").html("Detail Asessmen");
     }
@@ -566,7 +569,7 @@
               document.getElementById("terapi").value = data.terapi;
 
               if(data.hasil_lab!=null){
-                var link = ' <a href="<?= base_url() ?>document/hasil_lab/'+data.hasil_lab+'" target="_blank">Lihat Hasil Lab</a>';
+                var link = ' <a href="<?= base_url() ?>document/hasil_lab/'+data.hasil_lab+'" target="_blank"> Lihat Hasil Lab</a>';
                 $("#file_lab").html(link);
               }
 
