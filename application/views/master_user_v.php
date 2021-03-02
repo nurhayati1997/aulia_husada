@@ -202,8 +202,8 @@
           baris += '<td>' + data[i].email + '</td>'
           baris += '<td>' + data[i].rule + '</td>'
           baris += '<td>' + data[i].jabatan + '</td>'
-          baris += '<td><a href="#" title="hapus?" class="badge badge-danger" id="hapus' + data[i].id_user + '" onClick="tryHapus(' + data[i].id_user + ')"><i class="fa fa-times"></i></a>'
-          baris += ' <a href="#" title="edit?" class="badge badge-info" id="edit' + data[i].id_user + '" onClick="tryEdit(' + data[i].id_user + ')"><i class="fa fa-edit"></i></a>'
+          baris += '<td><div style="cursor:pointer;" title="hapus?" class="badge badge-danger" id="hapus' + data[i].id_user + '" onClick="tryHapus(' + data[i].id_user + ')"><i class="fa fa-times"></i></div>'
+          baris += ' <div style="cursor:pointer;" title="edit?" class="badge badge-info" id="edit' + data[i].id_user + '" onClick="tryEdit(' + data[i].id_user + ')"><i class="fa fa-edit"></i></div>'
           baris += '</td></tr>'
         }
         baris += '</tbody></table>'

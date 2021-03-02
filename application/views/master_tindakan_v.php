@@ -135,7 +135,7 @@
           baris += '<td>' + data[i].id_tindakan + '</td>'
           baris += '<td>' + data[i].nama_tindakan + '</td>'
           baris += '<td>' + formatRupiah(data[i].harga.toString()) + '</td>'
-          baris += '<td><a href="#" title="hapus?" class="badge badge-danger" id="hapus' + data[i].id_tindakan + '" onClick="tryHapus(' + data[i].id_tindakan + ')"><i class="fa fa-times"></i></a>'
+          baris += '<td><div style="cursor:pointer;" title="hapus?" class="badge badge-danger" id="hapus' + data[i].id_tindakan + '" onClick="tryHapus(' + data[i].id_tindakan + ')"><i class="fa fa-times"></i></div>'
           baris += '</div></td></tr>'
         }
         baris += '</tbody></table>'
