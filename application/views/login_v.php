@@ -42,7 +42,7 @@
 					</span>
 
 					<span class="login100-form-title p-b-34 p-t-27">
-						Husada Raya
+						Aulia Husada
 					</span>
 
 					<div class="wrap-input100 validate-input <?php if (isset($error)) {
