@@ -188,6 +188,29 @@
                 </a>
               </li>
             <?php } ?>
+
+            <li class="nav-item">
+              <a class="nav-link" href="#navbar-rujukan" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="navbar-maps">
+                <i class="ni ni-archive-2 text-primary"></i>
+                <span class="nav-link-text">Rujukan</span>
+              </a>
+              <div class="collapse" id="navbar-rujukan">
+                <ul class="nav nav-sm flex-column">
+                  <li class="nav-item">
+                    <a href="<?= site_url('resume_medis') ?>" class="nav-link">
+                      <span class="sidenav-mini-icon"> U </span>
+                      <span class="sidenav-normal"> USG Kiriman </span>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="<?= site_url('pasien') ?>" class="nav-link">
+                      <span class="sidenav-mini-icon"> L</span>
+                      <span class="sidenav-normal"> Laboratorium </span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </li>
             <!-- <li class="nav-item">
               <a class="nav-link" href="examples/icons.html">
                 <i class="ni ni-planet text-orange"></i>
