@@ -191,13 +191,13 @@
 
             <li class="nav-item">
               <a class="nav-link" href="#navbar-rujukan" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="navbar-maps">
-                <i class="ni ni-archive-2 text-primary"></i>
+                <i class="ni ni-archive-2 text-green"></i>
                 <span class="nav-link-text">Rujukan</span>
               </a>
               <div class="collapse" id="navbar-rujukan">
                 <ul class="nav nav-sm flex-column">
                   <li class="nav-item">
-                    <a href="<?= site_url('resume_medis') ?>" class="nav-link">
+                    <a href="<?= site_url('usg') ?>" class="nav-link">
                       <span class="sidenav-mini-icon"> U </span>
                       <span class="sidenav-normal"> USG Kiriman </span>
                     </a>
