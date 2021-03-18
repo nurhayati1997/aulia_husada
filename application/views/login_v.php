@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-	<title>Husada Raya</title>
+	<title>Aulia Husada</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<!--===============================================================================================-->
