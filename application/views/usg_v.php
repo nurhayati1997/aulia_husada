@@ -53,6 +53,7 @@
                               <th>Tanggal</th>
                               <th>Tarif</th>
                               <th>Usia</th>
+                              <th></th>
                           </tr>
                       </thead>
                       <tfoot>
@@ -65,6 +66,7 @@
                               <th>Tanggal</th>
                               <th>Tarif</th>
                               <th>Usia</th>
+                              <th></th>
                           </tr>
                       </tfoot>
                       <tbody>
@@ -129,7 +131,7 @@
                   <div class="input-group-prepend">
                     <span class="input-group-text"><i class="ni ni-calendar-grid-58"></i></span>
                   </div>
-                  <input class="form-control datepicker" id="tanggal_kirim" placeholder="Tanggal" type="date">
+                  <input class="form-control datepicker" id="tgl" placeholder="Tanggal" type="text">
                 </div>
               </div>
             </div>
@@ -169,12 +171,12 @@
                   <div class="input-group-prepend">
                     <span class="input-group-text"><i class="ni ni-box-2"></i></span>
                   </div>
-                  <input class="form-control" placeholder="Tarif" id="tarif" type="number">
+                  <input class="form-control" placeholder="Tarif" id="tarif" type="text">
                 </div>
               </div>
             </div>
           </div>
-          <button type="button" id="simpan_button" class="btn btn-block btn-info" onclick="tambah_baru()"> <div id="loader"> </div> Simpan</button>
+          <button type="button" id="simpan_button" class="btn btn-block btn-info" onclick="simpan()"> <div id="loader"> </div> Simpan</button>
         </form>
       </div>
       <div class="modal-footer">
@@ -185,10 +187,216 @@
 </div>
 
 <script>
+  $(document).ready(function() {
+    ambil_data();
+    var rupiah = document.getElementById('tarif');
+		rupiah.addEventListener('keyup', function(e){
+			rupiah.value = formatRupiah(this.value, 'Rp. ');
+		});
+  });
+
   function tampil_daftar_modal(){
-    // document.getElementById("nrm_radio").checked = true;
-    // get_dokter();
-    // add_list();
+    reset_form();
     $('#modal-default').modal('show');
+  }
+
+  function formatRupiah(angka, prefix){
+    var number_string = angka.replace(/[^,\d]/g, '').toString(),
+    split   		= number_string.split(','),
+    sisa     		= split[0].length % 3,
+    rupiah     		= split[0].substr(0, sisa),
+    ribuan     		= split[0].substr(sisa).match(/\d{3}/gi);
+
+    // tambahkan titik jika yang di input sudah menjadi angka ribuan
+    if(ribuan){
+      separator = sisa ? '.' : '';
+      rupiah += separator + ribuan.join('.');
+    }
+
+    rupiah = split[1] != undefined ? rupiah + ',' + split[1] : rupiah;
+    return prefix == undefined ? rupiah : (rupiah ? 'Rp. ' + rupiah : '');
+  }
+
+  function ambil_data(){
+    $('#datatable-basic').DataTable({
+      destroy: true,
+      "order": [[ 1, "asc" ]],
+        "ajax": {
+        "type": "POST",
+          "url": "<?php echo site_url("usg/get_usg") ?>",
+          "dataSrc": ""
+      },
+      "columns": [
+          {
+              "data": "nama"
+          },
+          {
+              "data": "alamat"
+          },
+          {
+              "data": "telp"
+          },
+          {
+              "data": "diagnosa"
+          },
+          {
+              "data": "pengirim"
+          },
+          {
+              "data": "tgl"
+          },
+          {
+              "data": "tarif",
+              "render": function(data, type, row) {
+                return formatRupiah(data, 'Rp. ')
+              }
+          },
+          {
+              "data": "usia"
+          },
+          {
+              "data": "id_usg",
+              "render": function(data, type, row) {
+                return '<div style="cursor:pointer;" title="hapus?" class="badge badge-danger" id="' + data + '" onClick="hapus(' + data + ')"><i class="fa fa-times"></i></div>'
+              }
+          },
+          
+      ]
+    });
+  }
+
+  function reset_form(){
+    document.getElementById('nama').value = "";
+    document.getElementById('alamat').value = "";
+    document.getElementById('telp').value = "";
+    document.getElementById('tgl').value = "";
+
+    document.getElementById('pengirim').value = "";
+    document.getElementById('diagnosa').value = "";
+    document.getElementById('usia').value = "";
+    document.getElementById('tarif').value = "";
+  }
+
+  function simpan(){
+    if(document.getElementById('nama').value == ""){
+      document.getElementById('nama').focus();
+    }else if(document.getElementById('alamat').value == ""){
+      document.getElementById('alamat').focus();
+    }else if(document.getElementById('telp').value == ""){
+      document.getElementById('telp').focus();
+    }else if(document.getElementById('tgl').value == ""){
+      document.getElementById('tgl').focus();
+    }else if(document.getElementById('pengirim').value == ""){
+      document.getElementById('pengirim').focus();
+    }else if(document.getElementById('diagnosa').value == ""){
+      document.getElementById('diagnosa').focus();
+    }else if(document.getElementById('usia').value == ""){
+      document.getElementById('usia').focus();
+    }else if(document.getElementById('tarif').value == ""){
+      document.getElementById('tarif').focus();
+    }else{
+      var form_data = new FormData();
+      form_data.append('nama', document.getElementById("nama").value);
+      form_data.append('alamat', document.getElementById("alamat").value);
+      form_data.append('telp', document.getElementById("telp").value);
+      form_data.append('tgl', document.getElementById("tgl").value);
+
+      form_data.append('pengirim', document.getElementById("pengirim").value);
+      form_data.append('diagnosa', document.getElementById("diagnosa").value);
+      form_data.append('usia', document.getElementById("usia").value);
+
+      var tarif = document.getElementById("tarif").value;
+      tarif = tarif.replace("Rp. ", "");
+      tarif = tarif.replace(".", "");
+
+      form_data.append('tarif', parseInt(tarif));
+
+      $.ajax({
+          type: 'POST',
+          data: form_data,
+          url: '<?= base_url() ?>usg/tambah',
+          processData:false,
+          contentType:false,
+          cache:false,
+          dataType: 'json',
+          beforeSend: function () {
+            $('#simpan_button').attr('disabled', true);
+            $('#loader').html('');
+            addSpinner($('#loader'));
+          },
+          success: function(data) {
+            // console.log(data);
+            ambil_data();
+            $('#modal-default').modal('hide');
+
+            $('#simpan_button').attr('disabled', false);
+            removeSpinner($('#loader'), function () {
+              $('#loader').html('');
+            });
+            Swal.fire({
+              position: 'center',
+              icon: 'success',
+              title: 'Data Berhasil Ditambahkan',
+              showConfirmButton: false,
+              timer: 2500
+            });
+          }
+        });
+    }
+  }
+
+  function hapus(id){
+    Swal.fire({
+      title: 'Hapus ?',
+      text: "Data yang telkah dihapus tidak dapat dikembalikan!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Hapus'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        $.ajax({
+          type: 'POST',
+          url: '<?= base_url() ?>usg/hapus',
+          dataType: 'json',
+          data: 'id=' + id,
+          success: function(data) {
+            ambil_data();
+            Swal.fire({
+              position: 'center',
+              icon: 'success',
+              title: 'Data Berhasil Dihapus',
+              showConfirmButton: false,
+              timer: 1500
+            })
+          }
+        });
+      }
+    })
+  }
+
+  function addSpinner(el, static_pos)
+  {
+    var spinner = el.children('.spinner');
+    if (spinner.length && !spinner.hasClass('spinner-remove')) return null;
+    !spinner.length && (spinner = $('<div class="spinner' + (static_pos ? '' : ' spinner-absolute') + '"/>').appendTo(el));
+    animateSpinner(spinner, 'add');
+  }
+
+  function removeSpinner(el, complete)
+  {
+    var spinner = el.children('.spinner');
+    spinner.length && animateSpinner(spinner, 'remove', complete);
+  }
+
+  function animateSpinner(el, animation, complete)
+  {
+    if (el.data('animating')) {
+      el.removeClass(el.data('animating')).data('animating', null);
+      el.data('animationTimeout') && clearTimeout(el.data('animationTimeout'));
+    }
+    el.addClass('spinner-' + animation).data('animating', 'spinner-' + animation);
+    el.data('animationTimeout', setTimeout(function() { animation == 'remove' && el.remove(); complete && complete(); }, parseFloat(el.css('animation-duration')) * 1000));
   }
 </script>
