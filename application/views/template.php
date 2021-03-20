@@ -181,12 +181,35 @@
               </li>
             <?php }
             if ($this->session->userdata("rule") == 1) { ?>
-              <li class="nav-item">
+              <!-- <li class="nav-item">
                 <a class="nav-link" href="<?= site_url('Laporan') ?>">
                   <i class="ni ni-bullet-list-67 text-default"></i>
                   <span class="nav-link-text">Laporan</span>
                 </a>
+              </li> -->
+              <li class="nav-item">
+                <a class="nav-link" href="#navbar-laporan" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="navbar-maps">
+                  <i class="ni ni-bullet-list-67 text-default"></i>
+                  <span class="nav-link-text">Laporan</span>
+                </a>
+                <div class="collapse" id="navbar-laporan">
+                  <ul class="nav nav-sm flex-column">
+                    <li class="nav-item">
+                      <a href="<?= site_url('laporan_internal') ?>" class="nav-link">
+                        <span class="sidenav-mini-icon"> I </span>
+                        <span class="sidenav-normal"> Laporan Internal </span>
+                      </a>
+                    </li>
+                    <li class="nav-item">
+                      <a href="<?= site_url('laporan_rujukan') ?>" class="nav-link">
+                        <span class="sidenav-mini-icon"> R </span>
+                        <span class="sidenav-normal"> Laporan Rujukan </span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
               </li>
+
             <?php } ?>
 
             <li class="nav-item">

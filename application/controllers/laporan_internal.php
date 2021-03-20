@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class laporan extends CI_Controller
+class laporan_internal extends CI_Controller
 {
 	public function __construct()
 	{
@@ -16,7 +16,7 @@ class laporan extends CI_Controller
 	public function index()
 	{
 		// $this->load->view('dashboard_v');
-		$this->template->load('template', 'laporan_v');
+		$this->template->load('template', 'laporan_internal_v');
 	}
 
 	public function dataLaporan()

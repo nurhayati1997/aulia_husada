@@ -10,7 +10,7 @@
             <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
               <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
                 <li class="breadcrumb-item"><a><i class="fas fa-home"></i></a></li>
-                <li class="breadcrumb-item"><a>Laporan</a></li>
+                <li class="breadcrumb-item"><a>Laporan Rujukan</a></li>
                 <!-- <li class="breadcrumb-item active" aria-current="page">Default</li> -->
               </ol>
             </nav>
@@ -24,61 +24,111 @@
   </div>
   <!-- Page content -->
   <!-- Dark table -->
-  <div class="container-fluid mt--6">
-    <div class="row">
-      <div class="col">
-        <div class="card">
-          <div class="card-header bg-gradient-info">
-            <div class="pt-4 text-center">
-              <h4 class="text-uppercase ls-1 text-white py-3 mb-0" id="judul">Laporan</h4>
-              <div id="pesanError" class="badge badge-danger"></div>
-              <div class="row">
-                <div class="col-md-4">
-                </div>
-                <div class="col-md-4">
-                  <div class="form-group">
-                    <div class="input-group input-group-alternative mb-3">
-                      <div class="input-group-prepend">
-                        <span class="input-group-text"><i class="ni ni-calendar-grid-58"></i></span>
+  <div class="container-fluid mt--4">
+    <div class="row justify-content-center">
+        <div class="col-lg-12">
+          <div class="pricing card-group flex-column flex-md-row mb-3">
+            <div class="card card-pricing bg-gradient-info border-0 text-center mb-4">
+              <div class="card-header bg-transparent">
+                <h4 class="text-uppercase ls-1 text-white py-3 mb-0">USG</h4>
+                <div class="row">
+                  <div class="col-md-2">
+                  </div>
+                  <div class="col-md-8">
+                    <div class="form-group">
+                      <div class="input-group input-group-alternative mb-3">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text"><i class="ni ni-calendar-grid-58"></i></span>
+                        </div>
+                        <input class="form-control datepicker" placeholder="Mulai Tanggal" id="tanggalMulai" type="text" onchange="tampilkanLaporan()">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text"><i class="ni ni-calendar-grid-58"></i></span>
+                        </div>
+                        <input class="form-control datepicker" placeholder="Sampai Tanggal" id="tanggalSelesai" type="text" onchange="tampilkanLaporan()">
                       </div>
-                      <input class="form-control datepicker" placeholder="Mulai Tanggal" id="tanggalMulai" type="text" onchange="tampilkanLaporan()">
-                      <div class="input-group-prepend">
-                        <span class="input-group-text"><i class="ni ni-calendar-grid-58"></i></span>
-                      </div>
-                      <input class="form-control datepicker" placeholder="Sampai Tanggal" id="tanggalSelesai" type="text" onchange="tampilkanLaporan()">
                     </div>
                   </div>
+                  <div class="col-md-2">
+                  </div>
                 </div>
-                <div class="col-md-4">
+                <div class="row">
+                  <div class="col-md-2">
+                  </div>
+                  <div class="col-md-4">
+                    <div class="numbers text-white">
+                      <p class="card-category">Total Pemasukan :</p>
+                      <h4 class="card-title  text-white" id="pemasukan">Rp. 0</h4>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="numbers text-white">
+                      <p class="card-category">Total Keuntungan :</p>
+                      <h4 class="card-title  text-white" id="keuntungan">Rp. 0</h4>
+                    </div>
+                  </div>
+                  <div class="col-md-2">
+                  </div>
                 </div>
               </div>
-              <div class="row">
-                <div class="col-md-2">
-                </div>
-                <div class="col-md-4">
-                  <div class="numbers text-white">
-                    <p class="card-category">Total Pemasukan :</p>
-                    <h4 class="card-title  text-white" id="pemasukan">Rp. 0</h4>
-                  </div>
-                </div>
-                <div class="col-md-4">
-                  <div class="numbers text-white">
-                    <p class="card-category">Total Keuntungan :</p>
-                    <h4 class="card-title  text-white" id="keuntungan">Rp. 0</h4>
-                  </div>
-                </div>
-                <div class="col-md-2">
-                </div>
+              <div class="card-body px-lg-7">
+                <!-- <div class="table-responsive py-4" id="tempatTabel">
+                </div> -->
+              </div>
+              <div class="card-footer bg-transparent">
+                <a class="text-light">Laporan USG Rujukan</a>
               </div>
             </div>
-          </div>
-          <div class="card-body ">
-            <div class="table-responsive py-4" id="tempatTabel">
+            <div class="card card-pricing bg-gradient-success zoom-in shadow-lg rounded border-0 text-center mb-4">
+              <div class="card-header bg-transparent">
+                <h4 class="text-uppercase ls-1 text-white py-3 mb-0">LABORATORIUM</h4>
+                <div class="row">
+                  <div class="col-md-2">
+                  </div>
+                  <div class="col-md-8">
+                    <div class="form-group">
+                      <div class="input-group input-group-alternative mb-3">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text"><i class="ni ni-calendar-grid-58"></i></span>
+                        </div>
+                        <input class="form-control datepicker" placeholder="Mulai Tanggal" id="tanggalMulai" type="text" onchange="tampilkanLaporan()">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text"><i class="ni ni-calendar-grid-58"></i></span>
+                        </div>
+                        <input class="form-control datepicker" placeholder="Sampai Tanggal" id="tanggalSelesai" type="text" onchange="tampilkanLaporan()">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-2">
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-2">
+                  </div>
+                  <div class="col-md-4">
+                    <div class="numbers text-white">
+                      <p class="card-category">Total Pemasukan :</p>
+                      <h4 class="card-title  text-white" id="pemasukan">Rp. 0</h4>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="numbers text-white">
+                      <p class="card-category">Total Keuntungan :</p>
+                      <h4 class="card-title  text-white" id="keuntungan">Rp. 0</h4>
+                    </div>
+                  </div>
+                  <div class="col-md-2">
+                  </div>
+                </div>
+              </div>
+              <div class="card-body px-lg-7">
+              </div>
+              <div class="card-footer bg-transparent">
+                <a class="text-white">Laporan LAB Rujukan</a>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
   </div>
 </div>
 <div class="modal fade" id="modalHapus" tabindex="-1" role="dialog" aria-hidden="true">
@@ -140,10 +190,10 @@
     var tanggalSelesai = formatTanggal($("#tanggalSelesai").val())
     var totalKeuntungan = 0;
     var totalPemasukan = 0;
-    var tabel = '<table class="table table-flush" id="tabelKeuntungan"><thead class="thead-light"><tr><th>Hapus</th><th>Pasien</th><th>Waktu</th><th>Tindakan</th><th>Biaya</th><th>Dokter</th><th>keuntungan</th></tr></thead><tbody>';
+    var tabel = '<table class="table table-flush" id="tabelKeuntungan"><thead class="thead-light"><tr><th>Pasien</th><th>Harga</th></tr></thead><tbody>';
     var keuntungan = 0;
     $.ajax({
-      url: '<?= base_url() ?>laporan/dataLaporan',
+      url: '<?= base_url() ?>laporan_internal/dataLaporan',
       method: 'post',
       data: "target=tbl_penjualan&tanggalMulai=" + tanggalMulai + "&tanggalSelesai=" + tanggalSelesai,
       dataType: 'json',
@@ -152,21 +202,21 @@
         for (let i = 0; i < data.length; i++) {
           tabel += '<tr>'
 
-          tabel += '<td><div style="cursor:pointer;" title="hapus?" class="badge badge-danger" id="hapus' + data[i].id_transaksi_tindakan + '" onClick="tryHapus(' + data[i].id_transaksi_tindakan + ')"><i class="fa fa-times"></i></div></td>'
+          // tabel += '<td><div style="cursor:pointer;" title="hapus?" class="badge badge-danger" id="hapus' + data[i].id_transaksi_tindakan + '" onClick="tryHapus(' + data[i].id_transaksi_tindakan + ')"><i class="fa fa-times"></i></div></td>'
           tabel += '<td>' + data[i].namaPasien + '</td>'
-          tabel += '<td>' + data[i].tanggal + '</td>'
-          tabel += '<td>' + data[i].nama_tindakan + '</td>'
-          tabel += '<td>' + formatRupiah(data[i].harga.toString()) + '</td>'
-          tabel += '<td>' + data[i].namaUser + '</td>'
-          if (data[i].rule != 1) {
-            keuntungan = data[i].harga * 0.3
-          } else {
-            keuntungan = data[i].harga
-          }
+          // tabel += '<td>' + data[i].tanggal + '</td>'
+          // tabel += '<td>' + data[i].nama_tindakan + '</td>'
+          // tabel += '<td>' + formatRupiah(data[i].harga.toString()) + '</td>'
+          // tabel += '<td>' + data[i].namaUser + '</td>'
+          // if (data[i].rule != 1) {
+          //   keuntungan = data[i].harga * 0.3
+          // } else {
+          //   keuntungan = data[i].harga
+          // }
           tabel += '<td>' + formatRupiah(keuntungan.toString()) + '</td>'
-          tabel += '</tr>'
-          totalKeuntungan += parseInt(keuntungan)
-          totalPemasukan += parseInt(data[i].harga)
+          // tabel += '</tr>'
+          // totalKeuntungan += parseInt(keuntungan)
+          // totalPemasukan += parseInt(data[i].harga)
         }
         tabel += '</tbody></table>'
         $("#tempatTabel").html(tabel)
@@ -184,7 +234,7 @@
     var tanggalMulai = formatTanggal($("#tanggalMulai").val())
     var tanggalSelesai = formatTanggal($("#tanggalSelesai").val())
 
-    window.open("<?= base_url("laporan/printLaporan?") ?>mulai=" + tanggalMulai + "&selesai=" + tanggalSelesai)
+    window.open("<?= base_url("laporan_internal/printLaporan?") ?>mulai=" + tanggalMulai + "&selesai=" + tanggalSelesai)
 
     $("#linkPrintLaporan").html('Print Laporan')
   }
@@ -192,7 +242,7 @@
   function tryHapus(id) {
     $("#hapus" + id).html('<i class="fas fa-spinner fa-pulse"></i>')
     $.ajax({
-      url: '<?= base_url() ?>laporan/dataByid',
+      url: '<?= base_url() ?>laporan_internal/dataByid',
       method: 'post',
       data: {
         target: "vw_transaksi",
@@ -214,7 +264,7 @@
     $("#hapus").html('<i class="fas fa-spinner fa-pulse"></i> Memproses..')
     var id = $("#idHapus").val()
     $.ajax({
-      url: '<?= base_url() ?>laporan/hapusData',
+      url: '<?= base_url() ?>laporan_internal/hapusData',
       method: 'post',
       data: {
         id: id
