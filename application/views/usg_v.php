@@ -92,8 +92,8 @@
         </button>
       </div>
       <div class="modal-body">
-      <h4 class="text-center " id="modal-title-notification">Jenis Identitas</h4>
-        <form role="form" class="form-danger">
+      <!-- <h4 class="text-center " id="modal-title-notification">Jenis Identitas</h4> -->
+        <form role="form" class="form-danger" autocomplete="off">
           <div class="row">
             <div class="col-6">
               <div class="form-group">

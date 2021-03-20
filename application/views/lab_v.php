@@ -86,8 +86,8 @@
         </button>
       </div>
       <div class="modal-body">
-      <h4 class="text-center " id="modal-title-notification">Jenis Identitas</h4>
-        <form role="form" class="form-danger">
+      <!-- <h4 class="text-center " id="modal-title-notification">Jenis Identitas</h4> -->
+        <form role="form" class="form-danger" autocomplete="off">
           <div class="row">
             <div class="col-6">
               <div class="form-group">
@@ -115,7 +115,7 @@
                   <div class="input-group-prepend">
                     <span class="input-group-text"><i class="ni ni-calendar-grid-58"></i></span>
                   </div>
-                  <input class="form-control datepicker" id="tanggal_kirim" placeholder="Tanggal" type="date">
+                  <input class="form-control datepicker" id="tgl" placeholder="Tanggal" type="text">
                 </div>
               </div>
             </div>
@@ -145,12 +145,12 @@
                   <div class="input-group-prepend">
                     <span class="input-group-text"><i class="ni ni-box-2"></i></span>
                   </div>
-                  <input class="form-control" placeholder="Discount %" id="Disc" type="number">
+                  <input class="form-control" placeholder="Discount %" id="disc" type="number">
                 </div>
               </div>
             </div>
           </div>
-          <button type="button" id="simpan_button" class="btn btn-block btn-success" onclick="tambah_baru()"> <div id="loader"> </div> Simpan</button>
+          <button type="button" id="simpan_button" class="btn btn-block btn-success" onclick="simpan()"> <div id="loader"> </div> Simpan</button>
         </form>
       </div>
       <div class="modal-footer">
@@ -162,9 +162,17 @@
 
 <script>
   function tampil_daftar_modal(){
-    // document.getElementById("nrm_radio").checked = true;
-    // get_dokter();
-    // add_list();
+    reset_form();
     $('#modal-default').modal('show');
+  }
+
+  function reset_form(){
+    document.getElementById('nama').value = "";
+    document.getElementById('jenis').value = "";
+    document.getElementById('tgl').value = "";
+
+    document.getElementById('pengirim').value = "";
+    document.getElementById('tarif').value = "";
+    document.getElementById('disc').value = "";
   }
 </script>
