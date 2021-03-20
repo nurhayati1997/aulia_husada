@@ -10,7 +10,7 @@
               <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
                 <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
                   <li class="breadcrumb-item"><a href="#"><i class="fas fa-home"></i>Rujukan</a></li>
-                  <li class="breadcrumb-item"><a href="#">USG</a></li>
+                  <li class="breadcrumb-item"><a href="#">Laboratorium</a></li>
                   <!-- <li class="breadcrumb-item active" aria-current="page">Default</li> -->
                 </ol>
               </nav>
@@ -25,14 +25,14 @@
       <div class="row">
         <div class="col">
           <div class="card">
-            <div class="card-header bg-gradient-info">
+            <div class="card-header bg-gradient-success">
                 <div class="pt-4 text-center">
-                  <h4 class="text-uppercase ls-1 text-white py-3 mb-0">Data USG Rujukan</h4>
+                  <h4 class="text-uppercase ls-1 text-white py-3 mb-0">Data Laboratorium Rujukan</h4>
                   <div class="row">
                     <div class="col-md-4">
                     </div>
                     <div class="col-md-4">
-                      <button type="button" class="btn btn-warning" onclick="tampil_daftar_modal()">Tambah Data</button>
+                      <button type="button" class="btn btn-secondary" onclick="tampil_daftar_modal()">Tambah Data</button>
                     </div>
                     </div>
                     <div class="col-md-4">
@@ -46,25 +46,21 @@
                       <thead class="thead-light">
                           <tr>
                               <th>Nama</th>
-                              <th>Alamat</th>
-                              <th>No Telp</th>
-                              <th>Diagnosa</th>
-                              <th>Asal Rujukan</th>
-                              <th>Tanggal</th>
-                              <th>Tarif</th>
-                              <th>Usia</th>
+                              <th>Jenis</th>
+                              <th>Pengirim</th>
+                              <th>Harga</th>
+                              <th>Discount</th>
+                              <th>Total</th>
                           </tr>
                       </thead>
                       <tfoot>
                           <tr>
                               <th>Nama</th>
-                              <th>Alamat</th>
-                              <th>No Telp</th>
-                              <th>Diagnosa</th>
-                              <th>Asal Rujukan</th>
-                              <th>Tanggal</th>
-                              <th>Tarif</th>
-                              <th>Usia</th>
+                              <th>Jenis</th>
+                              <th>Pengirim</th>
+                              <th>Harga</th>
+                              <th>Discount</th>
+                              <th>Total</th>
                           </tr>
                       </tfoot>
                       <tbody>
@@ -84,7 +80,7 @@
   <div class="modal-dialog modal- modal-dialog-centered modal-" role="document">
     <div class="modal-content">
       <div class="modal-header">
-      <h6 class="text-center modal-title " id="modal-title-notification">Pendaftaran USG Rujukan</h6>
+      <h6 class="text-center modal-title " id="modal-title-notification">Pendaftaran Laboratorium Rujukan</h6>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">×</span>
         </button>
@@ -109,17 +105,7 @@
                   <div class="input-group-prepend">
                     <span class="input-group-text"><i class="ni ni-pin-3"></i></span>
                   </div>
-                  <input class="form-control" placeholder="Alamat" id="alamat" type="text">
-                </div>
-              </div>
-            </div>
-            <div class="col-6">
-              <div class="form-group">
-                <div class="input-group input-group-alternative">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
-                  </div>
-                  <input class="form-control" placeholder="No Hp" id="telp" type="number">
+                  <input class="form-control" placeholder="Janis" id="jenis" type="text">
                 </div>
               </div>
             </div>
@@ -139,27 +125,7 @@
                   <div class="input-group-prepend">
                     <span class="input-group-text"><i class="ni ni-circle-08"></i></span>
                   </div>
-                  <input class="form-control" placeholder="Dokter Pengirim" id="pengirim" type="text">
-                </div>
-              </div>
-            </div>
-            <div class="col-12">
-                <div class="form-group">
-                  <div class="input-group input-group-alternative mb-3">
-                    <div class="input-group-prepend">
-                      <span class="input-group-text"><i class="ni ni-bullet-list-67"></i></span>
-                    </div>
-                    <input class="form-control form-control-lg" placeholder="Diagnosa" id="diagnosa" type="text">
-                  </div>
-                </div>
-            </div>
-            <div class="col-6">
-              <div class="form-group">
-                <div class="input-group input-group-alternative mb-3">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text"><i class="ni ni-box-2"></i></span>
-                  </div>
-                  <input class="form-control" placeholder="Usia" id="usia" type="number">
+                  <input class="form-control" placeholder="Pengirim" id="pengirim" type="text">
                 </div>
               </div>
             </div>
@@ -173,8 +139,18 @@
                 </div>
               </div>
             </div>
+            <div class="col-6">
+              <div class="form-group">
+                <div class="input-group input-group-alternative mb-3">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="ni ni-box-2"></i></span>
+                  </div>
+                  <input class="form-control" placeholder="Discount %" id="Disc" type="number">
+                </div>
+              </div>
+            </div>
           </div>
-          <button type="button" id="simpan_button" class="btn btn-block btn-info" onclick="tambah_baru()"> <div id="loader"> </div> Simpan</button>
+          <button type="button" id="simpan_button" class="btn btn-block btn-success" onclick="tambah_baru()"> <div id="loader"> </div> Simpan</button>
         </form>
       </div>
       <div class="modal-footer">

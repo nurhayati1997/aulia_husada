@@ -203,7 +203,7 @@
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a href="<?= site_url('pasien') ?>" class="nav-link">
+                    <a href="<?= site_url('lab') ?>" class="nav-link">
                       <span class="sidenav-mini-icon"> L</span>
                       <span class="sidenav-normal"> Laboratorium </span>
                     </a>
