@@ -101,7 +101,6 @@
                   <div class="row">
                     <div class="col-md-6">
                       <button type="button" class="btn btn-default" onclick="tampil_input_modal()">Input Pasien Baru</button>
-                      
                     </div>
                     <div class="col-md-6">
                       <button type="button" class="btn btn-warning" onclick="tampil_daftar_modal()">Pendaftaran</button>
