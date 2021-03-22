@@ -32,6 +32,44 @@
                     <div class="col-md-4">
                     </div>
                     <div class="col-md-4">
+                      <div class="form-group">
+                        <div class="input-group input-group-alternative mb-3">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="ni ni-calendar-grid-58"></i></span>
+                          </div>
+                          <input class="form-control datepicker" placeholder="Mulai Tanggal" id="tanggalMulai" type="text" onchange="tampilkanLaporan()">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="ni ni-calendar-grid-58"></i></span>
+                          </div>
+                          <input class="form-control datepicker" placeholder="Sampai Tanggal" id="tanggalSelesai" type="text" onchange="tampilkanLaporan()">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-2">
+                    </div>
+                    <div class="col-md-4">
+                      <div class="numbers text-white">
+                        <p class="card-category">Total Pemasukan :</p>
+                        <h4 class="card-title  text-white" id="pemasukan">Rp. 0</h4>
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="numbers text-white">
+                        <p class="card-category">Total Keuntungan :</p>
+                        <h4 class="card-title  text-white" id="keuntungan">Rp. 0</h4>
+                      </div>
+                    </div>
+                    <div class="col-md-2">
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-4">
+                    </div>
+                    <div class="col-md-4">
                       <button type="button" class="btn btn-warning" onclick="tampil_daftar_modal()">Tambah Data</button>
                     </div>
                     </div>
@@ -45,28 +83,28 @@
                   <table class="table table-flush" id="datatable-basic">
                       <thead class="thead-light">
                           <tr>
+                              <th>Tanggal</th>
                               <th>Nama</th>
+                              <th>Usia</th>
                               <th>Alamat</th>
                               <th>No Telp</th>
                               <th>Diagnosa</th>
                               <th>Asal Rujukan</th>
-                              <th>Tanggal</th>
                               <th>Tarif</th>
-                              <th>Usia</th>
-                              <th></th>
+                              <th>Total Pendapatan</th>
                           </tr>
                       </thead>
                       <tfoot>
                           <tr>
+                              <th>Tanggal</th>
                               <th>Nama</th>
+                              <th>Usia</th>
                               <th>Alamat</th>
                               <th>No Telp</th>
                               <th>Diagnosa</th>
                               <th>Asal Rujukan</th>
-                              <th>Tanggal</th>
                               <th>Tarif</th>
-                              <th>Usia</th>
-                              <th></th>
+                              <th>Total Pendapatan</th>
                           </tr>
                       </tfoot>
                       <tbody>
