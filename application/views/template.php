@@ -181,13 +181,13 @@
               </li>
             <?php }
             if ($this->session->userdata("rule") == 1) { ?>
-              <!-- <li class="nav-item">
-                <a class="nav-link" href="<?= site_url('Laporan') ?>">
+              <li class="nav-item">
+                <a class="nav-link" href="<?= site_url('Laporan_internal') ?>">
                   <i class="ni ni-bullet-list-67 text-default"></i>
                   <span class="nav-link-text">Laporan</span>
                 </a>
-              </li> -->
-              <li class="nav-item">
+              </li>
+              <!-- <li class="nav-item">
                 <a class="nav-link" href="#navbar-laporan" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="navbar-maps">
                   <i class="ni ni-bullet-list-67 text-default"></i>
                   <span class="nav-link-text">Laporan</span>
@@ -208,7 +208,7 @@
                     </li>
                   </ul>
                 </div>
-              </li>
+              </li> -->
 
             <?php } ?>
 
