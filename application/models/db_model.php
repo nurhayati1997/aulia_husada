@@ -30,27 +30,27 @@ class Db_model extends CI_Model
         $this->db->select('*');
         $this->db->from($tabel);
         $this->db->group_by($order);
-        return $this->db->get(); 
+        return $this->db->get();
     }
 
     public function get_tbl_pasien($tabel, $order, $tgl, $dokter, $kec, $diagnosa)
     {
         $this->db->select('*');
         $this->db->from($tabel);
-        if($tgl!=null){
+        if ($tgl != null) {
             $this->db->where('tanggal_antri', $tgl);
         }
-        if($dokter!=null){
+        if ($dokter != null) {
             $this->db->where('id_dokter', $dokter);
         }
-        if($kec!=null){
+        if ($kec != null) {
             $this->db->where('id_kecamatan', $kec);
         }
-        if($diagnosa!=null){
+        if ($diagnosa != null) {
             $this->db->where('diagnosa', $diagnosa);
         }
         $this->db->group_by($order);
-        return $this->db->get(); 
+        return $this->db->get();
     }
 
     public function update($tabel, $data, $where)
@@ -61,5 +61,14 @@ class Db_model extends CI_Model
     public function delete($tabel, $where)
     {
         $this->db->delete($tabel, $where);
+    }
+
+    public function keuntunganHariIni($tanggalMulai, $tanggalSelesai)
+    {
+        $this->db->order_by("tanggal DESC");
+        $this->db->select("SUM(harga)");
+        $this->db->from("vw_transaksi");
+        $this->db->where(['tanggal >=' => $tanggalMulai, 'tanggal <=' => $tanggalSelesai]);
+        return $this->db->get()->row_array()["SUM(harga)"];
     }
 }
