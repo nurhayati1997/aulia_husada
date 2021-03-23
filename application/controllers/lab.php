@@ -36,7 +36,13 @@ class lab extends CI_Controller
 
 	function get_lab()
 	{
-		echo json_encode($this->db_model->get_where('tbl_lab', array('tgl' => strval(date('Y-m-d'))))->result());
+		$time_awal = strtotime($this->input->post('awal', TRUE));
+		$newformat_awal = date('Y-m-d', $time_awal);
+
+		$time_akhir = strtotime($this->input->post('akhir', TRUE));
+		$newformat_akhir = date('Y-m-d', $time_akhir);
+		echo json_encode($this->db_model->get_where('tbl_lab', array('tgl >=' => $newformat_awal, 'tgl <=' => $newformat_akhir))->result());
+		// echo json_encode($this->db_model->get_where('tbl_lab', array('tgl' => strval(date('Y-m-d'))))->result());
 		// echo json_encode(strval(date('Y-m-d')));
 	}
 
