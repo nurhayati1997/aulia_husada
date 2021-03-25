@@ -415,7 +415,7 @@
                         }
                       } ?>],
             datasets: [{
-              label: "Performance",
+              label: "Total ",
               data: [<?php for ($i = 0; $i < count($pasienByKecamatan); $i++) {
                         echo '"' . $pasienByKecamatan[$i]["COUNT(nama)"] . '"';
                         if ($i != count($pasienByKecamatan) - 1) {
@@ -452,7 +452,7 @@
                         }
                       } ?>],
             datasets: [{
-              label: "Performance",
+              label: "Jumlah ",
               data: [<?php for ($i = 0; $i < count($pasienPerminggu); $i++) {
                         echo '"' . $pasienPerminggu[$i][1] . '"';
                         if ($i != count($pasienPerminggu) - 1) {
@@ -475,7 +475,7 @@
                           }
                         } ?>],
               datasets: [{
-                label: "Sales",
+                label: "Jumlah ",
                 data: [<?php for ($i = 0; $i < count($pasienBaruPerminggu); $i++) {
                           echo '"' . $pasienBaruPerminggu[$i][1] . '"';
                           if ($i != count($pasienBaruPerminggu) - 1) {
