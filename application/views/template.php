@@ -45,7 +45,7 @@
   <!-- Icons -->
   <link rel="stylesheet" href="<?= base_url() ?>assets_admin/vendor/nucleo/css/nucleo.css" type="text/css">
   <link rel="stylesheet" href="<?= base_url() ?>assets_admin/vendor/%40fortawesome/fontawesome-free/css/all.min.css" type="text/css">
-  <link rel="stylesheet" href="../../assets/vendor/animate.css/animate.min.css">
+  <link rel="stylesheet" href="<?= base_url() ?>assets_admin/vendor/animate.css/animate.min.css">
   <!-- <link rel="stylesheet" href="../../assets/vendor/sweetalert2/dist/sweetalert2.min.css"> -->
   <!-- Page plugins -->
   <link rel="stylesheet" href="<?= base_url() ?>assets_admin/vendor/datatables.net-bs4/css/dataTables.bootstrap4.min.css">
@@ -69,7 +69,7 @@
 
 
   <!-- Google Tag Manager -->
-  <script>
+  <!-- <script>
     (function(w, d, s, l, i) {
       w[l] = w[l] || [];
       w[l].push({
@@ -81,16 +81,16 @@
         dl = l != 'dataLayer' ? '&l=' + l : '';
       j.async = true;
       j.src =
-        '../../../../www.googletagmanager.com/gtm5445.html?id=' + i + dl;
+        // '../../../../www.googletagmanager.com/gtm5445.html?id=' + i + dl;
       f.parentNode.insertBefore(j, f);
     })(window, document, 'script', 'dataLayer', 'GTM-NKDMSK6');
-  </script>
+  </script> -->
   <!-- End Google Tag Manager -->
 </head>
 
 <body>
   <!-- Google Tag Manager (noscript) -->
-  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NKDMSK6" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NKDMSK6" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript> -->
   <!-- End Google Tag Manager (noscript) -->
   <!-- Sidenav -->
   <nav class="sidenav navbar navbar-vertical  fixed-left  navbar-expand-xs navbar-light bg-white" id="sidenav-main">
