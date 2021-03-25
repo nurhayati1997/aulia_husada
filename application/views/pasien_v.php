@@ -35,7 +35,7 @@
                           <div class="input-group-prepend">
                             <span class="input-group-text"><i class="ni ni-calendar-grid-58"></i></span>
                           </div>
-                          <input class="form-control datepicker" onchange="ambil_data()" placeholder="Tanggal Periksa" id="tgl" type="date" autocomplete="off">
+                          <input class="form-control datepicker" onchange="ambil_data()" placeholder="Tanggal Periksa" id="tgl" type="text" autocomplete="off">
                         </div>
                       </div>
                     </div>
