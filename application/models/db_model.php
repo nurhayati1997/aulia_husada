@@ -71,4 +71,22 @@ class Db_model extends CI_Model
         $this->db->where(['tanggal >=' => $tanggalMulai, 'tanggal <=' => $tanggalSelesai]);
         return $this->db->get()->row_array()["SUM(harga)"];
     }
+
+    public function pasienByKecamatan()
+    {
+        $this->db->select("tbl_kecamatan.KECAMATAN, COUNT(nama)");
+        $this->db->from("tbl_pasien");
+        $this->db->join("tbl_kecamatan", "tbl_kecamatan.id = tbl_pasien.kecamatan");
+        $this->db->group_by("tbl_pasien.kecamatan");
+        return $this->db->get();
+    }
+
+    public function praktekByDokter()
+    {
+        $this->db->select("tbl_user.nama, COUNT(id_antrian)");
+        $this->db->from("tbl_user");
+        $this->db->join("tbl_antrian", "tbl_antrian.id_user = tbl_user.id_user");
+        $this->db->group_by("tbl_antrian.id_user");
+        return $this->db->get();
+    }
 }

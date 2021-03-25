@@ -23,12 +23,15 @@ class dashboard extends CI_Controller
 		$tanggalMulai = date("Y-m-d") . " 00:00:00";
 		$tanggalSelesai = date("Y-m-d h:i:s");
 		$data["totalUntung"] = $this->db_model->keuntunganHariIni($tanggalMulai, $tanggalSelesai);
-
+		$data["pasienPerminggu"] = $this->pasienPerminggu();
+		$data["pasienBaruPerminggu"] = $this->pasienBaruPerminggu();
+		$data["pasienByKecamatan"] = $this->db_model->pasienByKecamatan()->result_array();
+		$data["praktekByDokter"] = $this->db_model->praktekByDokter()->result_array();
 
 		$this->template->load('template', 'dashboard_v', $data);
 	}
 
-	public function keuntunganMingguan()
+	public function pasienPerminggu()
 	{
 		$hari = array('Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun');
 		$hariIndo = array("Senin", "Selasa", "Rabu", "Kamis", "Juma'at", "Sabtu", "Minggu");
@@ -49,6 +52,30 @@ class dashboard extends CI_Controller
 
 			array_push($hasil, array($hariIndo[$i], $jumlahPasien));
 		}
-		echo json_encode($hasil);
+		return $hasil;
+	}
+
+	public function pasienBaruPerminggu()
+	{
+		$hari = array('Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun');
+		$hariIndo = array("Senin", "Selasa", "Rabu", "Kamis", "Juma'at", "Sabtu", "Minggu");
+
+		$hariIni = array_search(date('D', strtotime('today')), $hari);
+
+		$tanggalSeminggu = array(date('Y-m-d', strtotime('last monday')), date('Y-m-d', strtotime('last tuesday')), date('Y-m-d', strtotime('last wednesday')), date('Y-m-d', strtotime('last thursday')), date('Y-m-d', strtotime('last friday')), date('Y-m-d', strtotime('last saturday')), date('Y-m-d', strtotime('last sunday')));
+
+		$hasil = array();
+
+		for ($i = $hariIni; $i < count($hari); $i++) {
+			$jumlahPasien = $this->db_model->get_where('tbl_pasien', ['tgl_input >=' => $tanggalSeminggu[$i] . " 00:00:00", 'tgl_input <=' => $tanggalSeminggu[$i] . " 23:59:59"])->num_rows();
+
+			array_push($hasil, array($hariIndo[$i], $jumlahPasien));
+		}
+		for ($i = 0; $i < $hariIni; $i++) {
+			$jumlahPasien = $this->db_model->get_where('tbl_pasien', ['tgl_input >=' => $tanggalSeminggu[$i] . " 00:00:00", 'tgl_input <=' => $tanggalSeminggu[$i] . " 23:59:59"])->num_rows();
+
+			array_push($hasil, array($hariIndo[$i], $jumlahPasien));
+		}
+		return $hasil;
 	}
 }
