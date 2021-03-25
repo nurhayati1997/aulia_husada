@@ -37,11 +37,11 @@
                       <div class="input-group-prepend">
                         <span class="input-group-text"><i class="ni ni-calendar-grid-58"></i></span>
                       </div>
-                      <input class="form-control datepicker" placeholder="Mulai Tanggal" id="tanggalMulai" type="text" onchange="tampilkanLaporan()">
+                      <input class="form-control datepicker" placeholder="Mulai Tanggal" id="tanggalMulai" type="text" onchange="ambil_data()" autocomplete="off">
                       <div class="input-group-prepend">
                         <span class="input-group-text"><i class="ni ni-calendar-grid-58"></i></span>
                       </div>
-                      <input class="form-control datepicker" placeholder="Sampai Tanggal" id="tanggalSelesai" type="text" onchange="tampilkanLaporan()">
+                      <input class="form-control datepicker" placeholder="Sampai Tanggal" id="tanggalSelesai" type="text" onchange="ambil_data()" autocomplete="off">
                     </div>
                   </div>
                 </div>
@@ -85,7 +85,7 @@
                   <th>Diagnosa</th>
                   <th>Asal Rujukan</th>
                   <th>Tarif</th>
-                  <th>Total Pendapatan</th>
+                  <th></th>
                 </tr>
               </thead>
               <tfoot>
@@ -98,7 +98,7 @@
                   <th>Diagnosa</th>
                   <th>Asal Rujukan</th>
                   <th>Tarif</th>
-                  <th>Total Pendapatan</th>
+                  <th></th>
                 </tr>
               </tfoot>
               <tbody>
@@ -222,6 +222,9 @@
 
 <script>
   $(document).ready(function() {
+    date = new Date();
+    document.getElementById("tanggalMulai").value = parseInt(date.getMonth()+1) + "/" + date.getDate() + "/" + date.getFullYear();
+    document.getElementById("tanggalSelesai").value = parseInt(date.getMonth()+1) + "/" + date.getDate() + "/" + date.getFullYear();
     ambil_data();
     var rupiah = document.getElementById('tarif');
     rupiah.addEventListener('keyup', function(e) {
@@ -232,6 +235,23 @@
   function tampil_daftar_modal() {
     reset_form();
     $('#modal-default').modal('show');
+  }
+
+  function pemasukan(){
+    $.ajax({
+      type: 'POST',
+      url: '<?= base_url() ?>usg/get_usg',
+      dataType: 'json',
+      data: 'awal=' + $("#tanggalMulai").val() + "&akhir=" + $("#tanggalSelesai").val(),
+      success: function(data) {
+        var total = 0;
+        for(var i =0;i<data.length;i++){
+          total = parseInt(total)  + parseInt(data[i].tarif);
+        }
+        // alert(total);
+        document.getElementById("pemasukan").innerHTML = formatRupiah(total.toString(), 'Rp. ');
+      }
+    });
   }
 
   function formatRupiah(angka, prefix) {
@@ -252,6 +272,7 @@
   }
 
   function ambil_data() {
+    pemasukan();
     $('#datatable-basic').DataTable({
       destroy: true,
       "order": [
@@ -260,10 +281,20 @@
       "ajax": {
         "type": "POST",
         "url": "<?php echo site_url("usg/get_usg") ?>",
+        "data": function(data) {
+            data.awal = $("#tanggalMulai").val();
+            data.akhir = $("#tanggalSelesai").val();
+        },
         "dataSrc": ""
       },
       "columns": [{
+          "data": "tgl"
+        },
+        {
           "data": "nama"
+        },
+        {
+          "data": "usia"
         },
         {
           "data": "alamat"
@@ -278,17 +309,12 @@
           "data": "pengirim"
         },
         {
-          "data": "tgl"
-        },
-        {
           "data": "tarif",
           "render": function(data, type, row) {
             return formatRupiah(data, 'Rp. ')
           }
         },
-        {
-          "data": "usia"
-        },
+        
         {
           "data": "id_usg",
           "render": function(data, type, row) {
