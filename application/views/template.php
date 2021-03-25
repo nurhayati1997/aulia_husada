@@ -497,6 +497,8 @@
   <script src="<?= base_url() ?>assets_admin/vendor/jquery.scrollbar/jquery.scrollbar.min.js"></script>
   <script src="<?= base_url() ?>assets_admin/vendor/jquery-scroll-lock/dist/jquery-scrollLock.min.js"></script>
   <!-- Optional JS -->
+  <script src="<?= base_url() ?>assets_admin/vendor/chart.js/dist/Chart.min.js"></script>
+  <script src="<?= base_url() ?>assets_admin/vendor/chart.js/dist/Chart.extension.js"></script>
   <script src="<?= base_url() ?>assets_admin/vendor/datatables.net/js/jquery.dataTables.min.js"></script>
   <script src="<?= base_url() ?>assets_admin/vendor/datatables.net-bs4/js/dataTables.bootstrap4.min.js"></script>
   <script src="<?= base_url() ?>assets_admin/vendor/datatables.net-buttons/js/dataTables.buttons.min.js"></script>
@@ -530,6 +532,7 @@
     });
   </script>
   <!-- Argon JS -->
+  <script src="<?= base_url() ?>assets_admin/js/argon.min5438.js?v=1.2.0"></script>
   <!-- Demo JS - remove this in your project -->
   <script src="<?= base_url() ?>assets_admin/js/demo.min.js"></script>
   <!-- <script>
