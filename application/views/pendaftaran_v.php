@@ -269,7 +269,7 @@
                   <div class="input-group-prepend">
                     <span class="input-group-text"><i class="ni ni-calendar-grid-58"></i></span>
                   </div>
-                  <input class="form-control datepicker" id="ttl" placeholder="Tanggal lahir" type="text">
+                  <input class="form-control datepicker" id="ttl" placeholder="Tanggal lahir" type="date">
                 </div>
               </div>
             </div>
