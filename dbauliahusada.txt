@@ -1,0 +1,6 @@
+MySQL database name
+u459131159_aulia_husada
+MySQL username
+u459131159_aulia_husada
+password
+auliaHusada_d#b2021
