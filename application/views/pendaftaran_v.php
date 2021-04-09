@@ -1123,7 +1123,7 @@
       }
   }
 
-  function addSpinner(el, static_pos)
+function addSpinner(el, static_pos)
 {
   var spinner = el.children('.spinner');
   if (spinner.length && !spinner.hasClass('spinner-remove')) return null;
