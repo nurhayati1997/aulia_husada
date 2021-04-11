@@ -7,9 +7,9 @@ class master_user extends CI_Controller
 	public function __construct()
 	{
 		parent::__construct();
-		// if (!$this->session->userdata("id_user") or ($this->session->userdata("rule") != 1 and $this->session->userdata("rule") != 2)) {
-		// 	redirect("login");
-		// }
+		if (!$this->session->userdata("id_user") or ($this->session->userdata("rule") != 1 and $this->session->userdata("rule") != 2)) {
+			redirect("login");
+		}
 		$this->load->model('db_model');
 		$this->load->library('form_validation');
 	}

@@ -189,7 +189,7 @@
 
   function tampilkan() {
     $("#tempatTabel").html('<i class="fas fa-spinner fa-pulse"></i> Memuat...')
-    var baris = '<table class="table table-flush" id="tabelUser"><thead class="thead-light"><tr><th>ID</th><th>Nama</th><th>Email</th><th>Jabatan</th><th>Dokter/spesialis</th><th>Action</th></tr></thead><tbody>'
+    var baris = '<table class="table table-flush" id="tabelUser"><thead class="thead-light"><tr><th>NO</th><th>Nama</th><th>Email</th><th>Jabatan</th><th>Dokter/spesialis</th><th>Action</th></tr></thead><tbody>'
     $.ajax({
       url: '<?= base_url() ?>master_user/tampil',
       method: 'post',
@@ -197,7 +197,7 @@
       success: function(data) {
         for (let i = 0; i < data.length; i++) {
           baris += '<tr>'
-          baris += '<td>' + data[i].id_user + '</td>'
+          baris += '<td>' + (i + 1) + '</td>'
           baris += '<td>' + data[i].nama + '</td>'
           baris += '<td>' + data[i].email + '</td>'
           baris += '<td>' + data[i].rule + '</td>'

@@ -124,7 +124,7 @@
 
   function tampilkan() {
     $("#tempatTabel").html('<i class="fas fa-spinner fa-pulse"></i> Memuat...')
-    var baris = '<table class="table table-flush" id="tabelTindakan"><thead class="thead-light"><tr><th>ID</th><th>Tindakan</th><th>Harga</th><th>-</th></tr></thead><tbody>'
+    var baris = '<table class="table table-flush" id="tabelTindakan"><thead class="thead-light"><tr><th>NO</th><th>Tindakan</th><th>Harga</th><th>-</th></tr></thead><tbody>'
     $.ajax({
       url: '<?= base_url() ?>master_tindakan/tampil',
       method: 'post',
@@ -132,7 +132,7 @@
       success: function(data) {
         for (let i = 0; i < data.length; i++) {
           baris += '<tr>'
-          baris += '<td>' + data[i].id_tindakan + '</td>'
+          baris += '<td>' + (i + 1) + '</td>'
           baris += '<td>' + data[i].nama_tindakan + '</td>'
           baris += '<td>' + formatRupiah(data[i].harga.toString()) + '</td>'
           baris += '<td><div style="cursor:pointer;" title="hapus?" class="badge badge-danger" id="hapus' + data[i].id_tindakan + '" onClick="tryHapus(' + data[i].id_tindakan + ')"><i class="fa fa-times"></i></div>'
