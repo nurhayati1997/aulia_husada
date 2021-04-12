@@ -20,6 +20,7 @@
     var input = $('.validate-input .input100');
 
     $('.validate-form').on('submit', function () {
+        $("#tombolLogin").html('<i class="fas fa-spinner fa-pulse"></i>')
         var check = true;
         $("#pesanEmail").attr("data-validate", "Silahkan isi Email.")
         $("#pesanPass").attr("data-validate", "Silahkan isi Password.")

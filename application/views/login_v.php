@@ -75,6 +75,17 @@
 						<span class="focus-input100" data-placeholder="&#xf191;"></span>
 					</div>
 
+					<div class="row mb-4">
+						<div class="col-6" id="tempatCaptcha">
+							<?php echo $fotoCaptcha; ?>
+						</div>
+						<div class="col-6">
+							<input type="text" id="isiCaptcha" class="form-control" name="isiCaptcha" placeholder="kode..">
+							<?php if (isset($error)) {
+								if ($error[0] == "cap") echo "<i class='badge badge-danger'>" . $error[1] . "</i>";
+							} ?>
+						</div>
+					</div>
 					<div class="container-login100-form-btn">
 						<button class="login100-form-btn" id="tombolLogin">
 							Login

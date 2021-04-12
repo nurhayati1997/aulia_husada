@@ -16,17 +16,48 @@ class login extends CI_Controller
 		if ($this->session->userdata("id_user")) {
 			redirect("dashboard");
 		}
+
 		$this->form_validation->set_rules('email', 'Email', 'required|trim|valid_email', [
 			"required" => "Email tidak boleh kosong.",
 			"valid_email" => "Email tidak valid."
 		]);
 		$this->form_validation->set_rules('pass', 'Password', 'required|trim');
 		if ($this->form_validation->run() == false) {
-			$this->load->view('login_v');
+			$data['fotoCaptcha'] = $this->buatCaptcha();
+			$this->load->view('login_v', $data);
 		} else {
 			$this->_login();
 		}
 	}
+
+	public function buatCaptcha()
+	{
+		$options = array(
+			'img_path' => './assets/fotoCaptcha/',
+			'img_url' => base_url('assets/fotoCaptcha'),
+			'img_width' => '150',
+			'img_height' => '40',
+			'expiration' => 300,
+			'word_length'   => 4
+		);
+
+		$cap = create_captcha($options);
+		$image = $cap['image'];
+		$this->session->set_userdata('kataCaptcha', $cap['word']);
+		$this->session->set_userdata('namaCaptcha', $cap['time'] . ".jpg");
+		return $image;
+	}
+
+	private function cekCaptcha()
+	{
+		if ($this->input->post('isiCaptcha') == $this->session->userdata('kataCaptcha')) {
+			return true;
+		} else {
+			$this->form_validation->set_message('kesalahanCaptcha', "Captcha Salah.");
+			return false;
+		}
+	}
+
 
 	private function _login()
 	{
@@ -34,23 +65,31 @@ class login extends CI_Controller
 		$pass = $this->enkripsi($this->input->post("pass"));
 		$user = $this->db_model->get_where("tbl_user", ["email" => $email])->row_array();
 
-		if ($user) {
-			if (password_verify($pass, $this->spin($user['password']))) {
-				$data = [
-					'id_user' => $user['id_user'],
-					'email' => $user['email'],
-					'nama' => $user['nama'],
-					'rule' => $user['rule']
-				];
-				$this->session->set_userdata($data);
+		if ($this->cekCaptcha()) {
+			if ($user) {
+				if (password_verify($pass, $this->spin($user['password']))) {
+					$data = [
+						'id_user' => $user['id_user'],
+						'email' => $user['email'],
+						'nama' => $user['nama'],
+						'rule' => $user['rule']
+					];
+					$this->session->set_userdata($data);
 
-				redirect('dashboard');
+					redirect('dashboard');
+				} else {
+					$data['fotoCaptcha'] = $this->buatCaptcha();
+					$data["error"] = ["pass", "Password tidak cocok."];
+					$this->load->view('login_v', $data);
+				}
 			} else {
-				$data["error"] = ["pass", "Password tidak cocok."];
+				$data['fotoCaptcha'] = $this->buatCaptcha();
+				$data["error"] = ["email", "Email tidak terdaftar."];
 				$this->load->view('login_v', $data);
 			}
 		} else {
-			$data["error"] = ["email", "Email tidak terdaftar."];
+			$data['fotoCaptcha'] = $this->buatCaptcha();
+			$data["error"] = ["cap", "Captcha Salah."];
 			$this->load->view('login_v', $data);
 		}
 	}
