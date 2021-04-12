@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 20 Mar 2021 pada 16.34
+-- Waktu pembuatan: 12 Apr 2021 pada 15.27
 -- Versi server: 10.4.18-MariaDB
 -- Versi PHP: 7.3.27
 
@@ -113,13 +113,13 @@ INSERT INTO `tbl_lab` (`id_lab`, `nama`, `jenis`, `tgl`, `pengirim`, `tarif`, `d
 
 CREATE TABLE `tbl_pasien` (
   `id` int(11) NOT NULL,
-  `kode` varchar(12) NOT NULL,
+  `kode` varchar(12) DEFAULT NULL,
   `nik` varchar(16) DEFAULT NULL,
   `nama` varchar(50) NOT NULL,
   `ortu` varchar(50) NOT NULL,
   `alamat` varchar(100) NOT NULL,
   `nohp` varchar(13) DEFAULT NULL,
-  `ttl` varchar(50) NOT NULL,
+  `ttl` varchar(50) DEFAULT NULL,
   `kecamatan` int(11) NOT NULL,
   `jenis_kelamin` int(11) NOT NULL,
   `agama` int(11) NOT NULL,
@@ -135,7 +135,10 @@ CREATE TABLE `tbl_pasien` (
 
 INSERT INTO `tbl_pasien` (`id`, `kode`, `nik`, `nama`, `ortu`, `alamat`, `nohp`, `ttl`, `kecamatan`, `jenis_kelamin`, `agama`, `status`, `pekerjaan`, `pendidikan`, `tgl_input`) VALUES
 (1, '1.AVIr0.1', '1234', 'inas', 'tukimin', 'pejagan', '092123', '12/12/1996', 1, 1, 0, 0, 'test', 'test', '2021-02-23'),
-(2, '2.v1KQP.1', '', 'mirna', 'saiman', 'asas', '123123', '02/01/2021', 2, 1, 1, 0, '', '', '2021-02-23');
+(2, '2.v1KQP.1', '', 'mirna', 'saiman', 'asas', '123123', '02/01/2021', 2, 1, 1, 0, '', '', '2021-02-23'),
+(3, '3', '1212', 'saya', 'ini', 'itu', '12', '04/13/2021', 4, 0, 0, 0, 'sd', 'as', '2021-04-12'),
+(4, '4', '11', 'as', 'as', 'as', '12', '04/20/2021', 2, 0, 1, 0, 'as', 'as', '2021-04-12'),
+(5, '5', '12', 'we', 'sd', 'wqe', '123123', '', 5, 0, 0, 1, '', '', '2021-04-12');
 
 -- --------------------------------------------------------
 
@@ -238,7 +241,7 @@ CREATE TABLE `tbl_user` (
 --
 
 INSERT INTO `tbl_user` (`id_user`, `nama`, `jabatan`, `email`, `password`, `rule`, `status`) VALUES
-(1, 'dr.Nunuk Kristiani,Sp.Rad', 'Spesialis Radiologi', 'test@gmail.com', 'd8578edf8458ce06fbc5bb76a58c5ca4', 3, 0),
+(1, 'dr.Nunuk Kristiani,Sp.Rad', 'Spesialis Radiologi', 'test@gmail.com', 'd8578edf8458ce06fbc5bb76a58c5ca4', 1, 0),
 (2, 'dr.Nuryatien Husna,Sp.KFR', 'Spesialis Kedokteran Fisik & Rehabilitas', 'test@gmail.com', 'd8578edf8458ce06fbc5bb76a58c5ca4', 3, 0),
 (3, 'dr.Mirathi Ayu Irnanda', 'Dokter Umum', 'test@gmail.com', 'd8578edf8458ce06fbc5bb76a58c5ca4', 3, 0),
 (4, 'inas', 'admin', 'ainur.inas.annisa@gmail.com', '$y201$iiR$XdtHzKvDqiKDI8T1kQM3d2UJIuZs1yaR1JvhF0fw4BazAyKERI', 2, 1),
@@ -431,7 +434,7 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW 
 --
 DROP TABLE IF EXISTS `vw_transaksi`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `vw_transaksi`  AS SELECT `tbl_tindakan`.`id_tindakan` AS `id_tindakan`, `tbl_transaksi_tindakan`.`id_transaksi_tindakan` AS `id_transaksi_tindakan`, `tbl_tindakan`.`nama_tindakan` AS `nama_tindakan`, `tbl_tindakan`.`harga` AS `harga`, `tbl_transaksi`.`id_transaksi` AS `id_transaksi`, `tbl_transaksi`.`tanggal` AS `tanggal`, `tbl_transaksi`.`id_pasien` AS `id_pasien`, `tbl_transaksi`.`dokter` AS `dokter`, `tbl_user`.`nama` AS `namaUser`, `tbl_user`.`rule` AS `rule`, `tbl_pasien`.`nama` AS `namaPasien`, `tbl_pasien`.`ortu` AS `ortu` FROM ((((`tbl_transaksi_tindakan` join `tbl_transaksi` on(`tbl_transaksi_tindakan`.`id_transaksi` = `tbl_transaksi`.`id_transaksi`)) join `tbl_tindakan` on(`tbl_tindakan`.`id_tindakan` = `tbl_transaksi_tindakan`.`id_tindakan`)) join `tbl_user` on(`tbl_user`.`id_user` = `tbl_transaksi`.`dokter`)) join `tbl_pasien` on(`tbl_pasien`.`id` = `tbl_transaksi`.`id_pasien`)) ;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `vw_transaksi`  AS SELECT `tbl_tindakan`.`id_tindakan` AS `id_tindakan`, `tbl_tindakan`.`nama_tindakan` AS `nama_tindakan`, `tbl_tindakan`.`harga` AS `harga`, `tbl_transaksi`.`id_transaksi` AS `id_transaksi`, `tbl_transaksi`.`tanggal` AS `tanggal`, `tbl_transaksi`.`id_pasien` AS `id_pasien`, `tbl_transaksi`.`dokter` AS `dokter`, `tbl_user`.`nama` AS `namaUser`, `tbl_user`.`rule` AS `rule`, `tbl_pasien`.`nama` AS `namaPasien`, `tbl_pasien`.`ortu` AS `ortu` FROM ((((`tbl_transaksi_tindakan` join `tbl_transaksi` on(`tbl_transaksi_tindakan`.`id_transaksi` = `tbl_transaksi`.`id_transaksi`)) join `tbl_tindakan` on(`tbl_tindakan`.`id_tindakan` = `tbl_transaksi_tindakan`.`id_tindakan`)) join `tbl_user` on(`tbl_user`.`id_user` = `tbl_transaksi`.`dokter`)) join `tbl_pasien` on(`tbl_pasien`.`id` = `tbl_transaksi`.`id_pasien`)) ;
 
 -- --------------------------------------------------------
 
@@ -553,7 +556,7 @@ ALTER TABLE `tbl_lab`
 -- AUTO_INCREMENT untuk tabel `tbl_pasien`
 --
 ALTER TABLE `tbl_pasien`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT untuk tabel `tbl_riwayat_diagnosa`
