@@ -52,6 +52,20 @@ class pendaftaran extends CI_Controller
 		echo json_encode($this->Db_model->get_query("SELECT MAX(id) AS kode FROM `tbl_pasien`")->row());
 	}
 
+	function normalisasi()
+	{
+		$all_id = $this->Db_model->get_query("SELECT * FROM `tbl_pasien`")->result();
+		foreach ($all_id as $row){
+			echo json_encode($row->id);
+			$random = rand(pow(10,5),pow(10,6)-1);
+			$data = [
+				"kode" => $random
+			];
+			$this->Db_model->update('tbl_pasien', $data, array('id' => $row->id));
+			echo json_encode($random);
+		}
+	}
+
 	function tambah_pasien()
 	{
 		$data = [

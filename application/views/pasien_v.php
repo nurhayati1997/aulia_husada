@@ -439,20 +439,8 @@ function ambil_data() {
 function tambah_baru(id) {
   if (document.getElementById('nama').value == "") {
       document.getElementById('nama').focus();
-  } else if (document.getElementById('kecamatan').value == "") {
-      document.getElementById('kecamatan').focus();
-  } else if (document.getElementById('alamat').value == "") {
-      document.getElementById('alamat').focus();
-  } else if (document.getElementById('jk').value == "") {
-      document.getElementById('jk').focus();
-  } else if (document.getElementById('agama').value == "") {
-      document.getElementById('agama').focus();
-  } else if (document.getElementById('status').value == "") {
-      document.getElementById('status').focus();
-  } else if (document.getElementById('telp').value == "") {
-      document.getElementById('telp').focus();
-  } else if (document.getElementById('ortu').value == "") {
-      document.getElementById('ortu').focus();
+  } else if(document.getElementById('kec').value == "") {
+          document.getElementById('kec').focus();
   } else {
       $.ajax({
           type: 'POST',
