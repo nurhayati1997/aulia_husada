@@ -23,8 +23,8 @@ class login extends CI_Controller
 		]);
 		$this->form_validation->set_rules('pass', 'Password', 'required|trim');
 		if ($this->form_validation->run() == false) {
-			$data['fotoCaptcha'] = $this->buatCaptcha();
-			$this->load->view('login_v', $data);
+			//$data['fotoCaptcha'] = $this->buatCaptcha();
+			$this->load->view('login_v'); //, $data);
 		} else {
 			$this->_login();
 		}
@@ -65,33 +65,33 @@ class login extends CI_Controller
 		$pass = $this->enkripsi($this->input->post("pass"));
 		$user = $this->db_model->get_where("tbl_user", ["email" => $email])->row_array();
 
-		if ($this->cekCaptcha()) {
-			if ($user) {
-				if (password_verify($pass, $this->spin($user['password']))) {
-					$data = [
-						'id_user' => $user['id_user'],
-						'email' => $user['email'],
-						'nama' => $user['nama'],
-						'rule' => $user['rule']
-					];
-					$this->session->set_userdata($data);
+		//if ($this->cekCaptcha()) {
+		if ($user) {
+			if (password_verify($pass, $this->spin($user['password']))) {
+				$data = [
+					'id_user' => $user['id_user'],
+					'email' => $user['email'],
+					'nama' => $user['nama'],
+					'rule' => $user['rule']
+				];
+				$this->session->set_userdata($data);
 
-					redirect('dashboard');
-				} else {
-					$data['fotoCaptcha'] = $this->buatCaptcha();
-					$data["error"] = ["pass", "Password tidak cocok."];
-					$this->load->view('login_v', $data);
-				}
+				redirect('dashboard');
 			} else {
-				$data['fotoCaptcha'] = $this->buatCaptcha();
-				$data["error"] = ["email", "Email tidak terdaftar."];
+				//$data['fotoCaptcha'] = $this->buatCaptcha();
+				$data["error"] = ["pass", "Password tidak cocok."];
 				$this->load->view('login_v', $data);
 			}
 		} else {
-			$data['fotoCaptcha'] = $this->buatCaptcha();
-			$data["error"] = ["cap", "Captcha Salah."];
+			// $data['fotoCaptcha'] = $this->buatCaptcha();
+			$data["error"] = ["email", "Email tidak terdaftar."];
 			$this->load->view('login_v', $data);
 		}
+		// } else {
+		// 	$data['fotoCaptcha'] = $this->buatCaptcha();
+		// 	$data["error"] = ["cap", "Captcha Salah."];
+		// 	$this->load->view('login_v', $data);
+		// }
 	}
 
 	public function ubahPassword()
