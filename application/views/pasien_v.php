@@ -186,7 +186,7 @@
                   <div class="input-group-prepend">
                     <span class="input-group-text"><i class="ni ni-box-2"></i></span>
                   </div>
-                  <input class="form-control" placeholder="No KTP" id="nik" type="number">
+                  <input class="form-control" placeholder="No KTP"  id="nik" type="number">
                 </div>
               </div>
             </div>
@@ -196,13 +196,13 @@
                   <div class="input-group-prepend">
                     <span class="input-group-text"><i class="ni ni-circle-08"></i></span>
                   </div>
-                  <input class="form-control" placeholder="Nama Lengkap" id="nama" type="text">
+                  <input class="form-control" placeholder="Nama Lengkap"  id="nama" type="text">
                 </div>
               </div>
             </div>
             <div class="col-6">
               <div class="form-group">
-                <select class="form-control" onchange="get_nrm()" id="kecamatan">
+                <select class="form-control"  id="kecamatan">
                   
                 </select>
               </div>
@@ -213,7 +213,7 @@
                   <div class="input-group-prepend">
                     <span class="input-group-text"><i class="ni ni-circle-08"></i></span>
                   </div>
-                  <input class="form-control" placeholder="Nama Orang Tua" id="ortu" type="text">
+                  <input class="form-control" placeholder="Nama Orang Tua"  id="ortu" type="text">
                 </div>
               </div>
             </div>
@@ -223,13 +223,13 @@
                   <div class="input-group-prepend">
                     <span class="input-group-text"><i class="ni ni-pin-3"></i></span>
                   </div>
-                  <input class="form-control" placeholder="Alamat" id="alamat" type="text">
+                  <input class="form-control" placeholder="Alamat" id="alamat"  type="text">
                 </div>
               </div>
             </div>
             <div class="col-4">
               <div class="form-group">
-                <select class="form-control" onchange="get_nrm()" id="jk">
+                <select class="form-control"  id="jk">
                   <option value="">-Pilih Jenis Kelamin-</option>
                   <option value="0">laki-Laki</option>
                   <option value="1">Perempuan</option>
@@ -238,7 +238,7 @@
             </div>
             <div class="col-4">
               <div class="form-group">
-                <select class="form-control" id="agama">
+                <select class="form-control"  id="agama">
                   <option value="">-Pilih Agama-</option>
                   <option value="0">Islam</option>
                   <option value="1">Kristen</option>
@@ -250,7 +250,7 @@
             </div>
             <div class="col-4">
               <div class="form-group">
-                <select class="form-control" id="status">
+                <select class="form-control"  id="status">
                   <option value="">-Pilih Status-</option>
                   <option value="0">Belum Menikah</option>
                   <option value="1">Menikah</option>
@@ -263,7 +263,7 @@
                   <div class="input-group-prepend">
                     <span class="input-group-text"><i class="ni ni-calendar-grid-58"></i></span>
                   </div>
-                  <input class="form-control datepicker" id="ttl" placeholder="Tanggal lahir" type="text">
+                  <input class="form-control datepicker" id="ttl"  placeholder="Tanggal lahir" type="text">
                 </div>
               </div>
             </div>
@@ -273,7 +273,7 @@
                   <div class="input-group-prepend">
                     <span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
                   </div>
-                  <input class="form-control" placeholder="Pekerjaan" id="pekerjaan" type="text">
+                  <input class="form-control" placeholder="Pekerjaan"  id="pekerjaan" type="text">
                 </div>
               </div>
             </div>
@@ -283,7 +283,7 @@
                   <div class="input-group-prepend">
                     <span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
                   </div>
-                  <input class="form-control" placeholder="Pendidikan" id="pendd" type="text">
+                  <input class="form-control" placeholder="Pendidikan"  id="pendd" type="text">
                 </div>
               </div>
             </div>
@@ -293,7 +293,7 @@
                   <div class="input-group-prepend">
                     <span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
                   </div>
-                  <input class="form-control" placeholder="No Hp" id="telp" type="number">
+                  <input class="form-control" placeholder="No Hp"  id="telp" type="number">
                 </div>
               </div>
             </div>
@@ -310,7 +310,6 @@
 </div>
 
 <script>
-var kode = '';
 $(document).ready(function() {
     get_dokter();
     get_kec();
@@ -371,8 +370,6 @@ function ubah(id){
       data: 'id=' + id,
       dataType: 'json',
       success: function(data) {
-        var nrm = data.kode.split(".");
-        kode = nrm[1];
         document.getElementById('nrm').value = data.kode;
         document.getElementById('nik').value = data.nik;
         document.getElementById('nama').value = data.nama;
@@ -391,10 +388,6 @@ function ubah(id){
         
       }
   });
-}
-
-function get_nrm(){
-  document.getElementById("nrm").value = document.getElementById("kecamatan").value + "." + kode +"." + document.getElementById("jk").value;
 }
 
 function ambil_data() {
@@ -446,22 +439,8 @@ function ambil_data() {
 function tambah_baru(id) {
   if (document.getElementById('nama').value == "") {
       document.getElementById('nama').focus();
-  } else if (document.getElementById('kecamatan').value == "") {
-      document.getElementById('kecamatan').focus();
-  } else if (document.getElementById('alamat').value == "") {
-      document.getElementById('alamat').focus();
-  } else if (document.getElementById('jk').value == "") {
-      document.getElementById('jk').focus();
-  } else if (document.getElementById('agama').value == "") {
-      document.getElementById('agama').focus();
-  } else if (document.getElementById('status').value == "") {
-      document.getElementById('status').focus();
-  } else if (document.getElementById('ttl').value == "") {
-      document.getElementById('ttl').focus();
-  } else if (document.getElementById('telp').value == "") {
-      document.getElementById('telp').focus();
-  } else if (document.getElementById('ortu').value == "") {
-      document.getElementById('ortu').focus();
+  } else if(document.getElementById('kec').value == "") {
+          document.getElementById('kec').focus();
   } else {
       $.ajax({
           type: 'POST',
