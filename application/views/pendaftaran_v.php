@@ -112,7 +112,7 @@
               <!-- Card body -->
               <div class="card-body">
                 <div class="row justify-content-center">
-                  <div class="col-lg-15">
+                  <div class="col-lg-12">
                     <div class="pricing card-group flex-column flex-md-row mb-3">
                       <!-- Card dokter 1 -->
                       <div class="card card-pricing border-0 text-center mb-4">
