@@ -112,13 +112,14 @@
               <!-- Card body -->
               <div class="card-body">
                 <div class="row justify-content-center">
-                  <div class="col-lg-10">
+                  <div class="col-lg-15">
                     <div class="pricing card-group flex-column flex-md-row mb-3">
+                      <!-- Card dokter 1 -->
                       <div class="card card-pricing border-0 text-center mb-4">
                         <div class="card-header bg-transparent">
                           <h4 class="ls-1 text-primary py-3 mb-0 nama_dokter 1"></h4>
                         </div>
-                        <div class="card-body px-lg-7">
+                        <div class="card-body px-lg-5">
                           <ul class="list-group list-group-flush list my--3 list_pasien 1">
                             
                           </ul>
@@ -127,30 +128,44 @@
                           <a href="#!" class="text-light spesialis 1"></a>
                         </div>
                       </div>
+                      <!-- Card dokter 2 -->
                       <div class="card card-pricing zoom-in shadow-lg rounded border-0 text-center mb-4">
                         <div class="card-header bg-transparent">
                           <h4 class="ls-1 text-primary py-3 mb-0 nama_dokter 2"></h4>
                         </div>
-                        <div class="card-body px-lg-7">
+                        <div class="card-body px-lg-5">
                           <ul class="list-group list-group-flush list my--3 list_pasien 2">
-                            
                           </ul>
                         </div>
                         <div class="card-footer bg-transparent">
                           <a href="#!" class="text-light spesialis 2"></a>
                         </div>
                       </div>
+                      <!-- Card dokter 3 -->
                       <div class="card card-pricing border-0 text-center mb-4">
                         <div class="card-header bg-transparent">
                           <h4 class=" ls-1 text-primary py-3 mb-0 nama_dokter 3"></h4>
                         </div>
-                        <div class="card-body px-lg-7">
+                        <div class="card-body px-lg-5">
                           <ul class="list-group list-group-flush list my--3 list_pasien 3">
                             
                           </ul>
                         </div>
                         <div class="card-footer">
                           <a href="#!" class="text-light spesialis 3"></a>
+                        </div>
+                      </div>
+                      <!-- Card dokter 4 -->
+                      <div class="card card-pricing zoom-in shadow-lg rounded border-0 text-center mb-4">
+                        <div class="card-header bg-transparent">
+                          <h4 class="ls-1 text-primary py-3 mb-0 nama_dokter 4"></h4>
+                        </div>
+                        <div class="card-body px-lg-5">
+                          <ul class="list-group list-group-flush list my--3 list_pasien 4">
+                          </ul>
+                        </div>
+                        <div class="card-footer bg-transparent">
+                          <a href="#!" class="text-light spesialis 4"></a>
                         </div>
                       </div>
                     </div>
