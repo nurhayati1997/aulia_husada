@@ -95,9 +95,9 @@
                                     <li class="nav-item">
                                         <a class="page-scroll" href="#about">Pelayanan</a>
                                     </li>
-                                    <li class="nav-item">
+                                    <!-- <li class="nav-item">
                                         <a class="page-scroll" href="#facts">Galeri</a>
-                                    </li>
+                                    </li> -->
                                     <li class="nav-item">
                                         <a class="page-scroll" href="#team">Kontak</a>
                                     </li>
@@ -128,7 +128,7 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="header-hero-image text-center wow fadeIn" data-wow-duration="1.3s" data-wow-delay="1.4s">
-                            <img src="<?= base_url() ?>assets/images/landing.png" alt="hero">
+                            <img src="<?= base_url() ?>assets/images/page.png" alt="hero">
                         </div> <!-- header hero image -->
                     </div>
                 </div> <!-- row -->
@@ -152,12 +152,11 @@
                 </div>
             </div> <!-- row -->
             <div class="row justify-content-center">
-                <div class="col-lg-4 col-md-7 col-sm-8">
+                <div class="col-lg-3 col-md-7 col-sm-8">
                     <div class="single-services text-center mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
                         <div class="services-icon">
                             <img class="shape" src="<?= base_url() ?>assets/images/services-shape.svg" alt="shape">
-                            <img class="shape-1" src="<?= base_url() ?>assets/images/services-shape-1.svg" alt="shape">
-                            <i class="lni-baloon"></i>
+                            <img class="shape-1" src="<?= base_url() ?>assets/images/drnunuk.jpeg" alt="shape">
                         </div>
                         <div class="services-content mt-30">
                             <h4 class="services-title"><a href="#">dr.Nunuk Kristiani,Sp.Rad</a></h4>
@@ -166,12 +165,12 @@
                         </div>
                     </div> <!-- single services -->
                 </div>
-                <div class="col-lg-4 col-md-7 col-sm-8">
+                <div class="col-lg-3 col-md-7 col-sm-8">
                     <div class="single-services text-center mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
                         <div class="services-icon">
                             <img class="shape" src="<?= base_url() ?>assets/images/services-shape.svg" alt="shape">
-                            <img class="shape-1" src="<?= base_url() ?>assets/images/services-shape-2.svg" alt="shape">
-                            <i class="lni-cog"></i>
+                            <img class="shape-1" src="<?= base_url() ?>assets/images/drnuryatin.jpeg" alt="shape">
+                            <!-- <i class="lni-cog"></i> -->
                         </div>
                         <div class="services-content mt-30">
                             <h4 class="services-title"><a href="#">dr.Nuryatien Husna,Sp.KFR</a></h4>
@@ -180,16 +179,30 @@
                         </div>
                     </div> <!-- single services -->
                 </div>
-                <div class="col-lg-4 col-md-7 col-sm-8">
+                <div class="col-lg-3 col-md-7 col-sm-8">
                     <div class="single-services text-center mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.8s">
                         <div class="services-icon">
                             <img class="shape" src="<?= base_url() ?>assets/images/services-shape.svg" alt="shape">
-                            <img class="shape-1" src="<?= base_url() ?>assets/images/services-shape-3.svg" alt="shape">
-                            <i class="lni-bolt-alt"></i>
+                            <img class="shape-1" src="<?= base_url() ?>assets/images/drmira.jpeg" alt="shape">
+                            <!-- <i class="lni-bolt-alt"></i> -->
                         </div>
                         <div class="services-content mt-30">
                             <h4 class="services-title"><a href="#">dr.Mirathi Ayu Irnanda</a></h4>
                             <p class="text">Dokter Umum</p>
+                            <!-- <a class="more" href="#">Learn More <i class="lni-chevron-right"></i></a> -->
+                        </div>
+                    </div> <!-- single services -->
+                </div>
+                <div class="col-lg-3 col-md-7 col-sm-8">
+                    <div class="single-services text-center mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
+                        <div class="services-icon">
+                            <img class="shape" src="<?= base_url() ?>assets/images/services-shape.svg" alt="shape">
+                            <img class="shape-1" src="<?= base_url() ?>assets/images/drliemena.jpeg" alt="shape">
+                            <!-- <i class="lni-baloon"></i> -->
+                        </div>
+                        <div class="services-content mt-30">
+                            <h4 class="services-title"><a href="#">dr.liemena,Sp.pj</a></h4>
+                            <p class="text">Spesialis Jantung</p>
                             <!-- <a class="more" href="#">Learn More <i class="lni-chevron-right"></i></a> -->
                         </div>
                     </div> <!-- single services -->
@@ -293,148 +306,6 @@
     
     <!--====== ABOUT PART ENDS ======-->
     
-    <!--====== VIDEO COUNTER PART START ======-->
-    
-    <section id="facts" class="video-counter pt-70">
-    <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-5">
-                    <div class="section-title text-center pb-40">
-                        <div class="line m-auto"></div>
-                        <h3 class="title">Galeri<span> Aulia Husada</span></h3>
-                    </div> <!-- section title -->
-                </div>
-            </div> <!-- row -->
-            <div class="row testimonial-active wow fadeInUpBig" data-wow-duration="1s" data-wow-delay="0.8s">
-                <div class="col-lg-4">
-                    <div class="single-testimonial">
-                        <div class="testimonial-review d-flex align-items-center justify-content-between">
-                            <div class="quota">
-                                <i class="lni-quotation"></i>
-                            </div>
-                            <div class="star">
-                                <ul>
-                                    <li><i class="lni-star-filled"></i></li>
-                                    <li><i class="lni-star-filled"></i></li>
-                                    <li><i class="lni-star-filled"></i></li>
-                                    <li><i class="lni-star-filled"></i></li>
-                                    <li><i class="lni-star-filled"></i></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="testimonial-text">
-                            <p class="text">Lorem ipsum dolor sit amet,consetetur sadipscing elitr, seddiam nonu eirmod tempor invidunt labore.Lorem ipsum dolor sit amet,consetetur sadipscing elitr, seddiam nonu.</p>
-                        </div>
-                        <div class="testimonial-author d-flex align-items-center">
-                            <div class="author-image">
-                                <img class="shape" src="<?= base_url() ?>assets/images/textimonial-shape.svg" alt="shape">
-                                <img class="author" src="<?= base_url() ?>assets/images/author-1.png" alt="author">
-                            </div>
-                            <div class="author-content media-body">
-                                <h6 class="holder-name">Kegiatan 1</h6>
-                                <p class="text">Detail :</p>
-                            </div>
-                        </div>
-                    </div> <!-- single testimonial -->
-                </div>
-                <div class="col-lg-4">
-                    <div class="single-testimonial">
-                        <div class="testimonial-review d-flex align-items-center justify-content-between">
-                            <div class="quota">
-                                <i class="lni-quotation"></i>
-                            </div>
-                            <div class="star">
-                                <ul>
-                                    <li><i class="lni-star-filled"></i></li>
-                                    <li><i class="lni-star-filled"></i></li>
-                                    <li><i class="lni-star-filled"></i></li>
-                                    <li><i class="lni-star-filled"></i></li>
-                                    <li><i class="lni-star-filled"></i></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="testimonial-text">
-                            <p class="text">Lorem ipsum dolor sit amet,consetetur sadipscing elitr, seddiam nonu eirmod tempor invidunt labore.Lorem ipsum dolor sit amet,consetetur sadipscing elitr, seddiam nonu.</p>
-                        </div>
-                        <div class="testimonial-author d-flex align-items-center">
-                            <div class="author-image">
-                                <img class="shape" src="<?= base_url() ?>assets/images/textimonial-shape.svg" alt="shape">
-                                <img class="author" src="assets/images/author-2.png" alt="author">
-                            </div>
-                            <div class="author-content media-body">
-                                <h6 class="holder-name">Kegiatan 2 </h6>
-                                <p class="text">Detail :</p>
-                            </div>
-                        </div>
-                    </div> <!-- single testimonial -->
-                </div>
-                <div class="col-lg-4">
-                    <div class="single-testimonial">
-                        <div class="testimonial-review d-flex align-items-center justify-content-between">
-                            <div class="quota">
-                                <i class="lni-quotation"></i>
-                            </div>
-                            <div class="star">
-                                <ul>
-                                    <li><i class="lni-star-filled"></i></li>
-                                    <li><i class="lni-star-filled"></i></li>
-                                    <li><i class="lni-star-filled"></i></li>
-                                    <li><i class="lni-star-filled"></i></li>
-                                    <li><i class="lni-star-filled"></i></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="testimonial-text">
-                            <p class="text">Lorem ipsum dolor sit amet,consetetur sadipscing elitr, seddiam nonu eirmod tempor invidunt labore.Lorem ipsum dolor sit amet,consetetur sadipscing elitr, seddiam nonu.</p>
-                        </div>
-                        <div class="testimonial-author d-flex align-items-center">
-                            <div class="author-image">
-                                <img class="shape" src="<?= base_url() ?>assets/images/textimonial-shape.svg" alt="shape">
-                                <img class="author" src="<?= base_url() ?>assets/images/author-3.png" alt="author">
-                            </div>
-                            <div class="author-content media-body">
-                                <h6 class="holder-name">Kegiatan 3</h6>
-                                <p class="text">Detail :</p>
-                            </div>
-                        </div>
-                    </div> <!-- single testimonial -->
-                </div>
-                <div class="col-lg-4">
-                    <div class="single-testimonial">
-                        <div class="testimonial-review d-flex align-items-center justify-content-between">
-                            <div class="quota">
-                                <i class="lni-quotation"></i>
-                            </div>
-                            <div class="star">
-                                <ul>
-                                    <li><i class="lni-star-filled"></i></li>
-                                    <li><i class="lni-star-filled"></i></li>
-                                    <li><i class="lni-star-filled"></i></li>
-                                    <li><i class="lni-star-filled"></i></li>
-                                    <li><i class="lni-star-filled"></i></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="testimonial-text">
-                            <p class="text">Lorem ipsum dolor sit amet,consetetur sadipscing elitr, seddiam nonu eirmod tempor invidunt labore.Lorem ipsum dolor sit amet,consetetur sadipscing elitr, seddiam nonu.</p>
-                        </div>
-                        <div class="testimonial-author d-flex align-items-center">
-                            <div class="author-image">
-                                <img class="shape" src="<?= base_url() ?>assets/images/textimonial-shape.svg" alt="shape">
-                                <img class="author" src="<?= base_url() ?>assets/images/author-2.png" alt="author">
-                            </div>
-                            <div class="author-content media-body">
-                            <h6 class="holder-name">Kegiatan 4</h6>
-                                <p class="text">Detail :</p>
-                            </div>
-                        </div>
-                    </div> <!-- single testimonial -->
-                </div>
-            </div> <!-- row -->
-        </div> <!-- container -->
-    </section>
-    
-    <!--====== VIDEO COUNTER PART ENDS ======-->
     
     <!--====== TEAM PART START ======-->
     
@@ -449,18 +320,10 @@
                 </div>
             </div> <!-- row -->
             <div class="row justify-content-center">
-                <div class="col-lg-4 col-md-7 col-sm-8">
+                <div class="col-lg-3 col-md-7 col-sm-8">
                     <div class="single-team text-center mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
                         <div class="team-image">
-                            <img src="<?= base_url() ?>assets/images/team-1.png" alt="Team">
-                            <div class="social">
-                                <ul>
-                                    <li><a href="#"><i class="lni-facebook-filled"></i></a></li>
-                                    <li><a href="#"><i class="lni-twitter-filled"></i></a></li>
-                                    <li><a href="#"><i class="lni-instagram-filled"></i></a></li>
-                                    <li><a href="#"><i class="lni-linkedin-original"></i></a></li>
-                                </ul>
-                            </div>
+                            <img src="<?= base_url() ?>assets/images/team c.jpg" alt="Team">
                         </div>
                         <div class="team-content">
                             <h6 class="holder-name">Nama</h6>
@@ -468,18 +331,10 @@
                         </div>
                     </div> <!-- single team -->
                 </div>
-                <div class="col-lg-4 col-md-7 col-sm-8">
+                <div class="col-lg-3 col-md-7 col-sm-8">
                     <div class="single-team text-center mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
                         <div class="team-image">
-                            <img src="<?= base_url() ?>assets/images/team-1.png" alt="Team">
-                            <div class="social">
-                                <ul>
-                                    <li><a href="#"><i class="lni-facebook-filled"></i></a></li>
-                                    <li><a href="#"><i class="lni-twitter-filled"></i></a></li>
-                                    <li><a href="#"><i class="lni-instagram-filled"></i></a></li>
-                                    <li><a href="#"><i class="lni-linkedin-original"></i></a></li>
-                                </ul>
-                            </div>
+                            <img src="<?= base_url() ?>assets/images/team a.jpeg" alt="Team">
                         </div>
                         <div class="team-content">
                             <h6 class="holder-name">Nama</h6>
@@ -487,22 +342,80 @@
                         </div>
                     </div> <!-- single team -->
                 </div>
-                <div class="col-lg-4 col-md-7 col-sm-8">
+                <div class="col-lg-3 col-md-7 col-sm-8">
                     <div class="single-team text-center mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.8s">
                         <div class="team-image">
-                            <img src="<?= base_url() ?>assets/images/team-1.png" alt="Team">
-                            <div class="social">
-                                <ul>
-                                    <li><a href="#"><i class="lni-facebook-filled"></i></a></li>
-                                    <li><a href="#"><i class="lni-twitter-filled"></i></a></li>
-                                    <li><a href="#"><i class="lni-instagram-filled"></i></a></li>
-                                    <li><a href="#"><i class="lni-linkedin-original"></i></a></li>
-                                </ul>
-                            </div>
+                            <img src="<?= base_url() ?>assets/images/team b.jpeg" alt="Team">
                         </div>
                         <div class="team-content">
                             <h6 class="holder-name">Nama</h6>
                             <p class="text">Jabatan</p>
+                        </div>
+                    </div> <!-- single team -->
+                </div>
+                <div class="col-lg-3 col-md-7 col-sm-8">
+                    <div class="single-team text-center mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
+                        <div class="team-image">
+                            <img src="<?= base_url() ?>assets/images/team d.jpeg" alt="Team">
+                        </div>
+                        <div class="team-content">
+                            <h6 class="holder-name">Yuyun Handiwiyati</h6>
+                            <p class="text">Asisten Apoteker</p>
+                        </div>
+                    </div> <!-- single team -->
+                </div>
+                <div class="col-lg-3 col-md-7 col-sm-8">
+                    <div class="single-team text-center mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.8s">
+                        <div class="team-image">
+                            <img src="<?= base_url() ?>assets/images/team e.jpeg" alt="Team">
+                        </div>
+                        <div class="team-content">
+                            <h6 class="holder-name">Diana Nurus S</h6>
+                            <p class="text">Apoteker Penanggung Jawab</p>
+                        </div>
+                    </div> <!-- single team -->
+                </div>
+                <div class="col-lg-3 col-md-7 col-sm-8">
+                    <div class="single-team text-center mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
+                        <div class="team-image">
+                            <img src="<?= base_url() ?>assets/images/team f.jpeg" alt="Team">
+                        </div>
+                        <div class="team-content">
+                            <h6 class="holder-name">Iflahah arifin</h6>
+                            <p class="text">administrasi</p>
+                        </div>
+                    </div> <!-- single team -->
+                </div>
+                <div class="col-lg-3 col-md-7 col-sm-8">
+                    <div class="single-team text-center mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
+                        <div class="team-image">
+                            <img src="<?= base_url() ?>assets/images/team g.jpeg" alt="Team">
+                        </div>
+                        <div class="team-content">
+                            <h6 class="holder-name">Siti Sublihah</h6>
+                            <p class="text">Asisten Apoteker</p>
+                        </div>
+                    </div> <!-- single team -->
+                </div>
+                <div class="col-lg-3 col-md-7 col-sm-8">
+                    <div class="single-team text-center mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.8s">
+                        <div class="team-image">
+                            <img src="<?= base_url() ?>assets/images/team i.jpeg" alt="Team">
+                        </div>
+                        <div class="team-content">
+                            <h6 class="holder-name">Siti Romlah</h6>
+                            <p class="text">Analis Medis</p>
+                        </div>
+                    </div> <!-- single team -->
+                </div>
+                <div class="col-lg-3 col-md-7 col-sm-8">
+                    <div class="single-team text-center mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.8s">
+                        <div class="team-image">
+                            <img src="<?= base_url() ?>assets/images/team h.jpeg" alt="Team">
+                        </div>
+                        <div class="team-content">
+                            <h6 class="holder-name">Rian sandi</h6>
+                            <p class="text">Asisten Apoteker</p>
                         </div>
                     </div> <!-- single team -->
                 </div>
@@ -541,12 +454,12 @@
                                 <img src="<?= base_url() ?>assets/images/logo.svg" alt="logo">
                             </a>
                             <p class="text">Merupakan Praktik Bersama dr.Nunuk Kristiani dengan beberapa dokter yang siap melayani Kesehatan anda dan Keluarga</p>
-                            <ul class="social">
+                            <!-- <ul class="social">
                                 <li><a href="#"><i class="lni-facebook-filled"></i></a></li>
                                 <li><a href="#"><i class="lni-twitter-filled"></i></a></li>
                                 <li><a href="#"><i class="lni-instagram-filled"></i></a></li>
                                 <li><a href="#"><i class="lni-linkedin-original"></i></a></li>
-                            </ul>
+                            </ul> -->
                         </div> <!-- footer about -->
                     </div>
                     <div class="col-lg-5 col-md-7 col-sm-7">
@@ -610,7 +523,9 @@
     
     <!--====== BACK TOP TOP PART START ======-->
 
-    <a href="#" class="back-to-top"><i class="lni-chevron-up"></i></a>
+    <a href="#" class="back-to-top">
+        <!-- <i class="lni-chevron-up"></i> -->
+    </a>
 
     <!--====== BACK TOP TOP PART ENDS ======-->   
     
