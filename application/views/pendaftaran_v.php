@@ -588,7 +588,47 @@
                   </select>
                 </div>
               </div>
-              <div class="col-3">
+              <div class="col-6">
+                <div class="form-group">
+                  <div class="input-group input-group-alternative mb-3">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="ni ni-basket"></i></span>
+                    </div>
+                    <input class="form-control" placeholder="Berat Badan (Kg)" id="bb" type="number">
+                  </div>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="form-group">
+                  <div class="input-group input-group-alternative mb-3">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="ni ni-basket"></i></span>
+                    </div>
+                    <input class="form-control" placeholder="GDA" id="gda" type="number">
+                  </div>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="form-group">
+                  <div class="input-group input-group-alternative mb-3">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="ni ni-basket"></i></span>
+                    </div>
+                    <input class="form-control" placeholder="Choles" id="choles" type="number">
+                  </div>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="form-group">
+                  <div class="input-group input-group-alternative mb-3">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="ni ni-basket"></i></span>
+                    </div>
+                    <input class="form-control" placeholder="AU" id="au" type="number">
+                  </div>
+                </div>
+              </div>
+              <div class="col-6">
                 <div class="form-group">
                   <div class="input-group input-group-alternative mb-3">
                     <div class="input-group-prepend">
@@ -598,7 +638,7 @@
                   </div>
                 </div>
               </div>
-              <div class="col-3">
+              <div class="col-6">
                 <div class="form-group">
                   <div class="input-group input-group-alternative mb-3">
                     <div class="input-group-prepend">
@@ -608,7 +648,7 @@
                   </div>
                 </div>
               </div>
-              <div class="col-3">
+              <div class="col-6">
                 <div class="form-group">
                   <div class="input-group input-group-alternative mb-3">
                     <div class="input-group-prepend">
@@ -618,7 +658,7 @@
                   </div>
                 </div>
               </div>
-              <div class="col-3">
+              <div class="col-6">
                 <div class="form-group">
                   <div class="input-group input-group-alternative mb-3">
                     <div class="input-group-prepend">
@@ -878,6 +918,10 @@
     document.getElementById('riwayat_obat').value = "";
     document.getElementById('kesadaran_umum').value = "";
     document.getElementById('kesadaran').value = "";
+    document.getElementById('bb').value = "";
+    document.getElementById('gda').value = "";
+    document.getElementById('choles').value = "";
+    document.getElementById('au').value = "";
     document.getElementById('tekanan_darah').value = "";
     document.getElementById('nadi').value = "";
     document.getElementById('suhu').value = "";
@@ -1066,6 +1110,10 @@
       form_data.append('riwayat_obat', document.getElementById("riwayat_obat").value);
       form_data.append('kesadaran_umum', document.getElementById("kesadaran_umum").value);
       form_data.append('kesadaran', document.getElementById("kesadaran").value);
+      form_data.append('bb', document.getElementById("bb").value);
+      form_data.append('gda', document.getElementById("gda").value);
+      form_data.append('choles', document.getElementById("choles").value);
+      form_data.append('au', document.getElementById("au").value);
       form_data.append('tekanan_darah', document.getElementById("tekanan_darah").value);
       form_data.append('nadi', document.getElementById("nadi").value);
       form_data.append('suhu', document.getElementById("suhu").value);

@@ -244,7 +244,47 @@
                   </select>
                 </div>
               </div>
-              <div class="col-3">
+              <div class="col-6">
+                <div class="form-group">
+                  <div class="input-group input-group-alternative mb-3">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="ni ni-basket"></i></span>
+                    </div>
+                    <input class="form-control" placeholder="Berat Badan (Kg)" id="bb" type="number">
+                  </div>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="form-group">
+                  <div class="input-group input-group-alternative mb-3">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="ni ni-basket"></i></span>
+                    </div>
+                    <input class="form-control" placeholder="GDA" id="gda" type="number">
+                  </div>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="form-group">
+                  <div class="input-group input-group-alternative mb-3">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="ni ni-basket"></i></span>
+                    </div>
+                    <input class="form-control" placeholder="Choles" id="choles" type="number">
+                  </div>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="form-group">
+                  <div class="input-group input-group-alternative mb-3">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="ni ni-basket"></i></span>
+                    </div>
+                    <input class="form-control" placeholder="AU" id="au" type="number">
+                  </div>
+                </div>
+              </div>
+              <div class="col-6">
                 <div class="form-group">
                   <div class="input-group input-group-alternative mb-3">
                     <div class="input-group-prepend">
@@ -254,7 +294,7 @@
                   </div>
                 </div>
               </div>
-              <div class="col-3">
+              <div class="col-6">
                 <div class="form-group">
                   <div class="input-group input-group-alternative mb-3">
                     <div class="input-group-prepend">
@@ -264,7 +304,7 @@
                   </div>
                 </div>
               </div>
-              <div class="col-3">
+              <div class="col-6">
                 <div class="form-group">
                   <div class="input-group input-group-alternative mb-3">
                     <div class="input-group-prepend">
@@ -274,7 +314,7 @@
                   </div>
                 </div>
               </div>
-              <div class="col-3">
+              <div class="col-6">
                 <div class="form-group">
                   <div class="input-group input-group-alternative mb-3">
                     <div class="input-group-prepend">
@@ -492,6 +532,10 @@
       document.getElementById("riwayat_obat").disabled = true;
       document.getElementById("kesadaran_umum").disabled = true;
       document.getElementById("kesadaran").disabled = true;
+      document.getElementById("bb").disabled = true;
+      document.getElementById("gda").disabled = true;
+      document.getElementById("choles").disabled = true;
+      document.getElementById("au").disabled = true;
       document.getElementById("tekanan_darah").disabled = true;
       document.getElementById("nadi").disabled = true;
       document.getElementById("suhu").disabled = true;
@@ -518,6 +562,10 @@
       document.getElementById("riwayat_obat").disabled = false;
       document.getElementById("kesadaran_umum").disabled = false;
       document.getElementById("kesadaran").disabled = false;
+      document.getElementById("bb").disabled = false;
+      document.getElementById("gda").disabled = false;
+      document.getElementById("choles").disabled = false;
+      document.getElementById("au").disabled = false;
       document.getElementById("tekanan_darah").disabled = false;
       document.getElementById("nadi").disabled = false;
       document.getElementById("suhu").disabled = false;
@@ -561,6 +609,10 @@
               document.getElementById("riwayat_obat").value = data.riwayat_obat;
               document.getElementById("kesadaran_umum").value = data.kesadaran_umum;
               document.getElementById("kesadaran").value = data.kesadaran;
+              document.getElementById("bb").value = data.bb;
+              document.getElementById("gda").value = data.gda;
+              document.getElementById("choles").value = data.choles;
+              document.getElementById("au").value = data.au;
               document.getElementById("tekanan_darah").value = data.tekanan_darah;
               document.getElementById("nadi").value = data.nadi;
               document.getElementById("suhu").value = data.suhu;
@@ -626,6 +678,10 @@
         form_data.append('riwayat_obat', document.getElementById("riwayat_obat").value);
         form_data.append('kesadaran_umum', document.getElementById("kesadaran_umum").value);
         form_data.append('kesadaran', document.getElementById("kesadaran").value);
+        form_data.append('bb', document.getElementById("bb").value);
+        form_data.append('gda', document.getElementById("gda").value);
+        form_data.append('choles', document.getElementById("choles").value);
+        form_data.append('au', document.getElementById("au").value);
         form_data.append('tekanan_darah', document.getElementById("tekanan_darah").value);
         form_data.append('nadi', document.getElementById("nadi").value);
         form_data.append('suhu', document.getElementById("suhu").value);
